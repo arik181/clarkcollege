@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0x8758d50" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>GNOME Inform 7</generator>
+  <activeNode nodeId="node-0x8758d50"/>
+  <item nodeId="node-0x8758d50">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+
+scenery_test
+An Interactive Fiction by Devin Quirozoliver
+Release 1 / Serial number 120627 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Center
+There are many things in this room. A small stool resides in one corner, and a bookshelf is propped against the wall. An art table sits off to one side, and on the art table is a blueprint of some kind.
+
+You can see an art table, a small stool, a bookshelf and a blueprint here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x8758e28"/>
+      <child nodeId="node-0xa54923a0"/>
+      <child nodeId="node-0xa5492550"/>
+    </children>
+  </item>
+  <item nodeId="node-0x8758e28">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Center
+There are many things in this room. A small stool resides in one corner, and a bookshelf is propped against the wall. An art table sits off to one side, and on the art table is a blueprint of some kind.
+
+You can see an art table, a small stool, a bookshelf and a blueprint here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x8758f00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x8758f00">
+    <command xml:space="preserve">look at art table</command>
+    <result xml:space="preserve">A table with a small tray at the bottom to hold pens. On the table is a blueprint of a large robot with lasers for hands.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa5492040"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa5492040">
+    <command xml:space="preserve">look at table</command>
+    <result xml:space="preserve">A table with a small tray at the bottom to hold pens. On the table is a blueprint of a large robot with lasers for hands.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa5492118"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa5492118">
+    <command xml:space="preserve">look at art</command>
+    <result xml:space="preserve">A table with a small tray at the bottom to hold pens. On the table is a blueprint of a large robot with lasers for hands.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa54921f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa54921f0">
+    <command xml:space="preserve">look at robot</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xa54923a0">
+    <command xml:space="preserve">look at bookshelf</command>
+    <result xml:space="preserve">A non-descript bookshelf containing many books. Among the books are a first edition copy of Frank Herbert&apos;s Dune, Neil Gaiman&apos;s Signal to Noise, and Alan Moore&apos;s From Hell.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa54922c8"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa54922c8">
+    <command xml:space="preserve">look at blueprint</command>
+    <result xml:space="preserve">A blue sheet covered in carefully rendered white lines and circles. A tiny man stands next to the robot&apos;s foot to provide a sense of its enormous scale.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa5492478"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa5492478">
+    <command xml:space="preserve">look at robot</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xa5492550">
+    <command xml:space="preserve">look at robot</command>
+    <result xml:space="preserve">A blue sheet covered in carefully rendered white lines and circles. A tiny man stands next to the robot&apos;s foot to provide a sense of its enormous scale.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa5492700"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa5492700">
+    <command xml:space="preserve">look at blueprint</command>
+    <result xml:space="preserve">A blue sheet covered in carefully rendered white lines and circles. A tiny man stands next to the robot&apos;s foot to provide a sense of its enormous scale.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa5492628"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa5492628">
+    <command xml:space="preserve">look at robot</command>
+    <result xml:space="preserve">A blue sheet covered in carefully rendered white lines and circles. A tiny man stands next to the robot&apos;s foot to provide a sense of its enormous scale.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa8e48018"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa8e48018">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Center
+There are many things in this room. A small stool resides in one corner, and a bookshelf is propped against the wall. An art table sits off to one side, and on the art table is a blueprint of some kind.
+
+You can see an art table, a small stool, a bookshelf and a blueprint here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xa8e480f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xa8e480f0">
+    <command xml:space="preserve">look at bookshelf</command>
+    <result xml:space="preserve">A non-descript bookshelf containing many books. Among the books are a first edition copy of Frank Herbert&apos;s Dune, Neil Gaiman&apos;s Signal to Noise, and Alan Moore&apos;s From Hell.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+</Skein>

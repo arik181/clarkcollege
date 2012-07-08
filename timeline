@@ -1,0 +1,56 @@
+Story Phase Plan
+
+The two initial stories in the "A Very Bad Week" cycle will be "Typhoon" and "Active Shooter".
+
+The introduction to each of these stories will be a simple narrator who, with the benefit of hindsight, tells the player that disaster is coming.
+
+The phases of these stories will be short, with a single decision point taking place between each phase. Actions must be fairly obvious, and the game should be relatively easy to win, but there should be a lot of more challenging "optional" items for the player to find for an increase in score. The score will be a way to let the player know that they can play the chapter again for a better score at the end of the game. 
+
+The narrator will let the player know at the end of the game how well they did during an epilogue sequence, and will tell the player how they could have improved their score (by finding additional items like water, or by performing an action, such as attempting to hide from the active shooter). Finally, a notice will appear to every player indicating all the things they could do during the scenario and encouraging them to try again for a better score.
+
+"Typhoon" will be divided into the following four phases:
+
+  * Introduction - Mitigation 
+    * Describe situation with a naration in the past tense
+    * Indicate that disaster is coming
+  * Buildup - Preparedness
+    * Prompt : Emergency Warning
+    * Decision Point : Five items found
+  * Peak Action - Response
+    * Prompt : Typhoon takes place
+    * Items found during prep phase will save lives during response phase
+    * Decision Point : Three lives saved or people helped
+  * Epilogue - Recovery
+    * Three days in a camp
+    * No decision point
+    * Short review of lessons learned
+    * Conclusion Point : Foreboding, i.e.: "How can this week get any worse?"
+
+"Active Shooter" 
+
+  * Introduction - Establishment of situation
+    * Describe a normal entry into a school building 
+      (Library or instructor's office)
+    * The player will be searching for a book which is needed for class
+  * Identification - 
+    * The player will find out that shooter is in area
+    * The player will be given information from various sources 
+      (NPCs or overheard reports) about the shooter's motive and movement
+    * Points will be given for attempts to evacuate and lock down
+    * Decision Point : When the shooter is identified and it becomes apparent 
+      that the shooter is in the building
+  * Buildup Movement 
+    * Track the shooter's movement
+    * Attempts to escape the building are rewarded with points
+    * Decision point : The player will move to the next phase when they reach 
+      the hallway where they will confront the shooter
+  * Peak Action - Confrontation
+    * When the shooter gets close, an attempt to hide is rewarded with points
+    * Inevitably, the shooter finds you, and you an attempt to attack 
+      the shooter is rewarded with escape
+  * Epilogue - Escape
+    * If certain conditions occur, the player escapes 
+      * The player must have taken a certain number of correct actions during 
+        the preceding phases in order to escape
+      * The player must have attacked the shooter during the final phase
+        in order to escape

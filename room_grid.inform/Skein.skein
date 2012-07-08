@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0x90adb80" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>GNOME Inform 7</generator>
+  <activeNode nodeId="node-0x90adb80"/>
+  <item nodeId="node-0x90adb80">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+
+room_grid
+An Interactive Fiction by Devin Quirozoliver
+Release 1 / Serial number 120708 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Center
+The Center is in the center of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x90adc58"/>
+      <child nodeId="node-0x90ad9d0"/>
+      <child nodeId="node-0x90ade08"/>
+      <child nodeId="node-0x9282830"/>
+      <child nodeId="node-0x9282c68"/>
+    </children>
+  </item>
+  <item nodeId="node-0x90adc58">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Center
+The Center is in the center of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x90add30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x90add30">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x90ad9d0">
+    <command xml:space="preserve">look w</command>
+    <result xml:space="preserve">You see nothing unexpected in that direction.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x90ad8f8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x90ad8f8">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+room named The West Wing
+The West is in the West of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x90ade08">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+The West Wing
+The West is in the West of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x90adee0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x90adee0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Center
+The Center is in the center of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x9282830">
+    <command xml:space="preserve">help</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x9282908"/>
+    </children>
+  </item>
+  <item nodeId="node-0x9282908">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Center
+The Center is in the center of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x92829e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x92829e0">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+The NorthEast Wing
+The NorthEast is in the NorthEast of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x9282ab8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x9282ab8">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+Center
+The Center is in the center of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x9282b90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x9282b90">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+The SouthWest Wing
+The SouthWest is in the SouthWest of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x9282c68">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+The SouthWest Wing
+The SouthWest is in the SouthWest of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x9282d40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x9282d40">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x9282e18"/>
+    </children>
+  </item>
+  <item nodeId="node-0x9282e18">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">The SouthWest Wing
+The SouthWest is in the SouthWest of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x9282ef0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x9282ef0">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+Center
+The Center is in the center of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x9233010"/>
+    </children>
+  </item>
+  <item nodeId="node-0x9233010">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+The SouthWest Wing
+The SouthWest is in the SouthWest of a nine room grid.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+</Skein>

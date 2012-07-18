@@ -1,5 +1,5 @@
 Debugging log of Inform 7
-Inform called as: /usr/libexec/gnome-inform7/ni -rules /usr/share/gnome-inform7/Extensions -extension=z8 -package /home/arik181/clarkcollege/room_grid.inform -release 
+Inform called as: C:\Program Files (x86)\Inform 7\Compilers\ni -rules C:\Program Files (x86)\Inform 7\Inform7\Extensions -package C:\Users\arik181\Documents\GitHub\clarkcollege\room_grid.inform -extension=z8 
 
 
 -----------------------------------------------------

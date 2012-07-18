@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0x023F8550" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Inform 7 for Windows</generator>
+  <activeNode nodeId="node-0x02621698"/>
+  <item nodeId="node-0x023F8550">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120718 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;Hallway South&#x000A;You don't know this yet, but you're about to have a very bad week. Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120718 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">NO</temporary>
+    <children>
+      <child nodeId="node-0x02621A88"/>
+      <child nodeId="node-0x0BCC7510"/>
+      <child nodeId="node-0x0BC85F70"/>
+      <child nodeId="node-0x0BC864B0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02621A88">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BCC72E0"/>
+      <child nodeId="node-0x0BC86130"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BCC72E0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BCC7350"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BCC7350">
+    <command xml:space="preserve">look at map</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x0BC86130">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">South East Office&#x000A;You are in an office at the South East end of the building. There is nothing here of interest.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC86210"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC86210">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC86280"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC86280">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">South West Office&#x000A;You are in an office at the South West end of the building. There is nothing here of interest.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC862F0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC862F0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC86360"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC86360">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South.&#x000A;&#x000A;You can see a map (on which is a label) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC863D0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC863D0">
+    <command xml:space="preserve">look at map</command>
+    <result xml:space="preserve">You see a map of the building. At the bottom of the map you see a label. In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and South toward the exit.&#x000A;&#x000A;On the map is a label.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x0BCC7510">
+    <command xml:space="preserve">look at map</command>
+    <result xml:space="preserve">You see a map of the building. At the bottom of the map you see some writing. In order to get out of the building, you'll have to go North toward the elevator and the stairwell.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BCC7580"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BCC7580">
+    <command xml:space="preserve">look at writing</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x0BC85F70">
+    <command xml:space="preserve">look at writing</command>
+    <result xml:space="preserve">The writing at the bottom of the map says: Posted by the Emergency Building Coordinator.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC85FE0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC85FE0">
+    <command xml:space="preserve">look at map</command>
+    <result xml:space="preserve">You see a map of the building. At the bottom of the map you see some writing. In order to get out of the building, you'll have to go North toward the elevator and the stairwell.&#x000A;&#x000A;On the map is a writing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x0BC864B0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South.&#x000A;&#x000A;You can see a map (on which is a label) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC86520"/>
+      <child nodeId="node-0x026211C8"/>
+      <child nodeId="node-0x02621698"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC86520">
+    <command xml:space="preserve">look at map</command>
+    <result xml:space="preserve">You see a map of the building. At the bottom of the map you see a label. In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and South toward the exit.&#x000A;&#x000A;On the map is a label.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC86590"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC86590">
+    <command xml:space="preserve">look at label</command>
+    <result xml:space="preserve">The label at the bottom of the map says: Posted by the Emergency Building Coordinator.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x026211C8">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">The Elevator Doors&#x000A;You see a set of large elevator doors. To the East you see stairs.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02620E48"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02620E48">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02621158"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02621158">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">The Stairwell&#x000A;You see stairs leading to the first and third floors of the building.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x026210E8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x026210E8">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02621078"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02621078">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">The First Floor Stairwell&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02620F28"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02620F28">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">The First Floor Stairwell&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0BC86670"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0BC86670">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02621698">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+</Skein>

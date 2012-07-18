@@ -29,7 +29,7 @@ Array UUID_ARRAY string "UUID://DE2E5DC6-C0DA-11E1-A9AC-00306720E087//";
 Constant Story "room_grid";
 Constant Headline "An Interactive Fiction";
 Constant Story_Author SC_2;
-Serial "120708";
+Serial "120718";
 
 Default Story 0;
 Default Headline 0;
@@ -9345,19 +9345,15 @@ Class K0_kind
 
 Class K1_room 
     class K0_kind
+    with description EMPTY_TEXT_VALUE
+    with map_region nothing
     has ~privately_named
     has light
     has ~visited
-    with description EMPTY_TEXT_VALUE
-    with map_region nothing
 ;
 
 Class K2_thing 
     class K0_kind
-    with action_bitmap 0 0 0 0 0 0 
-    with component_parent nothing
-    with component_child nothing
-    with component_sibling nothing
     has ~privately_named
     has ~light
     has ~edible
@@ -9365,6 +9361,10 @@ Class K2_thing
     has ~concealed
     has ~workflag
     has mentioned
+    with component_parent nothing
+    with component_child nothing
+    with component_sibling nothing
+    with action_bitmap 0 0 0 0 0 0 
     has ~scenery
     has ~clothing
     has ~pushable
@@ -9379,9 +9379,9 @@ Class K6_supporter
 
     	has transparent supporter
 
-    has static
-    with capacity 100
     with plural "supporters"
+    with capacity 100
+    has static
     has ~enterable
 ;
 
@@ -9391,24 +9391,24 @@ Class K8_person
     	has transparent animate
     	with before NULL,
 
+    with plural "people"
+    with capacity 100
     has ~female
     has ~neuter
-    with capacity 100
-    with plural "people"
 ;
 
 Class K10_man 
     class K8_person
+    with plural "men"
     has ~female
     has ~neuter
-    with plural "men"
 ;
 
 Class K11_woman 
     class K8_person
+    with plural "women"
     has female
     has ~neuter
-    with plural "women"
 ;
 
 Class K12_animal 
@@ -9419,13 +9419,13 @@ Class K12_animal
 Class K4_door 
     class K2_thing
      has door, 
-    has ~lockable
-    has ~locked
+    with plural "doors"
     has static
     has ~pushable
     has ~open
     has openable
-    with plural "doors"
+    has ~lockable
+    has ~locked
     with door_to nothing
     with with_key nothing
 ;
@@ -9433,50 +9433,50 @@ Class K4_door
 Class K5_container 
     class K2_thing
      has container, 
-    has ~lockable
-    has ~locked
+    with plural "containers"
+    with capacity 100
     has ~transparent
     has open
     has ~openable
-    with capacity 100
-    with plural "containers"
+    has ~lockable
+    has ~locked
     has ~enterable
     with with_key nothing
 ;
 
 Class K14_vehicle 
     class K5_container
+    with plural "vehicles"
     has static
     has enterable
-    with plural "vehicles"
 ;
 
 Class K15_player_s_holdall 
     class K5_container
+    with plural "player's holdalls"
     has ~static
     has openable
-    with plural "player's holdalls"
 ;
 
 Class K7_backdrop 
     class K2_thing
+    with plural "backdrops"
     has static
     has scenery
     has ~pushable
-    with plural "backdrops"
 ;
 
 Class K13_device 
     class K2_thing
      has switchable, 
-    has ~on
     with plural "devices"
+    has ~on
 ;
 
 Class K9_region 
     class K0_kind
-    has ~privately_named
     with plural "regions"
+    has ~privately_named
 ;
 
 Class K3_direction 
@@ -9484,190 +9484,190 @@ Class K3_direction
 
     	has scenery, ! class CompassDirection,
 
+    with plural "directions"
     has ~privately_named
     has ~workflag
-    with plural "directions"
     with p9_opposite I46_north
 ;
 
 Object I46_north "" Compass
     class K3_direction
-    with name 'north' 'n//' 
-    with parse_name Parse_Name_GV1
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "north"
+    with article SC_3
+    with p9_opposite I49_south
     with vector 0
     with list_together 0
     with IK3_Count 0
     with IK3_Link I47_northeast
-    with short_name "north"
-    with article SC_3
-    with p9_opposite I49_south
+    with KD_Count 3
+    with name 'north' 'n//' 
+    with parse_name Parse_Name_GV1
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I47_northeast "" Compass
     class K3_direction
-    with name 'northeast' 'ne' 
-    with parse_name Parse_Name_GV2
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "northeast"
+    with article SC_3
+    with p9_opposite I51_southwest
     with vector 0
     with list_together 0
     with IK3_Count 1
     with IK3_Link I48_northwest
-    with short_name "northeast"
-    with article SC_3
-    with p9_opposite I51_southwest
+    with KD_Count 3
+    with name 'northeast' 'ne' 
+    with parse_name Parse_Name_GV2
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I48_northwest "" Compass
     class K3_direction
-    with name 'northwest' 'nw' 
-    with parse_name Parse_Name_GV3
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "northwest"
+    with article SC_3
+    with p9_opposite I50_southeast
     with vector 0
     with list_together 0
     with IK3_Count 2
     with IK3_Link I49_south
-    with short_name "northwest"
-    with article SC_3
-    with p9_opposite I50_southeast
+    with KD_Count 3
+    with name 'northwest' 'nw' 
+    with parse_name Parse_Name_GV3
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I49_south "" Compass
     class K3_direction
-    with name 'south' 's//' 
-    with parse_name Parse_Name_GV4
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "south"
+    with article SC_3
+    with p9_opposite I46_north
     with vector 0
     with list_together 0
     with IK3_Count 3
     with IK3_Link I50_southeast
-    with short_name "south"
-    with article SC_3
-    with p9_opposite I46_north
+    with KD_Count 3
+    with name 'south' 's//' 
+    with parse_name Parse_Name_GV4
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I50_southeast "" Compass
     class K3_direction
-    with name 'southeast' 'se' 
-    with parse_name Parse_Name_GV5
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "southeast"
+    with article SC_3
+    with p9_opposite I48_northwest
     with vector 0
     with list_together 0
     with IK3_Count 4
     with IK3_Link I51_southwest
-    with short_name "southeast"
-    with article SC_3
-    with p9_opposite I48_northwest
+    with KD_Count 3
+    with name 'southeast' 'se' 
+    with parse_name Parse_Name_GV5
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I51_southwest "" Compass
     class K3_direction
-    with name 'southwest' 'sw' 
-    with parse_name Parse_Name_GV6
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "southwest"
+    with article SC_3
+    with p9_opposite I47_northeast
     with vector 0
     with list_together 0
     with IK3_Count 5
     with IK3_Link I52_east
-    with short_name "southwest"
-    with article SC_3
-    with p9_opposite I47_northeast
+    with KD_Count 3
+    with name 'southwest' 'sw' 
+    with parse_name Parse_Name_GV6
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I52_east "" Compass
     class K3_direction
-    with name 'east' 'e//' 
-    with parse_name Parse_Name_GV7
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "east"
+    with article SC_3
+    with p9_opposite I53_west
     with vector 0
     with list_together 0
     with IK3_Count 6
     with IK3_Link I53_west
-    with short_name "east"
-    with article SC_3
-    with p9_opposite I53_west
+    with KD_Count 3
+    with name 'east' 'e//' 
+    with parse_name Parse_Name_GV7
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I53_west "" Compass
     class K3_direction
-    with name 'west' 'w//' 
-    with parse_name Parse_Name_GV8
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "west"
+    with article SC_3
+    with p9_opposite I52_east
     with vector 0
     with list_together 0
     with IK3_Count 7
     with IK3_Link I54_up
-    with short_name "west"
-    with article SC_3
-    with p9_opposite I52_east
+    with KD_Count 3
+    with name 'west' 'w//' 
+    with parse_name Parse_Name_GV8
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I54_up "" Compass
     class K3_direction
-    with name 'up' 'u//' 
-    with parse_name Parse_Name_GV9
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "up"
+    with article SC_3
+    with p9_opposite I55_down
     with vector 0
     with list_together 0
     with IK3_Count 8
     with IK3_Link I55_down
-    with short_name "up"
-    with article SC_3
-    with p9_opposite I55_down
+    with KD_Count 3
+    with name 'up' 'u//' 
+    with parse_name Parse_Name_GV9
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I55_down "" Compass
     class K3_direction
-    with name 'down' 'd//' 
-    with parse_name Parse_Name_GV10
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "down"
+    with article SC_3
+    with p9_opposite I54_up
     with vector 0
     with list_together 0
     with IK3_Count 9
     with IK3_Link in_obj
-    with short_name "down"
-    with article SC_3
-    with p9_opposite I54_up
+    with KD_Count 3
+    with name 'down' 'd//' 
+    with parse_name Parse_Name_GV10
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object in_obj "" Compass
     class K3_direction
-    with name 'inside' 'in' 
-    with parse_name Parse_Name_GV11
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "inside"
+    with article SC_3
+    with p9_opposite out_obj
     with vector 0
     with list_together 0
     with IK3_Count 10
     with IK3_Link out_obj
-    with short_name "inside"
-    with article SC_3
-    with p9_opposite out_obj
+    with KD_Count 3
+    with name 'inside' 'in' 
+    with parse_name Parse_Name_GV11
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object out_obj "" Compass
     class K3_direction
-    with name 'outside' 'out' 
-    with parse_name Parse_Name_GV12
-    with action_bitmap 0 0 0 0 0 0 
-    with KD_Count 3
+    with short_name "outside"
+    with article SC_3
+    with p9_opposite in_obj
     with vector 0
     with list_together 0
     with IK3_Count 11
     with IK3_Link nothing
-    with short_name "outside"
-    with article SC_3
-    with p9_opposite in_obj
+    with KD_Count 3
+    with name 'outside' 'out' 
+    with parse_name Parse_Name_GV12
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object selfobj ""
@@ -9675,41 +9675,42 @@ Object selfobj ""
 
     	with saved_short_name "yourself",
      
-    with name 'yourself' 
-    with action_bitmap 0 0 0 0 0 0 
-    with IK8_Count 0
-    with IK8_Link nothing
-    with KD_Count 8
+    with short_name "yourself"
+    with description SC_4
+    has proper
+    has concealed
     with vector 0
     with list_together 0
     with cap_short_name "Yourself"
     has mark_as_thing
     with IK2_Count 0
     with IK2_Link nothing
-    has proper
-    has concealed
-    with short_name "yourself"
-    with description SC_4
+    with IK8_Count 0
+    with IK8_Link nothing
+    with KD_Count 8
+    with name 'yourself' 
+    with action_bitmap 0 0 0 0 0 0 
 ;
 
 Object I88_center ""
     class K1_room
-    with name 'center' 
-    with KD_Count 1
+    with short_name "Center"
+    with description SC_5
     with vector 0
     with room_index -1
     with list_together 0
     has mark_as_room
     with IK1_Count 0
     with IK1_Link I89_the_west_wing
-    with short_name "Center"
-    with description SC_5
+    with KD_Count 1
+    with name 'center' 
 ;
 
 Object I89_the_west_wing ""
     class K1_room
-    with name 'the' 'west' 'wing' 
-    with KD_Count 1
+    with short_name "The West Wing"
+    with description SC_6
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9717,15 +9718,15 @@ Object I89_the_west_wing ""
     has mark_as_room
     with IK1_Count 1
     with IK1_Link I90_the_east_wing_is_a_room
-    has proper
-    with short_name "The West Wing"
-    with description SC_6
+    with KD_Count 1
+    with name 'the' 'west' 'wing' 
 ;
 
 Object I90_the_east_wing_is_a_room ""
     class K1_room
-    with name 'the' 'east' 'wing' 'is' 'a//' 'room' 
-    with KD_Count 1
+    with short_name "The East Wing is a room"
+    with description SC_7
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9733,15 +9734,15 @@ Object I90_the_east_wing_is_a_room ""
     has mark_as_room
     with IK1_Count 2
     with IK1_Link I91_the_north_wing_is_a_room
-    has proper
-    with short_name "The East Wing is a room"
-    with description SC_7
+    with KD_Count 1
+    with name 'the' 'east' 'wing' 'is' 'a//' 'room' 
 ;
 
 Object I91_the_north_wing_is_a_room ""
     class K1_room
-    with name 'the' 'north' 'wing' 'is' 'a//' 'room' 
-    with KD_Count 1
+    with short_name "The North Wing is a room"
+    with description SC_8
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9749,15 +9750,15 @@ Object I91_the_north_wing_is_a_room ""
     has mark_as_room
     with IK1_Count 3
     with IK1_Link I92_the_south_wing_is_a_room
-    has proper
-    with short_name "The North Wing is a room"
-    with description SC_8
+    with KD_Count 1
+    with name 'the' 'north' 'wing' 'is' 'a//' 'room' 
 ;
 
 Object I92_the_south_wing_is_a_room ""
     class K1_room
-    with name 'the' 'south' 'wing' 'is' 'a//' 'room' 
-    with KD_Count 1
+    with short_name "The South Wing is a room"
+    with description SC_9
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9765,15 +9766,15 @@ Object I92_the_south_wing_is_a_room ""
     has mark_as_room
     with IK1_Count 4
     with IK1_Link I93_the_northeast_wing
-    has proper
-    with short_name "The South Wing is a room"
-    with description SC_9
+    with KD_Count 1
+    with name 'the' 'south' 'wing' 'is' 'a//' 'room' 
 ;
 
 Object I93_the_northeast_wing ""
     class K1_room
-    with name 'the' 'northeast' 'wing' 
-    with KD_Count 1
+    with short_name "The NorthEast Wing"
+    with description SC_10
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9781,15 +9782,15 @@ Object I93_the_northeast_wing ""
     has mark_as_room
     with IK1_Count 5
     with IK1_Link I94_the_northwest_wing
-    has proper
-    with short_name "The NorthEast Wing"
-    with description SC_10
+    with KD_Count 1
+    with name 'the' 'northeast' 'wing' 
 ;
 
 Object I94_the_northwest_wing ""
     class K1_room
-    with name 'the' 'northwest' 'wing' 
-    with KD_Count 1
+    with short_name "The NorthWest Wing"
+    with description SC_11
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9797,15 +9798,15 @@ Object I94_the_northwest_wing ""
     has mark_as_room
     with IK1_Count 6
     with IK1_Link I95_the_southeast_wing
-    has proper
-    with short_name "The NorthWest Wing"
-    with description SC_11
+    with KD_Count 1
+    with name 'the' 'northwest' 'wing' 
 ;
 
 Object I95_the_southeast_wing ""
     class K1_room
-    with name 'the' 'southeast' 'wing' 
-    with KD_Count 1
+    with short_name "The SouthEast Wing"
+    with description SC_12
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9813,15 +9814,15 @@ Object I95_the_southeast_wing ""
     has mark_as_room
     with IK1_Count 7
     with IK1_Link I96_the_southwest_wing
-    has proper
-    with short_name "The SouthEast Wing"
-    with description SC_12
+    with KD_Count 1
+    with name 'the' 'southeast' 'wing' 
 ;
 
 Object I96_the_southwest_wing ""
     class K1_room
-    with name 'the' 'southwest' 'wing' 
-    with KD_Count 1
+    with short_name "The SouthWest Wing"
+    with description SC_13
+    has proper
     with vector 0
     with room_index -1
     with list_together 0
@@ -9829,9 +9830,8 @@ Object I96_the_southwest_wing ""
     has mark_as_room
     with IK1_Count 8
     with IK1_Link nothing
-    has proper
-    with short_name "The SouthWest Wing"
-    with description SC_13
+    with KD_Count 1
+    with name 'the' 'southwest' 'wing' 
 ;
 
 Constant I65_figure_of_cover = 1;
@@ -31469,7 +31469,6 @@ Global precopied_comb_kov;
 
 #ENDIF; ! IFDEF MEMORY_HEAP_SIZE
 
-
 Constant RRV_NAME     		RR_NAME-4;
 Constant RRV_PERMISSIONS	RR_PERMISSIONS-4;
 Constant RRV_STORAGE		RR_STORAGE-4;
@@ -31530,7 +31529,6 @@ Constant RLIST_ALL_X 1;
 Constant RLIST_ALL_Y 2;
 Constant RLIST_ALL_PAIRS 3;
 
-
 Constant RRP_MIN_SIZE      8;   ! minimum number of entries (DO NOT CHANGE)
 Constant RRP_PERTURB_SHIFT 5;   ! affects the probe sequence
 Constant RRP_RESIZE_SMALL  4;   ! resize factor for small tables
@@ -31538,21 +31536,17 @@ Constant RRP_RESIZE_LARGE  2;   ! resize factor for large tables
 Constant RRP_LARGE_IS      256; ! how many entries make a table "large"?
 Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to 1
 
-
 [ RelationTest relation task X Y  handler;
 	handler = relation-->RR_HANDLER;
 	return handler(relation, task, X, Y);
 ];
-
 
 [ EmptyRelationHandler relation task X Y;
 	if (task == RELS_EMPTY) rtrue;
 	rfalse;
 ];
 
-
 #IFDEF MEMORY_HEAP_SIZE; ! Will exist if any use is made of heap
-
 
 [ RELATION_TY_Support task arg1 arg2 arg3;
 	switch(task) {
@@ -31568,7 +31562,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 		HASH_KOVS:       return arg1;
 	}
 ];
-
 
 [ RELATION_TY_Create kov from rel i skov handler;
 	rel = BlkAllocate((RRV_DATA_BASE + 3*RRP_MIN_SIZE)*WORDSIZE,
@@ -31602,19 +31595,16 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 	return rel;
 ];
 
-
 [ RELATION_TY_Destroy rel  handler;
 	handler = BlkValueRead(rel, RRV_HANDLER);
 	handler(rel, RELS_DESTROY);
 	return rel;
 ];
 
-
 [ RELATION_TY_Copy lto lfrom  handler;
 	handler = BlkValueRead(lto, RRV_HANDLER);
 	handler(lto, RELS_COPY);
 ];
-
 
 [ RELATION_TY_Compare rleft rright ind1 ind2;
 	ind1 = BlkValueRead(rleft, RRV_HANDLER);
@@ -31629,12 +31619,10 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 	rtrue;
 ];
 
-
 [ RELATION_TY_Say rel;
 	if (rel == 0) print "(null relation)"; ! shouldn't happen
 	else print (string) rel-->RR_NAME;
 ];
-
 
 [ RELATION_TY_Name rel txt;
 	if (rel) {
@@ -31642,7 +31630,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 		BlkValueWrite(rel, RRV_DESCRIPTION, txt);
 	}
 ];
-
 
 [ ChooseRelationHandler kov sym;
 	if (KOVIsBlockValue(KindBaseTerm(kov, 0))) {
@@ -31652,7 +31639,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 	if (sym) return SymDoubleHashSetRelationHandler;
 	return DoubleHashSetRelationHandler;
 ];
-
 
 [ RELATION_TY_SetValency rel val  kov filled cur handler ext;
 	filled = BlkValueRead(rel, RRV_FILLED);
@@ -31690,7 +31676,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 [ RELATION_TY_GetValency rel  handler;
 	return BlkValueRead(rel, RRV_PERMISSIONS) & VALENCY_MASK;
 ];
-
 
 [ DoubleHashSetRelationHandler rel task X Y sym  kov kx ky at tmp v;
 	kov = BlkValueRead(rel, RRV_KIND);
@@ -31979,20 +31964,17 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 	rtrue;
 ];
 
-
 [ HashListRelationHandler rel task X Y  sym kov kx ky;
 	kov = BlkValueRead(rel, RRV_KIND);
 	kx = KindBaseTerm(kov, 0); ky = KindBaseTerm(kov, 1);
 	return HashCoreRelationHandler(rel, task, kx, ky, X, Y, 1);
 ];
 
-
 [ HashTableRelationHandler rel task X Y  kov kx ky;
 	kov = BlkValueRead(rel, RRV_KIND);
 	kx = KindBaseTerm(kov, 0); ky = KindBaseTerm(kov, 1);
 	return HashCoreRelationHandler(rel, task, kx, ky, X, Y, 0);
 ];
-
 
 [ ReversedHashTableRelationHandler rel task X Y  kov kx ky;
 	kov = BlkValueRead(rel, RRV_KIND);
@@ -32023,7 +32005,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 	return HashCoreRelationHandler(rel, task, kx, ky, X, Y, 0);
 ];
 
-
 [ SymDoubleHashSetRelationHandler rel task X Y;
 	if (task == RELS_ASSERT_TRUE or RELS_ASSERT_FALSE)
 		DoubleHashSetRelationHandler(rel, task, Y, X);
@@ -32041,7 +32022,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 		TwoInOneHashTableRelationHandler(rel, task, Y, X);
 	return TwoInOneHashTableRelationHandler(rel, task, X, Y, 1);
 ];
-
 
 [ HashCoreRelationHandler rel task kx ky X Y mult  sym rev at tmp fl;
 	if (task == RELS_SET_VALENCY) {
@@ -32452,7 +32432,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 	rtrue;
 ];
 
-
 [ EquivHashTableRelationHandler rel task X Y  kx at at2 tmp fl i ext;
 	kx = KindBaseTerm(BlkValueRead(rel, RRV_KIND), 0);
 	if (task == RELS_SET_VALENCY) {
@@ -32663,7 +32642,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 			rtrue;
 	}
 ];
-
 
 [ TwoInOneHashTableRelationHandler rel task X Y sym  kov kx ky at at2 tmp fl;
 	kov = BlkValueRead(rel, RRV_KIND);
@@ -33066,7 +33044,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 	rtrue;
 ];
 
-
 #IFNOT; ! IFDEF MEMORY_HEAP_SIZE
 
 [ RELATION_TY_Support t a b c; rfalse; ];
@@ -33074,7 +33051,6 @@ Constant RRP_CROWDED_IS    2;   ! when filled entries outnumber unfilled by _ to
 [ RELATION_TY_Name rel txt; ];
 
 #ENDIF; ! IFDEF MEMORY_HEAP_SIZE
-
 
 [ RELATION_TY_Empty rel set  handler;
 	handler = rel-->RR_HANDLER;

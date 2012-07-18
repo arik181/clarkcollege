@@ -1,262 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Skein rootNode="node-0x90adb80" xmlns="http://www.logicalshift.org.uk/IF/Skein">
-  <generator>GNOME Inform 7</generator>
-  <activeNode nodeId="node-0x90adb80"/>
-  <item nodeId="node-0x90adb80">
+<Skein rootNode="node-0x02421CE0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Inform 7 for Windows</generator>
+  <activeNode nodeId="node-0x02421CE0"/>
+  <item nodeId="node-0x02421CE0">
     <command xml:space="preserve">- start -</command>
-    <result xml:space="preserve">
-
-
-
-room_grid
-An Interactive Fiction by Devin Quirozoliver
-Release 1 / Serial number 120708 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
-
-Center
-The Center is in the center of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;&#x000A;&#x000A;&#x000A;room_grid&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120708 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;Center&#x000A;The Center is in the center of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x90adc58"/>
-      <child nodeId="node-0x90ad9d0"/>
-      <child nodeId="node-0x90ade08"/>
-      <child nodeId="node-0x9282830"/>
-      <child nodeId="node-0x9282c68"/>
+      <child nodeId="node-0x02428FD8"/>
+      <child nodeId="node-0x02429138"/>
+      <child nodeId="node-0x02421750"/>
+      <child nodeId="node-0x024218C0"/>
+      <child nodeId="node-0x02429F48"/>
     </children>
   </item>
-  <item nodeId="node-0x90adc58">
+  <item nodeId="node-0x02428FD8">
     <command xml:space="preserve">look</command>
-    <result xml:space="preserve">Center
-The Center is in the center of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">Center&#x000A;The Center is in the center of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x90add30"/>
+      <child nodeId="node-0x02429048"/>
     </children>
   </item>
-  <item nodeId="node-0x90add30">
+  <item nodeId="node-0x02429048">
     <command xml:space="preserve">n</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-&gt;</result>
+    <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x90ad9d0">
+  <item nodeId="node-0x02429138">
     <command xml:space="preserve">look w</command>
-    <result xml:space="preserve">You see nothing unexpected in that direction.
-
-&gt;</result>
+    <result xml:space="preserve">You see nothing unexpected in that direction.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x90ad8f8"/>
+      <child nodeId="node-0x02421648"/>
     </children>
   </item>
-  <item nodeId="node-0x90ad8f8">
+  <item nodeId="node-0x02421648">
     <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-room named The West Wing
-The West is in the West of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;room named The West Wing&#x000A;The West is in the West of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x90ade08">
+  <item nodeId="node-0x02421750">
     <command xml:space="preserve">w</command>
-    <result xml:space="preserve">
-The West Wing
-The West is in the West of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;The West Wing&#x000A;The West is in the West of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x90adee0"/>
+      <child nodeId="node-0x02421850"/>
     </children>
   </item>
-  <item nodeId="node-0x90adee0">
+  <item nodeId="node-0x02421850">
     <command xml:space="preserve">e</command>
-    <result xml:space="preserve">
-Center
-The Center is in the center of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;Center&#x000A;The Center is in the center of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x9282830">
+  <item nodeId="node-0x024218C0">
     <command xml:space="preserve">help</command>
-    <result xml:space="preserve">That&apos;s not a verb I recognise.
-
-&gt;</result>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x9282908"/>
+      <child nodeId="node-0x024219C0"/>
     </children>
   </item>
-  <item nodeId="node-0x9282908">
+  <item nodeId="node-0x024219C0">
     <command xml:space="preserve">look</command>
-    <result xml:space="preserve">Center
-The Center is in the center of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">Center&#x000A;The Center is in the center of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x92829e0"/>
+      <child nodeId="node-0x02421AE8"/>
     </children>
   </item>
-  <item nodeId="node-0x92829e0">
+  <item nodeId="node-0x02421AE8">
     <command xml:space="preserve">ne</command>
-    <result xml:space="preserve">
-The NorthEast Wing
-The NorthEast is in the NorthEast of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;The NorthEast Wing&#x000A;The NorthEast is in the NorthEast of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x9282ab8"/>
+      <child nodeId="node-0x02421BE8"/>
     </children>
   </item>
-  <item nodeId="node-0x9282ab8">
+  <item nodeId="node-0x02421BE8">
     <command xml:space="preserve">sw</command>
-    <result xml:space="preserve">
-Center
-The Center is in the center of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;Center&#x000A;The Center is in the center of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x9282b90"/>
+      <child nodeId="node-0x02429E20"/>
     </children>
   </item>
-  <item nodeId="node-0x9282b90">
+  <item nodeId="node-0x02429E20">
     <command xml:space="preserve">sw</command>
-    <result xml:space="preserve">
-The SouthWest Wing
-The SouthWest is in the SouthWest of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;The SouthWest Wing&#x000A;The SouthWest is in the SouthWest of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x9282c68">
+  <item nodeId="node-0x02429F48">
     <command xml:space="preserve">sw</command>
-    <result xml:space="preserve">
-The SouthWest Wing
-The SouthWest is in the SouthWest of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;The SouthWest Wing&#x000A;The SouthWest is in the SouthWest of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x9282d40"/>
+      <child nodeId="node-0x0242A3B8"/>
     </children>
   </item>
-  <item nodeId="node-0x9282d40">
+  <item nodeId="node-0x0242A3B8">
     <command xml:space="preserve">se</command>
-    <result xml:space="preserve">You can&apos;t go that way.
-
-&gt;</result>
+    <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x9282e18"/>
+      <child nodeId="node-0x0242A4F8"/>
     </children>
   </item>
-  <item nodeId="node-0x9282e18">
+  <item nodeId="node-0x0242A4F8">
     <command xml:space="preserve">look</command>
-    <result xml:space="preserve">The SouthWest Wing
-The SouthWest is in the SouthWest of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">The SouthWest Wing&#x000A;The SouthWest is in the SouthWest of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x9282ef0"/>
+      <child nodeId="node-0x0242A568"/>
     </children>
   </item>
-  <item nodeId="node-0x9282ef0">
+  <item nodeId="node-0x0242A568">
     <command xml:space="preserve">ne</command>
-    <result xml:space="preserve">
-Center
-The Center is in the center of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;Center&#x000A;The Center is in the center of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x9233010"/>
+      <child nodeId="node-0x0242A5D8"/>
     </children>
   </item>
-  <item nodeId="node-0x9233010">
+  <item nodeId="node-0x0242A5D8">
     <command xml:space="preserve">sw</command>
-    <result xml:space="preserve">
-The SouthWest Wing
-The SouthWest is in the SouthWest of a nine room grid.
-
-&gt;</result>
+    <result xml:space="preserve">&#x000A;The SouthWest Wing&#x000A;The SouthWest is in the SouthWest of a nine room grid.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
-    <annotation xml:space="preserve"></annotation>
   </item>
 </Skein>

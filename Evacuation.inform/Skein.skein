@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-0x02A58BA8" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Inform 7 for Windows</generator>
-  <activeNode nodeId="node-0x02A58BA8"/>
+  <activeNode nodeId="node-0x08DD9860"/>
   <item nodeId="node-0x02A58BA8">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation.&#x000A;&#x000A;&#x000A;Please press SPACE to continue.</result>
@@ -287,7 +287,7 @@
   </item>
   <item nodeId="node-0x02A6BE38">
     <command xml:space="preserve"> </command>
-    <result xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120724 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;The Second Floor Elevator&#x000A;You don't know this yet, but you're about to have a very bad week.&#x000A;&#x000A;Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120724 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;The Second Floor Elevator&#x000A;You don't know this yet, but you're about to have a very bad week.&#x000A;&#x000A;Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel (on which are a 1f button, a 2f button and a 3f button) here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120722 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;The Second Floor Elevator&#x000A;You don't know this yet, but you're about to have a very bad week.&#x000A;&#x000A;Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
@@ -306,7 +306,7 @@
   </item>
   <item nodeId="node-0x02A6BEA8">
     <command xml:space="preserve">l</command>
-    <result xml:space="preserve">The Second Floor Elevator&#x000A;You are in the elevator on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">The Second Floor Elevator&#x000A;You are in the elevator on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel (on which are a 1f button, a 2f button and a 3f button) here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
@@ -315,6 +315,7 @@
       <child nodeId="node-0x02A6BF18"/>
       <child nodeId="node-0x02A64D40"/>
       <child nodeId="node-0x02A64DB0"/>
+      <child nodeId="node-0x02A774C8"/>
     </children>
   </item>
   <item nodeId="node-0x02A6BF18">
@@ -398,6 +399,25 @@
   <item nodeId="node-0x02A64F00">
     <command xml:space="preserve">ask EBC about office</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A774C8">
+    <command xml:space="preserve">l 1f button</command>
+    <result xml:space="preserve">The first floor button is unpressed.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x08DD9860"/>
+    </children>
+  </item>
+  <item nodeId="node-0x08DD9860">
+    <command xml:space="preserve">l 2f button</command>
+    <result xml:space="preserve">The second floor button is unpressed.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
@@ -1059,28 +1079,6 @@
   <item nodeId="node-0x02A71698">
     <command xml:space="preserve">put borrowed book on desk</command>
     <result xml:space="preserve">You put the borrowed book on the desk.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x02A76968"/>
-    </children>
-  </item>
-  <item nodeId="node-0x02A76968">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x02A769D8"/>
-    </children>
-  </item>
-  <item nodeId="node-0x02A769D8">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>

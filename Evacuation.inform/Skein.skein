@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Skein rootNode="node-0x03326648" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x02A58BA8" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Inform 7 for Windows</generator>
-  <activeNode nodeId="node-0x03EDB7E0"/>
-  <item nodeId="node-0x03326648">
+  <activeNode nodeId="node-0x02A58BA8"/>
+  <item nodeId="node-0x02A58BA8">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation.&#x000A;&#x000A;&#x000A;Please press SPACE to continue.</result>
     <commentary xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120718 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</commentary>
@@ -10,14 +10,14 @@
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
-      <child nodeId="node-0x033266B8"/>
-      <child nodeId="node-0x00723B88"/>
-      <child nodeId="node-0x03331608"/>
-      <child nodeId="node-0x0332F198"/>
-      <child nodeId="node-0x03EDB380"/>
+      <child nodeId="node-0x02A58C18"/>
+      <child nodeId="node-0x02A6D3C0"/>
+      <child nodeId="node-0x02A6D5D0"/>
+      <child nodeId="node-0x02A6B888"/>
+      <child nodeId="node-0x02A6BD58"/>
     </children>
   </item>
-  <item nodeId="node-0x033266B8">
+  <item nodeId="node-0x02A58C18">
     <command xml:space="preserve">look</command>
     <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -25,11 +25,11 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03327338"/>
-      <child nodeId="node-0x00723340"/>
+      <child nodeId="node-0x02A58C88"/>
+      <child nodeId="node-0x02A6C308"/>
     </children>
   </item>
-  <item nodeId="node-0x03327338">
+  <item nodeId="node-0x02A58C88">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -37,10 +37,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x033273A8"/>
+      <child nodeId="node-0x02A58D58"/>
     </children>
   </item>
-  <item nodeId="node-0x033273A8">
+  <item nodeId="node-0x02A58D58">
     <command xml:space="preserve">look at map</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -48,7 +48,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x00723340">
+  <item nodeId="node-0x02A6C308">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">South East Office&#x000A;You are in an office at the South East end of the building. There is nothing here of interest.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -56,10 +56,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x00723508"/>
+      <child nodeId="node-0x02A6C378"/>
     </children>
   </item>
-  <item nodeId="node-0x00723508">
+  <item nodeId="node-0x02A6C378">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -67,10 +67,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x00723678"/>
+      <child nodeId="node-0x02A6CB00"/>
     </children>
   </item>
-  <item nodeId="node-0x00723678">
+  <item nodeId="node-0x02A6CB00">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">South West Office&#x000A;You are in an office at the South West end of the building. There is nothing here of interest.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -78,10 +78,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x00723840"/>
+      <child nodeId="node-0x02A6CCC8"/>
     </children>
   </item>
-  <item nodeId="node-0x00723840">
+  <item nodeId="node-0x02A6CCC8">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -89,10 +89,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x00723AA8"/>
+      <child nodeId="node-0x02A6CF30"/>
     </children>
   </item>
-  <item nodeId="node-0x00723AA8">
+  <item nodeId="node-0x02A6CF30">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South.&#x000A;&#x000A;You can see a map (on which is a label) here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -100,10 +100,10 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x00723B18"/>
+      <child nodeId="node-0x02A6D1C8"/>
     </children>
   </item>
-  <item nodeId="node-0x00723B18">
+  <item nodeId="node-0x02A6D1C8">
     <command xml:space="preserve">look at map</command>
     <result xml:space="preserve">You see a map of the building. At the bottom of the map you see a label. In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and South toward the exit.&#x000A;&#x000A;On the map is a label.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -111,7 +111,7 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x00723B88">
+  <item nodeId="node-0x02A6D3C0">
     <command xml:space="preserve">look at map</command>
     <result xml:space="preserve">You see a map of the building. At the bottom of the map you see some writing. In order to get out of the building, you'll have to go North toward the elevator and the stairwell.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -119,10 +119,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x00723C58"/>
+      <child nodeId="node-0x02A6D490"/>
     </children>
   </item>
-  <item nodeId="node-0x00723C58">
+  <item nodeId="node-0x02A6D490">
     <command xml:space="preserve">look at writing</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -130,7 +130,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x03331608">
+  <item nodeId="node-0x02A6D5D0">
     <command xml:space="preserve">look at writing</command>
     <result xml:space="preserve">The writing at the bottom of the map says: Posted by the Emergency Building Coordinator.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -138,10 +138,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03331830"/>
+      <child nodeId="node-0x02A6D7F8"/>
     </children>
   </item>
-  <item nodeId="node-0x03331830">
+  <item nodeId="node-0x02A6D7F8">
     <command xml:space="preserve">look at map</command>
     <result xml:space="preserve">You see a map of the building. At the bottom of the map you see some writing. In order to get out of the building, you'll have to go North toward the elevator and the stairwell.&#x000A;&#x000A;On the map is a writing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -149,7 +149,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0332F198">
+  <item nodeId="node-0x02A6B888">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South.&#x000A;&#x000A;You can see a map (on which is a label) here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -157,12 +157,12 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F208"/>
-      <child nodeId="node-0x0332F2E8"/>
-      <child nodeId="node-0x0332F5F8"/>
+      <child nodeId="node-0x02A6B8F8"/>
+      <child nodeId="node-0x02A6B9D8"/>
+      <child nodeId="node-0x02A6BCE8"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F208">
+  <item nodeId="node-0x02A6B8F8">
     <command xml:space="preserve">look at map</command>
     <result xml:space="preserve">You see a map of the building. At the bottom of the map you see a label. In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and South toward the exit.&#x000A;&#x000A;On the map is a label.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -170,10 +170,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F278"/>
+      <child nodeId="node-0x02A6B968"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F278">
+  <item nodeId="node-0x02A6B968">
     <command xml:space="preserve">look at label</command>
     <result xml:space="preserve">The label at the bottom of the map says: Posted by the Emergency Building Coordinator.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -181,7 +181,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0332F2E8">
+  <item nodeId="node-0x02A6B9D8">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">The Elevator Doors&#x000A;You see a set of large elevator doors. To the East you see stairs.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -189,10 +189,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F358"/>
+      <child nodeId="node-0x02A6BA48"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F358">
+  <item nodeId="node-0x02A6BA48">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -200,10 +200,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F3C8"/>
+      <child nodeId="node-0x02A6BAB8"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F3C8">
+  <item nodeId="node-0x02A6BAB8">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">The Stairwell&#x000A;You see stairs leading to the first and third floors of the building.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -211,10 +211,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F438"/>
+      <child nodeId="node-0x02A6BB28"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F438">
+  <item nodeId="node-0x02A6BB28">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -222,10 +222,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F4A8"/>
+      <child nodeId="node-0x02A6BB98"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F4A8">
+  <item nodeId="node-0x02A6BB98">
     <command xml:space="preserve">d</command>
     <result xml:space="preserve">The First Floor Stairwell&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -233,10 +233,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F518"/>
+      <child nodeId="node-0x02A6BC08"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F518">
+  <item nodeId="node-0x02A6BC08">
     <command xml:space="preserve">look</command>
     <result xml:space="preserve">The First Floor Stairwell&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -244,10 +244,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0332F588"/>
+      <child nodeId="node-0x02A6BC78"/>
     </children>
   </item>
-  <item nodeId="node-0x0332F588">
+  <item nodeId="node-0x02A6BC78">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -255,7 +255,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0332F5F8">
+  <item nodeId="node-0x02A6BCE8">
     <command xml:space="preserve">s</command>
     <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -263,7 +263,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x03EDB380">
+  <item nodeId="node-0x02A6BD58">
     <command xml:space="preserve"> </command>
     <result xml:space="preserve">You want me to tell you that this is just a game, but I won't. The truth is that any of the things that you read here could happen to you. If you're not properly prepared for disaster, an emergency situation could easily become a horrifying experience.&#x000A;&#x000A; Welcome. You are about to have... &#x000A;&#x000A; ... a very bad week.&#x000A;&#x000A;&#x000A;Please press SPACE to continue.</result>
     <commentary xml:space="preserve"></commentary>
@@ -271,10 +271,10 @@
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
-      <child nodeId="node-0x03EDB5B0"/>
+      <child nodeId="node-0x02A6BDC8"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDB5B0">
+  <item nodeId="node-0x02A6BDC8">
     <command xml:space="preserve"> </command>
     <result xml:space="preserve">You may use any of the following commands during this scenario:&#x000A;&#x000A;Movement commands: &#x000A;north, south, east, west, up, down (or n, s, e, w, u, d)&#x000A;&#x000A;Exploration commands: &#x000A;look, examine(or l, x)&#x000A;&#x000A;Inventory commands: &#x000A;take, inventory(or t, i)&#x000A;&#x000A;Speech commands: &#x000A;ask, tell, say&#x000A;&#x000A;You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.&#x000A;&#x000A;&#x000A;Please press SPACE to continue.</result>
     <commentary xml:space="preserve"></commentary>
@@ -282,41 +282,42 @@
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
-      <child nodeId="node-0x03EDB7E0"/>
+      <child nodeId="node-0x02A6BE38"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDB7E0">
+  <item nodeId="node-0x02A6BE38">
     <command xml:space="preserve"> </command>
-    <result xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120722 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;The Second Floor Elevator&#x000A;You don't know this yet, but you're about to have a very bad week.&#x000A;&#x000A;Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120724 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;The Second Floor Elevator&#x000A;You don't know this yet, but you're about to have a very bad week.&#x000A;&#x000A;Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120722 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;The Second Floor Elevator&#x000A;You don't know this yet, but you're about to have a very bad week.&#x000A;&#x000A;Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
-      <child nodeId="node-0x0B99EFB0"/>
-      <child nodeId="node-0x0B99F5D0"/>
-      <child nodeId="node-0x03EDB620"/>
-      <child nodeId="node-0x03EDB3F0"/>
-      <child nodeId="node-0x0B99F480"/>
-      <child nodeId="node-0x0B99EC30"/>
-      <child nodeId="node-0x03EDBBD0"/>
-      <child nodeId="node-0x0B99F1E0"/>
-      <child nodeId="node-0x03EDB0E0"/>
+      <child nodeId="node-0x02A6BEA8"/>
+      <child nodeId="node-0x02A64F70"/>
+      <child nodeId="node-0x02A65210"/>
+      <child nodeId="node-0x02A65280"/>
+      <child nodeId="node-0x02A65440"/>
+      <child nodeId="node-0x02A65590"/>
+      <child nodeId="node-0x02A65670"/>
+      <child nodeId="node-0x02A65830"/>
+      <child nodeId="node-0x02A76A48"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99EFB0">
+  <item nodeId="node-0x02A6BEA8">
     <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;You can see a stack of papers here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">The Second Floor Elevator&#x000A;You are in the elevator on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99EF40"/>
-      <child nodeId="node-0x0332F898"/>
+      <child nodeId="node-0x02A6BF18"/>
+      <child nodeId="node-0x02A64D40"/>
+      <child nodeId="node-0x02A64DB0"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99EF40">
+  <item nodeId="node-0x02A6BF18">
     <command xml:space="preserve">l phone</command>
     <result xml:space="preserve">You look at your phone. The time is now 10:01 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -324,10 +325,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99F090"/>
+      <child nodeId="node-0x02A6BF88"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99F090">
+  <item nodeId="node-0x02A6BF88">
     <command xml:space="preserve">l phone</command>
     <result xml:space="preserve">You look at your phone. The time is now 10:02 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -335,10 +336,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99EDF0"/>
+      <child nodeId="node-0x02A6BFF8"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99EDF0">
+  <item nodeId="node-0x02A6BFF8">
     <command xml:space="preserve">l watch</command>
     <result xml:space="preserve">Time seems to have sped up.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -346,10 +347,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99F100"/>
+      <child nodeId="node-0x02A64CD0"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99F100">
+  <item nodeId="node-0x02A64CD0">
     <command xml:space="preserve">l phone</command>
     <result xml:space="preserve">You look at your phone. The time is now 11:16 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -357,7 +358,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0332F898">
+  <item nodeId="node-0x02A64D40">
     <command xml:space="preserve">l watch</command>
     <result xml:space="preserve">Time seems to have sped up. The time is now 11:15 am&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -365,7 +366,44 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0B99F5D0">
+  <item nodeId="node-0x02A64DB0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall.. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A64E20"/>
+      <child nodeId="node-0x02A64E90"/>
+      <child nodeId="node-0x02A64F00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A64E20">
+    <command xml:space="preserve">ask EBC about professor</command>
+    <result xml:space="preserve">The EBC says: Huh? I don't know about that.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A64E90">
+    <command xml:space="preserve">ask ebc about professor</command>
+    <result xml:space="preserve">The EBC says: Huh? Sorry, I'm a bit busy here. Don't forget that there's going to be an evacuation drill at noon.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A64F00">
+    <command xml:space="preserve">ask EBC about office</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A64F70">
     <command xml:space="preserve">i</command>
     <result xml:space="preserve">You are carrying:&#x000A;  a cell phone&#x000A;  a borrowed book&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -373,11 +411,11 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99F560"/>
-      <child nodeId="node-0x0B99F6B0"/>
+      <child nodeId="node-0x02A64FE0"/>
+      <child nodeId="node-0x02A65130"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99F560">
+  <item nodeId="node-0x02A64FE0">
     <command xml:space="preserve">x self</command>
     <result xml:space="preserve">As good-looking as ever.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -385,10 +423,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDBD90"/>
+      <child nodeId="node-0x02A65050"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDBD90">
+  <item nodeId="node-0x02A65050">
     <command xml:space="preserve">x me</command>
     <result xml:space="preserve">As good-looking as ever.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -396,10 +434,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDBD20"/>
+      <child nodeId="node-0x02A650C0"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDBD20">
+  <item nodeId="node-0x02A650C0">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;You can see a stack of papers here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -407,7 +445,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0B99F6B0">
+  <item nodeId="node-0x02A65130">
     <command xml:space="preserve">l phone</command>
     <result xml:space="preserve">You look at your phone. The time is now 10:01 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -415,10 +453,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99F640"/>
+      <child nodeId="node-0x02A651A0"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99F640">
+  <item nodeId="node-0x02A651A0">
     <command xml:space="preserve">x phone</command>
     <result xml:space="preserve">You look at your phone. The time is now 10:02 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -426,7 +464,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x03EDB620">
+  <item nodeId="node-0x02A65210">
     <command xml:space="preserve">score</command>
     <result xml:space="preserve">You have so far scored 0 out of a possible 500, in 1 turn.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -434,7 +472,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x03EDB3F0">
+  <item nodeId="node-0x02A65280">
     <command xml:space="preserve">time</command>
     <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -442,10 +480,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDB540"/>
+      <child nodeId="node-0x02A652F0"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDB540">
+  <item nodeId="node-0x02A652F0">
     <command xml:space="preserve">l watch</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -453,10 +491,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDB4D0"/>
+      <child nodeId="node-0x02A65360"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDB4D0">
+  <item nodeId="node-0x02A65360">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;You can see a stack of papers here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -464,10 +502,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDB150"/>
+      <child nodeId="node-0x02A653D0"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDB150">
+  <item nodeId="node-0x02A653D0">
     <command xml:space="preserve">i</command>
     <result xml:space="preserve">You are carrying:&#x000A;  a borrowed book&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -475,7 +513,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0B99F480">
+  <item nodeId="node-0x02A65440">
     <command xml:space="preserve"> i</command>
     <result xml:space="preserve">You are carrying:&#x000A;  a watch&#x000A;  a cell phone&#x000A;  a borrowed book&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -483,10 +521,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99F250"/>
+      <child nodeId="node-0x02A654B0"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99F250">
+  <item nodeId="node-0x02A654B0">
     <command xml:space="preserve">l watch</command>
     <result xml:space="preserve">You look at your watch. The time is now 10:01 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -494,10 +532,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99F410"/>
+      <child nodeId="node-0x02A65520"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99F410">
+  <item nodeId="node-0x02A65520">
     <command xml:space="preserve">l phone</command>
     <result xml:space="preserve">You look at your phone. The time is now 10:02 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -505,7 +543,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0B99EC30">
+  <item nodeId="node-0x02A65590">
     <command xml:space="preserve">l watch</command>
     <result xml:space="preserve">You look at your watch. The time is now 10:00 am&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -513,10 +551,10 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99ECA0"/>
+      <child nodeId="node-0x02A65600"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99ECA0">
+  <item nodeId="node-0x02A65600">
     <command xml:space="preserve">l watch</command>
     <result xml:space="preserve">Time seems to have sped up. The time is now 11:16 am&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -524,7 +562,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x03EDBBD0">
+  <item nodeId="node-0x02A65670">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label) and an EBC here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -532,10 +570,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDBE00"/>
+      <child nodeId="node-0x02A656E0"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDBE00">
+  <item nodeId="node-0x02A656E0">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">The Second Floor Elevator&#x000A;You see a panel with buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -543,10 +581,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDBA10"/>
+      <child nodeId="node-0x02A65750"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDBA10">
+  <item nodeId="node-0x02A65750">
     <command xml:space="preserve">l</command>
     <result xml:space="preserve">The Second Floor Elevator&#x000A;You see a panel with buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -554,10 +592,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x03EDB1C0"/>
+      <child nodeId="node-0x02A657C0"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDB1C0">
+  <item nodeId="node-0x02A657C0">
     <command xml:space="preserve">showme The Second Floor Elevator</command>
     <result xml:space="preserve">The Second Floor Elevator - room&#x000A;    yourself - person&#x000A;        watch&#x000A;        cell phone&#x000A;        borrowed book&#x000A;    panel&#x000A;singular-named, proper-named; lighted, visited&#x000A;printed name: "The Second Floor Elevator"&#x000A;printed plural name: none&#x000A;indefinite article: none&#x000A;description: "You see a panel with buttons for the first, second and third floors."&#x000A;map region: Second Floor&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -565,18 +603,24 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x0B99F1E0">
+  <item nodeId="node-0x02A65830">
     <command xml:space="preserve">s</command>
-    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. On the East wall you see a map. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label) and an EBC here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x0B99EED0"/>
+      <child nodeId="node-0x02A658A0"/>
+      <child nodeId="node-0x02A65910"/>
+      <child nodeId="node-0x02A65A60"/>
+      <child nodeId="node-0x02A70828"/>
+      <child nodeId="node-0x02A70898"/>
+      <child nodeId="node-0x02A70A58"/>
+      <child nodeId="node-0x02A71548"/>
     </children>
   </item>
-  <item nodeId="node-0x0B99EED0">
+  <item nodeId="node-0x02A658A0">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">The Second Floor Elevator&#x000A;You are in the elevator on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -584,7 +628,465 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x03EDB0E0">
+  <item nodeId="node-0x02A65910">
+    <command xml:space="preserve">ask ebc about professor</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A65980"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A65980">
+    <command xml:space="preserve">tell ebc about professor</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A659F0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A659F0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A65A60">
+    <command xml:space="preserve">ask ebc about prof</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A65AD0"/>
+      <child nodeId="node-0x02A65B40"/>
+      <child nodeId="node-0x02A70748"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A65AD0">
+    <command xml:space="preserve">ask ebc about directions</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A65B40">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A65BB0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A65BB0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A65C20"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A65C20">
+    <command xml:space="preserve">ask ebc about prof</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A70748">
+    <command xml:space="preserve">ask EBC about prof</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A707B8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A707B8">
+    <command xml:space="preserve">ask halo about prof</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A70828">
+    <command xml:space="preserve">ask ebc about o</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A70898">
+    <command xml:space="preserve">ask ebc about bas</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70908"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70908">
+    <command xml:space="preserve">ask EBC about bas</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70978"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70978">
+    <command xml:space="preserve">ask Emergency Building Coordinator about BAS</command>
+    <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A709E8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A709E8">
+    <command xml:space="preserve">ask about bas</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A70A58">
+    <command xml:space="preserve">ask ebc about l</command>
+    <result xml:space="preserve">Don't forget that there's going to be an evacuation drill at noon.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70AC8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70AC8">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">North West Office&#x000A;You are in an office at the North West end of the building. There is a Professor here who appears to be injured.&#x000A;&#x000A;You can see a Professor here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70B38"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70B38">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70BA8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70BA8">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70C18"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70C18">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">South West Office&#x000A;You are in an office at the South West end of the building. You see a desk with a stack of papers and a number of old books pertaining to your major. There is also a bookshelf with many more heavy looking books on it.&#x000A;&#x000A;You can see a stack of papers, a desk (on which are an old books and a heavy looking books) and a bookshelf here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70C88"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70C88">
+    <command xml:space="preserve">put book on table</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70CF8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70CF8">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying:&#x000A;  a watch&#x000A;  a cell phone&#x000A;  a borrowed book&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70DD8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70DD8">
+    <command xml:space="preserve">put borrowed book on desk</command>
+    <result xml:space="preserve">You put the borrowed book on the desk.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70E48"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70E48">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70EB8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70EB8">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70F28"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70F28">
+    <command xml:space="preserve">ask ebc about blah</command>
+    <result xml:space="preserve">The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. "Don't forget that there's going to be an evacuation drill at noon.", she says, cheerily.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A70F98"/>
+      <child nodeId="node-0x02A710E8"/>
+      <child nodeId="node-0x02A71158"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A70F98">
+    <command xml:space="preserve">showme scene</command>
+    <result xml:space="preserve">There seems to be no such object anywhere in the model world.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A71008"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A71008">
+    <command xml:space="preserve">showme borrowed book</command>
+    <result xml:space="preserve">borrowed book - borrowable&#x000A;location: on the desk in South West Office&#x000A;singular-named, improper-named; unlit, inedible, portable, handled; not returned&#x000A;printed name: "borrowed book"&#x000A;printed plural name: "borrowables"&#x000A;indefinite article: none&#x000A;description: "You really should have returned this book last week, but things have just been so busy lately...."&#x000A;initial appearance: none&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A71078"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A71078">
+    <command xml:space="preserve">scenes</command>
+    <result xml:space="preserve">Scene 'Entire Game' playing (for 11 mins now)&#x000A;Scene 'Returning a Book' ended&#x000A;Scene 'EBC Conversation' ended&#x000A;Scene 'Not a drill' playing (for 4 mins now)&#x000A;(Scene monitoring now switched on. Type "scenes off" to switch it off again.)&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A710E8">
+    <command xml:space="preserve">scenes</command>
+    <result xml:space="preserve">Scene 'Entire Game' playing (for 11 mins now)&#x000A;Scene 'Returning a Book' ended&#x000A;Scene 'EBC Conversation' playing (for 4 mins now)&#x000A;(Scene monitoring now switched on. Type "scenes off" to switch it off again.)&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A71158">
+    <command xml:space="preserve">reset</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A711C8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A711C8">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart?</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A71238"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A71238">
+    <command xml:space="preserve">y</command>
+    <result xml:space="preserve">The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation.&#x000A;&#x000A;&#x000A;Please press SPACE to continue.</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A712A8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A712A8">
+    <command xml:space="preserve"> </command>
+    <result xml:space="preserve">You want me to tell you that this is just a game, but I won't. The truth is that any of the things that you read here could happen to you. If you're not properly prepared for disaster, an emergency situation could easily become a horrifying experience.&#x000A;&#x000A; Welcome. You are about to have... &#x000A;&#x000A; ... a very bad week.&#x000A;&#x000A;&#x000A;Please press SPACE to continue.</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A71318"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A71318">
+    <command xml:space="preserve"> </command>
+    <result xml:space="preserve">You may use any of the following commands during this scenario:&#x000A;&#x000A;Movement commands: &#x000A;north, south, east, west, up, down (or n, s, e, w, u, d)&#x000A;&#x000A;Exploration commands: &#x000A;look, examine(or l, x)&#x000A;&#x000A;Inventory commands: &#x000A;take, inventory(or t, i)&#x000A;&#x000A;Speech commands: &#x000A;ask, tell, say&#x000A;&#x000A;You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.&#x000A;&#x000A;&#x000A;Please press SPACE to continue.</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A71388"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A71388">
+    <command xml:space="preserve"> </command>
+    <result xml:space="preserve">Evacuation&#x000A;An Interactive Fiction by Devin Quirozoliver&#x000A;Release 1 / Serial number 120724 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;The Second Floor Elevator&#x000A;You don't know this yet, but you're about to have a very bad week.&#x000A;&#x000A;Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A713F8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A713F8">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">The Second Floor Elevator&#x000A;You are in the elevator on the second floor. The elevator panel has buttons for the first, second and third floors.&#x000A;&#x000A;You can see a panel here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A71468"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A71468">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A714D8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A714D8">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A71548">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A715B8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A715B8">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">South West Office&#x000A;You are in an office at the South West end of the building. You see a desk with a stack of papers and a number of old books pertaining to your major. There is also a bookshelf with many more heavy looking books on it.&#x000A;&#x000A;You can see a stack of papers, a desk (on which are an old books and a heavy looking books) and a bookshelf here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A71698"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A71698">
+    <command xml:space="preserve">put borrowed book on desk</command>
+    <result xml:space="preserve">You put the borrowed book on the desk.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A76968"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A76968">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Hallway South&#x000A;You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02A769D8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02A769D8">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway North&#x000A;You are at the North end of the hallway, on the second floor. The Emergency Building Coordinator is busily putting up an evacuation map on the wall. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.&#x000A;&#x000A;You can see a map (on which is a label), a ladder and an Emergency Building Coordinator here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02A76A48">
     <command xml:space="preserve">showme scene</command>
     <result xml:space="preserve">There seems to be no such object anywhere in the model world.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -592,10 +1094,10 @@
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
-      <child nodeId="node-0x03EDBF50"/>
+      <child nodeId="node-0x02A76AB8"/>
     </children>
   </item>
-  <item nodeId="node-0x03EDBF50">
+  <item nodeId="node-0x02A76AB8">
     <command xml:space="preserve">showme current scene</command>
     <result xml:space="preserve">There seems to be no such object anywhere in the model world.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve">There seems to be no such object anywhere in the model world.&#x000A;&#x000A;&gt;</commentary>

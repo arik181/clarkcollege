@@ -16,6 +16,7 @@ The cell phone is a thing. The description of the phone is "You look at your pho
 Playerscore is a number that varies.
 
 
+
 Section - "The Player"
 
 A borrowable is a kind of thing. A borrowable can be returned or not returned.
@@ -35,12 +36,18 @@ In Hallway North is a map. It is fixed in place. The description of the map is "
 
 The label is a thing on the map. It is fixed in place. The description of the label is "The label at the bottom of the map says: Posted by the Emergency Building Coordinator."
 
-The Professor is a male person. He is in North West Office. He wears [a tweed jacket] and [a bowtie].
+The Professor is a person. He is in North West Office. He wears [a tweed jacket] and [a bowtie].
 
 
 Section - "The Emergency Building Coordinator"
 
-The EBC is a female person. She is in Hallway North. The description of the EBC is "There is a lady putting up a permanent sign in the hallway here."
+The ladder is a fixed in place thing in Hallway North.
+The Emergency Building Coordinator is a person. She is in Hallway North. The description of The Emergency Building Coordinator is "There is a nice lady putting up a permanent sign in the hallway here. She looks pretty busy."
+
+Understand "EBC" as The Emergency Building Coordinator.
+
+After asking the Emergency Building Coordinator about something: 
+	say "[if Returning a Book is happening][one of]What's that?[or]Sorry?[or]Pretty busy here.[or]Don't forget that there's going to be an evacuation drill at noon.[or]Hm?[at random][end if][if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]".
 
 
 Chapter - "Layout"
@@ -52,7 +59,7 @@ The Second Floor is a region.
 
 Hallway South is a room. The description of Hallway South is  "You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North."
 
-North of Hallway South is Hallway North. The description of Hallway North is  "You are at the North end of the hallway, on the second floor. On the East wall you see a [map]. There are offices to the East and West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs."
+North of Hallway South is Hallway North. The description of Hallway North is  "You are at the North end of the hallway, on the second floor. [If EBC Conversation is happening or Returning a Book is happening]The Emergency Building Coordinator is busily putting up an evacuation [map] on the wall.[otherwise]On the East wall you see a [map].[end if] There is an office to the West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs."
 
 West of Hallway North is North West Office. The description of North West Office is "You are in an office at the North West end of the building. There is a [Professor] here who appears to be injured."
 
@@ -65,7 +72,11 @@ The heavy looking books are on the desk.
 
 North of Hallway North is The Second Floor Elevator. The description of The Second Floor Elevator is "[if The Second Floor Elevator is unvisited]You don't know this yet, but you're about to have a very bad week.[paragraph break]Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. [otherwise]You are in the elevator on the second floor. [end if]The elevator [panel] has buttons for the first, second and third floors."
 The panel is a thing in The Second Floor Elevator.
-
+Understand "leave the elevator" or "exit the elevator" or "get out" or "get out of the elevator"  or "step out" or "step out of the elevator" as exiting.
+Instead of exiting when the player is in The Second Floor Elevator:
+	say "You step out of the elevator and into the hall.";
+	now the player is in Hallway North
+	
 East of Hallway North is The Stairwell. The description of The Stairwell is "You see stairs leading to the first and third floors of the building."
 
 Hallway South, Hallway North, North West Office, South West Office, The Second Floor Elevator and The Stairwell are in the second floor.
@@ -119,18 +130,20 @@ When play begins:
 The player is in The Second Floor Elevator.
 
 
-Section - "Finding the office"
+Section - "Returning a Book"
 
-Finding the office is a scene.
-Finding the office begins when play begins.
-Finding the office ends when the book is returned.
+Returning a Book is a scene.
+Returning a Book begins when play begins.
+Returning a Book ends when borrowed book is on the desk in South West Office.
+
+Instead of asking the Emergency Building Coordinator about "professor", say "I don't know, I think his office is around here somewhere."
 
 
-Section - "Conversation with the EBC"
+Section - "EBC Conversation"
 
 EBC Conversation is a scene.
-EBC Conversation begins when Finding the office has ended.
-EBC Conversation ends when the EBC is not visible.
+EBC Conversation begins when Returning a Book has ended.
+EBC Conversation ends when the Emergency Building Coordinator is off-stage.
 
 
 Section - "Not a drill"

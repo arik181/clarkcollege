@@ -29,7 +29,7 @@ Array UUID_ARRAY string "UUID://E241B2DC-4ABC-41D0-A308-50B5B36B6663//";
 Constant Story "Evacuation";
 Constant Headline "An Interactive Fiction";
 Constant Story_Author SC_2;
-Serial "120724";
+Serial "120730";
 
 Default Story 0;
 Default Headline 0;
@@ -377,7 +377,7 @@ Constant SCENE_TY = 39;
 Constant FIGURE_NAME_TY = 40;
 Constant SOUND_NAME_TY = 41;
 Constant EXTERNAL_FILE_TY = 42;
-Constant BASE_KIND_HWM = 45; ! Base kind high-water-mark
+Constant BASE_KIND_HWM = 44; ! Base kind high-water-mark
 
 
 Constant STUCK_PE     = 1;
@@ -4295,7 +4295,7 @@ Global lightflag = false;
 ];
 
 
-Constant REQUISITION_STACK_SIZE = 3*49;
+Constant REQUISITION_STACK_SIZE = 3*45;
 Array requisition_stack --> REQUISITION_STACK_SIZE;
 Global requisition_stack_pointer = 0;
 
@@ -8578,93 +8578,91 @@ Constant p8_initial_appearance = initial;
 Constant p10_other_side = door_to;
 Constant p11_carrying_capacity = capacity;
 Constant p12_matching_key = with_key;
-Constant p14_plural_named = pluralname;
-Constant p16_proper_named = proper;
-Constant p18_privately_named = privately_named;
-Constant p20_lighted = light;
-Constant p22_visited = visited;
-Constant p24_lit = light;
-Constant p26_edible = edible;
-Constant p28_fixed_in_place = static;
-Constant p30_scenery = scenery;
-Constant p31_wearable = clothing;
-Constant p32_pushable_between_rooms = pushable;
-Constant p33_handled = moved;
-Constant p35_undescribed = concealed;
-Constant p36_marked_for_listing = workflag;
-Constant p38_mentioned = mentioned;
-Constant p40_enterable = enterable;
-Constant p42_transparent = transparent;
-Constant p43_open = open;
-Constant p45_openable = openable;
-Constant p47_lockable = lockable;
-Constant p48_locked = locked;
-Constant p50_female = female;
-Constant p52_neuter = neuter;
-Constant p53_switched_on = on;
-Constant p63 = worn;
-Constant p64 = vector;
-Constant p65 = room_index;
-Constant p66 = door_dir;
-Constant p67 = door_to;
-Constant p68 = absent;
-Constant p69 = list_together;
-Constant p70 = cap_short_name;
-Constant p71 = mark_as_room;
-Constant p72 = mark_as_thing;
-Constant p73 = component_parent;
-Constant p74 = component_child;
-Constant p75 = component_sibling;
-Constant p76 = regional_found_in;
-Constant p77 = IK1_Count;
-Constant p78 = IK1_Link;
-Constant p79 = IK2_Count;
-Constant p80 = IK2_Link;
-Constant p81 = IK3_Count;
-Constant p82 = IK3_Link;
-Constant p83 = IK4_Count;
-Constant p84 = IK4_Link;
-Constant p85 = IK5_Count;
-Constant p86 = IK5_Link;
-Constant p87 = IK6_Count;
-Constant p88 = IK6_Link;
-Constant p89 = IK7_Count;
-Constant p90 = IK7_Link;
-Constant p91 = IK8_Count;
-Constant p92 = IK8_Link;
-Constant p93 = IK9_Count;
-Constant p94 = IK9_Link;
-Constant p95 = IK10_Count;
-Constant p96 = IK10_Link;
-Constant p97 = IK11_Count;
-Constant p98 = IK11_Link;
-Constant p99 = IK12_Count;
-Constant p100 = IK12_Link;
-Constant p101 = IK13_Count;
-Constant p102 = IK13_Link;
-Constant p103 = IK14_Count;
-Constant p104 = IK14_Link;
-Constant p105 = IK15_Count;
-Constant p106 = IK15_Link;
-Constant p107 = IK16_Count;
-Constant p108 = IK16_Link;
-Constant p109 = IK17_Count;
-Constant p110 = IK17_Link;
-Constant p111 = IK18_Count;
-Constant p112 = IK18_Link;
-Constant p113 = IK19_Count;
-Constant p114 = IK19_Link;
-Constant p115 = KD_Count;
-Constant p116 = name;
-Constant p117 = parse_name;
-Constant p118 = action_bitmap;
+Constant p13_plural_named = pluralname;
+Constant p15_proper_named = proper;
+Constant p17_privately_named = privately_named;
+Constant p19_lighted = light;
+Constant p21_visited = visited;
+Constant p23_lit = light;
+Constant p25_edible = edible;
+Constant p27_fixed_in_place = static;
+Constant p29_scenery = scenery;
+Constant p30_wearable = clothing;
+Constant p31_pushable_between_rooms = pushable;
+Constant p32_handled = moved;
+Constant p34_undescribed = concealed;
+Constant p35_marked_for_listing = workflag;
+Constant p37_mentioned = mentioned;
+Constant p39_enterable = enterable;
+Constant p41_transparent = transparent;
+Constant p42_open = open;
+Constant p44_openable = openable;
+Constant p46_lockable = lockable;
+Constant p47_locked = locked;
+Constant p49_female = female;
+Constant p51_neuter = neuter;
+Constant p52_switched_on = on;
+Constant p62 = worn;
+Constant p63 = vector;
+Constant p64 = room_index;
+Constant p65 = door_dir;
+Constant p66 = door_to;
+Constant p67 = absent;
+Constant p68 = list_together;
+Constant p69 = cap_short_name;
+Constant p70 = mark_as_room;
+Constant p71 = mark_as_thing;
+Constant p72 = component_parent;
+Constant p73 = component_child;
+Constant p74 = component_sibling;
+Constant p75 = regional_found_in;
+Constant p76 = IK1_Count;
+Constant p77 = IK1_Link;
+Constant p78 = IK2_Count;
+Constant p79 = IK2_Link;
+Constant p80 = IK3_Count;
+Constant p81 = IK3_Link;
+Constant p82 = IK4_Count;
+Constant p83 = IK4_Link;
+Constant p84 = IK5_Count;
+Constant p85 = IK5_Link;
+Constant p86 = IK6_Count;
+Constant p87 = IK6_Link;
+Constant p88 = IK7_Count;
+Constant p89 = IK7_Link;
+Constant p90 = IK8_Count;
+Constant p91 = IK8_Link;
+Constant p92 = IK9_Count;
+Constant p93 = IK9_Link;
+Constant p94 = IK10_Count;
+Constant p95 = IK10_Link;
+Constant p96 = IK11_Count;
+Constant p97 = IK11_Link;
+Constant p98 = IK12_Count;
+Constant p99 = IK12_Link;
+Constant p100 = IK13_Count;
+Constant p101 = IK13_Link;
+Constant p102 = IK14_Count;
+Constant p103 = IK14_Link;
+Constant p104 = IK15_Count;
+Constant p105 = IK15_Link;
+Constant p106 = IK16_Count;
+Constant p107 = IK16_Link;
+Constant p108 = IK17_Count;
+Constant p109 = IK17_Link;
+Constant p110 = IK18_Count;
+Constant p111 = IK18_Link;
+Constant p112 = KD_Count;
+Constant p113 = name;
+Constant p114 = parse_name;
+Constant p115 = action_bitmap;
 
-Attribute p57_returned;
-Attribute p59_stuck;
-Attribute p61_ringing;
-Constant FBNA_PROP_NUMBER = p55_recurring;
+Attribute p56_returned;
+Attribute p58_stuck;
+Attribute p60_ringing;
+Constant FBNA_PROP_NUMBER = p54_recurring;
 Object property_numberspace_forcer
-    with p55_recurring false
+    with p54_recurring false
 ;
 
 Array property_metadata -->
@@ -8694,181 +8692,175 @@ Array property_metadata -->
     "carrying capacity" K5_container K6_supporter K8_person NULL
     ! offset 49: property with_key
     "matching key" K2_thing K4_door K5_container NULL
-    ! offset 54: property p13_position
-    "position" K18_pressable NULL
-    ! offset 57: property pluralname
+    ! offset 54: property pluralname
     "plural-named" K1_room K2_thing K3_direction K9_region NULL
-    ! offset 63: property proper
+    ! offset 60: property proper
     "proper-named" K1_room K2_thing K3_direction K9_region NULL
-    ! offset 69: property privately_named
+    ! offset 66: property privately_named
     "privately-named" K1_room K2_thing K3_direction K9_region NULL
-    ! offset 75: property light
+    ! offset 72: property light
     "lighted" K1_room K2_thing NULL
-    ! offset 79: property visited
+    ! offset 76: property visited
     "visited" K1_room NULL
-    ! offset 82: property light
+    ! offset 79: property light
     "lit" K1_room K2_thing NULL
-    ! offset 86: property edible
+    ! offset 83: property edible
     "edible" K2_thing NULL
-    ! offset 89: property static
+    ! offset 86: property static
     "fixed in place" K2_thing NULL
-    ! offset 92: property scenery
+    ! offset 89: property scenery
     "scenery" K2_thing NULL
-    ! offset 95: property clothing
+    ! offset 92: property clothing
     "wearable" K2_thing NULL
-    ! offset 98: property pushable
+    ! offset 95: property pushable
     "pushable between rooms" K2_thing NULL
-    ! offset 101: property moved
+    ! offset 98: property moved
     "handled" K2_thing NULL
-    ! offset 104: property concealed
+    ! offset 101: property concealed
     "undescribed" K2_thing NULL
-    ! offset 107: property workflag
+    ! offset 104: property workflag
     "marked for listing" K2_thing K3_direction NULL
-    ! offset 111: property mentioned
+    ! offset 108: property mentioned
     "mentioned" K2_thing NULL
-    ! offset 114: property enterable
+    ! offset 111: property enterable
     "enterable" K5_container K6_supporter NULL
-    ! offset 118: property transparent
+    ! offset 115: property transparent
     "transparent" K5_container NULL
-    ! offset 121: property open
+    ! offset 118: property open
     "open" K4_door K5_container NULL
-    ! offset 125: property openable
+    ! offset 122: property openable
     "openable" K4_door K5_container NULL
-    ! offset 129: property lockable
+    ! offset 126: property lockable
     "lockable" K4_door K5_container NULL
-    ! offset 133: property locked
+    ! offset 130: property locked
     "locked" K4_door K5_container NULL
-    ! offset 137: property female
+    ! offset 134: property female
     "female" K8_person NULL
-    ! offset 140: property neuter
+    ! offset 137: property neuter
     "neuter" K8_person NULL
-    ! offset 143: property on
+    ! offset 140: property on
     "switched on" K13_device NULL
-    ! offset 146: property p55_recurring
+    ! offset 143: property p54_recurring
     "recurring" NULL
-    ! offset 148: property p57_returned
+    ! offset 145: property p56_returned
     "returned" K16_borrowable NULL
-    ! offset 151: property p59_stuck
+    ! offset 148: property p58_stuck
     "stuck" K17_stickable NULL
-    ! offset 154: property p61_ringing
-    "ringing" K19_ringable NULL
-    ! offset 157: property worn
+    ! offset 151: property p60_ringing
+    "ringing" K18_ringable NULL
+    ! offset 154: property worn
     "<nameless>" NULL
-    ! offset 159: property vector
+    ! offset 156: property vector
     "<nameless>" NULL
-    ! offset 161: property room_index
+    ! offset 158: property room_index
     "<nameless>" NULL
-    ! offset 163: property door_dir
+    ! offset 160: property door_dir
     "<nameless>" NULL
-    ! offset 165: property door_to
+    ! offset 162: property door_to
     "<nameless>" K4_door NULL
-    ! offset 168: property absent
+    ! offset 165: property absent
     "<nameless>" NULL
-    ! offset 170: property list_together
+    ! offset 167: property list_together
     "<nameless>" NULL
-    ! offset 172: property cap_short_name
+    ! offset 169: property cap_short_name
     "<nameless>" NULL
-    ! offset 174: property mark_as_room
+    ! offset 171: property mark_as_room
     "<nameless>" NULL
-    ! offset 176: property mark_as_thing
+    ! offset 173: property mark_as_thing
     "<nameless>" NULL
-    ! offset 178: property component_parent
+    ! offset 175: property component_parent
     "<nameless>" NULL
-    ! offset 180: property component_child
+    ! offset 177: property component_child
     "<nameless>" NULL
-    ! offset 182: property component_sibling
+    ! offset 179: property component_sibling
     "<nameless>" NULL
-    ! offset 184: property regional_found_in
+    ! offset 181: property regional_found_in
     "<nameless>" NULL
-    ! offset 186: property IK1_Count
+    ! offset 183: property IK1_Count
     "<nameless>" NULL
-    ! offset 188: property IK1_Link
+    ! offset 185: property IK1_Link
     "<nameless>" NULL
-    ! offset 190: property IK2_Count
+    ! offset 187: property IK2_Count
     "<nameless>" NULL
-    ! offset 192: property IK2_Link
+    ! offset 189: property IK2_Link
     "<nameless>" NULL
-    ! offset 194: property IK3_Count
+    ! offset 191: property IK3_Count
     "<nameless>" NULL
-    ! offset 196: property IK3_Link
+    ! offset 193: property IK3_Link
     "<nameless>" NULL
-    ! offset 198: property IK4_Count
+    ! offset 195: property IK4_Count
     "<nameless>" NULL
-    ! offset 200: property IK4_Link
+    ! offset 197: property IK4_Link
     "<nameless>" NULL
-    ! offset 202: property IK5_Count
+    ! offset 199: property IK5_Count
     "<nameless>" NULL
-    ! offset 204: property IK5_Link
+    ! offset 201: property IK5_Link
     "<nameless>" NULL
-    ! offset 206: property IK6_Count
+    ! offset 203: property IK6_Count
     "<nameless>" NULL
-    ! offset 208: property IK6_Link
+    ! offset 205: property IK6_Link
     "<nameless>" NULL
-    ! offset 210: property IK7_Count
+    ! offset 207: property IK7_Count
     "<nameless>" NULL
-    ! offset 212: property IK7_Link
+    ! offset 209: property IK7_Link
     "<nameless>" NULL
-    ! offset 214: property IK8_Count
+    ! offset 211: property IK8_Count
     "<nameless>" NULL
-    ! offset 216: property IK8_Link
+    ! offset 213: property IK8_Link
     "<nameless>" NULL
-    ! offset 218: property IK9_Count
+    ! offset 215: property IK9_Count
     "<nameless>" NULL
-    ! offset 220: property IK9_Link
+    ! offset 217: property IK9_Link
     "<nameless>" NULL
-    ! offset 222: property IK10_Count
+    ! offset 219: property IK10_Count
     "<nameless>" NULL
-    ! offset 224: property IK10_Link
+    ! offset 221: property IK10_Link
     "<nameless>" NULL
-    ! offset 226: property IK11_Count
+    ! offset 223: property IK11_Count
     "<nameless>" NULL
-    ! offset 228: property IK11_Link
+    ! offset 225: property IK11_Link
     "<nameless>" NULL
-    ! offset 230: property IK12_Count
+    ! offset 227: property IK12_Count
     "<nameless>" NULL
-    ! offset 232: property IK12_Link
+    ! offset 229: property IK12_Link
     "<nameless>" NULL
-    ! offset 234: property IK13_Count
+    ! offset 231: property IK13_Count
     "<nameless>" NULL
-    ! offset 236: property IK13_Link
+    ! offset 233: property IK13_Link
     "<nameless>" NULL
-    ! offset 238: property IK14_Count
+    ! offset 235: property IK14_Count
     "<nameless>" NULL
-    ! offset 240: property IK14_Link
+    ! offset 237: property IK14_Link
     "<nameless>" NULL
-    ! offset 242: property IK15_Count
+    ! offset 239: property IK15_Count
     "<nameless>" NULL
-    ! offset 244: property IK15_Link
+    ! offset 241: property IK15_Link
     "<nameless>" NULL
-    ! offset 246: property IK16_Count
+    ! offset 243: property IK16_Count
     "<nameless>" NULL
-    ! offset 248: property IK16_Link
+    ! offset 245: property IK16_Link
     "<nameless>" NULL
-    ! offset 250: property IK17_Count
+    ! offset 247: property IK17_Count
     "<nameless>" NULL
-    ! offset 252: property IK17_Link
+    ! offset 249: property IK17_Link
     "<nameless>" NULL
-    ! offset 254: property IK18_Count
+    ! offset 251: property IK18_Count
     "<nameless>" NULL
-    ! offset 256: property IK18_Link
+    ! offset 253: property IK18_Link
     "<nameless>" NULL
-    ! offset 258: property IK19_Count
+    ! offset 255: property KD_Count
     "<nameless>" NULL
-    ! offset 260: property IK19_Link
+    ! offset 257: property name
     "<nameless>" NULL
-    ! offset 262: property KD_Count
+    ! offset 259: property parse_name
     "<nameless>" NULL
-    ! offset 264: property name
-    "<nameless>" NULL
-    ! offset 266: property parse_name
-    "<nameless>" NULL
-    ! offset 268: property action_bitmap
+    ! offset 261: property action_bitmap
     "<nameless>" NULL
 ;
 
 Constant attributed_property_offsets_SIZE 48;
 Array attributed_property_offsets --> attributed_property_offsets_SIZE;
-Constant valued_property_offsets_SIZE (100 + 119 + INDIV_PROP_START-48);
+Constant valued_property_offsets_SIZE (100 + 116 + INDIV_PROP_START-48);
 Array valued_property_offsets --> valued_property_offsets_SIZE;
 
 [ CreatePropertyOffsets i;
@@ -8887,91 +8879,88 @@ Array valued_property_offsets --> valued_property_offsets_SIZE;
     valued_property_offsets-->door_to = 41;
     valued_property_offsets-->capacity = 44;
     valued_property_offsets-->with_key = 49;
-    valued_property_offsets-->p13_position = 54;
-    attributed_property_offsets-->pluralname = 57;
-    attributed_property_offsets-->proper = 63;
-    attributed_property_offsets-->privately_named = 69;
-    attributed_property_offsets-->light = 75;
-    attributed_property_offsets-->visited = 79;
-    attributed_property_offsets-->light = 82;
-    attributed_property_offsets-->edible = 86;
-    attributed_property_offsets-->static = 89;
-    attributed_property_offsets-->scenery = 92;
-    attributed_property_offsets-->clothing = 95;
-    attributed_property_offsets-->pushable = 98;
-    attributed_property_offsets-->moved = 101;
-    attributed_property_offsets-->concealed = 104;
-    attributed_property_offsets-->workflag = 107;
-    attributed_property_offsets-->mentioned = 111;
-    attributed_property_offsets-->enterable = 114;
-    attributed_property_offsets-->transparent = 118;
-    attributed_property_offsets-->open = 121;
-    attributed_property_offsets-->openable = 125;
-    attributed_property_offsets-->lockable = 129;
-    attributed_property_offsets-->locked = 133;
-    attributed_property_offsets-->female = 137;
-    attributed_property_offsets-->neuter = 140;
-    attributed_property_offsets-->on = 143;
-    valued_property_offsets-->p55_recurring = 146;
-    attributed_property_offsets-->p57_returned = 148;
-    attributed_property_offsets-->p59_stuck = 151;
-    attributed_property_offsets-->p61_ringing = 154;
-    attributed_property_offsets-->worn = 157;
-    valued_property_offsets-->vector = 159;
-    valued_property_offsets-->room_index = 161;
-    valued_property_offsets-->door_dir = 163;
-    valued_property_offsets-->door_to = 165;
-    attributed_property_offsets-->absent = 168;
-    valued_property_offsets-->list_together = 170;
-    valued_property_offsets-->cap_short_name = 172;
-    attributed_property_offsets-->mark_as_room = 174;
-    attributed_property_offsets-->mark_as_thing = 176;
-    valued_property_offsets-->component_parent = 178;
-    valued_property_offsets-->component_child = 180;
-    valued_property_offsets-->component_sibling = 182;
-    valued_property_offsets-->regional_found_in = 184;
-    valued_property_offsets-->IK1_Count = 186;
-    valued_property_offsets-->IK1_Link = 188;
-    valued_property_offsets-->IK2_Count = 190;
-    valued_property_offsets-->IK2_Link = 192;
-    valued_property_offsets-->IK3_Count = 194;
-    valued_property_offsets-->IK3_Link = 196;
-    valued_property_offsets-->IK4_Count = 198;
-    valued_property_offsets-->IK4_Link = 200;
-    valued_property_offsets-->IK5_Count = 202;
-    valued_property_offsets-->IK5_Link = 204;
-    valued_property_offsets-->IK6_Count = 206;
-    valued_property_offsets-->IK6_Link = 208;
-    valued_property_offsets-->IK7_Count = 210;
-    valued_property_offsets-->IK7_Link = 212;
-    valued_property_offsets-->IK8_Count = 214;
-    valued_property_offsets-->IK8_Link = 216;
-    valued_property_offsets-->IK9_Count = 218;
-    valued_property_offsets-->IK9_Link = 220;
-    valued_property_offsets-->IK10_Count = 222;
-    valued_property_offsets-->IK10_Link = 224;
-    valued_property_offsets-->IK11_Count = 226;
-    valued_property_offsets-->IK11_Link = 228;
-    valued_property_offsets-->IK12_Count = 230;
-    valued_property_offsets-->IK12_Link = 232;
-    valued_property_offsets-->IK13_Count = 234;
-    valued_property_offsets-->IK13_Link = 236;
-    valued_property_offsets-->IK14_Count = 238;
-    valued_property_offsets-->IK14_Link = 240;
-    valued_property_offsets-->IK15_Count = 242;
-    valued_property_offsets-->IK15_Link = 244;
-    valued_property_offsets-->IK16_Count = 246;
-    valued_property_offsets-->IK16_Link = 248;
-    valued_property_offsets-->IK17_Count = 250;
-    valued_property_offsets-->IK17_Link = 252;
-    valued_property_offsets-->IK18_Count = 254;
-    valued_property_offsets-->IK18_Link = 256;
-    valued_property_offsets-->IK19_Count = 258;
-    valued_property_offsets-->IK19_Link = 260;
-    valued_property_offsets-->KD_Count = 262;
-    valued_property_offsets-->name = 264;
-    valued_property_offsets-->parse_name = 266;
-    valued_property_offsets-->action_bitmap = 268;
+    attributed_property_offsets-->pluralname = 54;
+    attributed_property_offsets-->proper = 60;
+    attributed_property_offsets-->privately_named = 66;
+    attributed_property_offsets-->light = 72;
+    attributed_property_offsets-->visited = 76;
+    attributed_property_offsets-->light = 79;
+    attributed_property_offsets-->edible = 83;
+    attributed_property_offsets-->static = 86;
+    attributed_property_offsets-->scenery = 89;
+    attributed_property_offsets-->clothing = 92;
+    attributed_property_offsets-->pushable = 95;
+    attributed_property_offsets-->moved = 98;
+    attributed_property_offsets-->concealed = 101;
+    attributed_property_offsets-->workflag = 104;
+    attributed_property_offsets-->mentioned = 108;
+    attributed_property_offsets-->enterable = 111;
+    attributed_property_offsets-->transparent = 115;
+    attributed_property_offsets-->open = 118;
+    attributed_property_offsets-->openable = 122;
+    attributed_property_offsets-->lockable = 126;
+    attributed_property_offsets-->locked = 130;
+    attributed_property_offsets-->female = 134;
+    attributed_property_offsets-->neuter = 137;
+    attributed_property_offsets-->on = 140;
+    valued_property_offsets-->p54_recurring = 143;
+    attributed_property_offsets-->p56_returned = 145;
+    attributed_property_offsets-->p58_stuck = 148;
+    attributed_property_offsets-->p60_ringing = 151;
+    attributed_property_offsets-->worn = 154;
+    valued_property_offsets-->vector = 156;
+    valued_property_offsets-->room_index = 158;
+    valued_property_offsets-->door_dir = 160;
+    valued_property_offsets-->door_to = 162;
+    attributed_property_offsets-->absent = 165;
+    valued_property_offsets-->list_together = 167;
+    valued_property_offsets-->cap_short_name = 169;
+    attributed_property_offsets-->mark_as_room = 171;
+    attributed_property_offsets-->mark_as_thing = 173;
+    valued_property_offsets-->component_parent = 175;
+    valued_property_offsets-->component_child = 177;
+    valued_property_offsets-->component_sibling = 179;
+    valued_property_offsets-->regional_found_in = 181;
+    valued_property_offsets-->IK1_Count = 183;
+    valued_property_offsets-->IK1_Link = 185;
+    valued_property_offsets-->IK2_Count = 187;
+    valued_property_offsets-->IK2_Link = 189;
+    valued_property_offsets-->IK3_Count = 191;
+    valued_property_offsets-->IK3_Link = 193;
+    valued_property_offsets-->IK4_Count = 195;
+    valued_property_offsets-->IK4_Link = 197;
+    valued_property_offsets-->IK5_Count = 199;
+    valued_property_offsets-->IK5_Link = 201;
+    valued_property_offsets-->IK6_Count = 203;
+    valued_property_offsets-->IK6_Link = 205;
+    valued_property_offsets-->IK7_Count = 207;
+    valued_property_offsets-->IK7_Link = 209;
+    valued_property_offsets-->IK8_Count = 211;
+    valued_property_offsets-->IK8_Link = 213;
+    valued_property_offsets-->IK9_Count = 215;
+    valued_property_offsets-->IK9_Link = 217;
+    valued_property_offsets-->IK10_Count = 219;
+    valued_property_offsets-->IK10_Link = 221;
+    valued_property_offsets-->IK11_Count = 223;
+    valued_property_offsets-->IK11_Link = 225;
+    valued_property_offsets-->IK12_Count = 227;
+    valued_property_offsets-->IK12_Link = 229;
+    valued_property_offsets-->IK13_Count = 231;
+    valued_property_offsets-->IK13_Link = 233;
+    valued_property_offsets-->IK14_Count = 235;
+    valued_property_offsets-->IK14_Link = 237;
+    valued_property_offsets-->IK15_Count = 239;
+    valued_property_offsets-->IK15_Link = 241;
+    valued_property_offsets-->IK16_Count = 243;
+    valued_property_offsets-->IK16_Link = 245;
+    valued_property_offsets-->IK17_Count = 247;
+    valued_property_offsets-->IK17_Link = 249;
+    valued_property_offsets-->IK18_Count = 251;
+    valued_property_offsets-->IK18_Link = 253;
+    valued_property_offsets-->KD_Count = 255;
+    valued_property_offsets-->name = 257;
+    valued_property_offsets-->parse_name = 259;
+    valued_property_offsets-->action_bitmap = 261;
 ];
 
 
@@ -9042,13 +9031,13 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
 [ PrintSceneName value;
     switch(value) {
         I66_entire_game: print "Entire Game";
-        I129_returning_a_book: print "Returning a Book";
-        I130_ebc_conversation: print "EBC Conversation";
-        I133_not_a_drill: print "Not a drill";
-        I134_helping_the_professor: print "Helping the professor";
-        I135_elevator_trap: print "elevator trap";
-        I136_chaos_on_the_first_floo: print "Chaos on the first floor";
-        I137_epilogue: print "Epilogue";
+        I121_returning_a_book: print "Returning a Book";
+        I122_ebc_conversation: print "EBC Conversation";
+        I125_not_a_drill: print "Not a drill";
+        I126_helping_the_professor: print "Helping the professor";
+        I127_elevator_trap: print "elevator trap";
+        I128_chaos_on_the_first_floo: print "Chaos on the first floor";
+        I129_epilogue: print "Epilogue";
         default: print "<illegal scene>";
     }
 ];
@@ -9158,26 +9147,6 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
     if (a > b) return b+(random(MAX_POSITIVE_NUMBER) % (a-b+1));
     return a+(random(MAX_POSITIVE_NUMBER) % (b-a+1));
 ];
-[ T60 value;
-    switch(value) {
-        I114_pressed: print "pressed";
-        I115_unpressed: print "unpressed";
-        default: print "<illegal placement>";
-    }
-];
-
-[ A_T60 value;
-    return (value % 2)+1;
-];
-[ B_T60 value;
-    return ((value+0) % 2)+1;
-];
-[ R_T60 a b;
-    if (a == 0 && b == 0) return (random(2));
-    if (a == b) return b;
-    if (a > b) return b+(random(MAX_POSITIVE_NUMBER) % (a-b+1));
-    return a+(random(MAX_POSITIVE_NUMBER) % (b-a+1));
-];
 [ PrintKindValuePair k v;
     k = KindAtomic(k);
       switch(k) {
@@ -9221,7 +9190,6 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
         41: print (PrintSoundName) v;
         42: print (PrintExternalFileName) v;
         43: print (T57) v;
-        44: print (T60) v;
         default: print v;
     }
 ];
@@ -9261,7 +9229,6 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
         41: return ;
         42: return ;
         43: return I68_didn_t_understand_error;
-        44: return I114_pressed;
         default: return 0;
     }
 ];
@@ -9309,7 +9276,6 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
         41: return 0;
         42: return 0;
         43: return 20;
-        44: return 2;
         default: return 0;
     }
 ];
@@ -9348,8 +9314,7 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
     if (k == K15_player_s_holdall) print "player's holdall";
     if (k == K16_borrowable) print "borrowable";
     if (k == K17_stickable) print "stickable";
-    if (k == K18_pressable) print "pressable";
-    if (k == K19_ringable) print "ringable";
+    if (k == K18_ringable) print "ringable";
 ];
 
 Constant RBNO_0 = "allow access";
@@ -9371,7 +9336,7 @@ Constant RBNO_12 = "it does";
 
 
 
-Array KindHierarchy --> K0_kind (0) K1_room (0) K2_thing (0) K3_direction (0) K4_door (2) K5_container (2) K6_supporter (2) K7_backdrop (2) K8_person (2) K9_region (0) K10_man (8) K11_woman (8) K12_animal (8) K13_device (2) K14_vehicle (5) K15_player_s_holdall (5) K16_borrowable (2) K17_stickable (2) K18_pressable (2) K19_ringable (2) ;
+Array KindHierarchy --> K0_kind (0) K1_room (0) K2_thing (0) K3_direction (0) K4_door (2) K5_container (2) K6_supporter (2) K7_backdrop (2) K8_person (2) K9_region (0) K10_man (8) K11_woman (8) K12_animal (8) K13_device (2) K14_vehicle (5) K15_player_s_holdall (5) K16_borrowable (2) K17_stickable (2) K18_ringable (2) ;
 Constant IK1_First = I94_hallway_north;
 Constant IK2_First = I92_tweed_jacket;
 Constant IK3_First = I46_north;
@@ -9389,8 +9354,7 @@ Constant IK14_First = nothing;
 Constant IK15_First = nothing;
 Constant IK16_First = I91_borrowed_book;
 Constant IK17_First = I103_lift;
-Constant IK18_First = I118_1f_button;
-Constant IK19_First = I132_alarm;
+Constant IK18_First = I124_alarm;
 Constant No_Directions = 12;
 ! Table of direction object alias constants:
 Constant DirectionObject_0 = I46_north;
@@ -9406,28 +9370,28 @@ Constant DirectionObject_9 = I55_down;
 Constant DirectionObject_10 = in_obj;
 Constant DirectionObject_11 = out_obj;
 Array Map_Storage -->
- I112_the_second_floor_elevat 0 0 I105_hallway_south 0 0 I121_the_stairwell I98_north_west_office 0 0 0 0 ! Exits from: I94_hallway_north
+ I112_the_second_floor_elevat 0 0 I105_hallway_south 0 0 I113_the_stairwell I98_north_west_office 0 0 0 0 ! Exits from: I94_hallway_north
  0 0 0 0 0 0 I94_hallway_north 0 0 0 0 0 ! Exits from: I98_north_west_office
  I94_hallway_north 0 0 0 0 0 0 I106_south_west_office 0 0 0 0 ! Exits from: I105_hallway_south
  0 0 0 0 0 0 I105_hallway_south 0 0 0 0 0 ! Exits from: I106_south_west_office
  0 0 0 I94_hallway_north 0 0 0 0 0 0 0 0 ! Exits from: I112_the_second_floor_elevat
- 0 0 0 0 0 0 0 I94_hallway_north I128_the_third_floor_stairwe I125_the_first_floor_stairwe 0 0 ! Exits from: I121_the_stairwell
- 0 0 0 I124_first_floor_hallway_nor 0 0 0 0 0 0 0 0 ! Exits from: I123_first_floor_elevator
- I123_first_floor_elevator 0 0 I126_first_floor_hallway_sou 0 0 I125_the_first_floor_stairwe 0 0 0 0 0 ! Exits from: I124_first_floor_hallway_nor
- 0 0 0 0 0 0 0 I124_first_floor_hallway_nor I121_the_stairwell 0 0 0 ! Exits from: I125_the_first_floor_stairwe
- I124_first_floor_hallway_nor 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I126_first_floor_hallway_sou
- 0 0 0 0 0 0 0 0 0 I121_the_stairwell 0 0 ! Exits from: I128_the_third_floor_stairwe
+ 0 0 0 0 0 0 0 I94_hallway_north I120_the_third_floor_stairwe I117_the_first_floor_stairwe 0 0 ! Exits from: I113_the_stairwell
+ 0 0 0 I116_first_floor_hallway_nor 0 0 0 0 0 0 0 0 ! Exits from: I115_first_floor_elevator
+ I115_first_floor_elevator 0 0 I118_first_floor_hallway_sou 0 0 I117_the_first_floor_stairwe 0 0 0 0 0 ! Exits from: I116_first_floor_hallway_nor
+ 0 0 0 0 0 0 0 I116_first_floor_hallway_nor I113_the_stairwell 0 0 0 ! Exits from: I117_the_first_floor_stairwe
+ I116_first_floor_hallway_nor 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I118_first_floor_hallway_sou
+ 0 0 0 0 0 0 0 0 0 I113_the_stairwell 0 0 ! Exits from: I120_the_third_floor_stairwe
 ;
 
 Class VPH_Class;
-Array KOV_representatives --> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ValuePropertyHolder_39 0 0 0 0 0 ;
+Array KOV_representatives --> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ValuePropertyHolder_39 0 0 0 0 ;
 VPH_Class ValuePropertyHolder_39
     with value_range 8
-    with p55_recurring KOVP_39_P55
+    with p54_recurring KOVP_39_P54
     with description KOVP_39_P6
 ;
-! Storage for property p55_recurring of kind SCENE_TY
-Array KOVP_39_P55 table 0 0 (true) (false) (false) (false) (false) (false) (false) (false) ;
+! Storage for property p54_recurring of kind SCENE_TY
+Array KOVP_39_P54 table 0 0 (true) (false) (false) (false) (false) (false) (false) (false) ;
 ! Storage for property description of kind SCENE_TY
 Array KOVP_39_P6 table 0 0 (EMPTY_TEXT_VALUE) (EMPTY_TEXT_VALUE) (EMPTY_TEXT_VALUE) (EMPTY_TEXT_VALUE) (EMPTY_TEXT_VALUE) (EMPTY_TEXT_VALUE) (EMPTY_TEXT_VALUE) (EMPTY_TEXT_VALUE) ;
 Class K0_kind 
@@ -9571,25 +9535,19 @@ Class K13_device
 Class K16_borrowable 
     class K2_thing
     with plural "borrowables"
-    has ~p57_returned
+    has ~p56_returned
 ;
 
 Class K17_stickable 
     class K2_thing
     with plural "stickables"
-    has ~p59_stuck
+    has ~p58_stuck
 ;
 
-Class K18_pressable 
-    class K2_thing
-    with plural "pressables"
-    with p13_position I114_pressed
-;
-
-Class K19_ringable 
+Class K18_ringable 
     class K2_thing
     with plural "ringables"
-    has ~p61_ringing
+    has ~p60_ringing
 ;
 
 Class K9_region 
@@ -9968,7 +9926,7 @@ Object I104_second_floor ""
     with list_together 0
     with regional_found_in [; if (TestRegionalContainment(location, I104_second_floor)) rtrue; rfalse; ],
     with IK9_Count 0
-    with IK9_Link I122_first_floor
+    with IK9_Link I114_first_floor
     with KD_Count 9
     with name 'second' 'floor' 
     with action_bitmap 0 0 0 0 0 0 
@@ -10073,7 +10031,7 @@ Object -> I109_bookshelf ""
     with IK2_Count 15
     with IK2_Link selfobj
     with IK6_Count 2
-    with IK6_Link I117_panel
+    with IK6_Link nothing
     with KD_Count 6
     with name 'bookshelf' 
     with action_bitmap 0 0 0 0 0 0 
@@ -10091,7 +10049,7 @@ Object I112_the_second_floor_elevat ""
     with cap_short_name "The Second Floor Elevator"
     has mark_as_room
     with IK1_Count 4
-    with IK1_Link I121_the_stairwell
+    with IK1_Link I113_the_stairwell
     with KD_Count 1
     with name 'the' 'second' 'floor' 'elevator' 
 ;
@@ -10154,7 +10112,7 @@ Object -> -> I91_borrowed_book ""
     with list_together 0
     has mark_as_thing
     with IK2_Count 3
-    with IK2_Link I117_panel
+    with IK2_Link I124_alarm
     with IK16_Count 0
     with IK16_Link nothing
     with KD_Count 16
@@ -10162,74 +10120,7 @@ Object -> -> I91_borrowed_book ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object -> I117_panel ""
-    class K6_supporter
-    with short_name "panel"
-    has static
-    with vector 0
-    with list_together 0
-    has mark_as_thing
-    with IK2_Count 18
-    with IK2_Link I118_1f_button
-    with IK6_Count 3
-    with IK6_Link nothing
-    with KD_Count 6
-    with name 'panel' 
-    with action_bitmap 0 0 0 0 0 0 
-;
-
-Object -> -> I118_1f_button ""
-    class K18_pressable
-    with short_name "1f button"
-    with description text_routine_7
-    with p13_position I115_unpressed
-    with vector 0
-    with list_together 0
-    has mark_as_thing
-    with IK2_Count 19
-    with IK2_Link I119_2f_button
-    with IK18_Count 0
-    with IK18_Link I119_2f_button
-    with KD_Count 18
-    with name '1f' 'button' 
-    with action_bitmap 0 0 0 0 0 0 
-;
-
-Object -> -> I119_2f_button ""
-    class K18_pressable
-    with short_name "2f button"
-    with description text_routine_8
-    with p13_position I115_unpressed
-    with vector 0
-    with list_together 0
-    has mark_as_thing
-    with IK2_Count 20
-    with IK2_Link I120_3f_button
-    with IK18_Count 1
-    with IK18_Link I120_3f_button
-    with KD_Count 18
-    with name '2f' 'button' 
-    with action_bitmap 0 0 0 0 0 0 
-;
-
-Object -> -> I120_3f_button ""
-    class K18_pressable
-    with short_name "3f button"
-    with description text_routine_9
-    with p13_position I115_unpressed
-    with vector 0
-    with list_together 0
-    has mark_as_thing
-    with IK2_Count 21
-    with IK2_Link I132_alarm
-    with IK18_Count 2
-    with IK18_Link nothing
-    with KD_Count 18
-    with name '3f' 'button' 
-    with action_bitmap 0 0 0 0 0 0 
-;
-
-Object I121_the_stairwell ""
+Object I113_the_stairwell ""
     class K1_room
     with short_name "The Stairwell"
     with description SC_10
@@ -10241,56 +10132,56 @@ Object I121_the_stairwell ""
     with cap_short_name "The Stairwell"
     has mark_as_room
     with IK1_Count 5
-    with IK1_Link I123_first_floor_elevator
+    with IK1_Link I115_first_floor_elevator
     with KD_Count 1
     with name 'the' 'stairwell' 
 ;
 
-Object I122_first_floor ""
+Object I114_first_floor ""
     class K9_region
     with short_name "First Floor"
     with vector 0
     with list_together 0
-    with regional_found_in [; if (TestRegionalContainment(location, I122_first_floor)) rtrue; rfalse; ],
+    with regional_found_in [; if (TestRegionalContainment(location, I114_first_floor)) rtrue; rfalse; ],
     with IK9_Count 1
-    with IK9_Link I127_third_floor
+    with IK9_Link I119_third_floor
     with KD_Count 9
     with name 'first' 'floor' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I123_first_floor_elevator ""
+Object I115_first_floor_elevator ""
     class K1_room
     with short_name "First Floor Elevator"
-    with map_region I122_first_floor
+    with map_region I114_first_floor
     with vector 0
     with room_index -1
     with list_together 0
     has mark_as_room
     with IK1_Count 6
-    with IK1_Link I124_first_floor_hallway_nor
+    with IK1_Link I116_first_floor_hallway_nor
     with KD_Count 1
     with name 'first' 'floor' 'elevator' 
 ;
 
-Object I124_first_floor_hallway_nor ""
+Object I116_first_floor_hallway_nor ""
     class K1_room
     with short_name "First Floor Hallway North"
-    with map_region I122_first_floor
+    with map_region I114_first_floor
     with vector 0
     with room_index -1
     with list_together 0
     has mark_as_room
     with IK1_Count 7
-    with IK1_Link I125_the_first_floor_stairwe
+    with IK1_Link I117_the_first_floor_stairwe
     with KD_Count 1
     with name 'first' 'floor' 'hallway' 'north' 
 ;
 
-Object I125_the_first_floor_stairwe ""
+Object I117_the_first_floor_stairwe ""
     class K1_room
     with short_name "The First Floor Stairwell"
-    with map_region I122_first_floor
+    with map_region I114_first_floor
     has proper
     with vector 0
     with room_index -1
@@ -10298,15 +10189,15 @@ Object I125_the_first_floor_stairwe ""
     with cap_short_name "The First Floor Stairwell"
     has mark_as_room
     with IK1_Count 8
-    with IK1_Link I126_first_floor_hallway_sou
+    with IK1_Link I118_first_floor_hallway_sou
     with KD_Count 1
     with name 'the' 'first' 'floor' 'stairwell' 
 ;
 
-Object I126_first_floor_hallway_sou ""
+Object I118_first_floor_hallway_sou ""
     class K1_room
     with short_name "First Floor Hallway South"
-    with map_region I122_first_floor
+    with map_region I114_first_floor
     has proper
     with vector 0
     with room_index -1
@@ -10314,17 +10205,17 @@ Object I126_first_floor_hallway_sou ""
     with cap_short_name "First Floor Hallway South"
     has mark_as_room
     with IK1_Count 9
-    with IK1_Link I128_the_third_floor_stairwe
+    with IK1_Link I120_the_third_floor_stairwe
     with KD_Count 1
     with name 'first' 'floor' 'hallway' 'south' 
 ;
 
-Object I127_third_floor ""
+Object I119_third_floor ""
     class K9_region
     with short_name "Third Floor"
     with vector 0
     with list_together 0
-    with regional_found_in [; if (TestRegionalContainment(location, I127_third_floor)) rtrue; rfalse; ],
+    with regional_found_in [; if (TestRegionalContainment(location, I119_third_floor)) rtrue; rfalse; ],
     with IK9_Count 2
     with IK9_Link nothing
     with KD_Count 9
@@ -10332,10 +10223,10 @@ Object I127_third_floor ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I128_the_third_floor_stairwe ""
+Object I120_the_third_floor_stairwe ""
     class K1_room
     with short_name "The Third Floor Stairwell"
-    with map_region I127_third_floor
+    with map_region I119_third_floor
     has proper
     with vector 0
     with room_index -1
@@ -10348,17 +10239,17 @@ Object I128_the_third_floor_stairwe ""
     with name 'the' 'third' 'floor' 'stairwell' 
 ;
 
-Object I132_alarm ""
-    class K19_ringable
+Object I124_alarm ""
+    class K18_ringable
     with short_name "alarm"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 22
+    with IK2_Count 18
     with IK2_Link nothing
-    with IK19_Count 0
-    with IK19_Link nothing
-    with KD_Count 19
+    with IK18_Count 0
+    with IK18_Link nothing
+    with KD_Count 18
     with name 'alarm' 
     with action_bitmap 0 0 0 0 0 0 
 ;
@@ -10385,15 +10276,13 @@ Constant I84_nothing_to_do_error = 17;
 Constant I85_noun_did_not_make_sense_ = 18;
 Constant I86_referred_to_a_determinat = 19;
 Constant I87_i_beg_your_pardon_error = 20;
-Constant I114_pressed = 1;
-Constant I115_unpressed = 2;
-Constant I129_returning_a_book = 2;
-Constant I130_ebc_conversation = 3;
-Constant I133_not_a_drill = 4;
-Constant I134_helping_the_professor = 5;
-Constant I135_elevator_trap = 6;
-Constant I136_chaos_on_the_first_floo = 7;
-Constant I137_epilogue = 8;
+Constant I121_returning_a_book = 2;
+Constant I122_ebc_conversation = 3;
+Constant I125_not_a_drill = 4;
+Constant I126_helping_the_professor = 5;
+Constant I127_elevator_trap = 6;
+Constant I128_chaos_on_the_first_floo = 7;
+Constant I129_epilogue = 8;
 Array Global_Vars -->
   (false) ! 7
   (SC_11) ! 24
@@ -10418,12 +10307,12 @@ Array tab_0_2 table $2066 2  (Consult_Grammar_97)  (Consult_Grammar_98)  (Consul
 Array tab_0_3 table $0067 3  (IMMEDIATELY_RESTART_VM_R)  (IMMEDIATELY_RESTORE_SAVED_R)  TABLE_NOVALUE (IMMEDIATELY_QUIT_R)  (IMMEDIATELY_UNDO_R) ;
 Array tab_0_4 table $0068 4  TABLE_NOVALUE TABLE_NOVALUE (V26_amusing_a_victorious_pla)  TABLE_NOVALUE TABLE_NOVALUE;
 Array T1_locale_priorities table  tab_1_0 tab_1_1;
-Array tab_1_0 table $0869 NULL  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
-Array tab_1_1 table $446a 5  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_0 table $0869 NULL  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_1 table $446a 5  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
 Array T2_ordinary_status table  tab_2_0 tab_2_1 tab_2_2;
-Array tab_2_0 table $006b 8  (text_routine_10) ;
+Array tab_2_0 table $006b 8  (text_routine_7) ;
 Array tab_2_1 table $006c 9  (EMPTY_TEXT_VALUE) ;
-Array tab_2_2 table $006d 10  (text_routine_11) ;
+Array tab_2_2 table $006d 10  (text_routine_8) ;
 Array TB_Blanks -> 
   ! For table T0_final_question_options
   $00  ! Column 0
@@ -10433,7 +10322,7 @@ Array TB_Blanks ->
   $1b  ! Column 4
   
   ! For table T1_locale_priorities
-  $ff $ff $ff  ! Column 1
+  $ff $ff $0f  ! Column 1
   
   ! For table T2_ordinary_status
   $00  ! Column 0
@@ -11471,14 +11360,14 @@ self = noun;
       ! phrase 1
       ! [1: say ~[if Returning a Book is happening][one of]What's that?[or]Sorry?[or]Pretty busy here.[or]Don't forget that there's going to be an evacuation drill at noon.[or]Hm?[at random][end if][if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]~]
       say__p=1;
-	if (~~(((((scene_status-->(I129_returning_a_book-1)==1)))))) jump L_Say18;
+	if (~~(((((scene_status-->(I121_returning_a_book-1)==1)))))) jump L_Say18;
 		ParaContent();  I7_ST_say_one_of-->1 =
 	i7_soo_ran(I7_ST_say_one_of-->1, 5);
 	switch((I7_ST_say_one_of-->1)%(5+1)-1) {
 		0: ParaContent();  print (PrintText) SC_43;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_44;  new_line;ParaContent();  @nop; 2: ParaContent();  print (PrintText) SC_45;  new_line;ParaContent();  @nop; 3: ParaContent();  print (PrintText) SC_46;  new_line;ParaContent();  @nop; 4: ParaContent();  print (PrintText) SC_47;  new_line;ParaContent();  } 
 	.L_Say18; .L_SayX18;
 		
-	if (~~(((((scene_status-->(I130_ebc_conversation-1)==1)))))) jump L_Say19;
+	if (~~(((((scene_status-->(I122_ebc_conversation-1)==1)))))) jump L_Say19;
 		ParaContent();  print (PrintText) SC_48;  new_line;
 	.L_Say19; .L_SayX19;
 		 .L_Say20; .L_SayX20;
@@ -17759,7 +17648,7 @@ self = noun;
 [ R_778 ;
       ! phrase 1
       ! [1: now the alarm is ringing]
-       (Adj_78_t2_v9(I132_alarm)); 
+       (Adj_78_t2_v9(I124_alarm)); 
       ! phrase 2
       ! [2: say ~Well, there goes the alarm. I guess you'd better get downstairs.~]
       say__p=1;ParaContent();  print (PrintText) SC_65;  new_line; .L_Say59; .L_SayX59;
@@ -17776,13 +17665,10 @@ self = noun;
 ! When the Elevator Trap begins:
 [ R_779 ;
       ! phrase 1
-      ! [1: now the position of the 1f button is pressed]
-       WriteGProperty(9, I118_1f_button,p13_position,I114_pressed); 
-      ! phrase 2
-      ! [2: now the lift is stuck]
+      ! [1: now the lift is stuck]
        (Adj_76_t2_v9(I103_lift)); 
-      ! phrase 3
-      ! [3: say ~You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.[paragraph break]THUNK.[paragraph break]You stumble as the lights flicker and the elevator comes to a sudden and irrevokable stop.~]
+      ! phrase 2
+      ! [2: say ~You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.[paragraph break]THUNK.[paragraph break]You stumble as the lights flicker and the elevator comes to a sudden and irrevokable stop.~]
       say__p=1;ParaContent();  print (PrintText) SC_66; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_67; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_68;  new_line; .L_Say60; .L_SayX60;
    rfalse;
 ];
@@ -18699,7 +18585,7 @@ return ((RELATION_TY_VToVAdjective(t_0, -1)));
 
     t_0 ! Call parameter 'it' = scene
     ;
-return (GProperty(SCENE_TY, t_0, p55_recurring));
+return (GProperty(SCENE_TY, t_0, p54_recurring));
     rfalse;
 ];
 
@@ -18707,7 +18593,7 @@ return (GProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = scene
     ;
-return (GProperty(SCENE_TY, t_0, p55_recurring) == false);
+return (GProperty(SCENE_TY, t_0, p54_recurring) == false);
     rfalse;
 ];
 
@@ -18715,7 +18601,7 @@ return (GProperty(SCENE_TY, t_0, p55_recurring) == false);
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (GetEitherOrProperty(t_0, p57_returned));
+  if (t_0) return (GetEitherOrProperty(t_0, p56_returned));
     rfalse;
 ];
 
@@ -18723,7 +18609,7 @@ return (GProperty(SCENE_TY, t_0, p55_recurring) == false);
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (GetEitherOrProperty(t_0, p57_returned) == false);
+  if (t_0) return (GetEitherOrProperty(t_0, p56_returned) == false);
     rfalse;
 ];
 
@@ -18731,7 +18617,7 @@ return (GProperty(SCENE_TY, t_0, p55_recurring) == false);
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (GetEitherOrProperty(t_0, p59_stuck));
+  if (t_0) return (GetEitherOrProperty(t_0, p58_stuck));
     rfalse;
 ];
 
@@ -18739,7 +18625,7 @@ return (GProperty(SCENE_TY, t_0, p55_recurring) == false);
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (GetEitherOrProperty(t_0, p59_stuck) == false);
+  if (t_0) return (GetEitherOrProperty(t_0, p58_stuck) == false);
     rfalse;
 ];
 
@@ -18747,7 +18633,7 @@ return (GProperty(SCENE_TY, t_0, p55_recurring) == false);
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (GetEitherOrProperty(t_0, p61_ringing));
+  if (t_0) return (GetEitherOrProperty(t_0, p60_ringing));
     rfalse;
 ];
 
@@ -18755,7 +18641,7 @@ return (GProperty(SCENE_TY, t_0, p55_recurring) == false);
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (GetEitherOrProperty(t_0, p61_ringing) == false);
+  if (t_0) return (GetEitherOrProperty(t_0, p60_ringing) == false);
     rfalse;
 ];
 
@@ -19203,7 +19089,7 @@ return ((RELATION_TY_VToVAdjective(t_0, true)));
 
     t_0 ! Call parameter 'it' = scene
     ;
-return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
+return (WriteGProperty(SCENE_TY, t_0, p54_recurring, true));
     rfalse;
 ];
 
@@ -19211,7 +19097,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
 
     t_0 ! Call parameter 'it' = scene
     ;
-return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
+return (WriteGProperty(SCENE_TY, t_0, p54_recurring));
     rfalse;
 ];
 
@@ -19219,7 +19105,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p57_returned));
+  if (t_0) return (SetEitherOrProperty(t_0, p56_returned));
     rfalse;
 ];
 
@@ -19227,7 +19113,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p57_returned, true));
+  if (t_0) return (SetEitherOrProperty(t_0, p56_returned, true));
     rfalse;
 ];
 
@@ -19235,7 +19121,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p59_stuck));
+  if (t_0) return (SetEitherOrProperty(t_0, p58_stuck));
     rfalse;
 ];
 
@@ -19243,7 +19129,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p59_stuck, true));
+  if (t_0) return (SetEitherOrProperty(t_0, p58_stuck, true));
     rfalse;
 ];
 
@@ -19251,7 +19137,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p61_ringing));
+  if (t_0) return (SetEitherOrProperty(t_0, p60_ringing));
     rfalse;
 ];
 
@@ -19259,7 +19145,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p61_ringing, true));
+  if (t_0) return (SetEitherOrProperty(t_0, p60_ringing, true));
     rfalse;
 ];
 
@@ -19707,7 +19593,7 @@ return ((RELATION_TY_VToVAdjective(t_0, false)));
 
     t_0 ! Call parameter 'it' = scene
     ;
-return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
+return (WriteGProperty(SCENE_TY, t_0, p54_recurring));
     rfalse;
 ];
 
@@ -19715,7 +19601,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring));
 
     t_0 ! Call parameter 'it' = scene
     ;
-return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
+return (WriteGProperty(SCENE_TY, t_0, p54_recurring, true));
     rfalse;
 ];
 
@@ -19723,7 +19609,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p57_returned, true));
+  if (t_0) return (SetEitherOrProperty(t_0, p56_returned, true));
     rfalse;
 ];
 
@@ -19731,7 +19617,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p57_returned));
+  if (t_0) return (SetEitherOrProperty(t_0, p56_returned));
     rfalse;
 ];
 
@@ -19739,7 +19625,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p59_stuck, true));
+  if (t_0) return (SetEitherOrProperty(t_0, p58_stuck, true));
     rfalse;
 ];
 
@@ -19747,7 +19633,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p59_stuck));
+  if (t_0) return (SetEitherOrProperty(t_0, p58_stuck));
     rfalse;
 ];
 
@@ -19755,7 +19641,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p61_ringing, true));
+  if (t_0) return (SetEitherOrProperty(t_0, p60_ringing, true));
     rfalse;
 ];
 
@@ -19763,7 +19649,7 @@ return (WriteGProperty(SCENE_TY, t_0, p55_recurring, true));
 
     t_0 ! Call parameter 'it' = object
     ;
-  if (t_0) return (SetEitherOrProperty(t_0, p61_ringing));
+  if (t_0) return (SetEitherOrProperty(t_0, p60_ringing));
     rfalse;
 ];
 
@@ -20486,7 +20372,7 @@ if (scene_status-->0 == 1) {
         if ((( (deadflag~=0) ))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Entire Game' ends]^";
-            if (GProperty(39, 1, p55_recurring)) scene_status-->0 = 0; else scene_status-->0 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 1);
+            if (GProperty(39, 1, p54_recurring)) scene_status-->0 = 0; else scene_status-->0 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 1);
             ProcessRulebook(28);
             scene_ended-->0 = the_time;
             scene_endings-->0 = (scene_endings-->0)|2;
@@ -20510,7 +20396,7 @@ if (scene_status-->0 == 1) {
         if ((((I108_desk ofclass K6_supporter) && (I106_south_west_office == ContainerOf(I108_desk)) && (I108_desk == SupporterOf(I91_borrowed_book))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Returning a Book' ends]^";
-            if (GProperty(39, 2, p55_recurring)) scene_status-->1 = 0; else scene_status-->1 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 2);
+            if (GProperty(39, 2, p54_recurring)) scene_status-->1 = 0; else scene_status-->1 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 2);
             ProcessRulebook(366);
             scene_ended-->1 = the_time;
             scene_endings-->1 = (scene_endings-->1)|2;
@@ -20532,7 +20418,7 @@ if (scene_status-->0 == 1) {
         if (((((~~Adj_9_t1_v9(I101_emergency_building_coor)))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'EBC Conversation' ends]^";
-            if (GProperty(39, 3, p55_recurring)) scene_status-->2 = 0; else scene_status-->2 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 3);
+            if (GProperty(39, 3, p54_recurring)) scene_status-->2 = 0; else scene_status-->2 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 3);
             ProcessRulebook(368);
             scene_ended-->2 = the_time;
             scene_endings-->2 = (scene_endings-->2)|2;
@@ -20541,7 +20427,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->2 == 0) {
-        if ((( (scene_endings-->(I129_returning_a_book-1) > 1) ))) {
+        if ((( (scene_endings-->(I121_returning_a_book-1) > 1) ))) {
             ch = true;
             if (debug_scenes) print "[Scene 'EBC Conversation' begins]^";
             scene_status-->2 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 3);
@@ -20555,7 +20441,7 @@ if (scene_status-->0 == 1) {
     if (scene_status-->3 == 1) {
     }
     if (scene_status-->3 == 0) {
-        if ((( (scene_endings-->(I130_ebc_conversation-1) > 1) ))) {
+        if ((( (scene_endings-->(I122_ebc_conversation-1) > 1) ))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Not a drill' begins]^";
             scene_status-->3 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 4);
@@ -20569,7 +20455,7 @@ if (scene_status-->0 == 1) {
     if (scene_status-->4 == 1) {
     }
     if (scene_status-->4 == 0) {
-        if ((( (scene_endings-->(I133_not_a_drill-1) > 1) ))) {
+        if ((( (scene_endings-->(I125_not_a_drill-1) > 1) ))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Helping the professor' begins]^";
             scene_status-->4 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 5);
@@ -20584,7 +20470,7 @@ if (scene_status-->0 == 1) {
         if ((((~~((I112_the_second_floor_elevat == ContainerOf(player))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'elevator trap' ends]^";
-            if (GProperty(39, 6, p55_recurring)) scene_status-->5 = 0; else scene_status-->5 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 6);
+            if (GProperty(39, 6, p54_recurring)) scene_status-->5 = 0; else scene_status-->5 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 6);
             ProcessRulebook(374);
             scene_ended-->5 = the_time;
             scene_endings-->5 = (scene_endings-->5)|2;
@@ -20593,7 +20479,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->5 == 0) {
-        if (((((I112_the_second_floor_elevat == ContainerOf(player)))) && ((((Adj_78_t1_v9(I132_alarm))))))) {
+        if (((((I112_the_second_floor_elevat == ContainerOf(player)))) && ((((Adj_78_t1_v9(I124_alarm))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'elevator trap' begins]^";
             scene_status-->5 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 6);
@@ -20605,10 +20491,10 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->6 == 1) {
-        if (((((I126_first_floor_hallway_sou == ContainerOf(player)))) && ((((Adj_78_t1_v9(I132_alarm))))))) {
+        if (((((I118_first_floor_hallway_sou == ContainerOf(player)))) && ((((Adj_78_t1_v9(I124_alarm))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Chaos on the first floor' ends]^";
-            if (GProperty(39, 7, p55_recurring)) scene_status-->6 = 0; else scene_status-->6 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 7);
+            if (GProperty(39, 7, p54_recurring)) scene_status-->6 = 0; else scene_status-->6 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 7);
             ProcessRulebook(376);
             scene_ended-->6 = the_time;
             scene_endings-->6 = (scene_endings-->6)|2;
@@ -20625,7 +20511,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->6 == 0) {
-        if (((((I125_the_first_floor_stairwe == ContainerOf(player)))) && ((((Adj_78_t1_v9(I132_alarm))))))) {
+        if (((((I117_the_first_floor_stairwe == ContainerOf(player)))) && ((((Adj_78_t1_v9(I124_alarm))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Chaos on the first floor' begins]^";
             scene_status-->6 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 7);
@@ -23088,7 +22974,7 @@ Array FWMatrix --> NUM_ROOMS*NUM_ROOMS;
 ];
 #ENDIF;
 
-Constant MAX_ROUTE_LENGTH = 49 + 32;
+Constant MAX_ROUTE_LENGTH = 45 + 32;
 
 [ RelationRouteTo relation from to count  handler;
 	if (count) {
@@ -26379,16 +26265,16 @@ if (t_0 ofclass K13_device) {if (na > 0) { na = 0; print "; "; }
     if ((AllowInShowme(on)) && (t_0  hasnt on)) { if (na++ > 0) print ", "; print "switched off"; }
 }
 if (t_0 ofclass K16_borrowable) {if (na > 0) { na = 0; print "; "; }
-    if ((AllowInShowme(p57_returned)) && (t_0  has p57_returned)) { if (na++ > 0) print ", "; print "returned"; }
-    if ((AllowInShowme(p57_returned)) && (t_0  hasnt p57_returned)) { if (na++ > 0) print ", "; print "not returned"; }
+    if ((AllowInShowme(p56_returned)) && (t_0  has p56_returned)) { if (na++ > 0) print ", "; print "returned"; }
+    if ((AllowInShowme(p56_returned)) && (t_0  hasnt p56_returned)) { if (na++ > 0) print ", "; print "not returned"; }
 }
 if (t_0 ofclass K17_stickable) {if (na > 0) { na = 0; print "; "; }
-    if ((AllowInShowme(p59_stuck)) && (t_0  has p59_stuck)) { if (na++ > 0) print ", "; print "stuck"; }
-    if ((AllowInShowme(p59_stuck)) && (t_0  hasnt p59_stuck)) { if (na++ > 0) print ", "; print "unstuck"; }
+    if ((AllowInShowme(p58_stuck)) && (t_0  has p58_stuck)) { if (na++ > 0) print ", "; print "stuck"; }
+    if ((AllowInShowme(p58_stuck)) && (t_0  hasnt p58_stuck)) { if (na++ > 0) print ", "; print "unstuck"; }
 }
-if (t_0 ofclass K19_ringable) {if (na > 0) { na = 0; print "; "; }
-    if ((AllowInShowme(p61_ringing)) && (t_0  has p61_ringing)) { if (na++ > 0) print ", "; print "ringing"; }
-    if ((AllowInShowme(p61_ringing)) && (t_0  hasnt p61_ringing)) { if (na++ > 0) print ", "; print "not ringing"; }
+if (t_0 ofclass K18_ringable) {if (na > 0) { na = 0; print "; "; }
+    if ((AllowInShowme(p60_ringing)) && (t_0  has p60_ringing)) { if (na++ > 0) print ", "; print "ringing"; }
+    if ((AllowInShowme(p60_ringing)) && (t_0  hasnt p60_ringing)) { if (na++ > 0) print ", "; print "not ringing"; }
 }
 if (t_0) {if (na > 0) { na = 0; print "^"; }
     print "printed name: "; if (GProperty(OBJECT_TY, t_0, short_name) == EMPTY_TEXT_VALUE) print "none^"; else print "~", (PrintText) GProperty(OBJECT_TY, t_0, short_name), "~", "^";
@@ -26422,9 +26308,6 @@ if (t_0 ofclass K6_supporter) {if (na > 0) { na = 0; print "^"; }
 }
 if (t_0 ofclass K8_person) {if (na > 0) { na = 0; print "^"; }
     print "carrying capacity: "; print (DecimalNumber) GProperty(OBJECT_TY, t_0, capacity), "^";
-}
-if (t_0 ofclass K18_pressable) {if (na > 0) { na = 0; print "^"; }
-    print "position: "; print (T60) GProperty(OBJECT_TY, t_0, p13_position), "^";
 }
 
 ];
@@ -27042,7 +26925,7 @@ Array printed_text --> 64;
 ];
 [ text_routine_0;
 say__p=1;ParaContent();  print (PrintText) SC_70; 
-	if (~~((((((scene_status-->(I130_ebc_conversation-1)==1)))) || ((((scene_status-->(I129_returning_a_book-1)==1))))))) jump L_Say64;
+	if (~~((((((scene_status-->(I122_ebc_conversation-1)==1)))) || ((((scene_status-->(I121_returning_a_book-1)==1))))))) jump L_Say64;
 		ParaContent();  print (PrintText) SC_71; ParaContent();  print (PrintShortName) I95_map; ParaContent();  print (PrintText) SC_72; 
 	jump L_SayX64; .L_Say64;
 		ParaContent();  print (PrintText) SC_73; ParaContent();  print (PrintShortName) I95_map; ParaContent();  print (PrintText) SC_63; 
@@ -27070,45 +26953,28 @@ say__p=1;ParaContent();  print (PrintText) SC_79; ParaContent();  print (PrintSh
 say__p=1;
 	if (~~(((((Adj_40_t1_v9(I112_the_second_floor_elevat))))))) jump L_Say70;
 		ParaContent();  print (PrintText) SC_84; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_85; 
-	jump L_SayX69; .L_Say70;
-		ParaContent();  print (PrintText) SC_86; 
-	.L_Say71; .L_SayX69;
-		ParaContent();  print (PrintText) SC_87; ParaContent();  print (PrintShortName) I117_panel; ParaContent();  print (PrintText) SC_88;  .L_Say72; .L_SayX70;
+	.L_Say70; .L_SayX69;
+		ParaContent();  print (PrintText) SC_86;  .L_Say71; .L_SayX70;
     rtrue;
 ];
 
 [ text_routine_5;
-say__p=1;ParaContent();  print (PrintText) SC_89; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say73; .L_SayX71;
+say__p=1;ParaContent();  print (PrintText) SC_87; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say72; .L_SayX71;
     rtrue;
 ];
 
 [ text_routine_6;
-say__p=1;ParaContent();  print (PrintText) SC_90; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say74; .L_SayX72;
+say__p=1;ParaContent();  print (PrintText) SC_88; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say73; .L_SayX72;
     rtrue;
 ];
 
 [ text_routine_7;
-say__p=1;ParaContent();  print (PrintText) SC_91; ParaContent(); @push self;  print (T60) GProperty(9, self=I118_1f_button,p13_position); @pull self; ParaContent();  print (PrintText) SC_63;  .L_Say75; .L_SayX73;
+say__p=1;ParaContent();  print (PrintShortName) real_location;  .L_Say74; .L_SayX73;
     rtrue;
 ];
 
 [ text_routine_8;
-say__p=1;ParaContent();  print (PrintText) SC_92; ParaContent(); @push self;  print (T60) GProperty(9, self=I119_2f_button,p13_position); @pull self; ParaContent();  print (PrintText) SC_63;  .L_Say76; .L_SayX74;
-    rtrue;
-];
-
-[ text_routine_9;
-say__p=1;ParaContent();  print (PrintText) SC_93; ParaContent(); @push self;  print (T60) GProperty(9, self=I120_3f_button,p13_position); @pull self; ParaContent();  print (PrintText) SC_63;  .L_Say77; .L_SayX75;
-    rtrue;
-];
-
-[ text_routine_10;
-say__p=1;ParaContent();  print (PrintShortName) real_location;  .L_Say78; .L_SayX76;
-    rtrue;
-];
-
-[ text_routine_11;
-say__p=1;ParaContent();  print (say__n=score); ParaContent();  print (PrintText) SC_94; ParaContent();  print (say__n=turns);  .L_Say79; .L_SayX77;
+say__p=1;ParaContent();  print (say__n=score); ParaContent();  print (PrintText) SC_89; ParaContent();  print (say__n=turns);  .L_Say75; .L_SayX74;
     rtrue;
 ];
 
@@ -28867,7 +28733,6 @@ Constant SC_20 = " ";
 Constant SC_74 = " There is an office to the West, and the hallway continues to the South. To the North, you see a set of old elevator doors. To the East you see stairs.";
 Constant SC_19 = " Welcome. You are about to have... ";
 Constant SC_80 = " and a number of ";
-Constant SC_88 = " has buttons for the first, second and third floors.";
 Constant SC_78 = " here who appears to be injured.";
 Constant SC_62 = " here";
 Constant SC_83 = " on it.";
@@ -28883,7 +28748,7 @@ Constant SC_51 = ",";
 Constant SC_76 = ". In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and South toward the exit.";
 Constant SC_63 = ".";
 Constant SC_21 = "... a very bad week.";
-Constant SC_94 = "/";
+Constant SC_89 = "/";
 Constant SC_37 = ": ";
 Constant SC_64 = ":";
 Constant SC_54 = "> ";
@@ -28905,19 +28770,15 @@ Constant SC_45 = "Pretty busy here.";
 Constant SC_15 = "QUIT";
 Constant SC_12 = "RESTART";
 Constant SC_13 = "RESTORE a saved game";
-Constant SC_85 = "Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. ";
+Constant SC_85 = "Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. ";
 Constant SC_44 = "Sorry?";
 Constant SC_34 = "Speech commands: ";
 Constant SC_67 = "THUNK.";
 Constant SC_71 = "The Emergency Building Coordinator is busily putting up an evacuation ";
 Constant SC_48 = "The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. ~Don't forget that there's going to be an evacuation drill at noon.~, she says, cheerily.";
 Constant SC_41 = "The doors are closed! You can't get out!";
-Constant SC_87 = "The elevator ";
-Constant SC_91 = "The first floor button is ";
 Constant SC_17 = "The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation.";
 Constant SC_4 = "The label at the bottom of the map says: Posted by the Emergency Building Coordinator.";
-Constant SC_92 = "The second floor button is ";
-Constant SC_93 = "The third floor button is ";
 Constant SC_5 = "There is a nice lady putting up a permanent sign in the hallway here. She looks pretty busy.";
 Constant SC_16 = "UNDO the last command";
 Constant SC_65 = "Well, there goes the alarm. I guess you'd better get downstairs.";
@@ -28928,12 +28789,12 @@ Constant SC_70 = "You are at the North end of the hallway, on the second floor. 
 Constant SC_6 = "You are at the South end of the hallway, on the second floor. There are offices to the East and West, and the hallway continues to the North.";
 Constant SC_77 = "You are in an office at the North West end of the building. There is a ";
 Constant SC_79 = "You are in an office at the South West end of the building. You see a desk with a ";
-Constant SC_86 = "You are in the elevator on the second floor. ";
+Constant SC_86 = "You are in the elevator on the second floor, and a hallway is before you to the South.";
 Constant SC_39 = "You can't do that.";
 Constant SC_84 = "You don't know this yet, but you're about to have a very bad week.";
 Constant SC_66 = "You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.";
-Constant SC_90 = "You look at your phone. The time is now ";
-Constant SC_89 = "You look at your watch. The time is now ";
+Constant SC_88 = "You look at your phone. The time is now ";
+Constant SC_87 = "You look at your watch. The time is now ";
 Constant SC_36 = "You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
 Constant SC_22 = "You may use any of the following commands during this scenario:";
 Constant SC_7 = "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here.";
@@ -28970,7 +28831,6 @@ Constant SC_3 = "the";
 #ifndef door_to; Constant door_to = 0; #endif;
 #ifndef capacity; Constant capacity = 0; #endif;
 #ifndef with_key; Constant with_key = 0; #endif;
-#ifndef p13_position; Constant p13_position = 0; #endif;
 #ifndef pluralname; Constant pluralname = 0; #endif;
 #ifndef proper; Constant proper = 0; #endif;
 #ifndef privately_named; Constant privately_named = 0; #endif;
@@ -28995,10 +28855,10 @@ Constant SC_3 = "the";
 #ifndef female; Constant female = 0; #endif;
 #ifndef neuter; Constant neuter = 0; #endif;
 #ifndef on; Constant on = 0; #endif;
-#ifndef p55_recurring; Constant p55_recurring = 0; #endif;
-#ifndef p57_returned; Constant p57_returned = 0; #endif;
-#ifndef p59_stuck; Constant p59_stuck = 0; #endif;
-#ifndef p61_ringing; Constant p61_ringing = 0; #endif;
+#ifndef p54_recurring; Constant p54_recurring = 0; #endif;
+#ifndef p56_returned; Constant p56_returned = 0; #endif;
+#ifndef p58_stuck; Constant p58_stuck = 0; #endif;
+#ifndef p60_ringing; Constant p60_ringing = 0; #endif;
 #ifndef worn; Constant worn = 0; #endif;
 #ifndef vector; Constant vector = 0; #endif;
 #ifndef room_index; Constant room_index = 0; #endif;
@@ -29049,8 +28909,6 @@ Constant SC_3 = "the";
 #ifndef IK17_Link; Constant IK17_Link = 0; #endif;
 #ifndef IK18_Count; Constant IK18_Count = 0; #endif;
 #ifndef IK18_Link; Constant IK18_Link = 0; #endif;
-#ifndef IK19_Count; Constant IK19_Count = 0; #endif;
-#ifndef IK19_Link; Constant IK19_Link = 0; #endif;
 #ifndef KD_Count; Constant KD_Count = 0; #endif;
 #ifndef name; Constant name = 0; #endif;
 #ifndef parse_name; Constant parse_name = 0; #endif;

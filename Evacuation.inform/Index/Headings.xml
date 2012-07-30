@@ -67,77 +67,77 @@
     </dict>
     <key>9</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>97</integer>
+        <key>Line</key><integer>91</integer>
         <key>Title</key><string>Section - "First Floor"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>10</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>111</integer>
+        <key>Line</key><integer>105</integer>
         <key>Title</key><string>Section - "Third Floor"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>11</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>120</integer>
+        <key>Line</key><integer>114</integer>
         <key>Title</key><string>Chapter - "Time"</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>12</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>123</integer>
+        <key>Line</key><integer>117</integer>
         <key>Title</key><string>Section - "Start"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>13</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>145</integer>
+        <key>Line</key><integer>139</integer>
         <key>Title</key><string>Section - "Returning a Book"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>14</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>154</integer>
+        <key>Line</key><integer>148</integer>
         <key>Title</key><string>Section - "EBC Conversation"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>15</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>161</integer>
+        <key>Line</key><integer>155</integer>
         <key>Title</key><string>Section - "Not a drill"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>16</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>173</integer>
+        <key>Line</key><integer>167</integer>
         <key>Title</key><string>Section - "Helping the professor"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>17</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>179</integer>
+        <key>Line</key><integer>173</integer>
         <key>Title</key><string>Section - "The Elevator Trap"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>18</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>195</integer>
+        <key>Line</key><integer>188</integer>
         <key>Title</key><string>Section - "Chaos on the first floor"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>19</key><dict>
         <key>Filename</key><string>C:\Users\arik181\Documents\GitHub\clarkcollege\Evacuation.inform\Source\story.ni</string>
-        <key>Line</key><integer>201</integer>
+        <key>Line</key><integer>194</integer>
         <key>Title</key><string>Section - "Epilogue"</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>

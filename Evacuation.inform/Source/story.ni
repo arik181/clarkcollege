@@ -77,13 +77,7 @@ The old books are on the desk.
 The heavy looking books are on the desk.
 The heavy looking books are on the desk.
 
-North of Hallway North is The Second Floor Elevator. The description of The Second Floor Elevator is "[if The Second Floor Elevator is unvisited]You don't know this yet, but you're about to have a very bad week.[paragraph break]Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. [otherwise]You are in the elevator on the second floor. [end if]The elevator [panel] has buttons for the first, second and third floors."
-Placement is a kind of value. The placements are pressed and unpressed.
-A pressable is a kind of thing. A pressable has a placement called the position.
-The panel is a fixed in place supporter in The Second Floor Elevator.
-The 1f button is a pressable. It is on the panel. The position of the 1f button is unpressed. The description of the 1f button is "The first floor button is [position of the 1f button]."
-The 2f button is a pressable. It is on the panel. The position of the 2f button is unpressed. The description of the 2f button is "The second floor button is [position of the 2f button]."
-The 3f button is a pressable. It is on the panel. The position of the 3f button is unpressed. The description of the 3f button is "The third floor button is [position of the 3f button]."
+North of Hallway North is The Second Floor Elevator. The description of The Second Floor Elevator is "[if The Second Floor Elevator is unvisited]You don't know this yet, but you're about to have a very bad week.[paragraph break]Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. [end if]You are in the elevator on the second floor, and a hallway is before you to the South.".
 Understand "leave the elevator" or "exit the elevator" or "get out" or "get out of the elevator"  or "step out" or "step out of the elevator" as exiting.
 Instead of exiting when the player is in The Second Floor Elevator:
 	say "You step out of the elevator and into the hall.";
@@ -183,7 +177,6 @@ The elevator trap begins when the player is in the Second Floor Elevator and the
 The elevator trap ends when the player is not in the Second Floor Elevator.
 
 When the Elevator Trap begins:
-	now the position of the 1f button is pressed;
 	now the Lift is stuck;
 	say "You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.[paragraph break]THUNK.[paragraph break]You stumble as the lights flicker and the elevator comes to a sudden and irrevokable stop."
 	

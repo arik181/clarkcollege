@@ -60,7 +60,7 @@ Section - "The Professor"
 The tweed jacket is a wearable thing.
 The bowtie is a wearable thing.
 
-The Professor is a person. He is in South West Office. He wears [a tweed jacket] and [a bowtie].
+The Professor is a person. He is in South West Office. He wears a tweed jacket and a bowtie. The description of the professor is "Your Professor is sitting at his desk, quietly grading papers. He wears a bow tie and a tweed jacket."
 Understand "prof" as the Professor.
 
 In Hallway North is a map. It is fixed in place. The description of the map is "You see a map of the building. At the bottom of the map you see a [label]. In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and [bold type]South[roman type] toward the exit."

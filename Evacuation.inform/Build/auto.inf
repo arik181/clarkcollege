@@ -4293,7 +4293,7 @@ Global lightflag = false;
 ];
 
 
-Constant REQUISITION_STACK_SIZE = 3*48;
+Constant REQUISITION_STACK_SIZE = 3*47;
 Array requisition_stack --> REQUISITION_STACK_SIZE;
 Global requisition_stack_pointer = 0;
 
@@ -8303,7 +8303,7 @@ Constant START_ROOM_INIS = 2;
 Constant START_TIME_INIS = 3;
 Constant DONE_INIS = 4;
 
-Array InitialSituation --> selfobj I113_second_floor_elevator I113_second_floor_elevator 600 0;
+Array InitialSituation --> selfobj I112_second_floor_elevator I112_second_floor_elevator 600 0;
 
 
 
@@ -9056,13 +9056,13 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
 [ PrintSceneName value;
     switch(value) {
         I66_entire_game: print "Entire Game";
-        I124_returning_a_book: print "Returning a Book";
-        I125_ebc_conversation: print "EBC Conversation";
-        I128_not_a_drill: print "Not a drill";
-        I129_helping_the_professor: print "Helping the professor";
-        I132_elevator_trap: print "elevator trap";
-        I133_chaos_on_the_first_floo: print "Chaos on the first floor";
-        I134_epilogue: print "Epilogue";
+        I123_returning_a_book: print "Returning a Book";
+        I124_ebc_conversation: print "EBC Conversation";
+        I127_not_a_drill: print "Not a drill";
+        I128_helping_the_professor: print "Helping the professor";
+        I131_elevator_trap: print "elevator trap";
+        I132_chaos_on_the_first_floo: print "Chaos on the first floor";
+        I133_epilogue: print "Epilogue";
         default: print "<illegal scene>";
     }
 ];
@@ -9365,14 +9365,14 @@ Constant RBNO_12 = "it does";
 
 Array KindHierarchy --> K0_kind (0) K1_room (0) K2_thing (0) K3_direction (0) K4_door (2) K5_container (2) K6_supporter (2) K7_backdrop (2) K8_person (2) K9_region (0) K10_man (8) K11_woman (8) K12_animal (8) K13_device (2) K14_vehicle (5) K15_player_s_holdall (5) K16_borrowable (2) K17_stickable (2) K18_explodable (2) K19_ringable (2) K20_event (2) ;
 Constant IK1_First = I95_south_west_office;
-Constant IK2_First = I92_tweed_jacket;
+Constant IK2_First = I94_professor;
 Constant IK3_First = I46_north;
-Constant IK4_First = I112_south_west_door;
+Constant IK4_First = I111_south_west_door;
 Constant IK5_First = nothing;
-Constant IK6_First = I108_desk;
+Constant IK6_First = I107_desk;
 Constant IK7_First = nothing;
 Constant IK8_First = I94_professor;
-Constant IK9_First = I105_second_floor;
+Constant IK9_First = I104_second_floor;
 Constant IK10_First = nothing;
 Constant IK11_First = nothing;
 Constant IK12_First = nothing;
@@ -9380,10 +9380,10 @@ Constant IK13_First = nothing;
 Constant IK14_First = nothing;
 Constant IK15_First = nothing;
 Constant IK16_First = I91_borrowed_book;
-Constant IK17_First = I102_lift;
-Constant IK18_First = I104_water_heater;
-Constant IK19_First = I127_alarm;
-Constant IK20_First = I131_rescue;
+Constant IK17_First = I101_lift;
+Constant IK18_First = I103_water_heater;
+Constant IK19_First = I126_alarm;
+Constant IK20_First = I130_rescue;
 Constant No_Directions = 12;
 ! Table of direction object alias constants:
 Constant DirectionObject_0 = I46_north;
@@ -9399,17 +9399,17 @@ Constant DirectionObject_9 = I55_down;
 Constant DirectionObject_10 = in_obj;
 Constant DirectionObject_11 = out_obj;
 Array Map_Storage -->
- 0 0 0 0 0 0 I112_south_west_door 0 0 0 0 0 ! Exits from: I95_south_west_office
- I114_elevator_door 0 0 I106_hallway_south 0 0 I115_the_stairwell 0 0 0 0 0 ! Exits from: I97_hallway_north
- I97_hallway_north 0 0 0 0 0 0 I112_south_west_door 0 0 0 0 ! Exits from: I106_hallway_south
- 0 0 0 I114_elevator_door 0 0 0 0 0 0 0 0 ! Exits from: I113_second_floor_elevator
- 0 0 0 0 0 0 0 I97_hallway_north I123_the_third_floor_stairwe I120_the_first_floor_stairwe 0 0 ! Exits from: I115_the_stairwell
- 0 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I116_north_west_office
- 0 0 0 I119_first_floor_hallway_nor 0 0 0 0 0 0 0 0 ! Exits from: I118_first_floor_elevator
- I118_first_floor_elevator 0 0 I121_first_floor_hallway_sou 0 0 I120_the_first_floor_stairwe 0 0 0 0 0 ! Exits from: I119_first_floor_hallway_nor
- 0 0 0 0 0 0 0 I119_first_floor_hallway_nor I115_the_stairwell 0 0 0 ! Exits from: I120_the_first_floor_stairwe
- I119_first_floor_hallway_nor 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I121_first_floor_hallway_sou
- 0 0 0 0 0 0 0 0 0 I115_the_stairwell 0 0 ! Exits from: I123_the_third_floor_stairwe
+ 0 0 0 0 0 0 I111_south_west_door 0 0 0 0 0 ! Exits from: I95_south_west_office
+ I113_elevator_door 0 0 I105_hallway_south 0 0 I114_the_stairwell 0 0 0 0 0 ! Exits from: I96_hallway_north
+ I96_hallway_north 0 0 0 0 0 0 I111_south_west_door 0 0 0 0 ! Exits from: I105_hallway_south
+ 0 0 0 I113_elevator_door 0 0 0 0 0 0 0 0 ! Exits from: I112_second_floor_elevator
+ 0 0 0 0 0 0 0 I96_hallway_north I122_the_third_floor_stairwe I119_the_first_floor_stairwe 0 0 ! Exits from: I114_the_stairwell
+ 0 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I115_north_west_office
+ 0 0 0 I118_first_floor_hallway_nor 0 0 0 0 0 0 0 0 ! Exits from: I117_first_floor_elevator
+ I117_first_floor_elevator 0 0 I120_first_floor_hallway_sou 0 0 I119_the_first_floor_stairwe 0 0 0 0 0 ! Exits from: I118_first_floor_hallway_nor
+ 0 0 0 0 0 0 0 I118_first_floor_hallway_nor I114_the_stairwell 0 0 0 ! Exits from: I119_the_first_floor_stairwe
+ I118_first_floor_hallway_nor 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I120_first_floor_hallway_sou
+ 0 0 0 0 0 0 0 0 0 I114_the_stairwell 0 0 ! Exits from: I122_the_third_floor_stairwe
 ;
 
 Class VPH_Class;
@@ -9788,10 +9788,45 @@ Object out_obj "" Compass
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I92_tweed_jacket ""
+Object I95_south_west_office ""
+    class K1_room
+    with short_name "South West Office"
+    with description text_routine_0
+    with map_region I104_second_floor
+    has proper
+    with vector 0
+    with room_index -1
+    with list_together 0
+    with cap_short_name "South West Office"
+    has mark_as_room
+    with IK1_Count 0
+    with IK1_Link I96_hallway_north
+    with KD_Count 1
+    with name 'south' 'west' 'office' 
+;
+
+Object -> I94_professor ""
+    class K8_person
+    with short_name "Professor"
+    with description SC_4
+    with vector 0
+    with list_together 0
+    has mark_as_thing
+    with IK2_Count 6
+    with IK2_Link I92_tweed_jacket
+    with IK8_Count 1
+    with IK8_Link I99_emergency_building_coord
+    with KD_Count 8
+    with name 'professor' 'prof' 
+    with parse_name Parse_Name_GV106
+    with action_bitmap 0 0 0 0 0 0 
+;
+
+Object -> -> I92_tweed_jacket ""
     class K2_thing
     with short_name "tweed jacket"
     has clothing
+    has worn
     with vector 0
     with list_together 0
     has mark_as_thing
@@ -9802,146 +9837,97 @@ Object I92_tweed_jacket ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I93_bowtie ""
+Object -> -> I93_bowtie ""
     class K2_thing
     with short_name "bowtie"
     has clothing
+    has worn
     with vector 0
     with list_together 0
     has mark_as_thing
     with IK2_Count 5
-    with IK2_Link I94_professor
+    with IK2_Link I106_stack_of_papers
     with KD_Count 2
     with name 'bowtie' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I95_south_west_office ""
-    class K1_room
-    with short_name "South West Office"
-    with description text_routine_0
-    with map_region I105_second_floor
-    has proper
-    with vector 0
-    with room_index -1
-    with list_together 0
-    with cap_short_name "South West Office"
-    has mark_as_room
-    with IK1_Count 0
-    with IK1_Link I97_hallway_north
-    with KD_Count 1
-    with name 'south' 'west' 'office' 
-;
-
-Object -> I94_professor ""
-    class K8_person
-    with short_name "Professor"
-    with vector 0
-    with list_together 0
-    has mark_as_thing
-    with IK2_Count 6
-    with IK2_Link I96_and
-    with IK8_Count 1
-    with IK8_Link I100_emergency_building_coor
-    with KD_Count 8
-    with name 'professor' 'prof' 
-    with parse_name Parse_Name_GV106
-    with action_bitmap 0 0 0 0 0 0 
-;
-
-Object -> -> I96_and ""
-    class K2_thing
-    with short_name "and"
-    has proper
-    has clothing
-    has worn
-    with vector 0
-    with list_together 0
-    with cap_short_name "And"
-    has mark_as_thing
-    with IK2_Count 7
-    with IK2_Link I107_stack_of_papers
-    with KD_Count 2
-    with name 'and' 
-    with action_bitmap 0 0 0 0 0 0 
-;
-
-Object -> I107_stack_of_papers ""
+Object -> I106_stack_of_papers ""
     class K2_thing
     with short_name "stack of papers"
-    with description SC_4
+    with description SC_5
     has static
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 13
-    with IK2_Link I108_desk
+    with IK2_Count 12
+    with IK2_Link I107_desk
     with KD_Count 2
     with name 'stack' 'of' 'papers' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object -> I108_desk ""
+Object -> I107_desk ""
     class K6_supporter
     with short_name "desk"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 14
-    with IK2_Link I110_old_books
+    with IK2_Count 13
+    with IK2_Link I109_old_books
     with IK6_Count 1
-    with IK6_Link I109_bookshelf
+    with IK6_Link I108_bookshelf
     with KD_Count 6
     with name 'desk' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object -> -> I110_old_books ""
+Object -> -> I109_old_books ""
     class K2_thing
     with short_name "old books"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 16
-    with IK2_Link I111_heavy_looking_books
+    with IK2_Count 15
+    with IK2_Link I110_heavy_looking_books
     with KD_Count 2
     with name 'old' 'books' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object -> -> I111_heavy_looking_books ""
+Object -> -> I110_heavy_looking_books ""
     class K2_thing
     with short_name "heavy looking books"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 17
-    with IK2_Link I109_bookshelf
+    with IK2_Count 16
+    with IK2_Link I108_bookshelf
     with KD_Count 2
     with name 'heavy' 'looking' 'books' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object -> I109_bookshelf ""
+Object -> I108_bookshelf ""
     class K6_supporter
     with short_name "bookshelf"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 15
-    with IK2_Link I98_map
+    with IK2_Count 14
+    with IK2_Link I97_map
     with IK6_Count 2
-    with IK6_Link I98_map
+    with IK6_Link I97_map
     with KD_Count 6
     with name 'bookshelf' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I97_hallway_north ""
+Object I96_hallway_north ""
     class K1_room
     with short_name "Hallway North"
     with description text_routine_1
-    with map_region I105_second_floor
+    with map_region I104_second_floor
     has proper
     with vector 0
     with room_index -1
@@ -9949,12 +9935,12 @@ Object I97_hallway_north ""
     with cap_short_name "Hallway North"
     has mark_as_room
     with IK1_Count 1
-    with IK1_Link I106_hallway_south
+    with IK1_Link I105_hallway_south
     with KD_Count 1
     with name 'hallway' 'north' 
 ;
 
-Object -> I98_map ""
+Object -> I97_map ""
     class K6_supporter
     with short_name "map"
     with description text_routine_2
@@ -9962,8 +9948,8 @@ Object -> I98_map ""
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 8
-    with IK2_Link I99_label
+    with IK2_Count 7
+    with IK2_Link I98_label
     with IK6_Count 0
     with IK6_Link nothing
     with KD_Count 6
@@ -9971,30 +9957,30 @@ Object -> I98_map ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object -> -> I99_label ""
+Object -> -> I98_label ""
     class K2_thing
     with short_name "label"
-    with description SC_5
+    with description SC_6
     has static
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 9
-    with IK2_Link I100_emergency_building_coor
+    with IK2_Count 8
+    with IK2_Link I99_emergency_building_coord
     with KD_Count 2
     with name 'label' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object -> I100_emergency_building_coor ""
+Object -> I99_emergency_building_coord ""
     class K8_person
     with short_name "Emergency Building Coordinator"
-    with description SC_6
+    with description SC_7
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 10
-    with IK2_Link I102_lift
+    with IK2_Count 9
+    with IK2_Link I101_lift
     with IK8_Count 2
     with IK8_Link selfobj
     with KD_Count 8
@@ -10003,14 +9989,14 @@ Object -> I100_emergency_building_coor ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I102_lift ""
+Object I101_lift ""
     class K17_stickable
     with short_name "Lift"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 11
-    with IK2_Link I104_water_heater
+    with IK2_Count 10
+    with IK2_Link I103_water_heater
     with IK17_Count 0
     with IK17_Link nothing
     with KD_Count 17
@@ -10018,14 +10004,14 @@ Object I102_lift ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I104_water_heater ""
+Object I103_water_heater ""
     class K18_explodable
     with short_name "Water Heater"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 12
-    with IK2_Link I112_south_west_door
+    with IK2_Count 11
+    with IK2_Link I111_south_west_door
     with IK18_Count 0
     with IK18_Link nothing
     with KD_Count 18
@@ -10033,24 +10019,24 @@ Object I104_water_heater ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I105_second_floor ""
+Object I104_second_floor ""
     class K9_region
     with short_name "Second Floor"
     with vector 0
     with list_together 0
-    with regional_found_in [; if (TestRegionalContainment(location, I105_second_floor)) rtrue; rfalse; ],
+    with regional_found_in [; if (TestRegionalContainment(location, I104_second_floor)) rtrue; rfalse; ],
     with IK9_Count 0
-    with IK9_Link I117_first_floor
+    with IK9_Link I116_first_floor
     with KD_Count 9
     with name 'second' 'floor' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I106_hallway_south ""
+Object I105_hallway_south ""
     class K1_room
     with short_name "Hallway South"
     with description text_routine_3
-    with map_region I105_second_floor
+    with map_region I104_second_floor
     has proper
     with vector 0
     with room_index -1
@@ -10058,12 +10044,12 @@ Object I106_hallway_south ""
     with cap_short_name "Hallway South"
     has mark_as_room
     with IK1_Count 2
-    with IK1_Link I113_second_floor_elevator
+    with IK1_Link I112_second_floor_elevator
     with KD_Count 1
     with name 'hallway' 'south' 
 ;
 
-Object I112_south_west_door ""
+Object I111_south_west_door ""
     class K4_door
     with short_name "South West Door"
     has proper
@@ -10071,34 +10057,34 @@ Object I112_south_west_door ""
     with vector 0
     with door_dir [ loc; loc = location;
             if (loc == thedark) loc = real_location;
-            if (loc == I106_hallway_south) return I53_west; return I52_east; ],
+            if (loc == I105_hallway_south) return I53_west; return I52_east; ],
     with door_to [ loc; loc = location;
             if (loc == thedark) loc = real_location;
-            if (loc == I106_hallway_south) return I95_south_west_office; return I106_hallway_south; ],
-    with found_in I106_hallway_south I95_south_west_office
+            if (loc == I105_hallway_south) return I95_south_west_office; return I105_hallway_south; ],
+    with found_in I105_hallway_south I95_south_west_office
     with list_together 0
     with cap_short_name "South West Door"
     has mark_as_thing
-    with IK2_Count 18
+    with IK2_Count 17
     with IK2_Link selfobj
     with IK4_Count 0
-    with IK4_Link I114_elevator_door
+    with IK4_Link I113_elevator_door
     with KD_Count 4
     with name 'south' 'west' 'door' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I113_second_floor_elevator ""
+Object I112_second_floor_elevator ""
     class K1_room
     with short_name "Second Floor Elevator"
     with description text_routine_4
-    with map_region I105_second_floor
+    with map_region I104_second_floor
     with vector 0
     with room_index -1
     with list_together 0
     has mark_as_room
     with IK1_Count 3
-    with IK1_Link I115_the_stairwell
+    with IK1_Link I114_the_stairwell
     with KD_Count 1
     with name 'second' 'floor' 'elevator' 
 ;
@@ -10109,7 +10095,7 @@ Object -> selfobj ""
     	with saved_short_name "yourself",
      
     with short_name "yourself"
-    with description SC_7
+    with description SC_8
     has proper
     has concealed
     with vector 0
@@ -10157,12 +10143,12 @@ Object -> -> I89_cell_phone ""
 Object -> -> I91_borrowed_book ""
     class K16_borrowable
     with short_name "borrowed book"
-    with description SC_8
+    with description SC_9
     with vector 0
     with list_together 0
     has mark_as_thing
     with IK2_Count 3
-    with IK2_Link I114_elevator_door
+    with IK2_Link I113_elevator_door
     with IK16_Count 0
     with IK16_Link nothing
     with KD_Count 16
@@ -10170,22 +10156,22 @@ Object -> -> I91_borrowed_book ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I114_elevator_door ""
+Object I113_elevator_door ""
     class K4_door
     with short_name "elevator door"
     has open
     with vector 0
     with door_dir [ loc; loc = location;
             if (loc == thedark) loc = real_location;
-            if (loc == I113_second_floor_elevator) return I49_south; return I46_north; ],
+            if (loc == I112_second_floor_elevator) return I49_south; return I46_north; ],
     with door_to [ loc; loc = location;
             if (loc == thedark) loc = real_location;
-            if (loc == I113_second_floor_elevator) return I97_hallway_north; return I113_second_floor_elevator; ],
-    with found_in I113_second_floor_elevator I97_hallway_north
+            if (loc == I112_second_floor_elevator) return I96_hallway_north; return I112_second_floor_elevator; ],
+    with found_in I112_second_floor_elevator I96_hallway_north
     with list_together 0
     has mark_as_thing
-    with IK2_Count 19
-    with IK2_Link I127_alarm
+    with IK2_Count 18
+    with IK2_Link I126_alarm
     with IK4_Count 1
     with IK4_Link nothing
     with KD_Count 4
@@ -10193,11 +10179,11 @@ Object I114_elevator_door ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I115_the_stairwell ""
+Object I114_the_stairwell ""
     class K1_room
     with short_name "The Stairwell"
-    with description SC_9
-    with map_region I105_second_floor
+    with description SC_10
+    with map_region I104_second_floor
     has proper
     with vector 0
     with room_index -1
@@ -10205,15 +10191,15 @@ Object I115_the_stairwell ""
     with cap_short_name "The Stairwell"
     has mark_as_room
     with IK1_Count 4
-    with IK1_Link I116_north_west_office
+    with IK1_Link I115_north_west_office
     with KD_Count 1
     with name 'the' 'stairwell' 
 ;
 
-Object I116_north_west_office ""
+Object I115_north_west_office ""
     class K1_room
     with short_name "North West Office"
-    with map_region I105_second_floor
+    with map_region I104_second_floor
     has proper
     with vector 0
     with room_index -1
@@ -10221,56 +10207,56 @@ Object I116_north_west_office ""
     with cap_short_name "North West Office"
     has mark_as_room
     with IK1_Count 5
-    with IK1_Link I118_first_floor_elevator
+    with IK1_Link I117_first_floor_elevator
     with KD_Count 1
     with name 'north' 'west' 'office' 
 ;
 
-Object I117_first_floor ""
+Object I116_first_floor ""
     class K9_region
     with short_name "First Floor"
     with vector 0
     with list_together 0
-    with regional_found_in [; if (TestRegionalContainment(location, I117_first_floor)) rtrue; rfalse; ],
+    with regional_found_in [; if (TestRegionalContainment(location, I116_first_floor)) rtrue; rfalse; ],
     with IK9_Count 1
-    with IK9_Link I122_third_floor
+    with IK9_Link I121_third_floor
     with KD_Count 9
     with name 'first' 'floor' 
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I118_first_floor_elevator ""
+Object I117_first_floor_elevator ""
     class K1_room
     with short_name "First Floor Elevator"
-    with map_region I117_first_floor
+    with map_region I116_first_floor
     with vector 0
     with room_index -1
     with list_together 0
     has mark_as_room
     with IK1_Count 6
-    with IK1_Link I119_first_floor_hallway_nor
+    with IK1_Link I118_first_floor_hallway_nor
     with KD_Count 1
     with name 'first' 'floor' 'elevator' 
 ;
 
-Object I119_first_floor_hallway_nor ""
+Object I118_first_floor_hallway_nor ""
     class K1_room
     with short_name "First Floor Hallway North"
-    with map_region I117_first_floor
+    with map_region I116_first_floor
     with vector 0
     with room_index -1
     with list_together 0
     has mark_as_room
     with IK1_Count 7
-    with IK1_Link I120_the_first_floor_stairwe
+    with IK1_Link I119_the_first_floor_stairwe
     with KD_Count 1
     with name 'first' 'floor' 'hallway' 'north' 
 ;
 
-Object I120_the_first_floor_stairwe ""
+Object I119_the_first_floor_stairwe ""
     class K1_room
     with short_name "The First Floor Stairwell"
-    with map_region I117_first_floor
+    with map_region I116_first_floor
     has proper
     with vector 0
     with room_index -1
@@ -10278,15 +10264,15 @@ Object I120_the_first_floor_stairwe ""
     with cap_short_name "The First Floor Stairwell"
     has mark_as_room
     with IK1_Count 8
-    with IK1_Link I121_first_floor_hallway_sou
+    with IK1_Link I120_first_floor_hallway_sou
     with KD_Count 1
     with name 'the' 'first' 'floor' 'stairwell' 
 ;
 
-Object I121_first_floor_hallway_sou ""
+Object I120_first_floor_hallway_sou ""
     class K1_room
     with short_name "First Floor Hallway South"
-    with map_region I117_first_floor
+    with map_region I116_first_floor
     has proper
     with vector 0
     with room_index -1
@@ -10294,17 +10280,17 @@ Object I121_first_floor_hallway_sou ""
     with cap_short_name "First Floor Hallway South"
     has mark_as_room
     with IK1_Count 9
-    with IK1_Link I123_the_third_floor_stairwe
+    with IK1_Link I122_the_third_floor_stairwe
     with KD_Count 1
     with name 'first' 'floor' 'hallway' 'south' 
 ;
 
-Object I122_third_floor ""
+Object I121_third_floor ""
     class K9_region
     with short_name "Third Floor"
     with vector 0
     with list_together 0
-    with regional_found_in [; if (TestRegionalContainment(location, I122_third_floor)) rtrue; rfalse; ],
+    with regional_found_in [; if (TestRegionalContainment(location, I121_third_floor)) rtrue; rfalse; ],
     with IK9_Count 2
     with IK9_Link nothing
     with KD_Count 9
@@ -10312,10 +10298,10 @@ Object I122_third_floor ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I123_the_third_floor_stairwe ""
+Object I122_the_third_floor_stairwe ""
     class K1_room
     with short_name "The Third Floor Stairwell"
-    with map_region I122_third_floor
+    with map_region I121_third_floor
     has proper
     with vector 0
     with room_index -1
@@ -10328,14 +10314,14 @@ Object I123_the_third_floor_stairwe ""
     with name 'the' 'third' 'floor' 'stairwell' 
 ;
 
-Object I127_alarm ""
+Object I126_alarm ""
     class K19_ringable
     with short_name "alarm"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 20
-    with IK2_Link I131_rescue
+    with IK2_Count 19
+    with IK2_Link I130_rescue
     with IK19_Count 0
     with IK19_Link nothing
     with KD_Count 19
@@ -10343,13 +10329,13 @@ Object I127_alarm ""
     with action_bitmap 0 0 0 0 0 0 
 ;
 
-Object I131_rescue ""
+Object I130_rescue ""
     class K20_event
     with short_name "rescue"
     with vector 0
     with list_together 0
     has mark_as_thing
-    with IK2_Count 21
+    with IK2_Count 20
     with IK2_Link nothing
     with IK20_Count 0
     with IK20_Link nothing
@@ -10380,16 +10366,16 @@ Constant I84_nothing_to_do_error = 17;
 Constant I85_noun_did_not_make_sense_ = 18;
 Constant I86_referred_to_a_determinat = 19;
 Constant I87_i_beg_your_pardon_error = 20;
-Constant I124_returning_a_book = 2;
-Constant I125_ebc_conversation = 3;
-Constant I128_not_a_drill = 4;
-Constant I129_helping_the_professor = 5;
-Constant I132_elevator_trap = 6;
-Constant I133_chaos_on_the_first_floo = 7;
-Constant I134_epilogue = 8;
+Constant I123_returning_a_book = 2;
+Constant I124_ebc_conversation = 3;
+Constant I127_not_a_drill = 4;
+Constant I128_helping_the_professor = 5;
+Constant I131_elevator_trap = 6;
+Constant I132_chaos_on_the_first_floo = 7;
+Constant I133_epilogue = 8;
 Array Global_Vars -->
   (false) ! 7
-  (SC_10) ! 24
+  (SC_11) ! 24
   (SC_2) ! 29
   (EMPTY_TEXT_VALUE) ! 30
   (EMPTY_TEXT_VALUE) ! 31
@@ -10404,14 +10390,14 @@ Array Global_Vars -->
 
 
 Array T0_final_question_options table  tab_0_0 tab_0_1 tab_0_2 tab_0_3 tab_0_4;
-Array tab_0_0 table $0064 0  (SC_11)  (SC_12)  (SC_13)  (SC_14)  (SC_15) ;
+Array tab_0_0 table $0064 0  (SC_12)  (SC_13)  (SC_14)  (SC_15)  (SC_16) ;
 Array tab_0_1 table $0465 1  (0)  (0)  (1)  (0)  (0) ;
 Array tab_0_2 table $2066 2  (Consult_Grammar_109)  (Consult_Grammar_110)  (Consult_Grammar_111)  (Consult_Grammar_112)  (Consult_Grammar_113) ;
 Array tab_0_3 table $0067 3  (IMMEDIATELY_RESTART_VM_R)  (IMMEDIATELY_RESTORE_SAVED_R)  TABLE_NOVALUE (IMMEDIATELY_QUIT_R)  (IMMEDIATELY_UNDO_R) ;
 Array tab_0_4 table $0068 4  TABLE_NOVALUE TABLE_NOVALUE (V26_amusing_a_victorious_pla)  TABLE_NOVALUE TABLE_NOVALUE;
 Array T1_locale_priorities table  tab_1_0 tab_1_1;
-Array tab_1_0 table $0869 NULL  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
-Array tab_1_1 table $446a 5  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_0 table $0869 NULL  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_1 table $446a 5  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
 Array T2_ordinary_status table  tab_2_0 tab_2_1 tab_2_2;
 Array tab_2_0 table $006b 8  (text_routine_7) ;
 Array tab_2_1 table $006c 9  (EMPTY_TEXT_VALUE) ;
@@ -10425,7 +10411,7 @@ Array TB_Blanks ->
   $1b  ! Column 4
   
   ! For table T1_locale_priorities
-  $ff $ff $7f  ! Column 1
+  $ff $ff $3f  ! Column 1
   
   ! For table T2_ordinary_status
   $00  ! Column 0
@@ -10982,7 +10968,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 [ R_781 ;
       ! phrase 1
       ! [1: say ~The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation.~]
-      say__p=1;ParaContent();  print (PrintText) SC_16;  new_line; .L_Say1; .L_SayX1;
+      say__p=1;ParaContent();  print (PrintText) SC_17;  new_line; .L_Say1; .L_SayX1;
       ! phrase 2
       ! [2: say ~[bold type]~]
       say__p=1;ParaContent();  style bold;  .L_Say2; .L_SayX2;
@@ -10994,10 +10980,10 @@ Array ActionHappened --> 0 0 0 0 0 0;
       say__p=1;ParaContent();  style roman;  .L_Say3; .L_SayX3;
       ! phrase 5
       ! [5: say ~[paragraph break][paragraph break]You want me to tell you that this is just a game, but I won't. The truth is that any of the things that you read here could happen to you. If you're not properly prepared for disaster, an emergency situation could easily become a horrifying experience.[paragraph break] Welcome. You are about to have... [paragraph break] ~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_17; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_18; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_19;  .L_Say4; .L_SayX4;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_18; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_19; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_20;  .L_Say4; .L_SayX4;
       ! phrase 6
       ! [6: say ~[bold type]... a very bad week.~]
-      say__p=1;ParaContent();  style bold; ParaContent();  print (PrintText) SC_20;  new_line; .L_Say5; .L_SayX5;
+      say__p=1;ParaContent();  style bold; ParaContent();  print (PrintText) SC_21;  new_line; .L_Say5; .L_SayX5;
       ! phrase 7
       ! [7: pause the game]
       (PHR_746_r3 ());
@@ -11006,22 +10992,22 @@ Array ActionHappened --> 0 0 0 0 0 0;
       say__p=1;ParaContent();  style roman;  .L_Say6; .L_SayX6;
       ! phrase 9
       ! [9: say ~[paragraph break][paragraph break]You may use any of the following commands during this scenario:[paragraph break]Movement commands: [line break][bold type]north, south, east, west, up, down [roman type](or [bold type]n, s, e, w, u, d[roman type])~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_21; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_22; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_23; ParaContent();  style roman; ParaContent();  print (PrintText) SC_24; ParaContent();  style bold; ParaContent();  print (PrintText) SC_25; ParaContent();  style roman; ParaContent();  print (PrintText) SC_26;  .L_Say7; .L_SayX7;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_22; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_23; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_24; ParaContent();  style roman; ParaContent();  print (PrintText) SC_25; ParaContent();  style bold; ParaContent();  print (PrintText) SC_26; ParaContent();  style roman; ParaContent();  print (PrintText) SC_27;  .L_Say7; .L_SayX7;
       ! phrase 10
       ! [10: say ~[paragraph break]Exploration commands: [line break][bold type]look, examine[roman type](or [bold type]l, x[roman type])~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_27; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_28; ParaContent();  style roman; ParaContent();  print (PrintText) SC_24; ParaContent();  style bold; ParaContent();  print (PrintText) SC_29; ParaContent();  style roman; ParaContent();  print (PrintText) SC_26;  .L_Say8; .L_SayX8;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_28; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_29; ParaContent();  style roman; ParaContent();  print (PrintText) SC_25; ParaContent();  style bold; ParaContent();  print (PrintText) SC_30; ParaContent();  style roman; ParaContent();  print (PrintText) SC_27;  .L_Say8; .L_SayX8;
       ! phrase 11
       ! [11: say ~[paragraph break]Inventory commands: [line break][bold type]take, inventory[roman type](or [bold type]t, i[roman type])~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_30; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_31; ParaContent();  style roman; ParaContent();  print (PrintText) SC_24; ParaContent();  style bold; ParaContent();  print (PrintText) SC_32; ParaContent();  style roman; ParaContent();  print (PrintText) SC_26;  .L_Say9; .L_SayX9;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_31; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_32; ParaContent();  style roman; ParaContent();  print (PrintText) SC_25; ParaContent();  style bold; ParaContent();  print (PrintText) SC_33; ParaContent();  style roman; ParaContent();  print (PrintText) SC_27;  .L_Say9; .L_SayX9;
       ! phrase 12
       ! [12: say ~[paragraph break]Speech commands: [line break][bold type]ask, tell, say[roman type]~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_33; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_34; ParaContent();  style roman;  .L_Say10; .L_SayX10;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_34; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_35; ParaContent();  style roman;  .L_Say10; .L_SayX10;
       ! phrase 13
       ! [13: say ~[paragraph break]Finally, remember to use [bold type]help[roman type], and [bold type]command[roman type] at any time to get help.~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_35; ParaContent();  style bold; ParaContent();  print (PrintText) SC_36; ParaContent();  style roman; ParaContent();  print (PrintText) SC_37; ParaContent();  style bold; ParaContent();  print (PrintText) SC_38; ParaContent();  style roman; ParaContent();  print (PrintText) SC_39;  new_line; .L_Say11; .L_SayX11;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_36; ParaContent();  style bold; ParaContent();  print (PrintText) SC_37; ParaContent();  style roman; ParaContent();  print (PrintText) SC_38; ParaContent();  style bold; ParaContent();  print (PrintText) SC_39; ParaContent();  style roman; ParaContent();  print (PrintText) SC_40;  new_line; .L_Say11; .L_SayX11;
       ! phrase 14
       ! [14: say ~[line break]You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.~]
-      say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_40;  new_line; .L_Say12; .L_SayX12;
+      say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_41;  new_line; .L_Say12; .L_SayX12;
       ! phrase 15
       ! [15: say ~[bold type]~]
       say__p=1;ParaContent();  style bold;  .L_Say13; .L_SayX13;
@@ -11072,13 +11058,13 @@ Array ActionHappened --> 0 0 0 0 0 0;
    if (debug_rules) DB_Rule(R_787, 787);
       ! phrase 1
       ! [1: if player is in hallway north begin]
-       if (((I97_hallway_north == ContainerOf(player))))  {
+       if (((I96_hallway_north == ContainerOf(player))))  {
          ! phrase 2
          ! [2: say ~The Emergency Building Coordinator steps down from her ladder and sighs lightly. 'Still a bit crooked. Oh well.' The Coordinator turns to you and says 'Don't forget that there's going to be an evacuation drill in a few minutes.~]
-         say__p=1;ParaContent();  print (PrintText) SC_41;  new_line; .L_Say15; .L_SayX15;
+         say__p=1;ParaContent();  print (PrintText) SC_42;  new_line; .L_Say15; .L_SayX15;
          ! phrase 3
          ! [3: now emergency building coordinator is off-stage]
-          (Adj_9_t3_v9(I100_emergency_building_coor)); 
+          (Adj_9_t3_v9(I99_emergency_building_coord)); 
          ! phrase 4
          ! [4: end if]
          }
@@ -11094,10 +11080,10 @@ Array ActionHappened --> 0 0 0 0 0 0;
    if (debug_rules) DB_Rule(R_792, 792);
       ! phrase 1
       ! [1: if alarm is ringing begin]
-       if ((((Adj_80_t1_v9(I127_alarm)))))  {
+       if ((((Adj_80_t1_v9(I126_alarm)))))  {
          ! phrase 2
          ! [2: say ~The alarm is going off.~]
-         say__p=1;ParaContent();  print (PrintText) SC_42;  new_line; .L_Say16; .L_SayX16;
+         say__p=1;ParaContent();  print (PrintText) SC_43;  new_line; .L_Say16; .L_SayX16;
          ! phrase 3
          ! [3: end if]
          }
@@ -11113,10 +11099,10 @@ Array ActionHappened --> 0 0 0 0 0 0;
    if (debug_rules) DB_Rule(R_793, 793);
       ! phrase 1
       ! [1: if the rescue is unattempted , and the player is in the second floor begin]
-       if (((((Adj_83_t1_v9(I131_rescue))))) && (((TestRegionalContainment(player,I105_second_floor)))))  {
+       if (((((Adj_83_t1_v9(I130_rescue))))) && (((TestRegionalContainment(player,I104_second_floor)))))  {
          ! phrase 2
          ! [2: say ~You can hear a low moan coming from the direction of your professor's office.~]
-         say__p=1;ParaContent();  print (PrintText) SC_43;  new_line; .L_Say17; .L_SayX17;
+         say__p=1;ParaContent();  print (PrintText) SC_44;  new_line; .L_Say17; .L_SayX17;
          ! phrase 3
          ! [3: end if]
          }
@@ -11132,10 +11118,10 @@ Array ActionHappened --> 0 0 0 0 0 0;
    if (debug_rules) DB_Rule(R_795, 795);
       ! phrase 1
       ! [1: if the lift is stuck begin]
-       if ((((Adj_76_t1_v9(I102_lift)))))  {
+       if ((((Adj_76_t1_v9(I101_lift)))))  {
          ! phrase 2
          ! [2: say ~You may have to pry open the doors somehow.~]
-         say__p=1;ParaContent();  print (PrintText) SC_44;  new_line; .L_Say18; .L_SayX18;
+         say__p=1;ParaContent();  print (PrintText) SC_45;  new_line; .L_Say18; .L_SayX18;
          ! phrase 3
          ! [3: end if]
          }
@@ -11177,7 +11163,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 [ R_20 ;
       ! phrase 1
       ! [1: if the current item from the multiple object list is not nothing , say ~[current item from the multiple object list]: [run paragraph on]~]
-       if (((~~((multiple_object_item == nothing))))) { say__p=1;ParaContent();  print (PrintShortName) multiple_object_item; ParaContent();  print (PrintText) SC_45; ParaContent();  RunParagraphOn();  .L_Say19; .L_SayX19;  }
+       if (((~~((multiple_object_item == nothing))))) { say__p=1;ParaContent();  print (PrintShortName) multiple_object_item; ParaContent();  print (PrintText) SC_46; ParaContent();  RunParagraphOn();  .L_Say19; .L_SayX19;  }
    rfalse;
 ];
 ! No specific request
@@ -11509,21 +11495,21 @@ self = noun;
 ! Before going to the Second Floor Elevator during Not a drill:
 [ R_791 ;
    if (scene_status-->3 == 1) { ! Runs only during scene
-   if ((action ==##Go) &&  (actor==player) && (((MStack-->MstVON(20007,1)) == I113_second_floor_elevator) && (true))) { ! Runs only when pattern matches
+   if ((action ==##Go) &&  (actor==player) && (((MStack-->MstVON(20007,1)) == I112_second_floor_elevator) && (true))) { ! Runs only when pattern matches
 self = noun;
    if (debug_rules) DB_Rule(R_791, 791);
       ! phrase 1
       ! [1: if the water heater is undetonated begin]
-       if ((((Adj_79_t1_v9(I104_water_heater)))))  {
+       if ((((Adj_79_t1_v9(I103_water_heater)))))  {
          ! phrase 2
          ! [2: clear only the main screen]
           VM_ClearScreen(2); 
          ! phrase 3
          ! [3: say ~[bold type]What the... Did you feel that? There was a kind of a 'WHUMP', and then the lights flickered. It felt like the whole building shook just then...[roman type][paragraph break]~]
-         say__p=1;ParaContent();  style bold; ParaContent();  print (PrintText) SC_46; ParaContent();  style roman; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say20; .L_SayX20;
+         say__p=1;ParaContent();  style bold; ParaContent();  print (PrintText) SC_47; ParaContent();  style roman; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say20; .L_SayX20;
          ! phrase 4
          ! [4: now the water heater is detonated]
-          (Adj_78_t2_v9(I104_water_heater)); 
+          (Adj_78_t2_v9(I103_water_heater)); 
          ! phrase 5
          ! [5: pause the game]
          (PHR_746_r3 ());
@@ -11540,12 +11526,12 @@ self = noun;
 ! Before going to Hallway North during Elevator Trap:
 [ R_797 ;
    if (scene_status-->5 == 1) { ! Runs only during scene
-   if ((action ==##Go) &&  (actor==player) && (((MStack-->MstVON(20007,1)) == I97_hallway_north) && (true))) { ! Runs only when pattern matches
+   if ((action ==##Go) &&  (actor==player) && (((MStack-->MstVON(20007,1)) == I96_hallway_north) && (true))) { ! Runs only when pattern matches
 self = noun;
    if (debug_rules) DB_Rule(R_797, 797);
       ! phrase 1
       ! [1: say ~You have to pry the doors open with your hands. The elevator has stopped between floors. Through the gap at the bottom you can see people yelling and scurrying around on the first floor. Something strange is definitely going on.[paragraph break]You have to climb up to get back to the second floor. Maybe you shouldn't have taken the elevator.~]
-      say__p=1;ParaContent();  print (PrintText) SC_47; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_48;  new_line; .L_Say21; .L_SayX21;
+      say__p=1;ParaContent();  print (PrintText) SC_48; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_49;  new_line; .L_Say21; .L_SayX21;
    } ! Runs only during scene
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_797, 797, true);
@@ -11574,7 +11560,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_783, 783);
       ! phrase 1
       ! [1: say ~The professor says 'Just [bold type]put[roman type] it on the desk there, will you?'~]
-      say__p=1;ParaContent();  print (PrintText) SC_49; ParaContent();  style bold; ParaContent();  print (PrintText) SC_50; ParaContent();  style roman; ParaContent();  print (PrintText) SC_51;  new_line; .L_Say22; .L_SayX22;
+      say__p=1;ParaContent();  print (PrintText) SC_50; ParaContent();  style bold; ParaContent();  print (PrintText) SC_51; ParaContent();  style roman; ParaContent();  print (PrintText) SC_52;  new_line; .L_Say22; .L_SayX22;
       RulebookFails(); rtrue;
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_783, 783, true);
@@ -11583,12 +11569,12 @@ self = noun;
 ! No specific request
 ! Instead of asking the Emergency Building Coordinator about ~professor~:
 [ R_782 ;
-   if ((action ==##Ask) &&  (actor==player) && ((noun == I100_emergency_building_coor) && (true)) && (Consult_Grammar_114(consult_from, consult_words)~=GPR_FAIL)) { ! Runs only when pattern matches
+   if ((action ==##Ask) &&  (actor==player) && ((noun == I99_emergency_building_coord) && (true)) && (Consult_Grammar_114(consult_from, consult_words)~=GPR_FAIL)) { ! Runs only when pattern matches
 self = noun;
    if (debug_rules) DB_Rule(R_782, 782);
       ! phrase 1
       ! [1: say ~I don't know, I think his office is around here somewhere.~]
-      say__p=1;ParaContent();  print (PrintText) SC_52;  new_line; .L_Say23; .L_SayX23;
+      say__p=1;ParaContent();  print (PrintText) SC_53;  new_line; .L_Say23; .L_SayX23;
       RulebookFails(); rtrue;
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_782, 782, true);
@@ -11597,7 +11583,7 @@ self = noun;
 ! No specific request
 ! Instead of exiting when the player is in The Second Floor Elevator and the Lift is stuck:
 [ R_796 ;
-   if ((action ==##Exit) &&  (actor==player) && (self=actor,true) && ((((I113_second_floor_elevator == ContainerOf(player)))) && ((((Adj_76_t1_v9(I102_lift))))))) { ! Runs only when pattern matches
+   if ((action ==##Exit) &&  (actor==player) && (self=actor,true) && ((((I112_second_floor_elevator == ContainerOf(player)))) && ((((Adj_76_t1_v9(I101_lift))))))) { ! Runs only when pattern matches
 self = noun;
    if (debug_rules) DB_Rule(R_796, 796);
       ! phrase 1
@@ -11605,10 +11591,10 @@ self = noun;
       say__p=1;ParaContent();  I7_ST_say_one_of-->0 =
 	i7_soo_ran(I7_ST_say_one_of-->0, 3);
 	switch((I7_ST_say_one_of-->0)%(3+1)-1) {
-		0: ParaContent();  print (PrintText) SC_53;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_54;  new_line;ParaContent();  @nop; 2: ParaContent();  print (PrintText) SC_55;  new_line;ParaContent();  }  .L_Say24; .L_SayX24;
+		0: ParaContent();  print (PrintText) SC_54;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_55;  new_line;ParaContent();  @nop; 2: ParaContent();  print (PrintText) SC_56;  new_line;ParaContent();  }  .L_Say24; .L_SayX24;
       ! phrase 2
       ! [2: now the player is in hallway north]
-       MoveObject(player,I97_hallway_north); 
+       MoveObject(player,I96_hallway_north); 
       RulebookFails(); rtrue;
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_796, 796, true);
@@ -11617,15 +11603,15 @@ self = noun;
 ! No specific request
 ! Instead of exiting when the player is in The Second Floor Elevator:
 [ R_780 ;
-   if ((action ==##Exit) &&  (actor==player) && (self=actor,true) && (((I113_second_floor_elevator == ContainerOf(player))))) { ! Runs only when pattern matches
+   if ((action ==##Exit) &&  (actor==player) && (self=actor,true) && (((I112_second_floor_elevator == ContainerOf(player))))) { ! Runs only when pattern matches
 self = noun;
    if (debug_rules) DB_Rule(R_780, 780);
       ! phrase 1
       ! [1: say ~You step out of the elevator and into the hall.~]
-      say__p=1;ParaContent();  print (PrintText) SC_56;  new_line; .L_Say25; .L_SayX25;
+      say__p=1;ParaContent();  print (PrintText) SC_57;  new_line; .L_Say25; .L_SayX25;
       ! phrase 2
       ! [2: now the player is in hallway north]
-       MoveObject(player,I97_hallway_north); 
+       MoveObject(player,I96_hallway_north); 
       RulebookFails(); rtrue;
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_780, 780, true);
@@ -11639,7 +11625,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_778, 778);
       ! phrase 1
       ! [1: say ~Figures. There's no cell phone reception in this building.~]
-      say__p=1;ParaContent();  print (PrintText) SC_57;  new_line; .L_Say26; .L_SayX26;
+      say__p=1;ParaContent();  print (PrintText) SC_58;  new_line; .L_Say26; .L_SayX26;
       RulebookFails(); rtrue;
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_778, 778, true);
@@ -11657,21 +11643,21 @@ self = noun;
 ! No specific request
 ! After asking the Emergency Building Coordinator about something:
 [ R_779 ;
-   if ((action ==##Ask) &&  (actor==player) && ((noun == I100_emergency_building_coor) && (true)) && (true)) { ! Runs only when pattern matches
+   if ((action ==##Ask) &&  (actor==player) && ((noun == I99_emergency_building_coord) && (true)) && (true)) { ! Runs only when pattern matches
 self = noun;
    if (debug_rules) DB_Rule(R_779, 779);
       ! phrase 1
       ! [1: say ~[if Returning a Book is happening][one of]What's that?[or]Sorry?[or]Pretty busy here.[or]Don't forget that there's going to be an evacuation drill at noon.[or]Hm?[at random][end if][if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]~]
       say__p=1;
-	if (~~(((((scene_status-->(I124_returning_a_book-1)==1)))))) jump L_Say27;
+	if (~~(((((scene_status-->(I123_returning_a_book-1)==1)))))) jump L_Say27;
 		ParaContent();  I7_ST_say_one_of-->1 =
 	i7_soo_ran(I7_ST_say_one_of-->1, 5);
 	switch((I7_ST_say_one_of-->1)%(5+1)-1) {
-		0: ParaContent();  print (PrintText) SC_58;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_59;  new_line;ParaContent();  @nop; 2: ParaContent();  print (PrintText) SC_60;  new_line;ParaContent();  @nop; 3: ParaContent();  print (PrintText) SC_61;  new_line;ParaContent();  @nop; 4: ParaContent();  print (PrintText) SC_62;  new_line;ParaContent();  } 
+		0: ParaContent();  print (PrintText) SC_59;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_60;  new_line;ParaContent();  @nop; 2: ParaContent();  print (PrintText) SC_61;  new_line;ParaContent();  @nop; 3: ParaContent();  print (PrintText) SC_62;  new_line;ParaContent();  @nop; 4: ParaContent();  print (PrintText) SC_63;  new_line;ParaContent();  } 
 	.L_Say27; .L_SayX27;
 		
-	if (~~(((((scene_status-->(I125_ebc_conversation-1)==1)))))) jump L_Say28;
-		ParaContent();  print (PrintText) SC_63;  new_line;
+	if (~~(((((scene_status-->(I124_ebc_conversation-1)==1)))))) jump L_Say28;
+		ParaContent();  print (PrintText) SC_64;  new_line;
 	.L_Say28; .L_SayX28;
 		 .L_Say29; .L_SayX29;
       RulebookSucceeds(); rtrue;
@@ -11690,7 +11676,7 @@ self = noun;
       say__p=1;ParaContent();  I7_ST_say_one_of-->2 =
 	i7_soo_ran(I7_ST_say_one_of-->2, 2);
 	switch((I7_ST_say_one_of-->2)%(2+1)-1) {
-		0: ParaContent();  print (PrintText) SC_64;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_65;  new_line;ParaContent();  }  .L_Say30; .L_SayX30;
+		0: ParaContent();  print (PrintText) SC_65;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_66;  new_line;ParaContent();  }  .L_Say30; .L_SayX30;
       RulebookSucceeds(); rtrue;
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_784, 784, true);
@@ -11780,7 +11766,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_60, 60);
       ! phrase 1
       ! [1: say ~[listing group size in words] ~]
-      say__p=1;ParaContent();  print (number) say__n=(listing_size); ParaContent();  print (PrintText) SC_19;  .L_Say32; .L_SayX32;
+      say__p=1;ParaContent();  print (number) say__n=(listing_size); ParaContent();  print (PrintText) SC_20;  .L_Say32; .L_SayX32;
       ! phrase 2
       ! [2: carry out the printing the plural name activity with the item]
        CarryOutActivity(V1_printing_the_plural_name_, t_0); 
@@ -11993,7 +11979,7 @@ self = noun;
        if (((t_0 < 1))) {  if (ProcessRulebook(IMMEDIATELY_QUIT_R)) rtrue;   }
       ! phrase 10
       ! [10: say ~Would you like to ~]
-      say__p=1;ParaContent();  print (PrintText) SC_66;  .L_Say33; .L_SayX33;
+      say__p=1;ParaContent();  print (PrintText) SC_67;  .L_Say33; .L_SayX33;
       ! phrase 11
       ! [11: repeat through the table of final question options begin]
        @push ct_0; @push ct_1;
@@ -12020,23 +12006,23 @@ self = noun;
                    if (((t_0 == 0)))  {
                      ! phrase 18
                      ! [18: say ~?[line break]~]
-                     say__p=1;ParaContent();  print (PrintText) SC_67; ParaContent();  new_line;  .L_Say35; .L_SayX35;
+                     say__p=1;ParaContent();  print (PrintText) SC_68; ParaContent();  new_line;  .L_Say35; .L_SayX35;
                      ! phrase 19
                      ! [19: otherwise if the named options count is 1]
                       } else if (((t_0 == 1))) { 
                      ! phrase 20
                      ! [20: if the serial comma option is active , say ~,~]
-                      if ((((Adj_22_t1_v15(5))))) { say__p=1;ParaContent();  print (PrintText) SC_68;  .L_Say36; .L_SayX36;  }
+                      if ((((Adj_22_t1_v15(5))))) { say__p=1;ParaContent();  print (PrintText) SC_69;  .L_Say36; .L_SayX36;  }
                      ! phrase 21
                      ! [21: say ~ or ~]
-                     say__p=1;ParaContent();  print (PrintText) SC_69;  .L_Say37; .L_SayX37;
+                     say__p=1;ParaContent();  print (PrintText) SC_70;  .L_Say37; .L_SayX37;
                      ! phrase 22
                      ! [22: otherwise]
                      } else {
 
                      ! phrase 23
                      ! [23: say ~, ~]
-                     say__p=1;ParaContent();  print (PrintText) SC_70;  .L_Say38; .L_SayX38;
+                     say__p=1;ParaContent();  print (PrintText) SC_71;  .L_Say38; .L_SayX38;
                      ! phrase 24
                      ! [24: end if]
                      }
@@ -12065,7 +12051,7 @@ self = noun;
 [ R_68 ;
       ! phrase 1
       ! [1: say ~> [run paragraph on]~]
-      say__p=1;ParaContent();  print (PrintText) SC_71; ParaContent();  RunParagraphOn();  .L_Say39; .L_SayX39;
+      say__p=1;ParaContent();  print (PrintText) SC_72; ParaContent();  RunParagraphOn();  .L_Say39; .L_SayX39;
    rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -12318,40 +12304,40 @@ self = noun;
                 if (((t_0 ofclass K1_room)))  {
                   ! phrase 22
                   ! [22: if the domain is the location , say ~You ~]
-                   if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_72;  .L_Say40; .L_SayX40;  }
+                   if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_73;  .L_Say40; .L_SayX40;  }
                   ! phrase 23
                   ! [23: otherwise say ~In [the domain] you ~]
-                   else { say__p=1;ParaContent();  print (PrintText) SC_73; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_74;  .L_Say41; .L_SayX41;  }
+                   else { say__p=1;ParaContent();  print (PrintText) SC_74; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_75;  .L_Say41; .L_SayX41;  }
                   ! phrase 24
                   ! [24: otherwise if the domain is a supporter]
                    } else if (((t_0 ofclass K6_supporter))) { 
                   ! phrase 25
                   ! [25: say ~On [the domain] you ~]
-                  say__p=1;ParaContent();  print (PrintText) SC_75; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_74;  .L_Say42; .L_SayX42;
+                  say__p=1;ParaContent();  print (PrintText) SC_76; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_75;  .L_Say42; .L_SayX42;
                   ! phrase 26
                   ! [26: otherwise if the domain is an animal]
                    } else if (((t_0 ofclass K12_animal))) { 
                   ! phrase 27
                   ! [27: say ~On [the domain] you ~]
-                  say__p=1;ParaContent();  print (PrintText) SC_75; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_74;  .L_Say43; .L_SayX43;
+                  say__p=1;ParaContent();  print (PrintText) SC_76; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_75;  .L_Say43; .L_SayX43;
                   ! phrase 28
                   ! [28: otherwise]
                   } else {
 
                   ! phrase 29
                   ! [29: say ~In [the domain] you ~]
-                  say__p=1;ParaContent();  print (PrintText) SC_73; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_74;  .L_Say44; .L_SayX44;
+                  say__p=1;ParaContent();  print (PrintText) SC_74; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_75;  .L_Say44; .L_SayX44;
                   ! phrase 30
                   ! [30: end if]
                   }
 
                ! phrase 31
                ! [31: say ~can [if the locale paragraph count is greater than 0]also [end if]see ~]
-               say__p=1;ParaContent();  print (PrintText) SC_76; 
+               say__p=1;ParaContent();  print (PrintText) SC_77; 
 	if (~~(((((Global_Vars-->8) > 0))))) jump L_Say45;
-		ParaContent();  print (PrintText) SC_77; 
+		ParaContent();  print (PrintText) SC_78; 
 	.L_Say45; .L_SayX45;
-		ParaContent();  print (PrintText) SC_78;  .L_Say46; .L_SayX46;
+		ParaContent();  print (PrintText) SC_79;  .L_Say46; .L_SayX46;
                ! phrase 32
                ! [32: let the common holder be nothing]
                 t_2 = nothing; 
@@ -12397,10 +12383,10 @@ self = noun;
 		@pull subst__v;  .L_Say47; .L_SayX47;  }
                ! phrase 44
                ! [44: if the domain is the location , say ~ here~]
-                if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_79;  .L_Say48; .L_SayX48;  }
+                if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_80;  .L_Say48; .L_SayX48;  }
                ! phrase 45
                ! [45: say ~.[paragraph break]~]
-               say__p=1;ParaContent();  print (PrintText) SC_80; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say49; .L_SayX49;
+               say__p=1;ParaContent();  print (PrintText) SC_81; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say49; .L_SayX49;
                ! phrase 46
                ! [46: unfilter list recursion]
                 list_filter_routine = 0; 
@@ -12661,13 +12647,13 @@ self = noun;
 
                ! phrase 13
                ! [13: say ~On [the item] ~]
-               say__p=1;ParaContent();  print (PrintText) SC_75; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_19;  .L_Say54; .L_SayX54;
+               say__p=1;ParaContent();  print (PrintText) SC_76; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_20;  .L_Say54; .L_SayX54;
                ! phrase 14
                ! [14: list the contents of the item , as a sentence , including contents , giving brief inventory information , tersely , not listing concealed items , prefacing with is/are , listing marked items only]
                 WriteListFrom(child(t_0), 3800); 
                ! phrase 15
                ! [15: say ~.[paragraph break]~]
-               say__p=1;ParaContent();  print (PrintText) SC_80; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say55; .L_SayX55;
+               say__p=1;ParaContent();  print (PrintText) SC_81; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say55; .L_SayX55;
                ! phrase 16
                ! [16: end if]
                }
@@ -12735,13 +12721,13 @@ self = noun;
              (Global_Vars-->8) = (Global_Vars-->8) + 1; 
             ! phrase 11
             ! [11: say ~On [the item] ~]
-            say__p=1;ParaContent();  print (PrintText) SC_75; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_19;  .L_Say56; .L_SayX56;
+            say__p=1;ParaContent();  print (PrintText) SC_76; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_20;  .L_Say56; .L_SayX56;
             ! phrase 12
             ! [12: list the contents of the item , as a sentence , including contents , giving brief inventory information , tersely , not listing concealed items , prefacing with is/are , listing marked items only]
              WriteListFrom(child(t_0), 3800); 
             ! phrase 13
             ! [13: say ~.[paragraph break]~]
-            say__p=1;ParaContent();  print (PrintText) SC_80; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say57; .L_SayX57;
+            say__p=1;ParaContent();  print (PrintText) SC_81; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say57; .L_SayX57;
             ! phrase 14
             ! [14: end if]
             }
@@ -12791,7 +12777,7 @@ self = noun;
        GL__M(##Inv,2,noun); 
       ! phrase 2
       ! [2: say ~:[line break]~]
-      say__p=1;ParaContent();  print (PrintText) SC_81; ParaContent();  new_line;  .L_Say58; .L_SayX58;
+      say__p=1;ParaContent();  print (PrintText) SC_82; ParaContent();  new_line;  .L_Say58; .L_SayX58;
       ! phrase 3
       ! [3: list the contents of the player , with newlines , indented , including contents , giving inventory information , with extra indentation]
        WriteListFrom(child(player), 8215); 
@@ -14387,7 +14373,7 @@ self = noun;
           if (((~~(((MStack-->MstVO(20007,3)) == nothing)))))  {
             ! phrase 49
             ! [49: say ~ ~]
-            say__p=1;ParaContent();  print (PrintText) SC_19;  .L_Say59; .L_SayX59;
+            say__p=1;ParaContent();  print (PrintText) SC_20;  .L_Say59; .L_SayX59;
             ! phrase 50
             ! [50: if the vehicle gone by is a supporter , issue actor-based library message going action number 20 for the vehicle gone by]
              if ((((MStack-->MstVO(20007,3)) ofclass K6_supporter))) {  AGL__M(##Go,20,(MStack-->MstVO(20007,3)));   }
@@ -14442,7 +14428,7 @@ self = noun;
              AGL__M(##Go,26,noun); 
             ! phrase 66
             ! [66: say ~.~]
-            say__p=1;ParaContent();  print (PrintText) SC_80;  new_line; .L_Say60; .L_SayX60;
+            say__p=1;ParaContent();  print (PrintText) SC_81;  new_line; .L_Say60; .L_SayX60;
             ! phrase 67
             ! [67: try looking]
              TryAction(0, player, ##Look, 0, 0);; 
@@ -14455,7 +14441,7 @@ self = noun;
 
          ! phrase 70
          ! [70: say ~.~]
-         say__p=1;ParaContent();  print (PrintText) SC_80;  new_line; .L_Say61; .L_SayX61;
+         say__p=1;ParaContent();  print (PrintText) SC_81;  new_line; .L_Say61; .L_SayX61;
          ! phrase 71
          ! [71: end if]
          }
@@ -17970,7 +17956,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_774, 774);
       ! phrase 1
       ! [1: say ~To get a list of common commands, type [bold type]commands[roman type].[line break]To see what you should probably be doing right now, type [bold type]objective[roman type].[roman type][line break]Remember to look for commands in [bold type]bold[roman type] to find clues to your next action.[line break]Many commands have shorter versions. For instance, to go [bold type]south[roman type], you can just type [bold type]s[roman type].~]
-      say__p=1;ParaContent();  print (PrintText) SC_82; ParaContent();  style bold; ParaContent();  print (PrintText) SC_83; ParaContent();  style roman; ParaContent();  print (PrintText) SC_80; ParaContent();  new_line; ParaContent();  print (PrintText) SC_84; ParaContent();  style bold; ParaContent();  print (PrintText) SC_85; ParaContent();  style roman; ParaContent();  print (PrintText) SC_80; ParaContent();  style roman; ParaContent();  new_line; ParaContent();  print (PrintText) SC_86; ParaContent();  style bold; ParaContent();  print (PrintText) SC_87; ParaContent();  style roman; ParaContent();  print (PrintText) SC_88; ParaContent();  new_line; ParaContent();  print (PrintText) SC_89; ParaContent();  style bold; ParaContent();  print (PrintText) SC_90; ParaContent();  style roman; ParaContent();  print (PrintText) SC_91; ParaContent();  style bold; ParaContent();  print (PrintText) SC_92; ParaContent();  style roman; ParaContent();  print (PrintText) SC_80;  new_line; .L_Say69; .L_SayX69;
+      say__p=1;ParaContent();  print (PrintText) SC_83; ParaContent();  style bold; ParaContent();  print (PrintText) SC_84; ParaContent();  style roman; ParaContent();  print (PrintText) SC_81; ParaContent();  new_line; ParaContent();  print (PrintText) SC_85; ParaContent();  style bold; ParaContent();  print (PrintText) SC_86; ParaContent();  style roman; ParaContent();  print (PrintText) SC_81; ParaContent();  style roman; ParaContent();  new_line; ParaContent();  print (PrintText) SC_87; ParaContent();  style bold; ParaContent();  print (PrintText) SC_88; ParaContent();  style roman; ParaContent();  print (PrintText) SC_89; ParaContent();  new_line; ParaContent();  print (PrintText) SC_90; ParaContent();  style bold; ParaContent();  print (PrintText) SC_91; ParaContent();  style roman; ParaContent();  print (PrintText) SC_92; ParaContent();  style bold; ParaContent();  print (PrintText) SC_93; ParaContent();  style roman; ParaContent();  print (PrintText) SC_81;  new_line; .L_Say69; .L_SayX69;
    } ! Runs only when actor is the player
    else if (debug_rules > 1) DB_Rule(R_774, 774, true);
    rfalse;
@@ -17989,22 +17975,22 @@ self = noun;
    if (debug_rules) DB_Rule(R_775, 775);
       ! phrase 1
       ! [1: say ~[paragraph break]You may use any of the following commands during this scenario:[paragraph break]Movement commands: [line break][bold type]north, south, east, west, up, down [roman type](or [bold type]n, s, e, w, u, d[roman type])~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_21; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_22; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_23; ParaContent();  style roman; ParaContent();  print (PrintText) SC_24; ParaContent();  style bold; ParaContent();  print (PrintText) SC_25; ParaContent();  style roman; ParaContent();  print (PrintText) SC_26;  .L_Say70; .L_SayX70;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_22; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_23; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_24; ParaContent();  style roman; ParaContent();  print (PrintText) SC_25; ParaContent();  style bold; ParaContent();  print (PrintText) SC_26; ParaContent();  style roman; ParaContent();  print (PrintText) SC_27;  .L_Say70; .L_SayX70;
       ! phrase 2
       ! [2: say ~[paragraph break]Exploration commands: [line break][bold type]look, examine[roman type](or [bold type]l, x[roman type])~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_27; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_28; ParaContent();  style roman; ParaContent();  print (PrintText) SC_24; ParaContent();  style bold; ParaContent();  print (PrintText) SC_29; ParaContent();  style roman; ParaContent();  print (PrintText) SC_26;  .L_Say71; .L_SayX71;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_28; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_29; ParaContent();  style roman; ParaContent();  print (PrintText) SC_25; ParaContent();  style bold; ParaContent();  print (PrintText) SC_30; ParaContent();  style roman; ParaContent();  print (PrintText) SC_27;  .L_Say71; .L_SayX71;
       ! phrase 3
       ! [3: say ~[paragraph break]Inventory commands: [line break][bold type]take, inventory[roman type](or [bold type]t, i[roman type])~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_30; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_31; ParaContent();  style roman; ParaContent();  print (PrintText) SC_24; ParaContent();  style bold; ParaContent();  print (PrintText) SC_32; ParaContent();  style roman; ParaContent();  print (PrintText) SC_26;  .L_Say72; .L_SayX72;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_31; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_32; ParaContent();  style roman; ParaContent();  print (PrintText) SC_25; ParaContent();  style bold; ParaContent();  print (PrintText) SC_33; ParaContent();  style roman; ParaContent();  print (PrintText) SC_27;  .L_Say72; .L_SayX72;
       ! phrase 4
       ! [4: say ~[paragraph break]Speech commands: [line break][bold type]ask, tell, say[roman type]~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_33; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_34; ParaContent();  style roman;  .L_Say73; .L_SayX73;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_34; ParaContent();  new_line; ParaContent();  style bold; ParaContent();  print (PrintText) SC_35; ParaContent();  style roman;  .L_Say73; .L_SayX73;
       ! phrase 5
       ! [5: say ~[paragraph break]Finally, remember to use [bold type]help[roman type], [bold type]command[roman type], and [bold type]objective[roman type] at any time to get help.~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_35; ParaContent();  style bold; ParaContent();  print (PrintText) SC_36; ParaContent();  style roman; ParaContent();  print (PrintText) SC_70; ParaContent();  style bold; ParaContent();  print (PrintText) SC_38; ParaContent();  style roman; ParaContent();  print (PrintText) SC_37; ParaContent();  style bold; ParaContent();  print (PrintText) SC_85; ParaContent();  style roman; ParaContent();  print (PrintText) SC_39;  new_line; .L_Say74; .L_SayX74;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_36; ParaContent();  style bold; ParaContent();  print (PrintText) SC_37; ParaContent();  style roman; ParaContent();  print (PrintText) SC_71; ParaContent();  style bold; ParaContent();  print (PrintText) SC_39; ParaContent();  style roman; ParaContent();  print (PrintText) SC_38; ParaContent();  style bold; ParaContent();  print (PrintText) SC_86; ParaContent();  style roman; ParaContent();  print (PrintText) SC_40;  new_line; .L_Say74; .L_SayX74;
       ! phrase 6
       ! [6: say ~[line break]You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.~]
-      say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_40;  new_line; .L_Say75; .L_SayX75;
+      say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_41;  new_line; .L_Say75; .L_SayX75;
    } ! Runs only when actor is the player
    else if (debug_rules > 1) DB_Rule(R_775, 775, true);
    rfalse;
@@ -18023,7 +18009,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_776, 776);
       ! phrase 1
       ! [1: say ~Your current objective is ...~]
-      say__p=1;ParaContent();  print (PrintText) SC_93;  new_line; .L_Say76; .L_SayX76;
+      say__p=1;ParaContent();  print (PrintText) SC_94;  new_line; .L_Say76; .L_SayX76;
    } ! Runs only when actor is the player
    else if (debug_rules > 1) DB_Rule(R_776, 776, true);
    rfalse;
@@ -18050,7 +18036,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_785, 785);
       ! phrase 1
       ! [1: say ~'Hello,' you say to the Professor.[line break]'I'm pretty busy right now,' The professor says. 'If you have questions about the course, come see me during office hours.'~]
-      say__p=1;ParaContent();  print (PrintText) SC_94; ParaContent();  new_line; ParaContent();  print (PrintText) SC_95;  new_line; .L_Say77; .L_SayX77;
+      say__p=1;ParaContent();  print (PrintText) SC_95; ParaContent();  new_line; ParaContent();  print (PrintText) SC_96;  new_line; .L_Say77; .L_SayX77;
    } ! Runs only during scene
    } ! Runs only when actor is the player
    } ! Runs only while condition holds
@@ -18062,18 +18048,18 @@ self = noun;
 [ R_786 ;
    if (scene_status-->1 == 1) { ! Runs only during scene
    if (actor == player) {
-   if ((((((noun == I100_emergency_building_coor)))))) { ! Runs only while condition holds
+   if ((((((noun == I99_emergency_building_coord)))))) { ! Runs only while condition holds
    if (debug_rules) DB_Rule(R_786, 786);
       ! phrase 1
       ! [1: say ~'Hello,' you say to the Emergency Building Coordinator.[line break][if Returning a Book is happening][one of]'What's that? Oh, hello.'[or]'Sorry? Oh, hello.'[or]'Pretty busy here.'[or]'Hm? Oh, hello.'[at random][end if]'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.~]
-      say__p=1;ParaContent();  print (PrintText) SC_96; ParaContent();  new_line; 
-	if (~~(((((scene_status-->(I124_returning_a_book-1)==1)))))) jump L_Say78;
+      say__p=1;ParaContent();  print (PrintText) SC_97; ParaContent();  new_line; 
+	if (~~(((((scene_status-->(I123_returning_a_book-1)==1)))))) jump L_Say78;
 		ParaContent();  I7_ST_say_one_of-->3 =
 	i7_soo_ran(I7_ST_say_one_of-->3, 4);
 	switch((I7_ST_say_one_of-->3)%(4+1)-1) {
-		0: ParaContent();  print (PrintText) SC_97;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_98;  new_line;ParaContent();  @nop; 2: ParaContent();  print (PrintText) SC_99;  new_line;ParaContent();  @nop; 3: ParaContent();  print (PrintText) SC_100;  new_line;ParaContent();  } 
+		0: ParaContent();  print (PrintText) SC_98;  new_line;ParaContent();  @nop; 1: ParaContent();  print (PrintText) SC_99;  new_line;ParaContent();  @nop; 2: ParaContent();  print (PrintText) SC_100;  new_line;ParaContent();  @nop; 3: ParaContent();  print (PrintText) SC_101;  new_line;ParaContent();  } 
 	.L_Say78; .L_SayX78;
-		ParaContent();  print (PrintText) SC_101;  new_line; .L_Say79; .L_SayX79;
+		ParaContent();  print (PrintText) SC_102;  new_line; .L_Say79; .L_SayX79;
    } ! Runs only during scene
    } ! Runs only when actor is the player
    } ! Runs only while condition holds
@@ -18089,7 +18075,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_788, 788);
       ! phrase 1
       ! [1: say ~The Professor seems to be ignoring you~]
-      say__p=1;ParaContent();  print (PrintText) SC_102;  .L_Say80; .L_SayX80;
+      say__p=1;ParaContent();  print (PrintText) SC_103;  .L_Say80; .L_SayX80;
    } ! Runs only during scene
    } ! Runs only when actor is the player
    } ! Runs only while condition holds
@@ -18101,13 +18087,13 @@ self = noun;
 [ R_789 ;
    if (scene_status-->2 == 1) { ! Runs only during scene
    if (actor == player) {
-   if ((((((noun == I100_emergency_building_coor)))))) { ! Runs only while condition holds
+   if ((((((noun == I99_emergency_building_coord)))))) { ! Runs only while condition holds
    if (debug_rules) DB_Rule(R_789, 789);
       ! phrase 1
       ! [1: say ~'Hello,' you say to the Emergency Building Coordinator.[if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]~]
-      say__p=1;ParaContent();  print (PrintText) SC_96;  new_line;
-	if (~~(((((scene_status-->(I125_ebc_conversation-1)==1)))))) jump L_Say81;
-		ParaContent();  print (PrintText) SC_63;  new_line;
+      say__p=1;ParaContent();  print (PrintText) SC_97;  new_line;
+	if (~~(((((scene_status-->(I124_ebc_conversation-1)==1)))))) jump L_Say81;
+		ParaContent();  print (PrintText) SC_64;  new_line;
 	.L_Say81; .L_SayX81;
 		 .L_Say82; .L_SayX82;
    } ! Runs only during scene
@@ -18130,7 +18116,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_777, 777);
       ! phrase 1
       ! [1: say ~Figures. There's no cell phone reception in this building.~]
-      say__p=1;ParaContent();  print (PrintText) SC_57;  new_line; .L_Say83; .L_SayX83;
+      say__p=1;ParaContent();  print (PrintText) SC_58;  new_line; .L_Say83; .L_SayX83;
    } ! Runs only when actor is the player
    else if (debug_rules > 1) DB_Rule(R_777, 777, true);
    rfalse;
@@ -18147,10 +18133,10 @@ self = noun;
 [ R_790 ;
       ! phrase 1
       ! [1: now the alarm is ringing]
-       (Adj_80_t2_v9(I127_alarm)); 
+       (Adj_80_t2_v9(I126_alarm)); 
       ! phrase 2
       ! [2: say ~Well, there goes the alarm. I guess you'd better get downstairs.~]
-      say__p=1;ParaContent();  print (PrintText) SC_103;  new_line; .L_Say84; .L_SayX84;
+      say__p=1;ParaContent();  print (PrintText) SC_104;  new_line; .L_Say84; .L_SayX84;
    rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -18165,13 +18151,13 @@ self = noun;
 [ R_794 ;
       ! phrase 1
       ! [1: say ~You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.[paragraph break]THUNK.[paragraph break]You stumble as the lights flicker and the elevator comes to a sudden and irrevokable stop.~]
-      say__p=1;ParaContent();  print (PrintText) SC_104; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_105; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_106;  new_line; .L_Say85; .L_SayX85;
+      say__p=1;ParaContent();  print (PrintText) SC_105; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_106; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_107;  new_line; .L_Say85; .L_SayX85;
       ! phrase 2
       ! [2: now the elevator door is closed]
-       (Adj_61_t2_v9(I114_elevator_door)); 
+       (Adj_61_t2_v9(I113_elevator_door)); 
       ! phrase 3
       ! [3: now the lift is stuck]
-       (Adj_76_t2_v9(I102_lift)); 
+       (Adj_76_t2_v9(I101_lift)); 
    rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -21006,7 +20992,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->1 == 1) {
-        if (((((I95_south_west_office == ContainerOf(I91_borrowed_book)))) || ((((I108_desk ofclass K6_supporter) && (I95_south_west_office == ContainerOf(I108_desk)) && (I108_desk == SupporterOf(I91_borrowed_book)))) || ((((I109_bookshelf ofclass K6_supporter) && (I95_south_west_office == ContainerOf(I109_bookshelf)) && (I109_bookshelf == SupporterOf(I91_borrowed_book)))) || (((I94_professor == CarrierOf(I91_borrowed_book)))))))) {
+        if (((((I95_south_west_office == ContainerOf(I91_borrowed_book)))) || ((((I107_desk ofclass K6_supporter) && (I95_south_west_office == ContainerOf(I107_desk)) && (I107_desk == SupporterOf(I91_borrowed_book)))) || ((((I108_bookshelf ofclass K6_supporter) && (I95_south_west_office == ContainerOf(I108_bookshelf)) && (I108_bookshelf == SupporterOf(I91_borrowed_book)))) || (((I94_professor == CarrierOf(I91_borrowed_book)))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Returning a Book' ends]^";
             if (GProperty(39, 2, p54_recurring)) scene_status-->1 = 0; else scene_status-->1 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 2);
@@ -21028,7 +21014,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->2 == 1) {
-        if (((((~~Adj_9_t1_v9(I100_emergency_building_coor)))))) {
+        if (((((~~Adj_9_t1_v9(I99_emergency_building_coord)))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'EBC Conversation' ends]^";
             if (GProperty(39, 3, p54_recurring)) scene_status-->2 = 0; else scene_status-->2 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 3);
@@ -21040,7 +21026,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->2 == 0) {
-        if ((( (scene_endings-->(I124_returning_a_book-1) > 1) ))) {
+        if ((( (scene_endings-->(I123_returning_a_book-1) > 1) ))) {
             ch = true;
             if (debug_scenes) print "[Scene 'EBC Conversation' begins]^";
             scene_status-->2 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 3);
@@ -21054,7 +21040,7 @@ if (scene_status-->0 == 1) {
     if (scene_status-->3 == 1) {
     }
     if (scene_status-->3 == 0) {
-        if ((( (scene_endings-->(I125_ebc_conversation-1) > 1) ))) {
+        if ((( (scene_endings-->(I124_ebc_conversation-1) > 1) ))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Not a drill' begins]^";
             scene_status-->3 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 4);
@@ -21078,7 +21064,7 @@ if (scene_status-->0 == 1) {
     if (scene_status-->4 == 0) {
     }
     if (scene_status-->5 == 1) {
-        if ((((~~((I113_second_floor_elevator == ContainerOf(player))))))) {
+        if ((((~~((I112_second_floor_elevator == ContainerOf(player))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'elevator trap' ends]^";
             if (GProperty(39, 6, p54_recurring)) scene_status-->5 = 0; else scene_status-->5 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 6);
@@ -21090,7 +21076,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->5 == 0) {
-        if (((((I113_second_floor_elevator == ContainerOf(player)))) && ((((Adj_80_t1_v9(I127_alarm))))))) {
+        if (((((I112_second_floor_elevator == ContainerOf(player)))) && ((((Adj_80_t1_v9(I126_alarm))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'elevator trap' begins]^";
             scene_status-->5 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 6);
@@ -21102,7 +21088,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->6 == 1) {
-        if (((((I121_first_floor_hallway_sou == ContainerOf(player)))) && ((((Adj_80_t1_v9(I127_alarm))))))) {
+        if (((((I120_first_floor_hallway_sou == ContainerOf(player)))) && ((((Adj_80_t1_v9(I126_alarm))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Chaos on the first floor' ends]^";
             if (GProperty(39, 7, p54_recurring)) scene_status-->6 = 0; else scene_status-->6 = 2; ProcessRulebook(WHEN_SCENE_ENDS_RB, 7);
@@ -21122,7 +21108,7 @@ if (scene_status-->0 == 1) {
         }
     }
     if (scene_status-->6 == 0) {
-        if (((((I120_the_first_floor_stairwe == ContainerOf(player)))) && ((((Adj_80_t1_v9(I127_alarm))))))) {
+        if (((((I119_the_first_floor_stairwe == ContainerOf(player)))) && ((((Adj_80_t1_v9(I126_alarm))))))) {
             ch = true;
             if (debug_scenes) print "[Scene 'Chaos on the first floor' begins]^";
             scene_status-->6 = 1; ProcessRulebook(WHEN_SCENE_BEGINS_RB, 7);
@@ -23585,7 +23571,7 @@ Array FWMatrix --> NUM_ROOMS*NUM_ROOMS;
 ];
 #ENDIF;
 
-Constant MAX_ROUTE_LENGTH = 48 + 32;
+Constant MAX_ROUTE_LENGTH = 47 + 32;
 
 [ RelationRouteTo relation from to count  handler;
 	if (count) {
@@ -27421,7 +27407,7 @@ Array printed_text --> 64;
 [ PHR_746_r3 ;
       ! phrase 1
       ! [1: say ~[paragraph break]Please press SPACE to continue.~]
-      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_107;  new_line; .L_Say86; .L_SayX86;
+      say__p=1;ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_108;  new_line; .L_Say86; .L_SayX86;
       ! phrase 2
       ! [2: wait for the space key]
        SPACEPause(); 
@@ -27581,51 +27567,51 @@ Array printed_text --> 64;
 [ text_routine_0;
 say__p=1;
 	if (~~(((((Adj_40_t1_v9(I95_south_west_office))))))) jump L_Say89;
-		ParaContent();  print (PrintText) SC_108; ParaContent();  new_line; ParaContent();  print (PrintText) SC_109; ParaContent();  new_line; ParaContent();  print (PrintText) SC_110; ParaContent();  style bold; ParaContent();  print (PrintText) SC_50; ParaContent();  style roman; ParaContent();  print (PrintText) SC_111; ParaContent();  DivideParagraphPoint(); new_line; 
+		ParaContent();  print (PrintText) SC_109; ParaContent();  new_line; ParaContent();  print (PrintText) SC_110; ParaContent();  new_line; ParaContent();  print (PrintText) SC_111; ParaContent();  style bold; ParaContent();  print (PrintText) SC_51; ParaContent();  style roman; ParaContent();  print (PrintText) SC_112; ParaContent();  DivideParagraphPoint(); new_line; 
 	.L_Say89; .L_SayX89;
-		ParaContent();  print (PrintText) SC_112; ParaContent();  print (PrintShortName) I107_stack_of_papers; ParaContent();  print (PrintText) SC_113; ParaContent();  print (PrintShortName) I110_old_books; ParaContent();  print (PrintText) SC_114; ParaContent();  print (PrintShortName) I109_bookshelf; ParaContent();  print (PrintText) SC_115; ParaContent();  print (PrintShortName) I111_heavy_looking_books; ParaContent();  print (PrintText) SC_116;  .L_Say90; .L_SayX90;
+		ParaContent();  print (PrintText) SC_113; ParaContent();  print (PrintShortName) I106_stack_of_papers; ParaContent();  print (PrintText) SC_114; ParaContent();  print (PrintShortName) I109_old_books; ParaContent();  print (PrintText) SC_115; ParaContent();  print (PrintShortName) I108_bookshelf; ParaContent();  print (PrintText) SC_116; ParaContent();  print (PrintShortName) I110_heavy_looking_books; ParaContent();  print (PrintText) SC_117;  .L_Say90; .L_SayX90;
     rtrue;
 ];
 
 [ text_routine_1;
-say__p=1;ParaContent();  print (PrintText) SC_117; 
-	if (~~((((((scene_status-->(I125_ebc_conversation-1)==1)))) || ((((scene_status-->(I124_returning_a_book-1)==1))))))) jump L_Say91;
-		ParaContent();  print (PrintText) SC_118; ParaContent();  print (PrintShortName) I98_map; ParaContent();  print (PrintText) SC_119; 
+say__p=1;ParaContent();  print (PrintText) SC_118; 
+	if (~~((((((scene_status-->(I124_ebc_conversation-1)==1)))) || ((((scene_status-->(I123_returning_a_book-1)==1))))))) jump L_Say91;
+		ParaContent();  print (PrintText) SC_119; ParaContent();  print (PrintShortName) I97_map; ParaContent();  print (PrintText) SC_120; 
 	jump L_SayX91; .L_Say91;
-		ParaContent();  print (PrintText) SC_120; ParaContent();  print (PrintShortName) I98_map; ParaContent();  print (PrintText) SC_80; 
+		ParaContent();  print (PrintText) SC_121; ParaContent();  print (PrintShortName) I97_map; ParaContent();  print (PrintText) SC_81; 
 	.L_Say92; .L_SayX91;
-		ParaContent();  print (PrintText) SC_121; ParaContent();  style bold; ParaContent();  print (PrintText) SC_122; ParaContent();  style roman; ParaContent();  print (PrintText) SC_123; ParaContent();  style bold; ParaContent();  print (PrintText) SC_124; ParaContent();  style roman; ParaContent();  print (PrintText) SC_125; ParaContent();  style bold; ParaContent();  print (PrintText) SC_126; ParaContent();  style roman; ParaContent();  print (PrintText) SC_127; ParaContent();  style bold; ParaContent();  print (PrintText) SC_128; ParaContent();  style roman; ParaContent();  print (PrintText) SC_129;  .L_Say93; .L_SayX92;
+		ParaContent();  print (PrintText) SC_122; ParaContent();  style bold; ParaContent();  print (PrintText) SC_123; ParaContent();  style roman; ParaContent();  print (PrintText) SC_124; ParaContent();  style bold; ParaContent();  print (PrintText) SC_125; ParaContent();  style roman; ParaContent();  print (PrintText) SC_126; ParaContent();  style bold; ParaContent();  print (PrintText) SC_127; ParaContent();  style roman; ParaContent();  print (PrintText) SC_128; ParaContent();  style bold; ParaContent();  print (PrintText) SC_129; ParaContent();  style roman; ParaContent();  print (PrintText) SC_130;  .L_Say93; .L_SayX92;
     rtrue;
 ];
 
 [ text_routine_2;
-say__p=1;ParaContent();  print (PrintText) SC_130; ParaContent();  print (PrintShortName) I99_label; ParaContent();  print (PrintText) SC_131; ParaContent();  style bold; ParaContent();  print (PrintText) SC_124; ParaContent();  style roman; ParaContent();  print (PrintText) SC_132;  .L_Say94; .L_SayX93;
+say__p=1;ParaContent();  print (PrintText) SC_131; ParaContent();  print (PrintShortName) I98_label; ParaContent();  print (PrintText) SC_132; ParaContent();  style bold; ParaContent();  print (PrintText) SC_125; ParaContent();  style roman; ParaContent();  print (PrintText) SC_133;  .L_Say94; .L_SayX93;
     rtrue;
 ];
 
 [ text_routine_3;
-say__p=1;ParaContent();  print (PrintText) SC_133; ParaContent();  style bold; ParaContent();  print (PrintText) SC_122; ParaContent();  style roman; ParaContent();  print (PrintText) SC_123; ParaContent();  style bold; ParaContent();  print (PrintText) SC_126; ParaContent();  style roman; ParaContent();  print (PrintText) SC_80;  .L_Say95; .L_SayX94;
+say__p=1;ParaContent();  print (PrintText) SC_134; ParaContent();  style bold; ParaContent();  print (PrintText) SC_123; ParaContent();  style roman; ParaContent();  print (PrintText) SC_124; ParaContent();  style bold; ParaContent();  print (PrintText) SC_127; ParaContent();  style roman; ParaContent();  print (PrintText) SC_81;  .L_Say95; .L_SayX94;
     rtrue;
 ];
 
 [ text_routine_4;
 say__p=1;
-	if (~~(((((Adj_40_t1_v9(I113_second_floor_elevator))))))) jump L_Say96;
-		ParaContent();  print (PrintText) SC_134; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_135; 
+	if (~~(((((Adj_40_t1_v9(I112_second_floor_elevator))))))) jump L_Say96;
+		ParaContent();  print (PrintText) SC_135; ParaContent();  DivideParagraphPoint(); new_line; ParaContent();  print (PrintText) SC_136; 
 	jump L_SayX95; .L_Say96;
-		ParaContent();  print (PrintText) SC_136; ParaContent();  style bold; ParaContent();  print (PrintText) SC_90; ParaContent();  style roman; 
+		ParaContent();  print (PrintText) SC_137; ParaContent();  style bold; ParaContent();  print (PrintText) SC_91; ParaContent();  style roman; 
 	.L_Say97; .L_SayX95;
 		 .L_Say98; .L_SayX96;
     rtrue;
 ];
 
 [ text_routine_5;
-say__p=1;ParaContent();  print (PrintText) SC_137; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say99; .L_SayX97;
+say__p=1;ParaContent();  print (PrintText) SC_138; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say99; .L_SayX97;
     rtrue;
 ];
 
 [ text_routine_6;
-say__p=1;ParaContent();  print (PrintText) SC_138; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say100; .L_SayX98;
+say__p=1;ParaContent();  print (PrintText) SC_139; ParaContent();  print (PrintTimeOfDay) the_time;  .L_Say100; .L_SayX98;
     rtrue;
 ];
 
@@ -27635,7 +27621,7 @@ say__p=1;ParaContent();  print (PrintShortName) real_location;  .L_Say101; .L_Sa
 ];
 
 [ text_routine_8;
-say__p=1;ParaContent();  print (say__n=score); ParaContent();  print (PrintText) SC_139; ParaContent();  print (say__n=turns);  .L_Say102; .L_SayX100;
+say__p=1;ParaContent();  print (say__n=score); ParaContent();  print (PrintText) SC_140; ParaContent();  print (say__n=turns);  .L_Say102; .L_SayX100;
     rtrue;
 ];
 
@@ -29522,143 +29508,144 @@ ArgumentTypeFailed(filename, line);
 Array ConstantListPointers --> 
  0 0;
 
-Constant SC_19 = " ";
-Constant SC_121 = " There is an office to the ";
-Constant SC_18 = " Welcome. You are about to have... ";
-Constant SC_113 = " and a number of ";
-Constant SC_39 = " at any time to get help.";
-Constant SC_79 = " here";
-Constant SC_111 = " it anywhere~.";
-Constant SC_51 = " it on the desk there, will you?~";
-Constant SC_116 = " on it.";
-Constant SC_119 = " on the wall.";
-Constant SC_69 = " or ";
-Constant SC_114 = " pertaining to your major. There is also a ";
-Constant SC_88 = " to find clues to your next action.";
-Constant SC_132 = " toward the exit.";
-Constant SC_115 = " with many more ";
-Constant SC_74 = " you ";
-Constant SC_129 = " you see stairs.";
-Constant SC_101 = "~Don't forget that there's going to be an evacuation drill at noon.~, she says, cheerily.";
-Constant SC_96 = "~Hello,~ you say to the Emergency Building Coordinator.";
-Constant SC_94 = "~Hello,~ you say to the Professor.";
-Constant SC_100 = "~Hm? Oh, hello.~";
-Constant SC_109 = "~I'm dropping off your book,~ you say, casually.";
-Constant SC_95 = "~I'm pretty busy right now,~ The professor says. ~If you have questions about the course, come see me during office hours.~";
-Constant SC_110 = "~Oh, that's fine. You can just ";
-Constant SC_99 = "~Pretty busy here.~";
-Constant SC_98 = "~Sorry? Oh, hello.~";
-Constant SC_97 = "~What's that? Oh, hello.~";
-Constant SC_24 = "(or ";
-Constant SC_26 = ")";
-Constant SC_70 = ", ";
-Constant SC_37 = ", and ";
-Constant SC_123 = ", and the hallway continues to the ";
-Constant SC_91 = ", you can just type ";
-Constant SC_127 = ", you see a set of old elevator doors. To the ";
-Constant SC_68 = ",";
-Constant SC_131 = ". In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and ";
-Constant SC_125 = ". To the ";
-Constant SC_80 = ".";
-Constant SC_20 = "... a very bad week.";
-Constant SC_139 = "/";
-Constant SC_45 = ": ";
-Constant SC_81 = ":";
-Constant SC_71 = "> ";
-Constant SC_10 = ">";
-Constant SC_67 = "?";
-Constant SC_7 = "As good-looking as ever.";
+Constant SC_20 = " ";
+Constant SC_122 = " There is an office to the ";
+Constant SC_19 = " Welcome. You are about to have... ";
+Constant SC_114 = " and a number of ";
+Constant SC_40 = " at any time to get help.";
+Constant SC_80 = " here";
+Constant SC_112 = " it anywhere~.";
+Constant SC_52 = " it on the desk there, will you?~";
+Constant SC_117 = " on it.";
+Constant SC_120 = " on the wall.";
+Constant SC_70 = " or ";
+Constant SC_115 = " pertaining to your major. There is also a ";
+Constant SC_89 = " to find clues to your next action.";
+Constant SC_133 = " toward the exit.";
+Constant SC_116 = " with many more ";
+Constant SC_75 = " you ";
+Constant SC_130 = " you see stairs.";
+Constant SC_102 = "~Don't forget that there's going to be an evacuation drill at noon.~, she says, cheerily.";
+Constant SC_97 = "~Hello,~ you say to the Emergency Building Coordinator.";
+Constant SC_95 = "~Hello,~ you say to the Professor.";
+Constant SC_101 = "~Hm? Oh, hello.~";
+Constant SC_110 = "~I'm dropping off your book,~ you say, casually.";
+Constant SC_96 = "~I'm pretty busy right now,~ The professor says. ~If you have questions about the course, come see me during office hours.~";
+Constant SC_111 = "~Oh, that's fine. You can just ";
+Constant SC_100 = "~Pretty busy here.~";
+Constant SC_99 = "~Sorry? Oh, hello.~";
+Constant SC_98 = "~What's that? Oh, hello.~";
+Constant SC_25 = "(or ";
+Constant SC_27 = ")";
+Constant SC_71 = ", ";
+Constant SC_38 = ", and ";
+Constant SC_124 = ", and the hallway continues to the ";
+Constant SC_92 = ", you can just type ";
+Constant SC_128 = ", you see a set of old elevator doors. To the ";
+Constant SC_69 = ",";
+Constant SC_132 = ". In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and ";
+Constant SC_126 = ". To the ";
+Constant SC_81 = ".";
+Constant SC_21 = "... a very bad week.";
+Constant SC_140 = "/";
+Constant SC_46 = ": ";
+Constant SC_82 = ":";
+Constant SC_72 = "> ";
+Constant SC_11 = ">";
+Constant SC_68 = "?";
+Constant SC_8 = "As good-looking as ever.";
 Constant SC_2 = "Devin Quirozoliver";
-Constant SC_61 = "Don't forget that there's going to be an evacuation drill at noon.";
-Constant SC_128 = "East";
-Constant SC_27 = "Exploration commands: ";
-Constant SC_57 = "Figures. There's no cell phone reception in this building.";
-Constant SC_35 = "Finally, remember to use ";
-Constant SC_62 = "Hm?";
-Constant SC_52 = "I don't know, I think his office is around here somewhere.";
-Constant SC_73 = "In ";
-Constant SC_30 = "Inventory commands: ";
-Constant SC_89 = "Many commands have shorter versions. For instance, to go ";
-Constant SC_22 = "Movement commands: ";
-Constant SC_126 = "North";
-Constant SC_75 = "On ";
-Constant SC_120 = "On the East wall you see a ";
-Constant SC_107 = "Please press SPACE to continue.";
-Constant SC_60 = "Pretty busy here.";
-Constant SC_14 = "QUIT";
-Constant SC_11 = "RESTART";
-Constant SC_12 = "RESTORE a saved game";
-Constant SC_86 = "Remember to look for commands in ";
-Constant SC_135 = "Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. ";
-Constant SC_59 = "Sorry?";
-Constant SC_124 = "South";
-Constant SC_33 = "Speech commands: ";
-Constant SC_105 = "THUNK.";
-Constant SC_118 = "The Emergency Building Coordinator is busily putting up an evacuation ";
-Constant SC_63 = "The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. ~Don't forget that there's going to be an evacuation drill at noon.~, she says, cheerily.";
-Constant SC_41 = "The Emergency Building Coordinator steps down from her ladder and sighs lightly. ~Still a bit crooked. Oh well.~ The Coordinator turns to you and says ~Don't forget that there's going to be an evacuation drill in a few minutes.";
-Constant SC_102 = "The Professor seems to be ignoring you";
-Constant SC_42 = "The alarm is going off.";
-Constant SC_55 = "The doors are closed! You can't get out!";
-Constant SC_16 = "The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation.";
-Constant SC_5 = "The label at the bottom of the map says: Posted by the Emergency Building Coordinator.";
-Constant SC_64 = "The professor says ~I don't know, I've been in here all day. Working.~";
-Constant SC_65 = "The professor says ~I'm pretty busy right now. If you have questions about the course, come see me during office hours.~";
-Constant SC_49 = "The professor says ~Just ";
-Constant SC_6 = "There is a nice lady putting up a permanent sign in the hallway here. She looks pretty busy.";
-Constant SC_82 = "To get a list of common commands, type ";
-Constant SC_84 = "To see what you should probably be doing right now, type ";
-Constant SC_15 = "UNDO the last command";
-Constant SC_103 = "Well, there goes the alarm. I guess you'd better get downstairs.";
-Constant SC_122 = "West";
-Constant SC_46 = "What the... Did you feel that? There was a kind of a ~WHUMP~, and then the lights flickered. It felt like the whole building shook just then...";
-Constant SC_58 = "What's that?";
-Constant SC_66 = "Would you like to ";
-Constant SC_72 = "You ";
-Constant SC_117 = "You are at the North end of the hallway, on the second floor. ";
-Constant SC_133 = "You are at the South end of the hallway, on the second floor. There is an office to the ";
-Constant SC_136 = "You are in the elevator on the second floor. The hallway is to the ";
-Constant SC_43 = "You can hear a low moan coming from the direction of your professor's office.";
-Constant SC_53 = "You can't do that.";
-Constant SC_134 = "You don't know this yet, but you're about to have a very bad week.";
-Constant SC_48 = "You have to climb up to get back to the second floor. Maybe you shouldn't have taken the elevator.";
-Constant SC_47 = "You have to pry the doors open with your hands. The elevator has stopped between floors. Through the gap at the bottom you can see people yelling and scurrying around on the first floor. Something strange is definitely going on.";
-Constant SC_104 = "You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.";
-Constant SC_108 = "You knock on the door to your professor's office. ~Come in,~ he says. ";
-Constant SC_138 = "You look at your phone. The time is now ";
-Constant SC_137 = "You look at your watch. The time is now ";
-Constant SC_40 = "You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
-Constant SC_44 = "You may have to pry open the doors somehow.";
-Constant SC_21 = "You may use any of the following commands during this scenario:";
-Constant SC_4 = "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here.";
-Constant SC_8 = "You really should have returned this book last week, but things have just been so busy lately....";
-Constant SC_112 = "You see a desk with a ";
-Constant SC_130 = "You see a map of the building. At the bottom of the map you see a ";
-Constant SC_9 = "You see stairs leading to the first and third floors of the building.";
-Constant SC_56 = "You step out of the elevator and into the hall.";
-Constant SC_106 = "You stumble as the lights flicker and the elevator comes to a sudden and irrevokable stop.";
-Constant SC_17 = "You want me to tell you that this is just a game, but I won't. The truth is that any of the things that you read here could happen to you. If you're not properly prepared for disaster, an emergency situation could easily become a horrifying experience.";
-Constant SC_54 = "You're trapped!";
-Constant SC_93 = "Your current objective is ...";
-Constant SC_77 = "also ";
-Constant SC_34 = "ask, tell, say";
-Constant SC_87 = "bold";
-Constant SC_76 = "can ";
-Constant SC_38 = "command";
-Constant SC_83 = "commands";
-Constant SC_36 = "help";
-Constant SC_29 = "l, x";
-Constant SC_28 = "look, examine";
-Constant SC_25 = "n, s, e, w, u, d";
-Constant SC_23 = "north, south, east, west, up, down ";
-Constant SC_85 = "objective";
-Constant SC_50 = "put";
-Constant SC_92 = "s";
-Constant SC_78 = "see ";
-Constant SC_13 = "see some suggestions for AMUSING things to do";
-Constant SC_90 = "south";
-Constant SC_32 = "t, i";
-Constant SC_31 = "take, inventory";
+Constant SC_62 = "Don't forget that there's going to be an evacuation drill at noon.";
+Constant SC_129 = "East";
+Constant SC_28 = "Exploration commands: ";
+Constant SC_58 = "Figures. There's no cell phone reception in this building.";
+Constant SC_36 = "Finally, remember to use ";
+Constant SC_63 = "Hm?";
+Constant SC_53 = "I don't know, I think his office is around here somewhere.";
+Constant SC_74 = "In ";
+Constant SC_31 = "Inventory commands: ";
+Constant SC_90 = "Many commands have shorter versions. For instance, to go ";
+Constant SC_23 = "Movement commands: ";
+Constant SC_127 = "North";
+Constant SC_76 = "On ";
+Constant SC_121 = "On the East wall you see a ";
+Constant SC_108 = "Please press SPACE to continue.";
+Constant SC_61 = "Pretty busy here.";
+Constant SC_15 = "QUIT";
+Constant SC_12 = "RESTART";
+Constant SC_13 = "RESTORE a saved game";
+Constant SC_87 = "Remember to look for commands in ";
+Constant SC_136 = "Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. ";
+Constant SC_60 = "Sorry?";
+Constant SC_125 = "South";
+Constant SC_34 = "Speech commands: ";
+Constant SC_106 = "THUNK.";
+Constant SC_119 = "The Emergency Building Coordinator is busily putting up an evacuation ";
+Constant SC_64 = "The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. ~Don't forget that there's going to be an evacuation drill at noon.~, she says, cheerily.";
+Constant SC_42 = "The Emergency Building Coordinator steps down from her ladder and sighs lightly. ~Still a bit crooked. Oh well.~ The Coordinator turns to you and says ~Don't forget that there's going to be an evacuation drill in a few minutes.";
+Constant SC_103 = "The Professor seems to be ignoring you";
+Constant SC_43 = "The alarm is going off.";
+Constant SC_56 = "The doors are closed! You can't get out!";
+Constant SC_17 = "The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation.";
+Constant SC_6 = "The label at the bottom of the map says: Posted by the Emergency Building Coordinator.";
+Constant SC_65 = "The professor says ~I don't know, I've been in here all day. Working.~";
+Constant SC_66 = "The professor says ~I'm pretty busy right now. If you have questions about the course, come see me during office hours.~";
+Constant SC_50 = "The professor says ~Just ";
+Constant SC_7 = "There is a nice lady putting up a permanent sign in the hallway here. She looks pretty busy.";
+Constant SC_83 = "To get a list of common commands, type ";
+Constant SC_85 = "To see what you should probably be doing right now, type ";
+Constant SC_16 = "UNDO the last command";
+Constant SC_104 = "Well, there goes the alarm. I guess you'd better get downstairs.";
+Constant SC_123 = "West";
+Constant SC_47 = "What the... Did you feel that? There was a kind of a ~WHUMP~, and then the lights flickered. It felt like the whole building shook just then...";
+Constant SC_59 = "What's that?";
+Constant SC_67 = "Would you like to ";
+Constant SC_73 = "You ";
+Constant SC_118 = "You are at the North end of the hallway, on the second floor. ";
+Constant SC_134 = "You are at the South end of the hallway, on the second floor. There is an office to the ";
+Constant SC_137 = "You are in the elevator on the second floor. The hallway is to the ";
+Constant SC_44 = "You can hear a low moan coming from the direction of your professor's office.";
+Constant SC_54 = "You can't do that.";
+Constant SC_135 = "You don't know this yet, but you're about to have a very bad week.";
+Constant SC_49 = "You have to climb up to get back to the second floor. Maybe you shouldn't have taken the elevator.";
+Constant SC_48 = "You have to pry the doors open with your hands. The elevator has stopped between floors. Through the gap at the bottom you can see people yelling and scurrying around on the first floor. Something strange is definitely going on.";
+Constant SC_105 = "You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.";
+Constant SC_109 = "You knock on the door to your professor's office. ~Come in,~ he says. ";
+Constant SC_139 = "You look at your phone. The time is now ";
+Constant SC_138 = "You look at your watch. The time is now ";
+Constant SC_41 = "You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
+Constant SC_45 = "You may have to pry open the doors somehow.";
+Constant SC_22 = "You may use any of the following commands during this scenario:";
+Constant SC_5 = "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here.";
+Constant SC_9 = "You really should have returned this book last week, but things have just been so busy lately....";
+Constant SC_113 = "You see a desk with a ";
+Constant SC_131 = "You see a map of the building. At the bottom of the map you see a ";
+Constant SC_10 = "You see stairs leading to the first and third floors of the building.";
+Constant SC_57 = "You step out of the elevator and into the hall.";
+Constant SC_107 = "You stumble as the lights flicker and the elevator comes to a sudden and irrevokable stop.";
+Constant SC_18 = "You want me to tell you that this is just a game, but I won't. The truth is that any of the things that you read here could happen to you. If you're not properly prepared for disaster, an emergency situation could easily become a horrifying experience.";
+Constant SC_55 = "You're trapped!";
+Constant SC_4 = "Your Professor is sitting at his desk, quietly grading papers. He wears a bow tie and a tweed jacket.";
+Constant SC_94 = "Your current objective is ...";
+Constant SC_78 = "also ";
+Constant SC_35 = "ask, tell, say";
+Constant SC_88 = "bold";
+Constant SC_77 = "can ";
+Constant SC_39 = "command";
+Constant SC_84 = "commands";
+Constant SC_37 = "help";
+Constant SC_30 = "l, x";
+Constant SC_29 = "look, examine";
+Constant SC_26 = "n, s, e, w, u, d";
+Constant SC_24 = "north, south, east, west, up, down ";
+Constant SC_86 = "objective";
+Constant SC_51 = "put";
+Constant SC_93 = "s";
+Constant SC_79 = "see ";
+Constant SC_14 = "see some suggestions for AMUSING things to do";
+Constant SC_91 = "south";
+Constant SC_33 = "t, i";
+Constant SC_32 = "take, inventory";
 Constant SC_3 = "the";
 
 #ifndef p0_specification; Constant p0_specification = 0; #endif;

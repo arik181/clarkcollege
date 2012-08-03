@@ -60,12 +60,12 @@ Section - "The Professor"
 The tweed jacket is a wearable thing.
 The bowtie is a wearable thing.
 
-The Professor is a person. He is in South West Office. He wears a tweed jacket and a bowtie. The description of the professor is "Your Professor is sitting at his desk, quietly grading papers. He wears a bow tie and a tweed jacket."
-Understand "prof" as the Professor.
+Professor Plum is a person. He is in Professor's Office. He wears a tweed jacket and a bowtie. The description of Professor Plum is "Your Professor is sitting at his desk, quietly grading papers. He wears a bow tie and a tweed jacket."
+Understand "prof" as Professor Plum.
 
-In Hallway North is a map. It is fixed in place. The description of the map is "You see a map of the building. At the bottom of the map you see a [label]. In order to get out of the building, you'll have to go North toward the elevator and the stairwell. Then you'll need to head downstairs, and [bold type]South[roman type] toward the exit."
+In Hallway North is a map. It is fixed in place. The description of the map is "You see a map of the building. At the bottom of the map you see a [label]. In order to get out of the building, you'll have to go North toward the elevator or East toward the stairwell. Then you'll need to head downstairs, and [bold type]South[roman type] toward the exit."
 
-The label is a thing on the map. It is fixed in place. The description of the label is "The label at the bottom of the map says: Posted by the Emergency Building Coordinator."
+The label is a thing on the map. It is fixed in place. It is scenery. The description of the label is "The label at the bottom of the map says: Posted by the Emergency Building Coordinator."
 
 
 Section - "The Emergency Building Coordinator"
@@ -99,29 +99,27 @@ The Second Floor is a region.
 
 Hallway South is a room. The description of Hallway South is  "You are at the South end of the hallway, on the second floor. There is an office to the [bold type]West[roman type], and the hallway continues to the [bold type]North[roman type]."
 
-North of Hallway South is Hallway North. The description of Hallway North is  "You are at the North end of the hallway, on the second floor. [If EBC Conversation is happening or Returning a Book is happening]The Emergency Building Coordinator is busily putting up an evacuation [map] on the wall.[otherwise]On the East wall you see a [map].[end if] There is an office to the [bold type]West[roman type], and the hallway continues to the [bold type]South[roman type]. To the [bold type]North[roman type], you see a set of old elevator doors. To the [bold type]East[roman type] you see stairs."
+North of Hallway South is Hallway North. The description of Hallway North is  "You are at the North end of the hallway, on the second floor. [If EBC Conversation is happening or Returning a Book is happening]The Emergency Building Coordinator is busily putting up an evacuation [map] on the wall.[otherwise]On the East wall you see a [map].[end if] The hallway continues to the [bold type]South[roman type]. To the [bold type]North[roman type], you see a set of old elevator doors. To the [bold type]East[roman type] you see stairs."
 
-South West Office is a room. The description of South West Office is "[if South West Office is unvisited]You knock on the door to your professor's office. 'Come in,' he says. [line break]'I'm dropping off your book,' you say, casually.[line break]'Oh, that's fine. You can just [bold type]put[roman type] it anywhere'.[paragraph break][end if]You see a desk with a [stack of papers] and a number of [old books] pertaining to your major. There is also a [bookshelf] with many more [heavy looking books] on it."
-The stack of papers is fixed in place. It is in the South West Office. The description of the stack of papers is "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here."
-The desk is a supporter in the south west office.
-The bookshelf is a supporter in the south west office.
-The old books are on the desk.
-The heavy looking books are on the desk.
-The heavy looking books are on the desk.
+Professor's Office is a room. The description of Professor's Office is "[if Professor's Office is unvisited]You knock on the door to your professor's office. 'Come in,' he says. [line break]'I'm dropping off your book,' you say, casually.[line break]'Oh, that's fine. You can just [bold type]put[roman type] it anywhere'.[paragraph break][end if]You see a desk with a [stack of papers] and a number of [old books] pertaining to your major. There is also a [bookshelf] with many more [heavy books] on it."
+The stack of papers is fixed in place. It is scenery. It is in the Professor's Office. The description of the stack of papers is "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here."
+The desk is a fixed in place supporter in the Professor's Office.
+The bookshelf is a fixed in place supporter in the Professor's Office.
+There are some old books on the desk. They are fixed in place.
+There are some heavy books on the desk. They are fixed in place.
 
-South West Door is an open door. It is east of South West Office and west of Hallway South.
+South West Door is an open door. It is east of Professor's Office and west of Hallway South.
 
 The Second Floor Elevator is a room. The description of The Second Floor Elevator is "[if The Second Floor Elevator is unvisited]You don't know this yet, but you're about to have a very bad week.[paragraph break]Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. [otherwise]You are in the elevator on the second floor. The hallway is to the [bold type]south[roman type][end if]".
 The elevator door is an open door. It is south of the Second Floor Elevator and north of Hallway North.
 Understand "leave the elevator" or "exit the elevator" or "get out" or "get out of the elevator"  or "step out" or "step out of the elevator" as exiting.
 Instead of exiting when the player is in The Second Floor Elevator:
 	say "You step out of the elevator and into the hall.";
-	now the player is in Hallway North
-	
+	now the player is in Hallway North	
 	
 East of Hallway North is The Stairwell. The description of The Stairwell is "You see stairs leading to the first and third floors of the building."
 
-Hallway South, Hallway North, North West Office, South West Office, The Second Floor Elevator and The Stairwell are in the second floor.
+Hallway South, Hallway North, North West Office, Professor's Office, The Second Floor Elevator and The Stairwell are in the second floor.
 
 
 Section - "First Floor"
@@ -176,14 +174,14 @@ Section - "Returning a Book"
 
 Returning a Book is a scene.
 Returning a Book begins when play begins.
-Returning a Book ends when borrowed book is in South West Office, or borrowed book is on the desk in South West Office, or borrowed book is on the bookshelf in South West Office, or Professor is carrying borrowed book.
+Returning a Book ends when borrowed book is in Professor's Office, or borrowed book is on the desk in Professor's Office, or borrowed book is on the bookshelf in Professor's Office, or Professor Plum is carrying borrowed book.
 
 Instead of asking the Emergency Building Coordinator about "professor", say "I don't know, I think his office is around here somewhere."
-Instead of giving the book to the professor, say "The professor says 'Just [bold type]put[roman type] it on the desk there, will you?'"
-After asking the professor about anything, say "[one of]The professor says 'I don't know, I've been in here all day. Working.'[or]The professor says 'I'm pretty busy right now. If you have questions about the course, come see me during office hours.'[at random]"
+Instead of giving the book to Professor Plum, say "The professor says 'Just [bold type]put[roman type] it on the desk there, will you?'"
+After asking Professor Plum about anything, say "[one of]The professor says 'I don't know, I've been in here all day. Working.'[or]The professor says 'I'm pretty busy right now. If you have questions about the course, come see me during office hours.'[at random]"
 
-Check talking to when noun is the Professor during Returning a Book:
-	say "'Hello,' you say to the Professor.[line break]'I'm pretty busy right now,' The professor says. 'If you have questions about the course, come see me during office hours.'".
+Check talking to when noun is Professor Plum during Returning a Book:
+	say "'Hello,' you say to the professor.[line break]'I'm pretty busy right now,' The professor says. 'If you have questions about the course, come see me during office hours.'".
 
 Check talking to when noun is Emergency Building Coordinator during Returning a Book:
 	say "'Hello,' you say to the Emergency Building Coordinator.[line break][if Returning a Book is happening][one of]'What's that? Oh, hello.'[or]'Sorry? Oh, hello.'[or]'Pretty busy here.'[or]'Hm? Oh, hello.'[at random][end if]'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.".
@@ -199,7 +197,7 @@ Every turn during EBC Conversation:
 		say "The Emergency Building Coordinator steps down from her ladder and sighs lightly. 'Still a bit crooked. Oh well.' The Coordinator turns to you and says 'Don't forget that there's going to be an evacuation drill in a few minutes.";
 		now Emergency Building Coordinator is off-stage.
 	
-Check talking to when noun is the Professor during EBC Conversation:
+Check talking to when noun is Professor Plum during EBC Conversation:
 	say "The Professor seems to be ignoring you".
 
 Check talking to when noun is Emergency Building Coordinator during EBC Conversation:
@@ -228,10 +226,10 @@ Every turn during Not a drill:
 	If alarm is ringing:
 		say "The alarm is going off."
 
-Section - "Helping the professor"
+Section - "Helping Professor Plum"
  
-Helping the professor is a scene.
-Helping the professor begins when Not a drill begins.
+Helping Professor Plum is a scene.
+Helping Professor Plum begins when Not a drill begins.
 
 An event is a kind of thing. An event can be attempted or unattempted.
 The rescue is an event.

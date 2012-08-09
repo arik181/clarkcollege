@@ -23,10 +23,17 @@ Report commanding:
 	say "[paragraph break]Finally, remember to use [bold type]help[roman type], [bold type]command[roman type], and [bold type]objective[roman type] at any time to get help.";
 	say "[line break]You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
 	
+The objective is indexed text that varies.
+The objective is "to return the borrowed book to your Professor."
+
 Objectiving is an action applying to nothing.
 Understand "obj", "objective" or "objectives" as objectiving.
 Report objectiving:
-	say "Your current objective is ..." [need to insert a table of objectives here to match the current scene]
+	say "Your current objective is:[line break][objective]"
+	
+Currentrooming is an action applying to nothing.
+Report currentrooming:
+	say "You are currently in the[line break][location].";
 
 Mapping is an action applying to nothing.
 Understand "m" or "map" as mapping.
@@ -35,14 +42,17 @@ Report mapping:
         try rooming;
         try rooming;
         try rooming;
-        
+        try currentrooming;
+        try objectiving;
 	
 Rooming is an action applying to nothing.
 Report rooming:
-	say "***[line break]";
-	say "* *[line break]";
-	say "***[line break]";
-	
+	say "*** ";
+	say "[line break]";
+	say "* * ";
+	say "[line break]";
+	say "*** ";
+	say "[line break]";
 
 
 Talking to is an action applying to one visible thing.
@@ -50,7 +60,9 @@ Understand "talk to [someone]" as talking to.
 Understand "talk" as talking to.
 Understand "say hello to [someone]" as talking to.
 
-
+Every turn:
+	follow the window-drawing rules for the map-window;
+	
 Section - "Command and Map Windows"
 
 The command-window is a text-buffer g-window spawned by the main-window.

@@ -1,6 +1,7 @@
 "Evacuation" by "Devin Quirozoliver"
 
 Include Basic Screen Effects by Emily Short.
+Include Glulx Text Effects by Emily Short.
 Include Flexible Windows by Jon Ingold.
 
 Chapter - "Setup"
@@ -31,14 +32,18 @@ Mapping is an action applying to nothing.
 Understand "m" or "map" as mapping.
 Report mapping:
 	say "[paragraph break]            MAP[paragraph break]";
-	say "[fixed letter spacing]";
-	say "    ";
-	say "   ______________  [line break]";
-	say "    ";
-	say "  |  |  |  |  |  |[line break]";
-	say "    ";
-	say "   --------------  [line break]";
-	say "[variable letter spacing]";
+        try rooming;
+        try rooming;
+        try rooming;
+        
+	
+Rooming is an action applying to nothing.
+Report rooming:
+	say "***[line break]";
+	say "* *[line break]";
+	say "***[line break]";
+	
+
 
 Talking to is an action applying to one visible thing.
 Understand "talk to [someone]" as talking to. 

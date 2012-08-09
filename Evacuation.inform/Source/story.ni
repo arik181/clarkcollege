@@ -1,7 +1,7 @@
 "Evacuation" by "Devin Quirozoliver"
 
 Include Basic Screen Effects by Emily Short.
-
+Include Flexible Windows by Jon Ingold.
 
 Chapter - "Setup"
 
@@ -26,12 +26,50 @@ Objectiving is an action applying to nothing.
 Understand "obj", "objective" or "objectives" as objectiving.
 Report objectiving:
 	say "Your current objective is ..." [need to insert a table of objectives here to match the current scene]
-	
+
+Mapping is an action applying to nothing.
+Understand "m" or "map" as mapping.
+Report mapping:
+	say "[paragraph break]            MAP[paragraph break]";
+	say "[fixed letter spacing]";
+	say "    ";
+	say "   ______________  [line break]";
+	say "    ";
+	say "  |  |  |  |  |  |[line break]";
+	say "    ";
+	say "   --------------  [line break]";
+	say "[variable letter spacing]";
+
 Talking to is an action applying to one visible thing.
 Understand "talk to [someone]" as talking to. 
 Understand "talk" as talking to.
 Understand "say hello to [someone]" as talking to.
 
+
+Section - "Command and Map Windows"
+
+The command-window is a text-buffer g-window spawned by the main-window.
+The map-window is a text-grid g-window spawned by the command-window.
+
+The position of the command-window is g-placeright.
+The position of the map-window is g-placebelow.
+
+The scale method of the command-window is g-proportional. The measurement of the command-window is 25.
+The scale method of the map-window is g-proportional. The measurement of the map-window is 50.
+
+Window-drawing rule for the command-window:
+	if command-window is g-unpresent, rule fails;
+	clear the command-window;
+	move focus to command-window;
+	try commanding;
+	return to main screen;
+		
+Window-drawing rule for the map-window:
+	if map-window is g-unpresent, rule fails;
+	clear the map-window;
+	move focus to map-window;
+	try mapping;
+	return to main screen;
 
 
 Section - "Tracking Time and Score"
@@ -151,6 +189,8 @@ Chapter - "Time"
 Section - "Start"
 
 When play begins: 
+	open up the command-window;
+	open up the map-window;
 	say "The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation."; 
 	say "[bold type]";
 	pause the game; 
@@ -166,7 +206,7 @@ When play begins:
 	say "[paragraph break]Finally, remember to use [bold type]help[roman type], and [bold type]command[roman type] at any time to get help.";
 	say "[line break]You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
 	say "[bold type]";
-	pause the game.
+	pause the game;
 
 The player is in The Second Floor Elevator.
 
@@ -175,6 +215,7 @@ Section - "Returning a Book"
 Returning a Book is a scene.
 Returning a Book begins when play begins.
 Returning a Book ends when borrowed book is in Professor's Office, or borrowed book is on the desk in Professor's Office, or borrowed book is on the bookshelf in Professor's Office, or Professor Plum is carrying borrowed book.
+The description of returning a book is "".
 
 Instead of asking the Emergency Building Coordinator about "professor", say "I don't know, I think his office is around here somewhere."
 Instead of giving the book to Professor Plum, say "The professor says 'Just [bold type]put[roman type] it on the desk there, will you?'"
@@ -191,6 +232,7 @@ Section - "EBC Conversation"
 EBC Conversation is a scene.
 EBC Conversation begins when Returning a Book has ended.
 EBC Conversation ends when the Emergency Building Coordinator is off-stage.
+The description of EBC conversation is "".
 
 Every turn during EBC Conversation:
 	If player is in Hallway North:
@@ -215,6 +257,8 @@ When Not a drill begins:
 	now the alarm is ringing;
 	say "Well, there goes the alarm. I guess you'd better get downstairs."
 	
+The description of not a drill is "".
+	
 Before going to the Second Floor Elevator during Not a drill:
 	If the water heater is undetonated:
 		clear only the main screen;
@@ -230,6 +274,7 @@ Section - "Helping Professor Plum"
  
 Helping Professor Plum is a scene.
 Helping Professor Plum begins when Not a drill begins.
+The description of helping professor plum is "".
 
 An event is a kind of thing. An event can be attempted or unattempted.
 The rescue is an event.
@@ -243,6 +288,7 @@ Section - "The Elevator Trap"
 The elevator trap is a scene.
 The elevator trap begins when the player is in the Second Floor Elevator and the Alarm is ringing.
 The elevator trap ends when the player is not in the Second Floor Elevator.
+The description of the elevator trap is "".
 
 When the Elevator Trap begins:
 	say "You jab the button for the first floor repeatedly. The elevator doors close and you feel yourself grow just a tiny bit lighter as the elevator begins to descend.[paragraph break]THUNK.[paragraph break]You stumble as the lights flicker and the elevator comes to a sudden and irrevokable stop.";
@@ -265,11 +311,13 @@ Section - "Chaos on the first floor"
 Chaos on the first floor is a scene.
 Chaos on the first floor begins when the player is in the First Floor Stairwell and the Alarm is ringing.
 Chaos on the first floor ends when the player is in the First Floor Hallway South and the Alarm is ringing.
+The description of chaos on the first floor is "".
 
 Section - "Epilogue"
 
 Epilogue is a scene.
 Epilogue begins when Chaos on the first floor ends.
+The description of Epilogue is "".
 
 release along with the source text.
 release along with an interpreter.

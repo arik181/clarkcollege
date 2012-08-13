@@ -24,35 +24,113 @@ Report commanding:
 	say "[line break]You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
 	
 The objective is indexed text that varies.
-The objective is "to return the borrowed book to your Professor."
+The objective is "to find your Professor."
 
 Objectiving is an action applying to nothing.
 Understand "obj", "objective" or "objectives" as objectiving.
 Report objectiving:
-	say "Your current objective is:[line break][objective]"
+	say "    Your current objective is:[line break]    [objective]";
+	say "[line break]";
 	
 Currentrooming is an action applying to nothing.
 Report currentrooming:
-	say "You are currently in the[line break][location].";
+	say "[line break]";
+	say "    You are currently in the[line break]    [location]."; 
 
 Mapping is an action applying to nothing.
 Understand "m" or "map" as mapping.
 Report mapping:
-	say "[paragraph break]            MAP[paragraph break]";
-        try rooming;
-        try rooming;
-        try rooming;
-        try currentrooming;
-        try objectiving;
+	clear the map-window;
+	try currentrooming;
+	try objectiving;
+	try rendering;
 	
-Rooming is an action applying to nothing.
-Report rooming:
-	say "*** ";
-	say "[line break]";
-	say "* * ";
-	say "[line break]";
-	say "*** ";
-	say "[line break]";
+Section - "Map Rendering"
+
+[Grid is enumerated from 1]
+Table of Third Floor Rooms
+RName	X	Y
+Third Floor Stairwell	3	2
+
+Table of Second Floor Rooms
+RName	X	Y
+Second Floor Elevator	2	1
+Hallway North	2	2
+Hallway South	2	3
+Professor's Office	1	3
+The Stairwell	3	2
+
+Table of First Floor Rooms
+RName	X	Y
+First Floor Elevator	2	1
+First Floor Hallway North	2	2
+First Floor Stairwell	3	2
+First Floor Hallway South	2	3
+
+
+[This table describes a separate grid 
+ which overlays the room grid.]
+[There are no connecting passages
+  on the third floor]
+  [Type 1 : Vertical]
+  [Type 2 : Horizontal]
+Table of First Floor Connecting Passages
+Orientation	X	Y
+"v"	2	1
+"v"	2	2
+"h"	2	2
+
+Table of Second Floor Connecting Passages
+Orientation	X	Y
+"v"	2	1
+"v"	2	2
+"h"	2	2
+"h"	1	3
+
+
+Table of Third Floor Connecting Passages
+Orientation
+"none"
+
+The curtable is a table-name that varies;
+The curconnection is a table-name that varies;
+
+Rendering is an action applying to nothing.
+Report rendering:
+	If the player is in the Second Floor:
+		Now the curtable is the Table of Second Floor Rooms;
+		Now the curconnection is the Table of Second Floor Connecting Passages;
+	If the player is in the First Floor:
+		Now the curtable is the Table of First Floor Rooms;
+		Now the curconnection is the Table of First Floor Connecting Passages;
+	If the player is in the Third Floor:
+		Now the curtable is the Table of Third Floor Rooms;
+		Now the curconnection is the Table of Third Floor Connecting Passages;
+	repeat with N running from 1 to the number of rows in the curtable:
+		If the player is in rname in row N of the curtable:
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 6) column (X in row N of the curtable * 6);
+			say "***";
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 7) column (X in row N of the curtable * 6);
+			say "*y*";
+			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 8) column (X in row N of the curtable * 6);
+			say "***";
+		Otherwise:
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 6) column (X in row N of the curtable * 6);
+			say "***";
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 7) column (X in row N of the curtable * 6);
+			say "* *";
+			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 8) column (X in row N of the curtable * 6);
+			say "***";
+	repeat with M running from 1 to the number of rows in the curconnection:
+		Choose row M in the curconnection;
+		If the orientation entry is "v": 
+			position the cursor in map-window at row ((Y entry * 4) + 9) column ((X entry * 6) + 1);
+			say "|";
+		If the orientation entry is "h": 
+			position the cursor in map-window at row ((Y entry * 4) + 7) column ((X entry * 6) + 3);
+			say "---";
+	position the cursor in map-window at row 23 column 1;
+	say "    MAP KEY - [line break]    y = You. [paragraph break]";
 
 
 Talking to is an action applying to one visible thing.
@@ -71,7 +149,7 @@ The map-window is a text-grid g-window spawned by the command-window.
 The position of the command-window is g-placeright.
 The position of the map-window is g-placebelow.
 
-The scale method of the command-window is g-proportional. The measurement of the command-window is 25.
+The scale method of the command-window is g-proportional. The measurement of the command-window is 35.
 The scale method of the map-window is g-proportional. The measurement of the map-window is 50.
 
 Window-drawing rule for the command-window:
@@ -174,7 +252,7 @@ Instead of exiting when the player is in The Second Floor Elevator:
 	
 East of Hallway North is The Stairwell. The description of The Stairwell is "You see stairs leading to the first and third floors of the building."
 
-Hallway South, Hallway North, North West Office, Professor's Office, The Second Floor Elevator and The Stairwell are in the second floor.
+Hallway South, Hallway North, Professor's Office, The Second Floor Elevator and The Stairwell are in the second floor.
 
 
 Section - "First Floor"
@@ -183,12 +261,12 @@ The First Floor is a region.
 
 The First Floor Elevator is a room.
 
-East of the First Floor Hallway North is The First Floor Stairwell. It is below the Stairwell.
+East of the First Floor Hallway North is First Floor Stairwell. It is below the Stairwell.
 
 South of The First Floor Elevator is First Floor Hallway North.
 South of First Floor Hallway North is First Floor Hallway South.
 
-The First Floor Elevator, The First Floor Stairwell, The First Floor Hallway North, and the First Floor Hallway South are in The First Floor.
+The First Floor Elevator, First Floor Stairwell, The First Floor Hallway North, and the First Floor Hallway South are in The First Floor.
 
 
 Section - "Third Floor"
@@ -215,17 +293,8 @@ When play begins:
 	say "[paragraph break][paragraph break]You want me to tell you that this is just a game, but I won't. The truth is that any of the things that you read here could happen to you. If you're not properly prepared for disaster, an emergency situation could easily become a horrifying experience.[paragraph break] Welcome. You are about to have... [paragraph break] ";
 	say "[bold type]... a very bad week."; 
 	pause the game; 
-	say "[roman type]";
-	say "[paragraph break][paragraph break]You may use any of the following commands during this scenario:[paragraph break]Movement commands: [line break][bold type]north, south, east, west, up, down [roman type](or [bold type]n, s, e, w, u, d[roman type])"; 
-	say "[paragraph break]Exploration commands: [line break][bold type]look, examine[roman type](or [bold type]l, x[roman type])"; 
-	say "[paragraph break]Inventory commands: [line break][bold type]take, inventory[roman type](or [bold type]t, i[roman type])"; 
-	say "[paragraph break]Speech commands: [line break][bold type]ask, tell, say[roman type]"; 
-	say "[paragraph break]Finally, remember to use [bold type]help[roman type], and [bold type]command[roman type] at any time to get help.";
-	say "[line break]You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
-	say "[bold type]";
-	pause the game;
 
-The player is in The Second Floor Elevator.
+The player is in The First Floor Hallway South.
 
 Section - "Returning a Book"
 

@@ -430,7 +430,8 @@ The rescue is an event.
 Every turn during Not a Drill:
 	if the player is in Professor's Office:
 		say "You help the Professor to his feet. He favors his arm a little bit. 'I can walk if you help me,' he says. 'We should probably leave the building now. You lead the way.' He takes your arm and you help him toward the door.";
-		now the rescue is attempted.
+		now the rescue is attempted;
+		now the objective is "to help the Professor leave the building."
 		
 Every turn during Not a drill:
 	If the rescue is unattempted, and the player is in the second floor:

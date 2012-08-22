@@ -58,7 +58,7 @@ Second Floor Elevator	2	1
 Hallway North	2	2
 Hallway South	2	3
 Professor's Office	1	3
-The Stairwell	3	2
+The Second Floor Stairwell	3	2
 
 Table of First Floor Rooms
 RName	X	Y
@@ -111,7 +111,7 @@ Report rendering:
 			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 6) column (X in row N of the curtable * 6);
 			say "***";
 			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 7) column (X in row N of the curtable * 6);
-			say "*y*";
+			say "*@*";
 			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 8) column (X in row N of the curtable * 6);
 			say "***";
 		Otherwise:
@@ -130,7 +130,7 @@ Report rendering:
 			position the cursor in map-window at row ((Y entry * 4) + 7) column ((X entry * 6) + 3);
 			say "---";
 	position the cursor in map-window at row 23 column 1;
-	say "    MAP KEY - [line break]    y = You. [paragraph break]";
+	say "    MAP KEY - [line break]    @ = You. [paragraph break]";
 
 
 Talking to is an action applying to one visible thing.
@@ -169,6 +169,8 @@ Window-drawing rule for the map-window:
 
 Section - "Tracking Time and Score"
 
+The maximum score is 100.
+
 The time of day is 10:00 AM. 
 The watch is a thing. The description of the watch is "You look at your watch. The time is now [time of day]".
 The cell phone is a thing. The description of the phone is "You look at your phone. The time is now [time of day]".
@@ -180,6 +182,8 @@ Instead of dialing: say "Figures. There's no cell phone reception in this buildi
 Understand "call [number]" as dialing.
 Understand "dial [number]" as dialing.
 
+
+Chapter - "Characters"
 
 Section - "The Player"
 
@@ -199,6 +203,9 @@ Understand "prof" as Professor Plum.
 In Hallway North is a map. It is fixed in place. The description of the map is "You see a map of the building. At the bottom of the map you see a [label]. In order to get out of the building, you'll have to go North toward the elevator or East toward the stairwell. Then you'll need to head downstairs, and [bold type]South[roman type] toward the exit."
 
 The label is a thing on the map. It is fixed in place. It is scenery. The description of the label is "The label at the bottom of the map says: Posted by the Emergency Building Coordinator."
+
+After examining the map:
+	increase the score by 7;
 
 
 Section - "The Emergency Building Coordinator"
@@ -243,28 +250,59 @@ There are some heavy books on the desk. They are fixed in place.
 
 South West Door is an open door. It is east of Professor's Office and west of Hallway South.
 
-The Second Floor Elevator is a room. The description of The Second Floor Elevator is "[if The Second Floor Elevator is unvisited]You don't know this yet, but you're about to have a very bad week.[paragraph break]Right now you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. The elevator has just arrived on the second floor. [otherwise]You are in the elevator on the second floor. The hallway is to the [bold type]south[roman type][end if]".
+The Second Floor Elevator is a room. The description of The Second Floor Elevator is "[if Second Floor Elevator is unvisited and Prologue is happening]Now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. Good luck![otherwise]You are in the elevator on the second floor. The hallway is to the [bold type]south[roman type]".
 The elevator door is an open door. It is south of the Second Floor Elevator and north of Hallway North.
-Understand "leave the elevator" or "exit the elevator" or "get out" or "get out of the elevator"  or "step out" or "step out of the elevator" as exiting.
+Understand "leave" or "leave the elevator" or "exit the elevator" or "get out" or "get out of the elevator"  or "step out" or "step out of the elevator" as exiting.
 Instead of exiting when the player is in The Second Floor Elevator:
 	say "You step out of the elevator and into the hall.";
-	now the player is in Hallway North	
+	now the player is in Hallway North.
 	
-East of Hallway North is The Stairwell. The description of The Stairwell is "You see stairs leading to the first and third floors of the building."
+East of Hallway North is The Second Floor Stairwell. The description of The Second Floor Stairwell is "[if Second Floor Stairwell is unvisited and Prologue is happening]So now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. Good luck![otherwise]You are in the second floor stairwell. You see stairs leading to the first and third floors of the building.[end if]"
 
-Hallway South, Hallway North, Professor's Office, The Second Floor Elevator and The Stairwell are in the second floor.
+Hallway South, Hallway North, Professor's Office, The Second Floor Elevator and The Second Floor Stairwell are in the second floor.
 
 
 Section - "First Floor"
 
 The First Floor is a region.
 
-The First Floor Elevator is a room.
+The First Floor Elevator is a room. The description of the First Floor Elevator is "[If the First Floor Elevator is unvisited and Prologue is happening]Now you're in the first floor elevator. If you  [bold type]look[roman type] around, you'll see that there are some buttons here. Try pushing the button for the second floor.[otherwise]You are in the First Floor Elevator. There are buttons here for the first and second floors.[end if]"
 
-East of the First Floor Hallway North is First Floor Stairwell. It is below the Stairwell.
+A pressable is a kind of thing.
+The 1F Button is a pressable. It is in the First Floor Elevator. The 1F Button is fixed in place.
+The 2F Button is a pressable. It is in the First Floor Elevator. The 2F Button is fixed in place.
 
-South of The First Floor Elevator is First Floor Hallway North.
-South of First Floor Hallway North is First Floor Hallway South.
+Every turn:
+	if the player is in the first floor elevator:
+		now the 1F Button is in the first floor elevator;
+		now the 2F Button is in the first floor elevator;
+	if the player is in the second floor elevator:
+		now the 1F Button is in the second floor elevator;
+		now the 2F Button is in the second floor elevator;
+		
+Understand "press" as pushing.
+			
+Instead of pushing:
+	if the Lift is stuck:
+		say "Yeah, that's not going to work. The elevator is stuck, remember?";
+	else if the player is in the First Floor Elevator:
+		if the noun is the 2F Button:
+			say "You press [the noun], and head to the Second Floor.";
+			now the player is in the Second Floor Elevator;
+		else if the noun is the 1F Button:
+			say "You're already on the first floor.";
+	else if the player is in the Second Floor Elevator:
+		if the noun is the 1F Button:
+			say "You press [the noun], and head to the FirstFloor.";
+			now the player is in the First Floor Elevator;
+		else if the noun is the 2F Button:
+			say "You're already on the second floor.";
+
+East of the First Floor Hallway North is First Floor Stairwell. It is below the Second Floor Stairwell. The description of the First Floor Stairwell is "[if First Floor Stairwell is unvisited and Prologue is happening]Excellent. In a stairwell, moving between floors is just a matter of using the [bold type]up[roman type] and [bold type]down[roman type] commands. Try going up to the second floor now.[otherwise]You are in the first floor stairwell.[end if]"
+
+South of The First Floor Elevator is First Floor Hallway North. The description of First Floor Hallway North is "[if First Floor Hallway North is unvisited and Prologue is happening]Great! You will notice that the @ in the map on the right moved north by one room. This map represents your current location in the game. Now let's head upstairs. You can use either the elevator to the North, or the stairwell to the East.[otherwise]You are in the First Floor Hallway North. To the East is a stairwell, and to the North is an elevator.[end if]"
+
+South of First Floor Hallway North is First Floor Hallway South. The description of First Floor Hallway South is "[if First Floor Hallway South is unvisited and Prologue is happening]Let's do a quick tutorial, to get you acquainted with the commands. You are currently in the first floor hallway north. Try moving around. Use the command n to go North one room.[otherwise]You're in the First Floor Hallway South. This is the building entrance.[end if]"
 
 The First Floor Elevator, First Floor Stairwell, The First Floor Hallway North, and the First Floor Hallway South are in The First Floor.
 
@@ -273,7 +311,11 @@ Section - "Third Floor"
 
 The Third Floor is a region.
 
-Above the Stairwell is The Third Floor Stairwell.
+Above the Stairwell is The Third Floor Stairwell. The description of the Third Floor Stairwell is "You are in the third floor stairwell. There's is a door here."
+
+The Empty Room is a room. 
+
+The Third Floor Door is a locked door. It is east of the Third Floor Stairwell and west of the MT Room.
 
 The Third Floor Stairwell is in the Third Floor.
 
@@ -286,20 +328,37 @@ Section - "Start"
 When play begins: 
 	open up the command-window;
 	open up the map-window;
-	say "The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation."; 
+	increase the score by 50;
+
+The player is in The First Floor Hallway South.
+
+Section - "Prologue"
+
+Prologue is a scene.
+Prologue begins when play begins.
+Prologue Ends when the player is in Second Floor.
+
+When Prologue begins:
 	say "[bold type]";
 	pause the game; 
 	say "[roman type]";
-	say "[paragraph break][paragraph break]You want me to tell you that this is just a game, but I won't. The truth is that any of the things that you read here could happen to you. If you're not properly prepared for disaster, an emergency situation could easily become a horrifying experience.[paragraph break] Welcome. You are about to have... [paragraph break] ";
+	say "[paragraph break]The following scenario is intended to provide you with the tools that you will need to respond as safely as possible in the event of an emergency situation."; 
+	say "[bold type]";
+	pause the game; 
+	say "[roman type]";
+	say "[paragraph break]What you are about to experience isn't just a game. Any of the things that you read here could happen to you. If you're not prepared, an emergency situation could easily become a horrifying experience.[paragraph break]You are about to have... [paragraph break] ";
 	say "[bold type]... a very bad week."; 
 	pause the game; 
-
-The player is in The First Floor Hallway South.
+	say "[roman type]";
+	say "[paragraph break]You've just arrived on campus. Your first class of the day is in a half an hour, but first you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. You've just entered the building where your professor keeps his office.[paragraph break]";
+	say "[bold type]";
+	pause the game; 
+	say "[roman type]";
 
 Section - "Returning a Book"
 
 Returning a Book is a scene.
-Returning a Book begins when play begins.
+Returning a Book begins when Prologue ends.
 Returning a Book ends when borrowed book is in Professor's Office, or borrowed book is on the desk in Professor's Office, or borrowed book is on the bookshelf in Professor's Office, or Professor Plum is carrying borrowed book.
 The description of returning a book is "".
 
@@ -312,6 +371,11 @@ Check talking to when noun is Professor Plum during Returning a Book:
 
 Check talking to when noun is Emergency Building Coordinator during Returning a Book:
 	say "'Hello,' you say to the Emergency Building Coordinator.[line break][if Returning a Book is happening][one of]'What's that? Oh, hello.'[or]'Sorry? Oh, hello.'[or]'Pretty busy here.'[or]'Hm? Oh, hello.'[at random][end if]'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.".
+
+When Returning a Book ends:
+	Now Professor Plum has the borrowed book;
+	say "[if borrowed book is in the Professor's Office]The professor bends down and picks up the book. 'You should learn to treat books with respect,' he says, dusting off the cover.[otherwise]The professor picks up the book, without looking in your direction, and places it aside.[end if]";
+	Now the objective is "to get to class."
 
 Section - "EBC Conversation"
 
@@ -330,6 +394,9 @@ Check talking to when noun is Professor Plum during EBC Conversation:
 
 Check talking to when noun is Emergency Building Coordinator during EBC Conversation:
 	say "'Hello,' you say to the Emergency Building Coordinator.[if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]".
+	
+When EBC Conversation ends:
+	Now the objective is "To exit the building safely."
 
 
 Section - "Not a drill"
@@ -341,7 +408,8 @@ Not a drill is a scene.
 Not a drill begins when EBC Conversation has ended.
 When Not a drill begins:
 	now the alarm is ringing;
-	say "Well, there goes the alarm. I guess you'd better get downstairs."
+	say "Well, there goes the alarm. I guess you'd better get downstairs.";
+	now the objective is "to find out who is moaning."
 	
 The description of not a drill is "".
 	
@@ -355,19 +423,30 @@ Before going to the Second Floor Elevator during Not a drill:
 Every turn during Not a drill:
 	If alarm is ringing:
 		say "The alarm is going off."
+		
+An event is a kind of thing. An event can be attempted or unattempted.
+The rescue is an event.
+
+Every turn during Not a Drill:
+	if the player is in Professor's Office:
+		say "You help the Professor to his feet. He favors his arm a little bit. 'I can walk if you help me,' he says. 'We should probably leave the building now. You lead the way.' He takes your arm and you help him toward the door.";
+		now the rescue is attempted.
+		
+Every turn during Not a drill:
+	If the rescue is unattempted, and the player is in the second floor:
+		say "You can hear a low moan coming from the direction of your professor's office."
+
+Every turn when alarm is ringing:
+	decrease the score by 1;
 
 Section - "Helping Professor Plum"
  
 Helping Professor Plum is a scene.
-Helping Professor Plum begins when Not a drill begins.
+Helping Professor Plum begins when the rescue is attempted.
 The description of helping professor plum is "".
 
-An event is a kind of thing. An event can be attempted or unattempted.
-The rescue is an event.
-
-Every turn during Not a drill:
-	If the rescue is unattempted, and the player is in the second floor:
-		say "You can hear a low moan coming from the direction of your professor's office."
+Every turn during Helping Professor Plum:
+	say "It looks like Professor is doing ok."
 
 Section - "The Elevator Trap"
 
@@ -382,28 +461,51 @@ When the Elevator Trap begins:
 	now the Lift is stuck;
 
 Every turn during The Elevator Trap:
-	If the lift is stuck:
-		say "You may have to pry open the doors somehow."
+	If the lift is stuck and the player is in the second floor elevator:
+		say "You may have to pry open the doors."
 
 Instead of exiting when the player is in The Second Floor Elevator and the Lift is stuck:
 	say "[one of]You can't do that.[or]You're trapped![or]The doors are closed! You can't get out![at random]";
 	now the player is in Hallway North.
 
+Prying is an action applying to nothing.
+Understand "pry", "pry doors" or "pry elevator doors" as prying.
+
+Instead of prying:
+	clear the screen;
+	say "You have to pry the doors open with your hands. The elevator has stopped between floors. Through the gap at the bottom you can see people yelling and scurrying around on the first floor. Something strange is definitely going on.[paragraph break]You have to climb up to get back to the second floor. Maybe you shouldn't have taken the elevator.";
+	say "[bold type]";
+	pause the game;
+	say "[roman type]";
+	now the player is in Hallway North;
+
 Before going to Hallway North during Elevator Trap:
-	say "You have to pry the doors open with your hands. The elevator has stopped between floors. Through the gap at the bottom you can see people yelling and scurrying around on the first floor. Something strange is definitely going on.[paragraph break]You have to climb up to get back to the second floor. Maybe you shouldn't have taken the elevator."
+	try prying;
 
 Section - "Chaos on the first floor"
 
 Chaos on the first floor is a scene.
 Chaos on the first floor begins when the player is in the First Floor Stairwell and the Alarm is ringing.
 Chaos on the first floor ends when the player is in the First Floor Hallway South and the Alarm is ringing.
-The description of chaos on the first floor is "".
+The description of chaos on the first floor is "There are people running around all over the place down here! You wonder what's going on[if rescue is attempted], but you'd better get the professor out of the building.[otherwise].[end if]".
+
+
 
 Section - "Epilogue"
 
 Epilogue is a scene.
 Epilogue begins when Chaos on the first floor ends.
-The description of Epilogue is "".
+
+When Epilogue begins:
+	say "There's an EMT near the entrance to the building.[if rescue is attempted]You ask him to help you get the Professor to safety.[paragraph break][end if]'What's going on?' you ask.[paragraph break]'An old water heater exploded in the basement. Shook the whole building. Looks like there were only some minor injuries though.' Looks like you're going to be late for class. This has turned out to be a pretty bad day. You're sure that the rest of the week will be better than this. Of course it will. Right?[paragraph break]";	
+	if the rescue is attempted:
+		increase the score by 50;
+	if the lift is stuck:
+		decrease the score by 50;
+	if the third floor stairwell is visited:
+		decrease the score by 20;
+	end the game saying "Final Score : [score]. Can you do better?".
+	
 
 release along with the source text.
 release along with an interpreter.

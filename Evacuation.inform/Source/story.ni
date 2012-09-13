@@ -8,24 +8,23 @@ Chapter - "Setup"
 
 Section - "General Mechanics"
 
+The objective is indexed text that varies.
+The objective is "to find your Professor."
+
 Helping is an action applying to nothing.
 Understand "h" or "help" as helping.
 Report helping:
 	say "To get a list of common commands, type [bold type]commands[roman type].[line break]To see what you should probably be doing right now, type [bold type]objective[roman type].[roman type][line break]Remember to look for commands in [bold type]bold[roman type] to find clues to your next action.[line break]Many commands have shorter versions. For instance, to go [bold type]south[roman type], you can just type [bold type]s[roman type]."
 	
 Commanding is an action applying to nothing.
-Understand "c" or "commands" as commanding.
+Understand "c", "command" or "commands" as commanding.
 Report commanding:
-	say "[paragraph break]You may use any of the following commands during this scenario:[paragraph break]Movement commands: [line break][bold type]north, south, east, west, up, down [roman type](or [bold type]n, s, e, w, u, d[roman type])"; 
-	say "[paragraph break]Exploration commands: [line break][bold type]look, examine[roman type](or [bold type]l, x[roman type])"; 
-	say "[paragraph break]Inventory commands: [line break][bold type]take, inventory[roman type](or [bold type]t, i[roman type])"; 
-	say "[paragraph break]Speech commands: [line break][bold type]ask, tell, say[roman type]"; 
-	say "[paragraph break]Finally, remember to use [bold type]help[roman type], [bold type]command[roman type], and [bold type]objective[roman type] at any time to get help.";
-	say "[line break]You may find additional commands that work, but these will be the only commands necessary to successfully complete the game.";
+	say "[paragraph break]Use the following commands to explore:[paragraph break]Movement: [line break][bold type]north, south, east, west, up, down [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
+	say "[paragraph break]Exploration: [line break][bold type]look, examine, push, press[line break][roman type]([bold type]l, x[roman type])"; 
+	say "[paragraph break]Inventory: [line break][bold type]take, put, drop, inventory[line break][roman type]([bold type]t, p, d, i[roman type])"; 
+	say "[paragraph break]Speech: [line break][bold type]ask, tell, say[roman type]"; 
+	say "[paragraph break]Assistance: [line break]Type [bold type]help[roman type], [bold type]commands[roman type], or [bold type]objective[roman type] at any time to get help.";
 	
-The objective is indexed text that varies.
-The objective is "to find your Professor."
-
 Objectiving is an action applying to nothing.
 Understand "obj", "objective" or "objectives" as objectiving.
 Report objectiving:
@@ -250,14 +249,14 @@ There are some heavy books on the desk. They are fixed in place.
 
 South West Door is an open door. It is east of Professor's Office and west of Hallway South.
 
-The Second Floor Elevator is a room. The description of The Second Floor Elevator is "[if Second Floor Elevator is unvisited and Prologue is happening]Now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. Good luck![otherwise]You are in the elevator on the second floor. The hallway is to the [bold type]south[roman type]".
+The Second Floor Elevator is a room. The description of The Second Floor Elevator is "[if Second Floor Elevator is unvisited and Prologue is happening]Now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. If you want to return to the first floor by way of the elevator, simply [bold type]push[roman type] or [bold type]press[roman type] the 1F button. Good luck![otherwise]You are in the elevator on the second floor. [bold type]Press[roman type] the 1F button to return to the first floor. The hallway is to the [bold type]south[roman type]".
 The elevator door is an open door. It is south of the Second Floor Elevator and north of Hallway North.
-Understand "leave" or "leave the elevator" or "exit the elevator" or "get out" or "get out of the elevator"  or "step out" or "step out of the elevator" as exiting.
+Understand "leave", "leave the elevator","exit the elevator", "get out", "get out of the elevator", "step out" or "step out of the elevator" as exiting.
 Instead of exiting when the player is in The Second Floor Elevator:
 	say "You step out of the elevator and into the hall.";
 	now the player is in Hallway North.
 	
-East of Hallway North is The Second Floor Stairwell. The description of The Second Floor Stairwell is "[if Second Floor Stairwell is unvisited and Prologue is happening]So now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. Good luck![otherwise]You are in the second floor stairwell. You see stairs leading to the first and third floors of the building.[end if]"
+East of Hallway North is The Second Floor Stairwell. The description of The Second Floor Stairwell is "[if Second Floor Stairwell is unvisited and Prologue is happening]So now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. Remember to type [bold type]objectives[roman type] if you're not sure what to do next, or [bold type]commands[roman type] for a list of possible commands. Good luck![otherwise]You are in the second floor stairwell. Type[bold type]down[roman type] to return to the first floor. You see stairs leading to the first and third floors of the building.[end if]"
 
 Hallway South, Hallway North, Professor's Office, The Second Floor Elevator and The Second Floor Stairwell are in the second floor.
 
@@ -266,7 +265,7 @@ Section - "First Floor"
 
 The First Floor is a region.
 
-The First Floor Elevator is a room. The description of the First Floor Elevator is "[If the First Floor Elevator is unvisited and Prologue is happening]Now you're in the first floor elevator. If you  [bold type]look[roman type] around, you'll see that there are some buttons here. Try pushing the button for the second floor.[otherwise]You are in the First Floor Elevator. There are buttons here for the first and second floors.[end if]"
+The First Floor Elevator is a room. The description of the First Floor Elevator is "[If the First Floor Elevator is unvisited and Prologue is happening]Now you're in the first floor elevator. If you  [bold type]look[roman type] around, you'll see that there are some buttons here. Try [bold type]push[roman type]ing the button for the second floor.[otherwise]You are in the First Floor Elevator. [bold type]Press[roman type] the 2F button to go to the second floor. There are buttons here for the first and second floors.[end if]"
 
 A pressable is a kind of thing.
 The 1F Button is a pressable. It is in the First Floor Elevator. The 1F Button is fixed in place.
@@ -298,11 +297,11 @@ Instead of pushing:
 		else if the noun is the 2F Button:
 			say "You're already on the second floor.";
 
-East of the First Floor Hallway North is First Floor Stairwell. It is below the Second Floor Stairwell. The description of the First Floor Stairwell is "[if First Floor Stairwell is unvisited and Prologue is happening]Excellent. In a stairwell, moving between floors is just a matter of using the [bold type]up[roman type] and [bold type]down[roman type] commands. Try going up to the second floor now.[otherwise]You are in the first floor stairwell.[end if]"
+East of the First Floor Hallway North is First Floor Stairwell. It is below the Second Floor Stairwell. The description of the First Floor Stairwell is "[if First Floor Stairwell is unvisited and Prologue is happening]Excellent. In a stairwell, moving between floors is just a matter of using the [bold type]up[roman type] and [bold type]down[roman type] commands. Try going up to the second floor now.[otherwise]You are in the first floor stairwell. Type[bold type]up[roman type] to go to the second floor.[end if]"
 
 South of The First Floor Elevator is First Floor Hallway North. The description of First Floor Hallway North is "[if First Floor Hallway North is unvisited and Prologue is happening]Great! You will notice that the @ in the map on the right moved north by one room. This map represents your current location in the game. Now let's head upstairs. You can use either the elevator to the North, or the stairwell to the East.[otherwise]You are in the First Floor Hallway North. To the East is a stairwell, and to the North is an elevator.[end if]"
 
-South of First Floor Hallway North is First Floor Hallway South. The description of First Floor Hallway South is "[if First Floor Hallway South is unvisited and Prologue is happening]Let's do a quick tutorial, to get you acquainted with the commands. You are currently in the first floor hallway north. Try moving around. Use the command n to go North one room.[otherwise]You're in the First Floor Hallway South. This is the building entrance.[end if]"
+South of First Floor Hallway North is First Floor Hallway South. The description of First Floor Hallway South is "[if First Floor Hallway South is unvisited and Prologue is happening]First, let's do a quick tutorial to get you acquainted with the commands. You are currently in the first floor hallway north. Try moving around. Type [bold type]n[roman type] and press return to go North one room.[otherwise]You're in the First Floor Hallway South. This is the building entrance.[end if]"
 
 The First Floor Elevator, First Floor Stairwell, The First Floor Hallway North, and the First Floor Hallway South are in The First Floor.
 
@@ -350,7 +349,7 @@ When Prologue begins:
 	say "[bold type]... a very bad week."; 
 	pause the game; 
 	say "[roman type]";
-	say "[paragraph break]You've just arrived on campus. Your first class of the day is in a half an hour, but first you need to return a book to your professor's office, but you seem to have gotten yourself lost. You seem to remember that his office is somewhere on the second floor. You need to get there before he leaves. You've just entered the building where your professor keeps his office.[paragraph break]";
+	say "[paragraph break]You've just arrived on campus. Your first class of the day is in a half an hour, but first you need to return a book to your professor's office. Unfortunately, you seem to have forgotten where his office is located. It's somewhere on the second floor. You need to get there before he leaves. You've just entered the building where your professor keeps his office.[paragraph break]";
 	say "[bold type]";
 	pause the game; 
 	say "[roman type]";

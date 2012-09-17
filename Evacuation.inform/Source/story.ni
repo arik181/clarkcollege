@@ -168,7 +168,7 @@ Window-drawing rule for the map-window:
 
 Section - "Tracking Time and Score"
 
-The maximum score is 100.
+The maximum score is 150.
 
 The time of day is 10:00 AM. 
 The watch is a thing. The description of the watch is "You look at your watch. The time is now [time of day]".
@@ -215,7 +215,7 @@ Understand "EBC" as The Emergency Building Coordinator.
 Understand "Coordinator" as The Emergency Building Coordinator.
 
 After asking the Emergency Building Coordinator about something: 
-	say "[if Returning a Book is happening][one of]What's that?[or]Sorry?[or]Pretty busy here.[or]Don't forget that there's going to be an evacuation drill at noon.[or]Hm?[at random][end if][if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]".
+	say "[if Returning a Book is happening][one of]What's that?[or]Sorry?[or]Pretty busy here.[or]Don't forget that there's going to be an evacuation drill at noon.[or]Hm?[at random][end if][if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily. [paragraph break]Once the alarm goes off, you will continue to lose points until you get out of the building.[end if]".
 
 
 Section - "The Elevator"

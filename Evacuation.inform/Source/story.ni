@@ -8,33 +8,36 @@ Chapter - "Setup"
 
 Section - "General Mechanics"
 
-The objective is indexed text that varies.
-The objective is "to find your Professor."
+The player-objective is indexed text that varies.
+The player-objective is "to find your Professor."
 
 Helping is an action applying to nothing.
 Understand "h" or "help" as helping.
 Report helping:
-	say "To get a list of common commands, type [bold type]commands[roman type].[line break]To see what you should probably be doing right now, type [bold type]objective[roman type].[roman type][line break]Remember to look for commands in [bold type]bold[roman type] to find clues to your next action.[line break]Many commands have shorter versions. For instance, to go [bold type]south[roman type], you can just type [bold type]s[roman type]."
+	say "To get a list of common commands, type [bold type]commands[roman type].[line break]To see what you should probably be doing right now, type [bold type]objective[roman type].[roman type][line break]Remember to look for commands in [bold type]bold[roman type] to find clues to your next action.[line break]Many commands have shorter versions. For instance, to go [bold type]south[roman type], you can just type [bold type]s[roman type].";
 	
 Commanding is an action applying to nothing.
-Understand "c", "command" or "commands" as commanding.
+Understand "c" or "command" or "commands" as commanding.
 Report commanding:
-	say "[paragraph break]Use the following commands to explore:[paragraph break]Movement: [line break][bold type]north, south, east, west, up, down [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
+	say "[bold type]Commands:[roman type][paragraph break]Movement: [line break][bold type]north, south, east, west, up, down [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
 	say "[paragraph break]Exploration: [line break][bold type]look, examine, push, press[line break][roman type]([bold type]l, x[roman type])"; 
 	say "[paragraph break]Inventory: [line break][bold type]take, put, drop, inventory[line break][roman type]([bold type]t, p, d, i[roman type])"; 
 	say "[paragraph break]Speech: [line break][bold type]ask, tell, say[roman type]"; 
 	say "[paragraph break]Assistance: [line break]Type [bold type]help[roman type], [bold type]commands[roman type], or [bold type]objective[roman type] at any time to get help.";
 	
 Objectiving is an action applying to nothing.
-Understand "obj", "objective" or "objectives" as objectiving.
+Understand the command "objectives" as something new.
+Understand "objectives" as objectiving.
+Understand "objective" or "obj" as objectiving.
+
 Report objectiving:
-	say "    Your current objective is:[line break]    [objective]";
+	say "    Your current objective is:[line break]    [player-objective]";
 	say "[line break]";
 	
 Currentrooming is an action applying to nothing.
 Report currentrooming:
 	say "[line break]";
-	say "    You are currently in the[line break]    [location]."; 
+	say "    You are currently in the[line break]    [location]."
 
 Mapping is an action applying to nothing.
 Understand "m" or "map" as mapping.
@@ -43,6 +46,12 @@ Report mapping:
 	try currentrooming;
 	try objectiving;
 	try rendering;
+	
+Nomap is a truth state that varies.
+Before the player mapping:
+	If nomap is true:
+		say "That's not a verb I recognise.";
+		stop the action.
 	
 Section - "Map Rendering"
 
@@ -162,7 +171,9 @@ Window-drawing rule for the map-window:
 	if map-window is g-unpresent, rule fails;
 	clear the map-window;
 	move focus to map-window;
+	now nomap is false;
 	try mapping;
+	now nomap is true;
 	return to main screen;
 
 
@@ -240,14 +251,12 @@ Hallway South is a room. The description of Hallway South is  "You are at the So
 
 North of Hallway South is Hallway North. The description of Hallway North is  "You are at the North end of the hallway, on the second floor. [If EBC Conversation is happening or Returning a Book is happening]The Emergency Building Coordinator is busily putting up an evacuation [map] on the wall.[otherwise]On the East wall you see a [map].[end if] The hallway continues to the [bold type]South[roman type]. To the [bold type]North[roman type], you see a set of old elevator doors. To the [bold type]East[roman type] you see stairs."
 
-Professor's Office is a room. The description of Professor's Office is "[if Professor's Office is unvisited]You knock on the door to your professor's office. 'Come in,' he says. [line break]'I'm dropping off your book,' you say, casually.[line break]'Oh, that's fine. You can just [bold type]put[roman type] it anywhere'.[paragraph break][end if]You see a desk with a [stack of papers] and a number of [old books] pertaining to your major. There is also a [bookshelf] with many more [heavy books] on it."
+West of Hallway south is the Professor's Office. The description of Professor's Office is "[if Professor's Office is unvisited]You knock on the door to your professor's office. 'Come in,' he says. [line break]'I'm dropping off your book,' you say, casually.[line break]'Oh, that's fine. You can just [bold type]put[roman type] it anywhere'.[paragraph break][end if]You see a desk with a [stack of papers] and a number of [old books] pertaining to your major. There is also a [bookshelf] with many more [heavy books] on it."
 The stack of papers is fixed in place. It is scenery. It is in the Professor's Office. The description of the stack of papers is "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here."
 The desk is a fixed in place supporter in the Professor's Office.
 The bookshelf is a fixed in place supporter in the Professor's Office.
 There are some old books on the desk. They are fixed in place.
 There are some heavy books on the desk. They are fixed in place.
-
-South West Door is an open door. It is east of Professor's Office and west of Hallway South.
 
 The Second Floor Elevator is a room. The description of The Second Floor Elevator is "[if Second Floor Elevator is unvisited and Prologue is happening]Now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. If you want to return to the first floor by way of the elevator, simply [bold type]push[roman type] or [bold type]press[roman type] the 1F button. Good luck![otherwise]You are in the elevator on the second floor. [bold type]Press[roman type] the 1F button to return to the first floor. The hallway is to the [bold type]south[roman type]".
 The elevator door is an open door. It is south of the Second Floor Elevator and north of Hallway North.
@@ -256,7 +265,7 @@ Instead of exiting when the player is in The Second Floor Elevator:
 	say "You step out of the elevator and into the hall.";
 	now the player is in Hallway North.
 	
-East of Hallway North is The Second Floor Stairwell. The description of The Second Floor Stairwell is "[if Second Floor Stairwell is unvisited and Prologue is happening]So now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. Remember to type [bold type]objectives[roman type] if you're not sure what to do next, or [bold type]commands[roman type] for a list of possible commands. Good luck![otherwise]You are in the second floor stairwell. Type[bold type]down[roman type] to return to the first floor. You see stairs leading to the first and third floors of the building.[end if]"
+East of Hallway North is The Second Floor Stairwell. The description of The Second Floor Stairwell is "[if Second Floor Stairwell is unvisited and Prologue is happening]So now you're upstairs. Notice that the map on the right side of the screen has changed. You'll notice that your objective is located there. You should be able to find the professor's office on this floor. Remember to type [bold type]objectives[roman type] if you're not sure what to do next, or [bold type]commands[roman type] for a list of possible commands. Good luck![otherwise]You are in the second floor stairwell. Type [bold type]down[roman type] to return to the first floor. You see stairs leading to the first and third floors of the building.[end if]"
 
 Hallway South, Hallway North, Professor's Office, The Second Floor Elevator and The Second Floor Stairwell are in the second floor.
 
@@ -297,7 +306,7 @@ Instead of pushing:
 		else if the noun is the 2F Button:
 			say "You're already on the second floor.";
 
-East of the First Floor Hallway North is First Floor Stairwell. It is below the Second Floor Stairwell. The description of the First Floor Stairwell is "[if First Floor Stairwell is unvisited and Prologue is happening]Excellent. In a stairwell, moving between floors is just a matter of using the [bold type]up[roman type] and [bold type]down[roman type] commands. Try going up to the second floor now.[otherwise]You are in the first floor stairwell. Type[bold type]up[roman type] to go to the second floor.[end if]"
+East of the First Floor Hallway North is First Floor Stairwell. It is below the Second Floor Stairwell. The description of the First Floor Stairwell is "[if First Floor Stairwell is unvisited and Prologue is happening]Excellent. In a stairwell, moving between floors is just a matter of using the [bold type]up[roman type] and [bold type]down[roman type] commands. Try going up to the second floor now.[otherwise]You are in the first floor stairwell. Type [bold type]up[roman type] to go to the second floor.[end if]"
 
 South of The First Floor Elevator is First Floor Hallway North. The description of First Floor Hallway North is "[if First Floor Hallway North is unvisited and Prologue is happening]Great! You will notice that the @ in the map on the right moved north by one room. This map represents your current location in the game. Now let's head upstairs. You can use either the elevator to the North, or the stairwell to the East.[otherwise]You are in the First Floor Hallway North. To the East is a stairwell, and to the North is an elevator.[end if]"
 
@@ -374,7 +383,7 @@ Check talking to when noun is Emergency Building Coordinator during Returning a 
 When Returning a Book ends:
 	Now Professor Plum has the borrowed book;
 	say "[if borrowed book is in the Professor's Office]The professor bends down and picks up the book. 'You should learn to treat books with respect,' he says, dusting off the cover.[otherwise]The professor picks up the book, without looking in your direction, and places it aside.[end if]";
-	Now the objective is "to get to class."
+	Now the player-objective is "to get to class."
 
 Section - "EBC Conversation"
 
@@ -395,7 +404,7 @@ Check talking to when noun is Emergency Building Coordinator during EBC Conversa
 	say "'Hello,' you say to the Emergency Building Coordinator.[if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]".
 	
 When EBC Conversation ends:
-	Now the objective is "To exit the building safely."
+	Now the player-objective is "To exit the building safely."
 
 
 Section - "Not a drill"
@@ -408,11 +417,11 @@ Not a drill begins when EBC Conversation has ended.
 When Not a drill begins:
 	now the alarm is ringing;
 	say "Well, there goes the alarm. I guess you'd better get downstairs.";
-	now the objective is "to find out who is moaning."
+	now the player-objective is "to find out who is moaning."
 	
 The description of not a drill is "".
 	
-Before going to the Second Floor Elevator during Not a drill:
+Before going to the Second Floor during Not a drill:
 	If the water heater is undetonated:
 		clear only the main screen;
 		say "[bold type]What the... Did you feel that? There was a kind of a 'WHUMP', and then the lights flickered. It felt like the whole building shook just then...[roman type][paragraph break]";
@@ -430,7 +439,7 @@ Every turn during Not a Drill:
 	if the player is in Professor's Office:
 		say "You help the Professor to his feet. He favors his arm a little bit. 'I can walk if you help me,' he says. 'We should probably leave the building now. You lead the way.' He takes your arm and you help him toward the door.";
 		now the rescue is attempted;
-		now the objective is "to help the Professor leave the building."
+		now the player-objective is "to help the Professor leave the building."
 		
 Every turn during Not a drill:
 	If the rescue is unattempted, and the player is in the second floor:
@@ -462,14 +471,14 @@ When the Elevator Trap begins:
 
 Every turn during The Elevator Trap:
 	If the lift is stuck and the player is in the second floor elevator:
-		say "You may have to pry open the doors."
+		say "You may have to [bold type]pry[roman type] open the doors."
 
 Instead of exiting when the player is in The Second Floor Elevator and the Lift is stuck:
 	say "[one of]You can't do that.[or]You're trapped![or]The doors are closed! You can't get out![at random]";
 	now the player is in Hallway North.
 
 Prying is an action applying to nothing.
-Understand "pry", "pry doors" or "pry elevator doors" as prying.
+Understand "pry", "pry doors", "pry open doors" or "pry elevator doors" as prying.
 
 Instead of prying:
 	clear the screen;

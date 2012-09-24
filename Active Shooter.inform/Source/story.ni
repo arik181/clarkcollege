@@ -1,36 +1,41 @@
-"Active Shooter" by Devin Quirozoliver
+ "Active Shooter" by Devin Quirozoliver
 
 Include Basic Screen Effects by Emily Short.
 Include Glulx Text Effects by Emily Short.
 Include Flexible Windows by Jon Ingold.
-
+Include Plurality by Emily Short.
 
 
 Chapter - "Setup"
 
 Section - "General Mechanics"
 
-The objective is indexed text that varies.
-The objective is "to get to class on time."
+An event is a kind of thing. An event can be attempted or unattempted. An event is usually unattempted.
+
+The player-objective is indexed text that varies.
+The player-objective is "to drop off your paperwork."
 
 Helping is an action applying to nothing.
 Understand "h" or "help" as helping.
 Report helping:
-	say "To get a list of common commands, type [bold type]commands[roman type].[line break]To see what you should probably be doing right now, type [bold type]objective[roman type].[roman type][line break]Remember to look for commands in [bold type]bold[roman type] to find clues to your next action.[line break]Many commands have shorter versions. For instance, to go [bold type]south[roman type], you can just type [bold type]s[roman type]."
+	say "To get a list of common commands, type [bold type]commands[roman type].[line break]To see what you should probably be doing right now, type [bold type]objective[roman type].[roman type][line break]Remember to look for commands in [bold type]bold[roman type] to find clues to your next action.[line break]Many commands have shorter versions. For instance, to go [bold type]south[roman type], you can just type [bold type]s[roman type].";
 	
 Commanding is an action applying to nothing.
 Understand "c", "command" or "commands" as commanding.
 Report commanding:
-	say "[paragraph break]Use the following commands to explore:[paragraph break]Movement: [line break][bold type]north, south, east, west, up, down [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
-	say "[paragraph break]Exploration: [line break][bold type]look, examine, push, press[line break][roman type]([bold type]l, x[roman type])"; 
-	say "[paragraph break]Inventory: [line break][bold type]take, put, drop, inventory[line break][roman type]([bold type]t, p, d, i[roman type])"; 
+	say "[bold type]Commands:[roman type][paragraph break]Movement: [line break][bold type]north, south, east, west, up, down [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
+	say "[paragraph break]Exploration: [line break][bold type]look, examine, open, close[line break][roman type]([bold type]l, x[roman type])"; 
+	say "[paragraph break]Inventory: [line break][bold type]take, give, drop, inventory[line break][roman type]([bold type]t, p, d, i[roman type])"; 
 	say "[paragraph break]Speech: [line break][bold type]ask, tell, say[roman type]"; 
 	say "[paragraph break]Assistance: [line break]Type [bold type]help[roman type], [bold type]commands[roman type], or [bold type]objective[roman type] at any time to get help.";
 	
 Objectiving is an action applying to nothing.
-Understand "obj", "objective" or "objectives" as objectiving.
+Understand the command "objectives" as something new.
+Understand "objectives" as objectiving.
+Understand "objective" or "obj" as objectiving.
+
 Report objectiving:
-	say "    Your current objective is:[line break]    [objective]";
+	say "    Your current objective is:[line break]    [player-objective]";
 	say "[line break]";
 	
 Currentrooming is an action applying to nothing.
@@ -45,6 +50,12 @@ Report mapping:
 	try currentrooming;
 	try objectiving;
 	try rendering;
+
+Nomap is a truth state that varies.
+Before the player mapping:
+	If nomap is true:
+		say "That's not a verb I recognise.";
+		stop the action.	
 	
 Section - "Map Rendering"
 
@@ -57,19 +68,19 @@ F3 Hallway South			2	2
 
 Table of Second Floor Rooms
 RName		X	Y
-F2 Stairwell to One		2	1
-F2 Classroom One		1	2
+F2 stairwell toward One		2	1
+F2 Utility Closet		1	2
 F2 Hallway		2	2	
-F2 Classroom Two		3	2
-F2 Classroom Three		1	3
-F2 Stairwell to Three		2	3
-F2 Classroom Four 		3	3
+F2 Open Lobby		3	2
+F2 Classroom One		1	3
+F2 stairwell toward Three		2	3
+F2 Classroom Two 		3	3
 
 Table of First Floor Rooms
 RName			X	Y
 F1 Dean's Office			1	1
-F1 Stairwell to Two			2	1
-F1 Outer Lobby			1	2
+F1 stairwell toward Two			2	1
+F1 Coordinator's Office			1	2
 F1 Hallway			2	2
 F1 Entrance			2	3
 
@@ -148,6 +159,11 @@ Understand "talk to [someone]" as talking to.
 Understand "talk" as talking to.
 Understand "say hello to [someone]" as talking to.
 
+Telling to is an action applying to two things.
+Understand "say [something] to [someone]" as telling to.
+Understand "tell [someone] [something]" as telling to.
+Understand "ask [someone] [something]" as telling to.
+
 Every turn:
 	follow the window-drawing rules for the map-window;
 	
@@ -174,7 +190,9 @@ Window-drawing rule for the map-window:
 	if map-window is g-unpresent, rule fails;
 	clear the map-window;
 	move focus to map-window;
+	now nomap is false;
 	try mapping;
+	now nomap is true;
 	return to main screen;
 
 	
@@ -194,33 +212,56 @@ Understand "call [number]" as dialing.
 Understand "dial [number]" as dialing.
 
 
-
-
 Chapter - "Characters"
 
 Section - "The Player"
 
-The paperwork is a thing.
+The paperwork is a thing that is plural-named.
 The player carries the paperwork.The player carries the cell phone. The player carries the watch.
+
 
 Section - "The Dean"
 
-Dean Martin is a person. He is in the Outer Lobby. The description of Dean Martin is "Professor Martin is the Dean of your school. He's quite nice when you get to know him."
+Dean Martin is a person. He is in the F1 Coordinator's office. The description of Dean Martin is "Professor Martin is the Dean of your school. He's quite nice when you get to know him."
 Understand "The Dean", "Martin", "Professor Martin" and "Dean" as Dean Martin.
 
-Section - "The Secretary"
+Instead of asking Dean Martin about something:
+	say "[one of]'Oh, yes. Good to see you again.'[or]'Oh, hello there. Are you here to see me or the Program Coordinator?'[at random] says the Dean.";
+	
+Instead of telling Dean Martin about something:
+	say "'Oh, yes. I'll let you talk to the Program Coordinator, then.";
 
-Ms May is a person. She is in the Outer Lobby. The description of Ms May is "Ms. May is the undergraduate coordinator. She's helped you out a lot with your school career."
-Understand "May", "Ms May", "Secretary", "UC" and "Undergraduate Coordinator" as Ms May.
+Instead of telling to Dean Martin:
+	say "'Oh, yes. I'll let you talk to the Program Coordinator, then.";
+
+Instead of talking to Dean Martin:
+	say "'Oh, yes. I'll let you talk to the Program Coordinator, then.";
+
+
+Section - "The Program Coordinator"
+
+Program Coordinator May is a female person. She is in the F1 Coordinator's office. The description of Program Coordinator May is "Ms. May is the Program Coordinator. She's helped you out a lot with your school career."
+Understand "May", "Program Coordinator May", "Secretary", "PC", "ms may" or "Program Coordinator" as Program Coordinator May.
+
+Instead of talking to Program Coordinator May:
+	say "[if Dropping off paperwork is happening][one of]'Hm? What can I help you with?'[or]'Can I take those papers from you?'[or]'Do you have some paperwork for me?'[at random][end if][if Panic on the first floor is happening][one of]'Don't talk, run!'[or]'We have to get out of here!'[or]'Hurry! Into the Dean's office!'[at random][end if] says Ms. May.";
+	
+Instead of asking Program Coordinator May about something:
+	say "[if Dropping off paperwork is happening][one of]'Hm? What can I help you with?'[or]'Can I take those papers from you?'[or]'Do you have some paperwork for me?'[at random][end if][if Panic on the first floor is happening][one of]'Don't talk, run!'[or]'We have to get out of here!'[or]'Hurry! Into the Dean's office!'[at random][end if] says Ms. May.";
+
 
 Section - "The Shooter"
 
 James Shooter is a person. The description of James Shooter is "What is wrong with this guy?"
 Understand "Shooter", "The shooter", "active shooter", "ac", "Jim" and "James" as James Shooter.
 
+After asking James Shooter about something:
+	say "He doesn't respond. In fact he completely refuses to acknowledge you. It's almost like he's looking through you at someone else.";
+	
+
 Section - "The Emergency Building Coordinator"
 
-The Emergency Building Coordinator is a person. She is in Hallway North. The description of The Emergency Building Coordinator is "There is a nice lady putting up a permanent sign in the hallway here. She looks pretty busy."
+The Emergency Building Coordinator is a person. She is in F1 Hallway. The description of The Emergency Building Coordinator is "There is a nice lady putting up a permanent sign in the hallway here. She looks pretty busy."
 
 Understand "EBC" as The Emergency Building Coordinator.
 Understand "Coordinator" as The Emergency Building Coordinator.
@@ -229,36 +270,29 @@ After asking the Emergency Building Coordinator about something:
 	say "[if Dropping Off Paperwork is happening][one of]What's that?[or]Sorry?[or]Pretty busy here.[or]Don't forget that there's going to be an evacuation drill at noon.[or]Hm?[at random][end if][if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]".
 
 
-
-
 Chapter - "Layout"
 
 Section - "First Floor"
 
 The First Floor is a region.
 
+Firstshot is an event that is unattempted.
 
-F1 Entrance is a room in the first floor. The description of F1 Entrance is "You are standing in the building entrance. [If prologue is happening]It's time to go find the Undergraduate Coordinator.[end if][if F1 Entrance is unvisited] Remember to type [bold type]objectives[roman type] if you're not sure what to do next, or [bold type]commands[roman type] for a list of possible commands. Good luck![end if]"
+F1 Entrance is a room in the first floor. The description of F1 Entrance is "You are standing in the building entrance. [If prologue is happening]It's time to go find the Program Coordinator.[end if][if F1 Entrance is unvisited] Remember to type [bold type]objectives[roman type] if you're not sure what to do next, or [bold type]commands[roman type] for a list of possible commands. Good luck![end if]There is a Hallway to the North."
 
+North of F1 Entrance is F1 Hallway. It is in the first floor. The description of F1 Hallway is "You are standing in the hallway outside the office of the Program Coordinator. The office of the Program Coordinator is to the West. To the North, you can see a stairwell leading to the second floor."
 
-North of F1 Entrance is F1 Hallway. It is in the first floor. The description of F1 Hallway is "You are standing in the hallway outside the office of the Undergraduate Coordinator. The office of the Undergraduate Coordinator is to the West. To the North, you can see a stairwell leading to the second floor."
-
-
-West of F1 stairwell to two and north of F1 Outer Lobby is F1 Dean's Office. It is in the first floor. The description of Dean's Office is "[if Panic on the first floor is happening and Dean's Office is unvisited]What is going on?[end if]You're in the Dean's office. You see a desk with a [stack of papers] and a number of [old books] pertaining to your major."
-The stack of papers is fixed in place. It is scenery. It is in the Professor's Office. The description of the stack of papers is "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here."
+West of F1 stairwell toward two and north of F1 Coordinator's office is F1 Dean's Office. It is in the first floor. The description of Dean's Office is "[if Panic on the first floor is happening and Dean's Office is unvisited]What is going on? [end if]You're in the Dean's office. You see a desk with a stack of [papers] and a number of [old books] pertaining to your major. The Program Coordinator's office is to the [bold type]South[roman type], and to the [bold type]West[roman type] you can see a door leading toward the stairwell which leads to the second floor of the building."
+There are some papers  on the Dean's desk. They are fixed in place. They are scenery. The description of the papers is "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here."
 The Dean's Desk is a fixed in place supporter in the Dean's Office.
-There are some old books on the Dean's desk. They are fixed in place scenery.
-There are some heavy books on the Dean's desk. They are fixed in place scenery.
+There are some old books on the Dean's desk. They are fixed in place scenery. The description of the old books is "These books are pretty cool. If you had time, you would probably look at them more closely."
+There are some heavy books on the Dean's desk. They are fixed in place scenery. The description of the heavy books is "These books look pretty interesting. Maybe later when you have time you'll come back and check them out.[if firstshot is attempted] If there is a later at all.[end if]"
 
+North of F1 Hallway is F1 stairwell toward Two. It is in the first floor. The description of F1 stairwell toward Two is "This is the stairwell leading up to the second floor.[if F1 stairwell is unvisited] Use the [bold type]up[roman type] and [bold type]down[roman type] commands to move between floors.[end if] To the [bold type]West[roman type] you can see the Dean's office, and to the [bold type]South[roman type] is the hallway leading to the building entrance."
 
-North of F1 Hallway is F1 Stairwell to Two. It is in the first floor. The description of F1 Stairwell to Two is "This is the stairwell leading up to the second floor."
-
-
-West of F1 Hallway is F1 Outer Lobby. It is in the first floor. The description of the F1 Outer Lobby is "You enter the outer lobby of the Dean's office."
-The Coordinator's Desk is a fixed in place supporter in the Outer Lobby.
+West of F1 Hallway is F1 Coordinator's office. It is in the first floor. The description of the F1 Coordinator's office is "You enter the Coordinator's office of the Dean's office. To the [bold type]North[roman type] is the Dean's office, and to the [bold type]East[roman type] is the hallway leading toward the building entrance."
+The Coordinator's Desk is a fixed in place supporter in the Coordinator's office.
 There are some new books on the Coordinator's desk. They are fixed in place scenery.
-
-
 
 
 Section - "Second Floor"
@@ -266,25 +300,75 @@ Section - "Second Floor"
 The Second Floor is a region.
 
 
-Above F1 Stairwell to Two is F2 Stairwell to One. It is in the second floor. The description of F2 Stairwell to One is "This is the stairwell leading down to the first floor."
+Above F1 stairwell toward Two is F2 stairwell toward One. It is in the second floor. The description of F2 stairwell toward One is "This is the stairwell leading down to the first floor."
 
 
-South of F2 Stairwell to one is F2 Hallway. F2 Hallway is in the second floor. The description of F2 Hallway is "You're standing in the middle of the second floor hallway. [If Panic on the first floor has happened]You feel very exposed.[end if]"
+South of F2 stairwell toward one is F2 Hallway. F2 Hallway is in the second floor. The description of F2 Hallway is "You're standing in the middle of the second floor hallway. [If Panic on the first floor has happened]You feel very exposed.[end if]"
 
 
-South of F2 Hallway is F2 Stairwell to Three. F2 Stairwell to Three is in the second floor.The description of F2 Stairwell to Three is "This is the stairwell leading up to the third floor."
+South of F2 Hallway is F2 stairwell toward Three. F2 stairwell toward Three is in the second floor.The description of F2 stairwell toward Three is "This is the stairwell leading up to the third floor."
 
 
-East of F2 Hallway is F2 Classroom Two. F2 Classroom Two is in the second floor. The description of F2 Classroom Two is "An ordinary looking classroom."
+East of F2 Hallway is F2 Open lobby. F2 Open lobby is in the second floor. The description of F2 Open lobby is "A spacious room with glass walls and no protective cover."
+
+ClosetEntering is an action applying to nothing.
+Understand "enter closet", "get in closet", "hide in closet", "climb in closet",  "go in closet" or "get into closet" as ClosetEntering.
+Instead of ClosetEntering when player is not in F2 Hallway:
+	say "There is no closet here."
+	
+Instead of ClosetEntering when the player is in F2 Hallway:
+	If the closet door is locked:
+		say "The closet door is locked.";
+		stop the action;
+	try going west;
+	say "You climb into the utility closet.";
+
+ClosetExiting is an action applying to nothing. 
+Understand "exit closet", "leave closet", "get out of closet", "climb out of closet" or "go out of closet" as ClosetExiting.
+Instead of ClosetExiting when player is not in F2 Utility Closet:
+	say "I don't understand that verb."
+
+Instead of ClosetExiting when player is in F2 Utility Closet:
+	If the closet door is locked:
+		say "The closet door is locked.";
+		stop the action;
+	try going east;
+	say "You climb out of the utility closet.";
+		
+Understand "lock [something]" as locking keylessly. Locking keylessly is an action applying to one thing.
+Check locking keylessly: 
+	if the noun is not a door, say "[The noun] is not something you can lock." instead; 
+	if the noun is locked, say "[The noun] is already locked." instead; 
+	if the player is in F2 Hallway, say "You can't lock the door from this side." instead.
+	
+Carry out locking keylessly: 
+	now the noun is locked.
+	
+Report locking keylessly:
+	say "You lock the [noun]."
+
+Understand "unlock [something]" as unlocking keylessly. Unlocking keylessly is an action applying to one thing.
+Check unlocking keylessly: 
+	if the noun is not a door, say "[The noun] is not something you can unlock." instead; 
+	if the noun is unlocked, say "[The noun] is already unlocked." instead; 
+	if the player is in F2 Hallway, say "You can't unlock the door from this side." instead.
+	
+Carry out unlocking keylessly: 
+	now the noun is unlocked.
+	
+Report unlocking keylessly:
+	say "You unlock the [noun]."
+
+Instead of going east when player is in F2 Utility closet and closet door is locked:
+	say "You'll need to unlock the door first.";
+	stop the action;
+	
+F2 Utility closet is a room. F2 Utility closet is in the second floor. The description of F2 Utility closet is "A utility closet."
+
+South of F2 Utility closet and west of F2 stairwell toward Three is F2 Classroom One. F2 Classroom One is in the second floor. The description of F2 Classroom One is "An ordinary looking classroom."
 
 
-West of F2 Hallway is F2 Classroom One. F2 Classroom One is in the second floor. The description of F2 Classroom One is "An ordinary looking classroom."
-
-
-South of F2 Classroom One and west of F2 Stairwell to Three is F2 Classroom Three. F2 Classroom Three is in the second floor. The description of F2 Classroom Three is "An ordinary looking classroom."
-
-
-South of F2 Classroom Two and east of F2 Stairwell to Three is F2 Classroom Four. F2 Classroom Four is in the second floor. The description of F2 Classroom Four is "An ordinary looking classroom."
+South of F2 Open Lobby and east of F2 stairwell toward Three is F2 Classroom Two. F2 Classroom Two is in the second floor. The description of F2 Classroom Two is "An ordinary looking classroom."
 
 
 Section - "Third Floor"
@@ -292,7 +376,7 @@ Section - "Third Floor"
 The Third Floor is a region.
 
 
-Above F2 Stairwell to Three is F3 Third Floor Stairwell. It is a room in The Third Floor. The description of F3 Third Floor Stairwell is "This is the stairwell leading down to the third floor."
+Above F2 stairwell toward Three is F3 Third Floor Stairwell. It is a room in The Third Floor. The description of F3 Third Floor Stairwell is "This is the stairwell leading down to the third floor."
 
 
 North of F3 Hallway South is F3 Hallway North. F3 Hallway North is in the Third Floor. The description of F3 Hallway North is "The hallway seems to stretch for miles."
@@ -318,7 +402,10 @@ Section - "Prologue"
 
 Prologue is a scene.
 Prologue begins when play begins.
-Prologue Ends when the player is in Second Floor.
+Prologue Ends when the player is in F1 Hallway.
+
+Ending is an event that is unattempted.
+Wrongway is an event that is unattempted.
 
 When Prologue begins:
 	say "[bold type]";
@@ -332,7 +419,7 @@ When Prologue begins:
 	say "[bold type]... a very bad week."; 
 	pause the game; 
 	say "[roman type]";
-	say "[paragraph break]You're in the entrance of the administration building. It's almost time for class. There is a workman here fiddling with the lock on the front door of the building. You say good morning to him, but he very rudely chooses to ignore you. Before you head for the classroom, you need to drop off some paperwork with the undergraduate coordinator. This should only take a minute.[paragraph break]";
+	say "[paragraph break]You're in the entrance of the administration building. It's almost time for class. There is a workman here fiddling with the lock on the front door of the building. You say good morning to him, but he very rudely chooses to ignore you. Before you head for the classroom, you need to drop off some paperwork with the Program Coordinator. This should only take a minute.[paragraph break]";
 	say "[bold type]";
 	pause the game; 
 	say "[roman type]";
@@ -345,55 +432,149 @@ EBC Conversation begins when Prologue has ended.
 EBC Conversation ends when the Emergency Building Coordinator is off-stage.
 The description of EBC conversation is "".
 
-The brochure is a thing. The description of the brochure is "The brochure outlines a number of tips for how to be prepared in the event that someone enters a building with a gun, intending to harm other people. Among the points listed here are three important things that one can do in order of priority:[paragraph break]1. Try to get out of the building if possible.[line break]2. Try to hide from the shooter[line break]3. Try confront the shooter physically."  
+The poster is a thing. The poster is in the F1 Hallway. The description of the poster is "The poster outlines a number of tips for how to be prepared in the event that someone enters a building with a gun, intending to harm other people. Among the points listed here are three important things that one can do in order of priority:[paragraph break][bold type]1. Try to get out of the building if possible.[line break]2. Try to hide from the shooter[line break]3. Try confront the shooter physically.[roman type][paragraph break]These are ordered by priority, with confrontation being a strategy of last resort, to be undertaken only when there are no other options available.";
 
-Every turn during EBC Conversation:
-	If player is in Hallway North:
-		say "The Emergency Building Coordinator steps down from her ladder and sighs lightly. 'These signs are always crooked. Oh well.' You don't see anything wrong with the sign. The Coordinator turns to you and says 'Here. We just printed these. Take a [bold type]look[roman type].";
-		now the player is carrying the brochure.
-		now Emergency Building Coordinator is off-stage.
+When EBC Conversation begins:
+	say "The Emergency Building Coordinator steps down from her ladder and sighs lightly. 'These signs are always crooked. Oh well.' You don't see anything wrong with the sign. The Coordinator turns to you and says 'Here. We just printed these [poster]s. Take a [bold type]look[roman type].' The coordinator scratches her head. 'Does this look crooked to you?' Without waiting for a reply,
+	 the Emergency Building Coordinator picks up her ladder and walks away.";
+	now Emergency Building Coordinator is off-stage.
 
 
 Section - "Dropping Off Paperwork"
 
+Conversation is an event which is unattempted.
+
 Dropping off Paperwork is a scene.
 Dropping off Paperwork begins when EBC Conversation ends.
-Dropping off Paperwork ends when the paperwork is in the Outer Lobby, or the paperwork is on the coordinator's desk or Ms May is carrying the paperwork.
+Dropping off Paperwork ends when the paperwork is in the F1 Coordinator's office, or the paperwork is on the coordinator's desk or Program Coordinator May is carrying the paperwork.
 The description of Dropping Off Paperwork is "".
 
+After going to F1 Coordinator's office during Dropping off paperwork:
+	try looking;
+	If conversation is unattempted:
+		say "'Ms. May, did you schedule that staff meeting for next Wednesday?', the Dean asks as he steps into the Coordinator's office. 'Yes, I did,' replies Ms. May, the Program Coordinator. 'We had to move it because of the holiday.'[paragraph break]'Oh, yes. Thank you for reminding me,' the Dean says.[paragraph break]'Hello there,' the program coordinator says, looking at you. 'Do you have some paperwork for me?'";
+		now conversation is attempted;
 
-Section - "Office Conversation"
+When Dropping off Paperwork ends:
+	Now Program Coordinator May has the paperwork;
+	say "Ms. May picks up the paperwork and places it aside. 'Thank you,' she says, 'I'll take care of that'.";
+	Now the Emergency Building Coordinator is off-stage;
+	Now Program Coordinator May is off-stage;
+	Now the player-objective is "run."
 
-Office Conversation is a scene.
-Office Conversation begins when Dropping Off Paperwork has ended.
-Office Conversation ends when the Emergency Building Coordinator is off-stage.
-The description of Office conversation is "".
+Check giving paperwork to Program Coordinator May:
+	now Program Coordinator May has the paperwork.
 
 
 Section - "Panic on the first floor"
 
 Panic on the first floor is a scene.
-Panic on the first floor begins when Office Conversation has ended.
-Panic on the first floor ends when the player is in the Second Floor.
+Panic on the first floor begins when Dropping Off Paperwork has ended.
+Panic on the first floor ends when player is in second floor.
+The description of Panic on the first floor is "A loud popping sound can be heard in the hallway to the East. 'Did you hear that?' says Ms. May. She gets up from her desk and moves toward the hallway. The Dean follows her out toward the hallway. 'Isn't that Professor Reynolds ex-husband?' the Dean asks.[paragraph break]The Dean and Ms. May walk out into the hallway. A few moments later several more pops can be heard. Ms. May runs right back past you and [bold type]North[roman type] into the Dean's office. 'Run!' she says, and then she is gone.".
 
-Section - "Confrontation"
+After going to the F1 Hallway during Panic on the first floor:
+	say "You move in the direction of the shots. This is a very bad idea.";
+	now wrongway is attempted;
+	now ending is attempted.
+	
+After going to the F1 Dean's office during Panic on the first floor:
+	try looking;
+	say "You move into the Dean's office. Ms. May is nowhere to be seen. There is another door to the East, leading to the first floor stairwell.";
+	now firstshot is attempted.
+	
+After going to the F1 stairwell toward two during Panic on the first floor:
+	try looking;
+	say "Down the hall, you can see the workman from the front entrance. He is no longer wearing a hat, and he is holding a gun. He hasn't noticed you yet, but if you remain here for too long, he will.";
+	now firstshot is attempted.
+	
 
-Confrontation is a scene.
-Confrontation begins when the player is in the Third Floor.
+Section - "Hiding on the second floor"
+
+Shooting is an event that is unattempted.
+Classrooming is an event that is unattempted.
+Closeting is an event that is unattempted.
+Notlocking is an event that is unattempted.
+
+Hiding on the second floor is a scene.
+Hiding on the second floor begins when Panic on the first floor has ended.
+Hiding on the second floor ends when the player is in the Third Floor.
+The description of Hiding on the second floor is "It is obvious that there is an active shooter in the building. You hear more gunshots coming from the direction of the stairwell behind you. As frightening as a situation like this is, you know that you need to keep your wits about you. Standing here in the stairwell is probably not the best idea. You'd better keep moving."
+
+Before going to F1 stairwell toward two during Hiding on the second floor:
+	say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. You've been shot!";
+	now shooting has been attempted.
+	
+Every turn when shooting has been attempted:
+	say "[one of]Your leg is killing you.[or]You have a shooting pain in your leg.[or]You think your leg may have just gone numb.[or]The pain in your leg is really getting to you.[or]You wonder how much blood a person can lose before they pass out...[at random]"
+
+Before going to F1 Hallway during Hiding on the second floor:
+	now wrongway is attempted;
+	now ending is attempted;
+	 
+Before going to F2 classroom one during Hiding on the second floor:
+	now classrooming is attempted.
+
+Before going to F2 classroom two during Hiding on the second floor:
+	now classrooming is attempted.
+
+Before going to F2 utility closet during Hiding on the second floor:
+	say "You climb into the cramped utility closet and ease to a crouched position on the floor, trying not to upset any of the brooms which are leaned haphazardly against the wall.";
+	now closeting is attempted. 
+
+Closetturns is a number that varies. Closetturns is 1.
+closet door is a door that is unlocked. It is west of F2 Hallway and east of F2 Utility closet.
+
+Every turn when closeting is attempted:
+	If closetturns is greater than 4:
+		If closet door is unlocked:
+			say "The doorknob slowly turns. 'I know that you're in there,' says a voice from the outside.";
+			now notlocking is attempted;
+			now ending is attempted;
+		Else:
+			say "The doorknob rattles. Once. Twice. You hear footsteps moving away.";
+			now ending is attempted;
+	
+Before going to F2 open lobby during Hiding on the second floor:
+	say "You look around desperately for cover, but you can see no place to hide, and no exit. It looks like you took a wrong turn. As you turn back toward the door you came in through, you see the shooter, looking at you from the hallway through the glass walls of the lobby. You don't remember him firing his gun, but suddenly there is a wall of glass exploding toward you as the bullets fly in your direction.";
+	now ending is attempted.
+
+	
+Section - "Classroom shelter"
+
+Classroom shelter is a scene.
+Classroom shelter begins when Classrooming is attempted.
+
+
+Section - "Attack on the third floor"
+
+Confrontation is an event that is unattempted.
+
+Attack on the third floor is a scene.
+Attack on the third floor begins when Hiding on the second floor has ended.
+Attack on the third floor ends when the confrontation is attempted.
+
+Before going to F2 stairwell toward three during Attack on the third floor:
+	say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. You've been shot!";
+	If shooting has been attempted:
+		now wrongway is attempted;
+		now ending is attempted;
+	else:
+		now shooting is attempted.
 
 Section - "Epilogue"
 
+Epilogue begins when ending is attempted.
 Epilogue is a scene.
-Epilogue begins when Confrontation ends.
 
 When Epilogue begins:
-	say "This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for scenarios like this.[paragraph break]";	
-	if hiding is attempted:
+	say "[If wrongway is attempted]It looks like you took a very wrong turn. You wake up in the back of an ambulance. They tell you that you've lost a lot of blood, but there are others who fared worse. The police eventually caught the shooter, but many people were injured, and yes some were killed. Any wrong turn can cost you a lot in a situation involving an active shooter.[paragraph break][end if]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for scenarios like this.[paragraph break]";	
+[	if hiding is attempted:
 		increase the score by 50;
 	if doorlocking is attempted:
 		increase the score by 20;
 	if the confrontation is attempted:
-		increase the score by 100;
+		increase the score by 100;]
 	end the game saying "Final Score : [score]. Can you do better?".
 	
 

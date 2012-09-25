@@ -226,10 +226,10 @@ Dean Martin is a person. He is in the F1 Coordinator's office. The description o
 Understand "The Dean", "Martin", "Professor Martin" and "Dean" as Dean Martin.
 
 Instead of asking Dean Martin about something:
-	say "[one of]'Oh, yes. Good to see you again.'[or]'Oh, hello there. Are you here to see me or the Program Coordinator?'[at random] says the Dean.";
+	say "'Oh, yes. Good to see you again. That's probably a better question for the Progarm Coordinator,' says the Dean.";
 	
 Instead of telling Dean Martin about something:
-	say "'Oh, yes. I'll let you talk to the Program Coordinator, then.";
+	say "'Oh, hello. I'll let you talk to the Program Coordinator, then.";
 
 Instead of telling to Dean Martin:
 	say "'Oh, yes. I'll let you talk to the Program Coordinator, then.";
@@ -280,9 +280,9 @@ Firstshot is an event that is unattempted.
 
 F1 Entrance is a room in the first floor. The description of F1 Entrance is "You are standing in the building entrance. [If prologue is happening]It's time to go find the Program Coordinator.[end if][if F1 Entrance is unvisited] Remember to type [bold type]objectives[roman type] if you're not sure what to do next, or [bold type]commands[roman type] for a list of possible commands. Good luck![end if]There is a Hallway to the North."
 
-North of F1 Entrance is F1 Hallway. It is in the first floor. The description of F1 Hallway is "You are standing in the hallway outside the office of the Program Coordinator. The office of the Program Coordinator is to the West. To the North, you can see a stairwell leading to the second floor."
+North of F1 Entrance is F1 Hallway. It is in the first floor. The description of F1 Hallway is "You are standing in the hallway outside the office of the Program Coordinator. The office of the Program Coordinator is to the [bold type]West[roman type]. To the [bold type]North[roman type], you can see a stairwell leading to the second floor."
 
-West of F1 stairwell toward two and north of F1 Coordinator's office is F1 Dean's Office. It is in the first floor. The description of Dean's Office is "[if Panic on the first floor is happening and Dean's Office is unvisited]What is going on? [end if]You're in the Dean's office. You see a desk with a stack of [papers] and a number of [old books] pertaining to your major. The Program Coordinator's office is to the [bold type]South[roman type], and to the [bold type]West[roman type] you can see a door leading toward the stairwell which leads to the second floor of the building."
+West of F1 stairwell toward two is F1 Dean's Office. It is in the first floor. The description of Dean's Office is "[if Panic on the first floor is happening and Dean's Office is unvisited]What is going on? [end if]You're in the Dean's office. You see a desk with a stack of [papers] and a number of [old books] pertaining to your major. The Program Coordinator's office is to the [bold type]South[roman type], and to the [bold type]West[roman type] you can see a door leading toward the stairwell which leads to the second floor of the building."
 There are some papers  on the Dean's desk. They are fixed in place. They are scenery. The description of the papers is "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here."
 The Dean's Desk is a fixed in place supporter in the Dean's Office.
 There are some old books on the Dean's desk. They are fixed in place scenery. The description of the old books is "These books are pretty cool. If you had time, you would probably look at them more closely."
@@ -303,7 +303,7 @@ The Second Floor is a region.
 Above F1 stairwell toward Two is F2 stairwell toward One. It is in the second floor. The description of F2 stairwell toward One is "This is the stairwell leading down to the first floor."
 
 
-South of F2 stairwell toward one is F2 Hallway. F2 Hallway is in the second floor. The description of F2 Hallway is "You're standing in the middle of the second floor hallway. [If Panic on the first floor has happened]You feel very exposed.[end if]"
+South of F2 stairwell toward one is F2 Hallway. F2 Hallway is in the second floor. The description of F2 Hallway is "You're standing in the middle of the second floor hallway. [If Panic on the first floor has happened]You feel very exposed. [end if]The stairwell down to the first floor is back toward the [bold type]North[roman type]. Further to the [bold type]South[roman type] you can see the stairwell that goes up to the third floor. To the [bold type]East[roman type] you see an open lobby with glass walls and large windows. [If panic on the first floor has happened]It doesn't look like there's much protective cover in there. [end if]To the [bold type]West[roman type] you see a utility closet."
 
 
 South of F2 Hallway is F2 stairwell toward Three. F2 stairwell toward Three is in the second floor.The description of F2 stairwell toward Three is "This is the stairwell leading up to the third floor."
@@ -468,11 +468,20 @@ Check giving paperwork to Program Coordinator May:
 
 Section - "Panic on the first floor"
 
+
+Dean's door is a lockable door that is unlocked. It is north of F1 Coordinator's office and south of F1 Dean's Office.
+Toldaboutlock is a truth state that varies. Toldaboutlock is false.
+
 Panic on the first floor is a scene.
 Panic on the first floor begins when Dropping Off Paperwork has ended.
 Panic on the first floor ends when player is in second floor.
 The description of Panic on the first floor is "A loud popping sound can be heard in the hallway to the East. 'Did you hear that?' says Ms. May. She gets up from her desk and moves toward the hallway. The Dean follows her out toward the hallway. 'Isn't that Professor Reynolds ex-husband?' the Dean asks.[paragraph break]The Dean and Ms. May walk out into the hallway. A few moments later several more pops can be heard. Ms. May runs right back past you and [bold type]North[roman type] into the Dean's office. 'Run!' she says, and then she is gone.".
 
+Every turn during Panic on the first floor:
+	If the Dean's door is locked and toldaboutlock is false:
+		say "[bold type]Nice work[roman type]. Locking doors behind you is a good way to be safer in a bad situation like this one.";
+		now toldaboutlock is true;
+	
 After going to the F1 Hallway during Panic on the first floor:
 	say "You move in the direction of the shots. This is a very bad idea.";
 	now wrongway is attempted;
@@ -485,8 +494,7 @@ After going to the F1 Dean's office during Panic on the first floor:
 	
 After going to the F1 stairwell toward two during Panic on the first floor:
 	try looking;
-	say "Down the hall, you can see the workman from the front entrance. He is no longer wearing a hat, and he is holding a gun. He hasn't noticed you yet, but if you remain here for too long, he will.";
-	now firstshot is attempted.
+	say "Down the hall, you can see the man who was working on the door at the front entrance. The door behind him appears to have been bolted shut. He is no longer wearing a hat, and he is holding a gun. He hasn't noticed you yet, but if you remain here for too long, he will.";
 	
 
 Section - "Hiding on the second floor"
@@ -499,16 +507,24 @@ Notlocking is an event that is unattempted.
 Hiding on the second floor is a scene.
 Hiding on the second floor begins when Panic on the first floor has ended.
 Hiding on the second floor ends when the player is in the Third Floor.
-The description of Hiding on the second floor is "It is obvious that there is an active shooter in the building. You hear more gunshots coming from the direction of the stairwell behind you. As frightening as a situation like this is, you know that you need to keep your wits about you. Standing here in the stairwell is probably not the best idea. You'd better keep moving."
+The description of Hiding on the second floor is "It is obvious that there is an active shooter in the building. You hear more gunshots coming from the direction of the stairwell behind you. As frightening as a situation like this is, you know that you need to keep your wits about you. Standing here in the stairwell is probably not the best idea. You'd better keep moving.[paragraph break]"
 
 Before going to F1 stairwell toward two during Hiding on the second floor:
-	say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. You've been shot!";
-	now shooting has been attempted.
+	If shooting is unattempted:
+		clear only the main screen;
+		say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. [bold type]You've been shot!";
+		now shooting is attempted;
+		pause the game;
+		say "[roman type]";
+	Otherwise:
+		now wrongway is attempted;
+		now ending is attempted;
 	
 Every turn when shooting has been attempted:
 	say "[one of]Your leg is killing you.[or]You have a shooting pain in your leg.[or]You think your leg may have just gone numb.[or]The pain in your leg is really getting to you.[or]You wonder how much blood a person can lose before they pass out...[at random]"
 
 Before going to F1 Hallway during Hiding on the second floor:
+	say "You move in the direction of the shots. [bold type]This is a very bad idea.[roman type][paragraph break]";
 	now wrongway is attempted;
 	now ending is attempted;
 	 
@@ -535,8 +551,15 @@ Every turn when closeting is attempted:
 			say "The doorknob rattles. Once. Twice. You hear footsteps moving away.";
 			now ending is attempted;
 	
+unsheltered is an event that is unattempted;
+
 Before going to F2 open lobby during Hiding on the second floor:
+	clear only the main screen;
 	say "You look around desperately for cover, but you can see no place to hide, and no exit. It looks like you took a wrong turn. As you turn back toward the door you came in through, you see the shooter, looking at you from the hallway through the glass walls of the lobby. You don't remember him firing his gun, but suddenly there is a wall of glass exploding toward you as the bullets fly in your direction.";
+	say "[bold type]";
+	pause the game;
+	say "[roman type]";
+	now unsheltered is attempted;
 	now ending is attempted.
 
 	
@@ -555,7 +578,9 @@ Attack on the third floor begins when Hiding on the second floor has ended.
 Attack on the third floor ends when the confrontation is attempted.
 
 Before going to F2 stairwell toward three during Attack on the third floor:
-	say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. You've been shot!";
+	say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. [bold type]You've been shot!";
+	pause the game;
+	say "[roman type]";
 	If shooting has been attempted:
 		now wrongway is attempted;
 		now ending is attempted;
@@ -568,7 +593,22 @@ Epilogue begins when ending is attempted.
 Epilogue is a scene.
 
 When Epilogue begins:
-	say "[If wrongway is attempted]It looks like you took a very wrong turn. You wake up in the back of an ambulance. They tell you that you've lost a lot of blood, but there are others who fared worse. The police eventually caught the shooter, but many people were injured, and yes some were killed. Any wrong turn can cost you a lot in a situation involving an active shooter.[paragraph break][end if]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for scenarios like this.[paragraph break]";	
+	say "[bold type]Epilogue:[roman type][paragraph break]";
+	say "[If wrongway is attempted]It looks like you took a very wrong turn. You wake up in the back of an ambulance. They tell you that you've lost a lot of blood, but there are others who fared worse. The police eventually caught the shooter, but many people were injured, and some were even killed. Any wrong turn can cost you a lot in a situation involving an active shooter.[paragraph break][end if]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for scenarios like this.[paragraph break][bold type]Here are some pointers for the next time you play:[roman type][paragraph break]";	
+	If the Dean's door is locked:
+		say "* You locked the Dean's door behind you. That's a good way to be safer in a situation like this. Nice work.[paragraph break]";
+		increase the score by 20;
+	Otherwise:
+		say "* Consider locking more doors behind you. This will deter an active shooter from getting the jump on you.[paragraph break]";
+	If notlocking is attempted:
+		say "* When hiding, make sure that the doors between you and the active shooter are locked from the inside.[paragraph break]";
+		decrease the score by 20;
+	If wrongway is attempted:
+		say "* Try to be aware of where the active shooter is in relation to you. Don't move toward the shooter unless you have to.[paragraph break]";
+		decrease the score by 50;
+	If unsheltered is attempted:
+		say "* Be careful about entering open areas with little or no protective cover.[paragraph break]";
+		decrease the score by 20;
 [	if hiding is attempted:
 		increase the score by 50;
 	if doorlocking is attempted:

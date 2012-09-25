@@ -31,20 +31,18 @@ Understand "objectives" as objectiving.
 Understand "objective" or "obj" as objectiving.
 
 Report objectiving:
-	say "    Your current objective is:[line break]    [player-objective]";
+	say "    [bold type]Your current objective is:[roman type][line break]    [player-objective]";
 	say "[line break]";
 	
 Currentrooming is an action applying to nothing.
 Report currentrooming:
 	say "[line break]";
-	say "    You are currently in the[line break]    [location]."
+	say "    [bold type]You are currently in:[roman type][line break]    [location]."; 
 
 Mapping is an action applying to nothing.
 Understand "m" or "map" as mapping.
 Report mapping:
 	clear the map-window;
-	try currentrooming;
-	try objectiving;
 	try rendering;
 	
 Nomap is a truth state that varies.
@@ -102,7 +100,6 @@ Orientation
 
 The curtable is a table-name that varies;
 The curconnection is a table-name that varies;
-
 Rendering is an action applying to nothing.
 Report rendering:
 	If the player is in the Second Floor:
@@ -116,30 +113,29 @@ Report rendering:
 		Now the curconnection is the Table of Third Floor Connecting Passages;
 	repeat with N running from 1 to the number of rows in the curtable:
 		If the player is in rname in row N of the curtable:
-			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 6) column (X in row N of the curtable * 6);
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 2) column (X in row N of the curtable * 6);
 			say "***";
-			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 7) column (X in row N of the curtable * 6);
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 3) column (X in row N of the curtable * 6);
 			say "*@*";
-			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 8) column (X in row N of the curtable * 6);
+			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 4) column (X in row N of the curtable * 6);
 			say "***";
 		Otherwise:
-			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 6) column (X in row N of the curtable * 6);
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 2) column (X in row N of the curtable * 6);
 			say "***";
-			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 7) column (X in row N of the curtable * 6);
+			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 3) column (X in row N of the curtable * 6);
 			say "* *";
-			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 8) column (X in row N of the curtable * 6);
+			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 4) column (X in row N of the curtable * 6);
 			say "***";
 	repeat with M running from 1 to the number of rows in the curconnection:
 		Choose row M in the curconnection;
 		If the orientation entry is "v": 
-			position the cursor in map-window at row ((Y entry * 4) + 9) column ((X entry * 6) + 1);
+			position the cursor in map-window at row ((Y entry * 4) + 5) column ((X entry * 6) + 1);
 			say "|";
 		If the orientation entry is "h": 
-			position the cursor in map-window at row ((Y entry * 4) + 7) column ((X entry * 6) + 3);
+			position the cursor in map-window at row ((Y entry * 4) + 3) column ((X entry * 6) + 3);
 			say "---";
-	position the cursor in map-window at row 23 column 1;
-	say "    MAP KEY - [line break]    @ = You. [paragraph break]";
-
+	position the cursor in map-window at row 2 column 2;
+	say "    MAP KEY - [line break]     @ = You.[paragraph break]";
 
 Talking to is an action applying to one visible thing.
 Understand "talk to [someone]" as talking to. 
@@ -148,6 +144,9 @@ Understand "say hello to [someone]" as talking to.
 
 Every turn:
 	follow the window-drawing rules for the map-window;
+	try currentrooming;
+	try objectiving;
+	
 	
 Section - "Command and Map Windows"
 

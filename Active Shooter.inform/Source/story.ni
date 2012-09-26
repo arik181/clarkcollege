@@ -11,6 +11,7 @@ Chapter - "Setup"
 Section - "General Mechanics"
 
 An event is a kind of thing. An event can be attempted or unattempted. An event is usually unattempted.
+A challenge is a kind of thing. A challenge can be successful or unsuccessful. A challenge is usually unsuccessful.
 
 The player-objective is indexed text that varies.
 The player-objective is "to drop off your paperwork."
@@ -24,7 +25,7 @@ Commanding is an action applying to nothing.
 Understand "c", "command" or "commands" as commanding.
 Report commanding:
 	say "[bold type]Commands:[roman type][paragraph break]Movement: [line break][bold type]north, south, east, west, up, down [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
-	say "[paragraph break]Exploration: [line break][bold type]look, examine, open, close[line break][roman type]([bold type]l, x[roman type])"; 
+	say "[paragraph break]Exploration: [line break][bold type]look, examine, open, close, lock, unlock[line break][roman type]([bold type]l, x[roman type])"; 
 	say "[paragraph break]Inventory: [line break][bold type]take, give, drop, inventory[line break][roman type]([bold type]t, p, d, i[roman type])"; 
 	say "[paragraph break]Speech: [line break][bold type]ask, tell, say[roman type]"; 
 	say "[paragraph break]Assistance: [line break]Type [bold type]help[roman type], [bold type]commands[roman type], or [bold type]objective[roman type] at any time to get help.";
@@ -54,6 +55,45 @@ Before the player mapping:
 	If nomap is true:
 		say "That's not a verb I recognise.";
 		stop the action.	
+		
+Move-timer is a number that varies.
+move-timer is 4.
+
+The finding is an event that is unattempted.
+
+last location is a room that varies.
+
+Every turn when panic on the first floor has happened:
+	If last location is not location of player:
+		now move-timer is 4;
+		if the player is in F2 Classroom One:
+			now move-timer is 6;
+		if the player is in F2 Classroom Two:
+			now move-timer is 6;
+		if the player is in F3 Hallway North:
+			now move-timer is 3;
+		if the player is in F3 Hallway South:
+			now move-timer is 3;
+	Otherwise:
+		decrease move-timer by 1;
+		if move-timer < 1:
+			if the player is not in f2 utility closet AND the player is not in f2 classroom one AND the player is not in f2 classroom two:
+				now the finding has been attempted;
+				now unsheltered has been attempted;
+			move james shooter to the player;
+			now ending is attempted;
+	now last location is the location of the player;
+
+Player-collapse is an event that is unattempted.
+Pain-timer is a number that varies.
+pain-timer is 10.
+
+Every turn when shooting has been attempted:
+	decrease pain-timer by 1;
+	If pain-timer < 1:
+		now player-collapse is attempted;
+		now ending is attempted;
+		
 	
 Section - "Map Rendering"
 
@@ -99,8 +139,6 @@ Table of Second Floor Connecting Passages
 Orientation			X	Y
 "v"			2	1
 "v"			2	2
-"v"			1	2
-"v"			3	2
 "h"			1	3
 "h"			1	2
 "h"			2	3
@@ -204,7 +242,7 @@ Window-drawing rule for the map-window:
 	
 Section - "Tracking Time and Score"
 
-The maximum score is 150.
+The maximum score is 250.
 
 The time of day is 10:00 AM. 
 The watch is a thing. The description of the watch is "You look at your watch. The time is now [time of day]".
@@ -212,8 +250,8 @@ The cell phone is a thing. The description of the phone is "You look at your pho
 Understand "mobile", "cell" and "phone" as  the cell phone.
 Dialing is an action applying to a number.
 Check dialing:
-	say "Figures. There's no cell phone reception in this building."
-Instead of dialing: say "Figures. There's no cell phone reception in this building."
+	say "Figures. There's never any cell phone reception when you most need it."
+Instead of dialing: say "Figures. There's never any cell phone reception when you most need it."
 Understand "call [number]" as dialing.
 Understand "dial [number]" as dialing.
 
@@ -224,7 +262,8 @@ Section - "The Player"
 
 The paperwork is a thing that is plural-named.
 The player carries the paperwork.The player carries the cell phone. The player carries the watch.
-
+A current-status is a kind of thing. A current-status can be noticed or unnoticed. A current-status is usually unnoticed.
+The player-status is a current-status. The player-status is unnoticed. 
 
 Section - "The Dean"
 
@@ -288,7 +327,8 @@ F1 Entrance is a room in the first floor. The description of F1 Entrance is "You
 
 North of F1 Entrance is F1 Hallway. It is in the first floor. The description of F1 Hallway is "You are standing in the hallway outside the office of the Program Coordinator. The office of the Program Coordinator is to the [bold type]West[roman type]. To the [bold type]North[roman type], you can see a stairwell leading to the second floor."
 
-West of F1 stairwell toward two is F1 Dean's Office. It is in the first floor. The description of Dean's Office is "[if Panic on the first floor is happening and Dean's Office is unvisited]What is going on? [end if]You're in the Dean's office. You see a desk with a stack of [papers] and a number of [old books] pertaining to your major. The Program Coordinator's office is to the [bold type]South[roman type], and to the [bold type]West[roman type] you can see a door leading toward the stairwell which leads to the second floor of the building."
+West of F1 stairwell toward two is F1 Dean's Office. It is in the first floor. The description of Dean's Office is "[if Panic on the first floor is happening and Dean's Office is unvisited]What is going on? [end if]You're in the Dean's office. You see a desk with a stack of [papers] and a number of [old books] pertaining to your major. The Program Coordinator's office is to the [bold type]South[roman type], and to the [bold type]East[roman type] you can see a door leading toward the stairwell which leads to the second floor of the building. [if Panic on the first floor is happening]There is no good place to hide here.[end if]";
+
 There are some papers  on the Dean's desk. They are fixed in place. They are scenery. The description of the papers is "You probably shouldn't be poking around through this stuff. Besides, it doesn't look like your grade is here."
 The Dean's Desk is a fixed in place supporter in the Dean's Office.
 There are some old books on the Dean's desk. They are fixed in place scenery. The description of the old books is "These books are pretty cool. If you had time, you would probably look at them more closely."
@@ -306,17 +346,16 @@ Section - "Second Floor"
 The Second Floor is a region.
 
 
-Above F1 stairwell toward Two is F2 stairwell toward One. It is in the second floor. The description of F2 stairwell toward One is "This is the stairwell leading down to the first floor."
+Above F1 stairwell toward Two is F2 stairwell toward One. It is in the second floor. The description of F2 stairwell toward One is "This is the stairwell leading down to the first floor. To the [bold type]South [roman type]you see a hallway. Further [bold type]South[roman type] is the stairwell leading to the third floor."
 
 
-South of F2 stairwell toward one is F2 Hallway. F2 Hallway is in the second floor. The description of F2 Hallway is "You're standing in the middle of the second floor hallway. [If Panic on the first floor has happened]You feel very exposed. [end if]The stairwell down to the first floor is back toward the [bold type]North[roman type]. Further to the [bold type]South[roman type] you can see the stairwell that goes up to the third floor. To the [bold type]East[roman type] you see an open lobby with glass walls and large windows. [If panic on the first floor has happened]It doesn't look like there's much protective cover in there. [end if]To the [bold type]West[roman type] you see a utility closet."
+South of F2 stairwell toward one is F2 Hallway. F2 Hallway is in the second floor. The description of F2 Hallway is "You're standing in the middle of the second floor hallway. [If Panic on the first floor has happened]You feel very exposed. The best idea would probably be to try to conceal yourself and find some kind of protective cover. [end if]The stairwell down to the first floor is back toward the [bold type]North[roman type]. Further to the [bold type]South[roman type] you can see the stairwell that goes up to the third floor. To the [bold type]East[roman type] you see an open lobby with glass walls and large windows. [If panic on the first floor has happened]It doesn't look like there's much protective cover in there. [end if]To the [bold type]West[roman type] you see a utility closet."
 
-
-South of F2 Hallway is F2 stairwell toward Three. F2 stairwell toward Three is in the second floor.The description of F2 stairwell toward Three is "This is the stairwell leading up to the third floor."
-
+South of F2 Hallway is F2 stairwell toward Three. F2 stairwell toward Three is in the second floor.The description of F2 stairwell toward Three is "This is the stairwell leading up to the third floor. To the [bold type]West[roman type] and [bold type]East[roman type] are a pair of classrooms. To the [bold type]North[roman type] is the hallway leading back toward the first floor.[if F2 stairwell toward three is unvisited] Use the [bold type]up[roman type] and [bold type]down[roman type] commands to move between floors.[end if]"
 
 East of F2 Hallway is F2 Open lobby. F2 Open lobby is in the second floor. The description of F2 Open lobby is "A spacious room with glass walls and no protective cover."
 
+Closethiding is an event that is unattempted;
 ClosetEntering is an action applying to nothing.
 Understand "enter closet", "get in closet", "hide in closet", "climb in closet",  "go in closet" or "get into closet" as ClosetEntering.
 Instead of ClosetEntering when player is not in F2 Hallway:
@@ -326,8 +365,16 @@ Instead of ClosetEntering when the player is in F2 Hallway:
 	If the closet door is locked:
 		say "The closet door is locked.";
 		stop the action;
-	try going west;
-	say "You climb into the utility closet.";
+	say "You climb into the utility closet and crouch down.";
+	now the player is in F2 Utility Closet;
+	now the closet door is closed;
+	now closethiding is attempted;
+	
+Instead of going west when player is in F2 Hallway:
+	If hiding on the second floor is happening:
+		try ClosetEntering;
+	Otherwise:
+		say "Why would you want to get into the closet?";
 
 ClosetExiting is an action applying to nothing. 
 Understand "exit closet", "leave closet", "get out of closet", "climb out of closet" or "go out of closet" as ClosetExiting.
@@ -357,6 +404,9 @@ Understand "unlock [something]" as unlocking keylessly. Unlocking keylessly is a
 Check unlocking keylessly: 
 	if the noun is not a door, say "[The noun] is not something you can unlock." instead; 
 	if the noun is unlocked, say "[The noun] is already unlocked." instead; 
+	if the player is in F3 Hallway North:
+		try decisioning; 
+		stop the action;
 	if the player is in F2 Hallway, say "You can't unlock the door from this side." instead.
 	
 Carry out unlocking keylessly: 
@@ -369,12 +419,16 @@ Instead of going east when player is in F2 Utility closet and closet door is loc
 	say "You'll need to unlock the door first.";
 	stop the action;
 	
-F2 Utility closet is a room. F2 Utility closet is in the second floor. The description of F2 Utility closet is "A utility closet."
+F2 Utility closet is a room. F2 Utility closet is in the second floor. The description of F2 Utility closet is "A utility closet. The door is to the [bold type]East[roman type]."
 
-South of F2 Utility closet and west of F2 stairwell toward Three is F2 Classroom One. F2 Classroom One is in the second floor. The description of F2 Classroom One is "An ordinary looking classroom."
+F2 Classroom One is a room in the second floor. The description of F2 Classroom One is "You look around desperately for someplace to hide. There are a number of students in the room. They seem to have heard the shots[if shooting is attempted], and one of them points to your injured leg.[otherwise], and a number of them appear to be quite scared. What will you do?[end if]"
 
+F2 Classroom Two is a room in the second floor. The description of F2 Classroom Two is "You look around desperately for someplace to hide. There are a number of students in the room. They seem to have heard the shots[if shooting is attempted], and one of them points to your injured leg.[otherwise], and a number of them appear to be quite scared. What will you do?[end if]"
 
-South of F2 Open Lobby and east of F2 stairwell toward Three is F2 Classroom Two. F2 Classroom Two is in the second floor. The description of F2 Classroom Two is "An ordinary looking classroom."
+The modern lightswitch is a switched on device in F2 Classroom One. It is fixed in place. 
+The old lightswitch is a switched on device in F2 Classroom Two. It is fixed in place.
+The big desk is a fixed in place supporter in F2 Classroom One. 
+The huge old desk is a fixed in place supporter in F2 Classroom Two.
 
 
 Section - "Third Floor"
@@ -382,13 +436,23 @@ Section - "Third Floor"
 The Third Floor is a region.
 
 
-Above F2 stairwell toward Three is F3 Third Floor Stairwell. It is a room in The Third Floor. The description of F3 Third Floor Stairwell is "This is the stairwell leading down to the third floor."
+Above F2 stairwell toward Three is F3 Third Floor Stairwell. It is a room in The Third Floor. The description of F3 Third Floor Stairwell is "This is the stairwell leading down to the second floor.[paragraph break]The shooter has definitely knows where you are now. You need to move quickly. To the [bold type]North[roman type] you see a long corridor with several doors.";
 
 
-North of F3 Hallway South is F3 Hallway North. F3 Hallway North is in the Third Floor. The description of F3 Hallway North is "The hallway seems to stretch for miles."
+North of F3 Third Floor Stairwell is F3 Hallway South. F3 Hallway South is in the Third Floor. The description of F3 Hallway South is "The hallway seems to stretch for miles. In the stairwell behind you to the [bold type]South[roman type], you see the shooter coming up the stairs. There are doors on either side of the hallway. To the [bold type]North[roman type] you can see that the hallway ends in a single door.[paragraph break]The shooter is right behind you.";
 
+Before going to F3 Hallway South during attack on the third floor:
+	now shooter is in F3 Third Floor Stairwell.
 
-North of F3 Third Floor Stairwell is F3 Hallway South. F3 Hallway South is in the Third Floor. The description of F3 Hallway South is "The hallway seems to stretch for miles."
+West of F3 Hallway South is F3 door one. It is a locked door. F3 door one is not lockable.
+East of F3 Hallway South is F3 door two. It is a locked door. F3 door two is not lockable.
+
+North of F3 Hallway North is F3 final door. It is a locked door. F3 final door is not lockable.
+
+North of F3 Hallway South is F3 Hallway North. F3 Hallway North is in the Third Floor. The description of F3 Hallway North is "The hallway seems to stretch for miles. The shooter is following you down the hallway. There is no question about what his intentions are. There is a single door to the [bold type]North[roman type].";
+
+Before going to F3 Hallway North during attack on the third floor:
+	now shooter is in F3 Hallway South.
 
 
 Chapter - "Time"
@@ -438,7 +502,7 @@ EBC Conversation begins when Prologue has ended.
 EBC Conversation ends when the Emergency Building Coordinator is off-stage.
 The description of EBC conversation is "".
 
-The poster is a thing. The poster is in the F1 Hallway. The description of the poster is "The poster outlines a number of tips for how to be prepared in the event that someone enters a building with a gun, intending to harm other people. Among the points listed here are three important things that one can do in order of priority:[paragraph break][bold type]1. Try to get out of the building if possible.[line break]2. Try to hide from the shooter[line break]3. Try confront the shooter physically.[roman type][paragraph break]These are ordered by priority, with confrontation being a strategy of last resort, to be undertaken only when there are no other options available.";
+The poster is a thing. The poster is in the F1 Hallway. The description of the poster is "The poster outlines a number of tips for how to be prepared in the event that someone enters a building with a gun, intending to harm other people. Among the points listed here are three important things that one can do in order of priority:[paragraph break][bold type]1. Try to get out of the building if possible.[line break]2. Try to hide from the shooter.[line break]3. Try to confront the shooter physically.[roman type][paragraph break]These are ordered by priority, with confrontation being a strategy of last resort, to be undertaken only when there are no other options available.[paragraph break]When you are forced to hide, try to do the following:[paragraph break][bold type]1. Turn off all lights to avoid attracting attention.[line break]2. Lock all doors in the room you're in.[line break]3. Seek protective cover.[roman type]";
 
 When EBC Conversation begins:
 	say "The Emergency Building Coordinator steps down from her ladder and sighs lightly. 'These signs are always crooked. Oh well.' You don't see anything wrong with the sign. The Coordinator turns to you and says 'Here. We just printed these [poster]s. Take a [bold type]look[roman type].' The coordinator scratches her head. 'Does this look crooked to you?' Without waiting for a reply,
@@ -470,6 +534,11 @@ When Dropping off Paperwork ends:
 
 Check giving paperwork to Program Coordinator May:
 	now Program Coordinator May has the paperwork.
+	
+OffDropping is an action applying to nothing.
+Understand "drop off paperwork" as OffDropping.
+Instead of OffDropping:
+	Now Program Coordinator May has the paperwork;
 
 
 Section - "Panic on the first floor"
@@ -505,6 +574,8 @@ After going to the F1 stairwell toward two during Panic on the first floor:
 	try looking;
 	say "Down the hall, you can see the man who was working on the door at the front entrance. The door behind him appears to have been bolted shut. He is no longer wearing a hat, and he is holding a gun. He hasn't noticed you yet, but if you remain here for too long, he will.";
 	
+When Panic on the first floor ends:
+	Now the player-objective is "run, or hide."
 
 Section - "Hiding on the second floor"
 
@@ -516,8 +587,8 @@ Notlocking is an event that is unattempted.
 Hiding on the second floor is a scene.
 Hiding on the second floor begins when Panic on the first floor has ended.
 Hiding on the second floor ends when the player is in the Third Floor.
-The description of Hiding on the second floor is "It is obvious that there is an active shooter in the building. You hear more gunshots coming from the direction of the stairwell behind you. As frightening as a situation like this is, you know that you need to keep your wits about you. Standing here in the stairwell is probably not the best idea. You'd better keep moving.[paragraph break]"
-
+The description of Hiding on the second floor is "It is obvious that guy isn't really a workman. You have to face the fact that there is an active shooter in the building. You hear more gunshots coming from the direction of the stairwell behind you as you move through the building. As frightening as a situation like this is, you know that you need to keep your wits about you. Standing here in the stairwell is probably not the best idea. You'd better keep moving.";
+		
 Before going to F1 stairwell toward two during Hiding on the second floor:
 	If shooting is unattempted:
 		clear only the main screen;
@@ -529,8 +600,18 @@ Before going to F1 stairwell toward two during Hiding on the second floor:
 		now wrongway is attempted;
 		now ending is attempted;
 	
+After going to F2 stairwell toward three during Hiding on the second floor:
+	clear only the main screen;
+	now james shooter is in F2 stairwell toward one;
+	say "Looking [bold type]North[roman type], you notice that the shooter has appeared at the top of the stairs. He seems preoccupied, [if shooting has been attempted]but after a moment he looks right at you. You'd better run.[else if player-status is noticed]but after a moment he looks right at you.[otherwise]and he hasn't noticed you yet.[end if]";
+	say "[bold type]";
+	pause the game;
+	say "[roman type]";
+	try looking;
+	now the player-status is noticed;
+	
 Every turn when shooting has been attempted:
-	say "[one of]Your leg is killing you.[or]You have a shooting pain in your leg.[or]You think your leg may have just gone numb.[or]The pain in your leg is really getting to you.[or]You wonder how much blood a person can lose before they pass out...[at random]"
+	say "[one of]Your leg is killing you.[or]You have a shooting pain in your leg.[or]You think your leg may have just gone numb.[or]The pain in your leg is really getting to you.[or]You wonder how much blood a person can lose before they pass out...[at random]";
 
 Before going to F1 Hallway during Hiding on the second floor:
 	say "You move in the direction of the shots. [bold type]This is a very bad idea.[roman type][paragraph break]";
@@ -545,8 +626,14 @@ Before going to F2 classroom two during Hiding on the second floor:
 
 Before going to F2 utility closet during Hiding on the second floor:
 	say "You climb into the cramped utility closet and ease to a crouched position on the floor, trying not to upset any of the brooms which are leaned haphazardly against the wall.";
-	now closeting is attempted. 
+	now closeting is attempted;
 
+Every turn during Hiding on the second floor:
+	If james shooter is in F2 stairwell toward one:
+		If the player is in F2 hallway:
+			now wrongway is attempted;
+			now ending is attempted;
+		
 Closetturns is a number that varies. Closetturns is 1.
 closet door is a door that is unlocked. It is west of F2 Hallway and east of F2 Utility closet.
 
@@ -559,7 +646,7 @@ Every turn when closeting is attempted:
 		Else:
 			say "The doorknob rattles. Once. Twice. You hear footsteps moving away.";
 			now ending is attempted;
-	
+
 unsheltered is an event that is unattempted;
 
 Before going to F2 open lobby during Hiding on the second floor:
@@ -570,22 +657,62 @@ Before going to F2 open lobby during Hiding on the second floor:
 	say "[roman type]";
 	now unsheltered is attempted;
 	now ending is attempted.
-
+		
 	
 Section - "Classroom shelter"
 
 Classroom shelter is a scene.
 Classroom shelter begins when Classrooming is attempted.
 
+classroom door one is a door that is unlocked. It is west of F2 Stairwell toward three and east of F2 Classroom One.
+Classroom door two is a door that is unlocked. It is east of F2 Stairwell toward three and west of F2 Classroom Two.
+
+When classroom shelter begins:
+	now the player-objective is "help everyone here take cover.";
+
+cover is an event that is unattempted.
+classroom-covered is a challenge that is unsuccessful.
+
+Covering is an action applying to nothing.
+Understand "help everyone", "help cover", "help everyone take cover", "help people", "take cover", "cover", "hide", "take shelter" or "shelter" as covering.
+
+Report covering:
+	say "You quickly take charge of the students in the classroom. Very quietly, you motion people toward hiding places around the room. Those who can't find any protective cover stay pressed against the walls of the room so that they can't be easily seen from the doorway.";
+	
+Carry out covering:
+	now cover is attempted;
+	try looking;
+
+[Yeah. This is stupid.]
+Every turn during classroom shelter:
+	If player is in F2 classroom One:
+		If classroom door one is locked:
+			If modern lightswitch is switched off:
+				If cover is attempted:
+					now classroom-covered is successful;
+	If player is in F2 classroom Two:
+		If classroom door two is locked:
+			If old lightswitch is switched off:
+				If cover is attempted:
+					now classroom-covered is successful;
+
+Before going to F2 stairwell toward three during classroom shelter:
+	now wrongway is attempted;
+	now ending is attempted;
+	
 
 Section - "Attack on the third floor"
 
 Confrontation is an event that is unattempted.
+Passing is an event that is unattempted.
 
 Attack on the third floor is a scene.
 Attack on the third floor begins when Hiding on the second floor has ended.
 Attack on the third floor ends when the confrontation is attempted.
 
+When attack on the third floor begins:
+	now the player-objective is "run.";
+	
 Before going to F2 stairwell toward three during Attack on the third floor:
 	say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. [bold type]You've been shot!";
 	pause the game;
@@ -596,34 +723,116 @@ Before going to F2 stairwell toward three during Attack on the third floor:
 	else:
 		now shooting is attempted.
 
+Decision-making is an event that is unattempted;
+Decisioning is an action applying to nothing;
+Run-pasting is an action applying to nothing;
+Shooter-attacking is an action applying to nothing;
+
+Report decisioning:
+	say "Nope. The door is securely locked from the other side. You're cornered, and you're out of options. The shooter is walking toward you with his gun hanging loosely at his side. I suppose that you could try to run past the shooter, but you might not get very far. Your only real choice here is to attack.";
+	now decision-making is attempted;
+	
+Understand "attack", "fight", "attack the shooter", "attack him", "punch", "punch the shooter", "fight the shooter", "confront", "confront the shooter", "hit the shooter", "hit", "beat the shooter", "beat up the shooter" as shooter-attacking.
+Understand the command "run" as something new.
+Understand "run", "run past", "run past the shooter", "run away", "pass" as run-pasting.
+	
+Report shooter-attacking:
+	say "You throw yourself at the shooter, grabbing his gun hand in one hand and tackling him bodily. You wrestle him to the ground. The gun goes off one last time before it spirals away down the hallway. [paragraph break]Just as the shooter pushes you away, a half dozen police officers come barrelling up the stairs with their guns drawn, shouting loudly for everyone to lay face down on the floor."; 
+	
+Carry out shooter-attacking:
+	now confrontation is attempted;
+	now ending is attempted;
+
+Report run-pasting during attack on the third floor:
+	say "You try to run past the shooter, but...";
+
+Report run-pasting:
+	say "Use the commands north, south, east, west, up and down to move around the map.";
+	try looking;
+	
+Carry out run-pasting during attack on the third floor:
+	now passing is attempted;
+	now ending is attempted;
+
+Instead of unlocking keylessly when the player is in F3 Hallway South:
+	say "The door is locked securely from the other side.";
+	
+Instead of going west when the player is in F3 Hallway South:
+	say "The door is locked securely from the other side.";
+
 Section - "Epilogue"
 
 Epilogue begins when ending is attempted.
+Endingmessage is an event that is unattempted.
 Epilogue is a scene.
 
 When Epilogue begins:
 	say "[bold type]Epilogue:[roman type][paragraph break]";
-	say "[If wrongway is attempted]It looks like you took a very wrong turn. You wake up in the back of an ambulance. They tell you that you've lost a lot of blood, but there are others who fared worse. The police eventually caught the shooter, but many people were injured, and some were even killed. Any wrong turn can cost you a lot in a situation involving an active shooter.[paragraph break][end if]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for scenarios like this.[paragraph break][bold type]Here are some pointers for the next time you play:[roman type][paragraph break]";	
+	If closethiding is attempted:
+		If player is in F2 Utility Closet:
+			say "You hear footsteps approaching the door. The doorknob begins to turn slowly... [if closet door is locked]but stops because you locked the door behind you.[otherwise]and the door opens. [end if][if closet door is unlocked]You wake up in the back of an ambulance. They tell you that you've lost a lot of blood, but there are others who fared worse. [end if]The police eventually [if closet door is locked]found you hiding safely and [end if]caught the shooter, but many people were injured, and some were even killed. [If closet door is not locked]You might not have been shot if you had only had the closet door locked from the inside.[end if][line break]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for situations like this.[paragraph break][bold type]Here are some pointers for the next time you play:[roman type][paragraph break]";
+			now endingmessage is attempted;
+	Else if classrooming is attempted:
+		If classroom-covered is successful:
+			If player is in F2 classroom one:
+				say "You hear footsteps approaching the door. Everyone in the room tenses up. The doorknob begins to turn slowly... and stops. You hear the shooter begin to walk away from the door. It looks like you're safe for now. [paragraph break]The police eventually catch the shooter. You are given a commendation for your role in securing the other students from harm. [paragraph break]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for situations like this one.[paragraph break][bold type]Here are some pointers for the next time you play:[roman type][paragraph break]";
+				now endingmessage is attempted;
+		Otherwise:
+			If player is in F2 classroom one:
+				say "Footsteps slowly approach the classroom door. Because you didn't prepare quickly enough, the shooter makes his way into the classroom.[paragraph break]The shooter hovers in the doorway for a moment. He aims his gun at a student in the classroom. A loud crack sounds. The shooter slumps into the doorway and falls to the floor. You feel your heart jump as police officers come pouring into the room, followed shortly by medical personnel.[paragraph break] [if classroom door one is unlocked]The classroom door was unlocked. [end if][if modern lightswitch is switched off]The lights were still on. [end if][if cover is unattempted]No one in the room took protective cover. [end if]Because of this, people in the classroom came very close to dying. The police eventually caught the shooter, but many people were injured, and some were even killed.[paragraph break]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for situations like this one.[paragraph break][bold type]Here are some pointers for the next time you play:[roman type][paragraph break]";
+				now endingmessage is attempted;
+	Else if confrontation is attempted:
+		If endingmessage is unattempted:
+			say "The police wrap up their investigation quickly, and your story makes its way to the press. Your valiant attack on the active shooter may have saved many lives. Congratulations, hero. You did the right thing.[paragraph break]All the same, this has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for situations like this one.[paragraph break][bold type]Here are some pointers for the next time you play:[roman type][paragraph break]";
+			now endingmessage is attempted;
+	If endingmessage is unattempted:
+		say "[If player-collapse is attempted][bold type]You have passed out from loss of blood.[roman type][paragraph break][end if][If wrongway is attempted]It looks like you took a very wrong turn. [end if][If finding is attempted]It looks like you didn't find protective cover in time. You stayed in one place for far too long. [end if]You wake up in the back of an ambulance. They tell you that you've lost a lot of blood, but there are others who fared worse. The police eventually caught the shooter, but many people were injured, and some were even killed. [If wrongway is attempted]Any wrong turn [end if][If finding is attempted]Hesitation [end if][If unsheltered is attempted]Staying in an open area [end if]can cost you a lot in a situation involving an active shooter. [paragraph break]This has turned out to be a pretty bad week. It doesn't really get much worse than this. You've survived, and now you've decided that in the future you're going to be more prepared for situations like this one.[paragraph break][bold type]Here are some pointers for the next time you play:[roman type][paragraph break]";	
+		now endingmessage is attempted;
 	If the Dean's door is locked:
 		say "* You locked the Dean's door behind you. That's a good way to be safer in a situation like this. Nice work.[paragraph break]";
 		increase the score by 20;
 	Otherwise:
 		say "* Consider locking more doors behind you. This will deter an active shooter from getting the jump on you.[paragraph break]";
-	If notlocking is attempted:
-		say "* When hiding, make sure that the doors between you and the active shooter are locked from the inside.[paragraph break]";
-		decrease the score by 20;
+	If closethiding is attempted:
+		If player is in F2 Utility Closet:
+			If closet door is locked:
+				say "* You hid in the closet and stayed put until help arrived. This is a very good way to stay safe until help arrives, especially if you can't get out of the building any other way.[paragraph break]";
+				increase the score by 50;
+			Otherwise:
+				say "* When hiding, make sure that the doors between you and the active shooter are locked from the inside.[paragraph break]";
+				decrease the score by 20;
 	If wrongway is attempted:
 		say "* Try to be aware of where the active shooter is in relation to you. Don't move toward the shooter unless you have to.[paragraph break]";
 		decrease the score by 50;
 	If unsheltered is attempted:
 		say "* Be careful about entering open areas with little or no protective cover.[paragraph break]";
 		decrease the score by 20;
-[	if hiding is attempted:
-		increase the score by 50;
-	if doorlocking is attempted:
+	If finding is attempted:
+		say "* Try not to linger too long in unsafe places.";
+		decrease the score by 50;
+	If player-collapse is attempted:
+		say "* Going back down the stairs toward the shooter was a pretty bad move. You could have died.";
+		decrease the score by 50;
+	If classrooming is attempted:
+		If classroom-covered is successful:
+			say "* You performed exceptionally well in the classroom. Good job.";
+			increase the score by 50;
+		Otherwise:
+			say "* You could have done more to prepare in the classroom. Next time be sure the lights are off, the door is locked and that you take protective cover.";
+	If panic on the first floor has happened:
 		increase the score by 20;
-	if the confrontation is attempted:
-		increase the score by 100;]
+	If hiding on the second floor has happened:
+		increase the score by 20;
+		If closet door is locked:
+			decrease the score by 50;
+	If attack on the third floor has happened:
+		increase the score by 20;
+	If the confrontation is attempted:
+		say "* You're a hero. Well done.";
+		increase the score by 100;
+	If the passing is attempted:
+		say "* Sometimes there is no alternative left to us but to fight.";
+		decrease the score by 20;
 	end the game saying "Final Score : [score]. Can you do better?".
 	
 

@@ -80,7 +80,7 @@ Every turn when panic on the first floor has happened:
 			if the player is not in f2 utility closet AND the player is not in f2 classroom one AND the player is not in f2 classroom two:
 				now the finding has been attempted;
 				now unsheltered has been attempted;
-			move james shooter to the player;
+			move The Strange Man to the player;
 			now ending is attempted;
 	now last location is the location of the player;
 
@@ -178,7 +178,7 @@ Report rendering:
 			say "* *";
 			position the cursor in map-window at row ((Y in row N of the curtable * 4) + 4) column (X in row N of the curtable * 6);
 			say "***";
-		If james shooter is in rname in row N of the curtable:
+		If The Strange Man is in rname in row N of the curtable:
 			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 2) column (X in row N of the curtable * 6);
 			say "***";
 			position the cursor in map-window at row ((Y in row N of the curtable * 4)+ 3) column (X in row N of the curtable * 6);
@@ -297,11 +297,24 @@ Instead of asking Program Coordinator May about something:
 
 Section - "The Shooter"
 
-James Shooter is a person. The description of James Shooter is "What is wrong with this guy?"
-Understand "Shooter", "The shooter", "active shooter", "ac", "Jim" and "James" as James Shooter.
+The Strange Man is a person. He is in F1 Entrance. The description of The Strange Man is "He's a bit lanky, and the workman's uniform that he's wearing doesn't really fit. [if panic on the first floor has happened]What is wrong with this guy?[end if]".
+Understand "Shooter", "The shooter", "active shooter", "ac", "Jim" and "James" as The Strange Man.
 
-After asking James Shooter about something:
+Rule for printing the name of the strange man: 
+	say "[if panic on the first floor has happened]the active shooter[otherwise]the strange man[end if]".
+	
+Instead of asking the strange man about something:
 	say "He doesn't respond. In fact he completely refuses to acknowledge you. It's almost like he's looking through you at someone else.";
+	
+Instead of telling the strange man about something:
+	say "He doesn't respond. In fact he completely refuses to acknowledge you. It's almost like he's looking through you at someone else.";
+
+Instead of telling to the strange man:
+	say "He doesn't respond. In fact he completely refuses to acknowledge you. It's almost like he's looking through you at someone else.";
+
+Instead of talking to the strange man:
+	say "He doesn't respond. In fact he completely refuses to acknowledge you. It's almost like he's looking through you at someone else.";
+
 	
 
 Section - "The Emergency Building Coordinator"
@@ -353,7 +366,7 @@ South of F2 stairwell toward one is F2 Hallway. F2 Hallway is in the second floo
 
 South of F2 Hallway is F2 stairwell toward Three. F2 stairwell toward Three is in the second floor.The description of F2 stairwell toward Three is "This is the stairwell leading up to the third floor. To the [bold type]West[roman type] and [bold type]East[roman type] are a pair of classrooms. To the [bold type]North[roman type] is the hallway leading back toward the first floor.[if F2 stairwell toward three is unvisited] Use the [bold type]up[roman type] and [bold type]down[roman type] commands to move between floors.[end if]"
 
-East of F2 Hallway is F2 Open lobby. F2 Open lobby is in the second floor. The description of F2 Open lobby is "A spacious room with glass walls and no protective cover."
+East of F2 Hallway is F2 Open lobby. F2 Open lobby is in the second floor. The description of F2 Open lobby is "A spacious room with glass walls[if panic on the first floor has happened] and no protective cover[end if]."
 
 Closethiding is an event that is unattempted;
 ClosetEntering is an action applying to nothing.
@@ -405,15 +418,20 @@ Check unlocking keylessly:
 	if the noun is not a door, say "[The noun] is not something you can unlock." instead; 
 	if the noun is unlocked, say "[The noun] is already unlocked." instead; 
 	if the player is in F3 Hallway North:
-		try decisioning; 
-		stop the action;
+		if panic on the first floor has happened:
+			try decisioning; 
+			stop the action;
 	if the player is in F2 Hallway, say "You can't unlock the door from this side." instead.
 	
 Carry out unlocking keylessly: 
-	now the noun is unlocked.
+	if the player is in F3 Hallway North:
+		say "You can't unlock the door from this side.";
+	otherwise:
+		now the noun is unlocked.
 	
 Report unlocking keylessly:
-	say "You unlock the [noun]."
+	If the noun is unlocked:
+		say "You unlock the [noun]."
 
 Instead of going east when player is in F2 Utility closet and closet door is locked:
 	say "You'll need to unlock the door first.";
@@ -421,9 +439,9 @@ Instead of going east when player is in F2 Utility closet and closet door is loc
 	
 F2 Utility closet is a room. F2 Utility closet is in the second floor. The description of F2 Utility closet is "A utility closet. The door is to the [bold type]East[roman type]."
 
-F2 Classroom One is a room in the second floor. The description of F2 Classroom One is "You look around desperately for someplace to hide. There are a number of students in the room. They seem to have heard the shots[if shooting is attempted], and one of them points to your injured leg.[otherwise], and a number of them appear to be quite scared. What will you do?[end if]"
+F2 Classroom One is a room in the second floor. The description of F2 Classroom One is "[if panic on the first floor has happened]You look around desperately for someplace to hide. There are a number of students in the room. They seem to have heard the shots[otherwise]This looks like a pretty ordinary classroom.[end if][if shooting is attempted], and one of them points to your injured leg.[else if panic on the first floor has happened], and a number of them appear to be quite scared. What will you do?[end if]"
 
-F2 Classroom Two is a room in the second floor. The description of F2 Classroom Two is "You look around desperately for someplace to hide. There are a number of students in the room. They seem to have heard the shots[if shooting is attempted], and one of them points to your injured leg.[otherwise], and a number of them appear to be quite scared. What will you do?[end if]"
+F2 Classroom Two is a room in the second floor. The description of F2 Classroom Two is "[if panic on the first floor has happened]You look around desperately for someplace to hide. There are a number of students in the room. They seem to have heard the shots[otherwise]This looks like a pretty ordinary classroom.[end if][if shooting is attempted], and one of them points to your injured leg.[else if panic on the first floor has happened], and a number of them appear to be quite scared. What will you do?[end if]"
 
 The modern lightswitch is a switched on device in F2 Classroom One. It is fixed in place. 
 The old lightswitch is a switched on device in F2 Classroom Two. It is fixed in place.
@@ -436,23 +454,23 @@ Section - "Third Floor"
 The Third Floor is a region.
 
 
-Above F2 stairwell toward Three is F3 Third Floor Stairwell. It is a room in The Third Floor. The description of F3 Third Floor Stairwell is "This is the stairwell leading down to the second floor.[paragraph break]The shooter has definitely knows where you are now. You need to move quickly. To the [bold type]North[roman type] you see a long corridor with several doors.";
+Above F2 stairwell toward Three is F3 Third Floor Stairwell. It is a room in The Third Floor. The description of F3 Third Floor Stairwell is "This is the stairwell leading down to the second floor.[paragraph break][if panic on the first floor has happened]The shooter definitely knows where you are now. You need to move quickly.[end if] To the [bold type]North[roman type] you see a long corridor with several doors.";
 
 
-North of F3 Third Floor Stairwell is F3 Hallway South. F3 Hallway South is in the Third Floor. The description of F3 Hallway South is "The hallway seems to stretch for miles. In the stairwell behind you to the [bold type]South[roman type], you see the shooter coming up the stairs. There are doors on either side of the hallway. To the [bold type]North[roman type] you can see that the hallway ends in a single door.[paragraph break]The shooter is right behind you.";
+North of F3 Third Floor Stairwell is F3 Hallway South. F3 Hallway South is in the Third Floor. The description of F3 Hallway South is "[if panic on the first floor has happened]The hallway seems to stretch for miles. In the stairwell behind you to the [bold type]South[roman type], you see the shooter coming up the stairs. There are doors on either side of the hallway. To the [bold type]North[roman type] you can see that the hallway ends in a single door.[paragraph break]The shooter is right behind you.[otherwise]An empty hallway.[end if]";
 
 Before going to F3 Hallway South during attack on the third floor:
-	now shooter is in F3 Third Floor Stairwell.
+	now the strange man is in F3 Third Floor Stairwell.
 
 West of F3 Hallway South is F3 door one. It is a locked door. F3 door one is not lockable.
 East of F3 Hallway South is F3 door two. It is a locked door. F3 door two is not lockable.
 
 North of F3 Hallway North is F3 final door. It is a locked door. F3 final door is not lockable.
 
-North of F3 Hallway South is F3 Hallway North. F3 Hallway North is in the Third Floor. The description of F3 Hallway North is "The hallway seems to stretch for miles. The shooter is following you down the hallway. There is no question about what his intentions are. There is a single door to the [bold type]North[roman type].";
+North of F3 Hallway South is F3 Hallway North. F3 Hallway North is in the Third Floor. The description of F3 Hallway North is "[if panic on the first floor has happened]The hallway seems to stretch for miles. The shooter is following you down the hallway. There is no question about what his intentions are. There is a single door to the [bold type]North[roman type].[otherwise]You try the door, but it's locked. Looks like this hallway is a dead end.[end if]";
 
 Before going to F3 Hallway North during attack on the third floor:
-	now shooter is in F3 Hallway South.
+	now the strange man is in F3 Hallway South.
 
 
 Chapter - "Time"
@@ -553,7 +571,7 @@ Panic on the first floor ends when player is in second floor.
 The description of Panic on the first floor is "A loud popping sound can be heard in the hallway to the East. 'Did you hear that?' says Ms. May. She gets up from her desk and moves toward the hallway. The Dean follows her out toward the hallway. 'Isn't that Professor Reynolds ex-husband?' the Dean asks.[paragraph break]The Dean and Ms. May walk out into the hallway. A few moments later several more pops can be heard. Ms. May runs right back past you and [bold type]North[roman type] into the Dean's office. 'Run!' she says, and then she is gone.".
 
 When Panic on the first floor begins:
-	now james shooter is in F1 Entrance;
+	now The Strange Man is in F1 Entrance;
 
 Every turn during Panic on the first floor:
 	If the Dean's door is locked and toldaboutlock is false:
@@ -602,7 +620,7 @@ Before going to F1 stairwell toward two during Hiding on the second floor:
 	
 After going to F2 stairwell toward three during Hiding on the second floor:
 	clear only the main screen;
-	now james shooter is in F2 stairwell toward one;
+	now The Strange Man is in F2 stairwell toward one;
 	say "Looking [bold type]North[roman type], you notice that the shooter has appeared at the top of the stairs. He seems preoccupied, [if shooting has been attempted]but after a moment he looks right at you. You'd better run.[else if player-status is noticed]but after a moment he looks right at you.[otherwise]and he hasn't noticed you yet.[end if]";
 	say "[bold type]";
 	pause the game;
@@ -629,7 +647,7 @@ Before going to F2 utility closet during Hiding on the second floor:
 	now closeting is attempted;
 
 Every turn during Hiding on the second floor:
-	If james shooter is in F2 stairwell toward one:
+	If The Strange Man is in F2 stairwell toward one:
 		If the player is in F2 hallway:
 			now wrongway is attempted;
 			now ending is attempted;

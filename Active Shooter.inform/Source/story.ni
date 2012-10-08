@@ -24,7 +24,7 @@ Report helping:
 Commanding is an action applying to nothing.
 Understand "c", "command" or "commands" as commanding.
 Report commanding:
-	say "[bold type]Commands:[roman type][paragraph break]Movement: [line break][bold type]north, south, east, west, up, down [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
+	say "[bold type]Commands:[roman type][paragraph break]Movement: [line break][bold type]north, south, east, west, up, down, wait [roman type][line break]([bold type]n, s, e, w, u, d[roman type])"; 
 	say "[paragraph break]Exploration: [line break][bold type]look, examine, open, close, lock, unlock[line break][roman type]([bold type]l, x[roman type])"; 
 	say "[paragraph break]Inventory: [line break][bold type]take, give, drop, inventory[line break][roman type]([bold type]t, p, d, i[roman type])"; 
 	say "[paragraph break]Speech: [line break][bold type]ask, tell, say[roman type]"; 
@@ -301,7 +301,7 @@ The Strange Man is a person. He is in F1 Entrance. The description of The Strang
 Understand "Shooter", "The shooter", "active shooter", "ac", "Jim" and "James" as The Strange Man.
 
 Rule for printing the name of the strange man: 
-	say "[if panic on the first floor has happened]the active shooter[otherwise]the strange man[end if]".
+	say "[if panic on the first floor has happened]active shooter[otherwise]strange man[end if]".
 	
 Instead of asking the strange man about something:
 	say "He doesn't respond. In fact he completely refuses to acknowledge you. It's almost like he's looking through you at someone else.";
@@ -327,6 +327,33 @@ Understand "Coordinator" as The Emergency Building Coordinator.
 After asking the Emergency Building Coordinator about something: 
 	say "[if Dropping Off Paperwork is happening][one of]What's that?[or]Sorry?[or]Pretty busy here.[or]Don't forget that there's going to be an evacuation drill at noon.[or]Hm?[at random][end if][if EBC Conversation is happening]The Emergency Building Coordinator steps down from her ladder and looks at the newly minted map appraisingly. 'Don't forget that there's going to be an evacuation drill at noon.', she says, cheerily.[end if]".
 
+
+Section - "The Students"
+
+[I am soooo cheating here....]
+A studentgroup is a kind of person.
+The classroom one students is a studentgroup. He is in F2 Classroom One.
+The classroom two students is a studentgroup. He is in F2 Classroom Two.
+
+Understand "students" as studentgroup.
+The classroom one students is a thing that is plural-named.
+The classroom two students is a thing that is plural-named.
+
+The description of classroom one students is "The students seem to be milling about nervously, uncertain of what to do. Fortunately, you are prepared for this situation. You are prepared for this situation, aren't you?"
+
+Instead of asking studentgroup about something:
+	say "No one among the students really seems to have an answer.";
+	
+Instead of telling studentgroup about something:
+	say "The students look at one another, as if each one is expecting someone else to reply to you. They seem to be hoping that you will show them what to do...";
+
+Instead of telling to studentgroup:
+	say "The students look at one another, as if each one is expecting someone else to reply to you. They seem to be hoping that you will show them what to do...";
+
+Instead of talking to studentgroup:
+	say "The students look at one another, as if each one is expecting someone else to reply to you. They seem to be hoping that you will show them what to do...";
+	
+	
 
 Chapter - "Layout"
 
@@ -443,16 +470,22 @@ F2 Classroom One is a room in the second floor. The description of F2 Classroom 
 
 F2 Classroom Two is a room in the second floor. The description of F2 Classroom Two is "[if panic on the first floor has happened]You look around desperately for someplace to hide. There are a number of students in the room. They seem to have heard the shots[otherwise]This looks like a pretty ordinary classroom.[end if][if shooting is attempted], and one of them points to your injured leg.[else if panic on the first floor has happened], and a number of them appear to be quite scared. What will you do?[end if]"
 
-The modern lightswitch is a switched on device in F2 Classroom One. It is fixed in place. 
-The old lightswitch is a switched on device in F2 Classroom Two. It is fixed in place.
+
+A lightswitch is a kind of device.
+Understand "light", "lights" as lightswitch.
+
+The modern lightswitch is a switched on lightswitch in F2 Classroom One. It is fixed in place. 
+The old lightswitch is a switched on lightswitch in F2 Classroom Two. It is fixed in place.
 The big desk is a fixed in place supporter in F2 Classroom One. 
 The huge old desk is a fixed in place supporter in F2 Classroom Two.
+		
+Understand "flip [something] on", "switch [something] on", "turn [something] on", "flip on [something]", "switch on [something]", "turn on [something]" as switching on.
+Understand "flip [something] off", "switch [something] off", "turn [something] off", "flip off [something]", "switch off [something]", "turn off [something]" as switching off.
 
 
 Section - "Third Floor"
 
 The Third Floor is a region.
-
 
 Above F2 stairwell toward Three is F3 Third Floor Stairwell. It is a room in The Third Floor. The description of F3 Third Floor Stairwell is "This is the stairwell leading down to the second floor.[paragraph break][if panic on the first floor has happened]The shooter definitely knows where you are now. You need to move quickly.[end if] To the [bold type]North[roman type] you see a long corridor with several doors.";
 
@@ -460,14 +493,22 @@ Above F2 stairwell toward Three is F3 Third Floor Stairwell. It is a room in The
 North of F3 Third Floor Stairwell is F3 Hallway South. F3 Hallway South is in the Third Floor. The description of F3 Hallway South is "[if panic on the first floor has happened]The hallway seems to stretch for miles. In the stairwell behind you to the [bold type]South[roman type], you see the shooter coming up the stairs. There are doors on either side of the hallway. To the [bold type]North[roman type] you can see that the hallway ends in a single door.[paragraph break]The shooter is right behind you.[otherwise]An empty hallway.[end if]";
 
 Before going to F3 Hallway South during attack on the third floor:
-	now the strange man is in F3 Third Floor Stairwell.
+	If the player is in F3 Hallway North:
+		now wrongway is attempted;
+		now ending is attempted;
+	Otherwise:
+		now the strange man is in F3 Third Floor Stairwell.
 
+Before going to F2 Stairwell toward three during attack on the third floor:
+		now wrongway is attempted;
+		now ending is attempted;
+		
 West of F3 Hallway South is F3 door one. It is a locked door. F3 door one is not lockable.
 East of F3 Hallway South is F3 door two. It is a locked door. F3 door two is not lockable.
 
 North of F3 Hallway North is F3 final door. It is a locked door. F3 final door is not lockable.
 
-North of F3 Hallway South is F3 Hallway North. F3 Hallway North is in the Third Floor. The description of F3 Hallway North is "[if panic on the first floor has happened]The hallway seems to stretch for miles. The shooter is following you down the hallway. There is no question about what his intentions are. There is a single door to the [bold type]North[roman type].[otherwise]You try the door, but it's locked. Looks like this hallway is a dead end.[end if]";
+North of F3 Hallway South is F3 Hallway North. F3 Hallway North is in the Third Floor. The description of F3 Hallway North is "[if panic on the first floor has happened]The hallway seems to stretch for miles. The shooter is following you down the hallway, and he has almost caught up with you. There is no question about what his intentions are. There is a single door to the [bold type]North[roman type].[paragraph break]You're cornered, and you're out of options. The shooter is walking toward you with his gun hanging loosely at his side. I suppose that you could try to run past the shooter, but you might not get very far. Your only real choice here is to attack.[otherwise]You try the door, but it's locked. Looks like this hallway is a dead end.[end if]";
 
 Before going to F3 Hallway North during attack on the third floor:
 	now the strange man is in F3 Hallway South.
@@ -595,6 +636,7 @@ After going to the F1 stairwell toward two during Panic on the first floor:
 When Panic on the first floor ends:
 	Now the player-objective is "run, or hide."
 
+
 Section - "Hiding on the second floor"
 
 Shooting is an event that is unattempted.
@@ -621,7 +663,7 @@ Before going to F1 stairwell toward two during Hiding on the second floor:
 After going to F2 stairwell toward three during Hiding on the second floor:
 	clear only the main screen;
 	now The Strange Man is in F2 stairwell toward one;
-	say "Looking [bold type]North[roman type], you notice that the shooter has appeared at the top of the stairs. He seems preoccupied, [if shooting has been attempted]but after a moment he looks right at you. You'd better run.[else if player-status is noticed]but after a moment he looks right at you.[otherwise]and he hasn't noticed you yet.[end if]";
+	say "Looking [bold type]North[roman type], you notice that the shooter has appeared at the top of the stairs. He seems preoccupied, [if shooting has been attempted]but after a moment he looks right at you. You'd better run.[else if player-status is noticed]but after a moment he looks right at you. He takes a step toward you, and then another. He begins to raise his gun. You feel frozen in place...[otherwise]and he hasn't noticed you yet.[end if]";
 	say "[bold type]";
 	pause the game;
 	say "[roman type]";
@@ -701,7 +743,7 @@ Carry out covering:
 	now cover is attempted;
 	try looking;
 
-[Yeah. This is stupid.]
+[Yeah, I know. This implementation is stupid. There's probably a better way to do this.]
 Every turn during classroom shelter:
 	If player is in F2 classroom One:
 		If classroom door one is locked:
@@ -731,10 +773,12 @@ Attack on the third floor ends when the confrontation is attempted.
 When attack on the third floor begins:
 	now the player-objective is "run.";
 	
-Before going to F2 stairwell toward three during Attack on the third floor:
-	say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. [bold type]You've been shot!";
-	pause the game;
-	say "[roman type]";
+Before going to F3 Third floor stairwell during Attack on the third floor:
+	If shooting is unattempted:
+		clear only the main screen;
+		say "Going back down the stairs is probably a bad idea, but you decide to take the risk. As you walk down the stairs, the shooter appears at the base of the stairwell. He aims his gun in your direction and fires. After a moment, you begin to feel a sharp pain in your leg. [bold type]You've been shot!";
+		pause the game;
+		say "[roman type]";
 	If shooting has been attempted:
 		now wrongway is attempted;
 		now ending is attempted;
@@ -747,7 +791,7 @@ Run-pasting is an action applying to nothing;
 Shooter-attacking is an action applying to nothing;
 
 Report decisioning:
-	say "Nope. The door is securely locked from the other side. You're cornered, and you're out of options. The shooter is walking toward you with his gun hanging loosely at his side. I suppose that you could try to run past the shooter, but you might not get very far. Your only real choice here is to attack.";
+	say "Nope. The door is securely locked from the other side.[paragraph break]You're cornered, and you're out of options. The shooter is walking toward you with his gun hanging loosely at his side. I suppose that you could try to run past the shooter, but you might not get very far. Your only real choice here is to attack.";
 	now decision-making is attempted;
 	
 Understand "attack", "fight", "attack the shooter", "attack him", "punch", "punch the shooter", "fight the shooter", "confront", "confront the shooter", "hit the shooter", "hit", "beat the shooter", "beat up the shooter" as shooter-attacking.
@@ -755,18 +799,27 @@ Understand the command "run" as something new.
 Understand "run", "run past", "run past the shooter", "run away", "pass" as run-pasting.
 	
 Report shooter-attacking:
+	clear only the main screen;
 	say "You throw yourself at the shooter, grabbing his gun hand in one hand and tackling him bodily. You wrestle him to the ground. The gun goes off one last time before it spirals away down the hallway. [paragraph break]Just as the shooter pushes you away, a half dozen police officers come barrelling up the stairs with their guns drawn, shouting loudly for everyone to lay face down on the floor."; 
+	say "[bold type]";
+	pause the game;
+	say "[roman type]";
 	
 Carry out shooter-attacking:
 	now confrontation is attempted;
 	now ending is attempted;
 
 Report run-pasting during attack on the third floor:
+	clear only the main screen;
 	say "You try to run past the shooter, but...";
+	say "[bold type]";
+	pause the game;
+	say "[roman type]";
 
 Report run-pasting:
-	say "Use the commands north, south, east, west, up and down to move around the map.";
-	try looking;
+	If panic on the first floor has not happened:
+		say "Use the commands north, south, east, west, up and down to move around the map.";
+		try looking;
 	
 Carry out run-pasting during attack on the third floor:
 	now passing is attempted;

@@ -737,11 +737,12 @@ Covering is an action applying to nothing.
 Understand "help everyone", "help cover", "help everyone take cover", "help people", "take cover", "cover", "hide", "take shelter" or "shelter" as covering.
 
 Report covering:
-	say "You quickly take charge of the students in the classroom. Very quietly, you motion people toward hiding places around the room. Those who can't find any protective cover stay pressed against the walls of the room so that they can't be easily seen from the doorway.";
+	say "[If panic on the first floor has happened]You quickly take charge of the students in the classroom. Very quietly, you motion people toward hiding places around the room. Those who can't find any protective cover stay pressed against the walls of the room so that they can't be easily seen from the doorway.[otherwise]Why would you want to hide?[end if]";
 	
 Carry out covering:
-	now cover is attempted;
-	try looking;
+	If panic on the first floor has happened:
+		now cover is attempted;
+		try looking;
 
 [Yeah, I know. This implementation is stupid. There's probably a better way to do this.]
 Every turn during classroom shelter:
